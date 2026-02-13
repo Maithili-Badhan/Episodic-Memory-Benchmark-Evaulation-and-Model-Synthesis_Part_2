@@ -1,10 +1,16 @@
-build/
+# Ignore llama.cpp engine
 llama.cpp/
+
+# Future models
 models/
 *.gguf
+
+# Python
 venv/
 __pycache__/
 pycache/
 *.pyc
+
+# OS junk
 .DS_Store
 Thumbs.db
