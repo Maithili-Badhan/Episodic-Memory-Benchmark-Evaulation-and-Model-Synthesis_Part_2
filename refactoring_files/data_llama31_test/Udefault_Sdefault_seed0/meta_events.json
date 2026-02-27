@@ -1,0 +1,102 @@
+[
+  {
+    "nb_paragraphs": 7,
+    "idx_paragraph": {
+      "location": 2,
+      "date": 7,
+      "entity": 2,
+      "content": 2
+    },
+    "style": "thriller"
+  },
+  {
+    "nb_paragraphs": 7,
+    "idx_paragraph": {
+      "location": 5,
+      "date": 7,
+      "entity": 5,
+      "content": 3
+    },
+    "style": "fantasy"
+  },
+  {
+    "nb_paragraphs": 1,
+    "idx_paragraph": {
+      "location": 1,
+      "date": 1,
+      "entity": 1,
+      "content": 1
+    },
+    "style": "detective"
+  },
+  {
+    "nb_paragraphs": 5,
+    "idx_paragraph": {
+      "location": 3,
+      "date": 1,
+      "entity": 3,
+      "content": 4
+    },
+    "style": "mystery"
+  },
+  {
+    "nb_paragraphs": 9,
+    "idx_paragraph": {
+      "location": 2,
+      "date": 2,
+      "entity": 8,
+      "content": 8
+    },
+    "style": "romance"
+  },
+  {
+    "nb_paragraphs": 8,
+    "idx_paragraph": {
+      "location": 8,
+      "date": 6,
+      "entity": 2,
+      "content": 3
+    },
+    "style": "detective"
+  },
+  {
+    "nb_paragraphs": 7,
+    "idx_paragraph": {
+      "location": 7,
+      "date": 7,
+      "entity": 5,
+      "content": 1
+    },
+    "style": "tragedy"
+  },
+  {
+    "nb_paragraphs": 5,
+    "idx_paragraph": {
+      "location": 4,
+      "date": 2,
+      "entity": 1,
+      "content": 1
+    },
+    "style": "comedy"
+  },
+  {
+    "nb_paragraphs": 8,
+    "idx_paragraph": {
+      "location": 8,
+      "date": 5,
+      "entity": 8,
+      "content": 1
+    },
+    "style": "fantasy"
+  },
+  {
+    "nb_paragraphs": 6,
+    "idx_paragraph": {
+      "location": 6,
+      "date": 3,
+      "entity": 3,
+      "content": 4
+    },
+    "style": "mystery"
+  }
+]

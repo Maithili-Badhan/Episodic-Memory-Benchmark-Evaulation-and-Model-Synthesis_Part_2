@@ -1,0 +1,16 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "entity",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": false,
+    "content": false
+  },
+  "{\n    \"1\": false,\n    \"2\": false,\n    \"3\": false,\n    \"4\": false\n} <|im_end|>\nThe text describes multiple geographical locations (the statue, the sky above New Manhattan, the water, the island, the harbor) and multiple temporal events (the performance, the clock striking the hour of fate, the scene beginning). The text also describes multiple main characters (Mila, the bard, the shadowy figure). The text does not describe a single main event happening at that location that day."
+]

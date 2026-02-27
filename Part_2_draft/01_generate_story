@@ -1,0 +1,382 @@
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import types
+from datetime import datetime, timezone
+from pathlib import Path
+
+
+def find_project_root(explicit_root: Path | None = None) -> Path:
+    if explicit_root is not None:
+        root = explicit_root.resolve()
+        if (root / "refactoring_files" / "episodic_repo").is_dir():
+            return root
+        raise FileNotFoundError(
+            f"Invalid --project-root: {root}. "
+            "Expected refactoring_files/episodic_repo under it."
+        )
+
+    here = Path(__file__).resolve()
+    candidates = [here.parent, here.parent.parent, Path.cwd().resolve()]
+    for cand in candidates:
+        if (cand / "refactoring_files" / "episodic_repo").is_dir():
+            return cand
+
+    raise FileNotFoundError(
+        "Could not locate project root with refactoring_files/episodic_repo."
+    )
+
+
+def _upsert_namespace(pkg_name: str, pkg_path: Path) -> types.ModuleType:
+    pkg_path = pkg_path.resolve()
+    mod = sys.modules.get(pkg_name)
+    if mod is None:
+        mod = types.ModuleType(pkg_name)
+        mod.__path__ = [str(pkg_path)]
+        sys.modules[pkg_name] = mod
+        return mod
+
+    cur_paths = list(getattr(mod, "__path__", []))
+    if str(pkg_path) not in cur_paths:
+        cur_paths.insert(0, str(pkg_path))
+    mod.__path__ = cur_paths
+    return mod
+
+
+def bootstrap_epbench(episodic_repo_dir: Path) -> None:
+    if not episodic_repo_dir.is_dir():
+        raise FileNotFoundError(f"episodic_repo not found: {episodic_repo_dir}")
+
+    epbench = _upsert_namespace("epbench", episodic_repo_dir.parent)
+    src = _upsert_namespace("epbench.src", episodic_repo_dir)
+
+    subpkgs = {
+        "generation": episodic_repo_dir / "generation",
+        "evaluation": episodic_repo_dir / "evaluation",
+        "io": episodic_repo_dir / "io",
+        "models": episodic_repo_dir / "models",
+        "plots": episodic_repo_dir / "plots",
+        "results": episodic_repo_dir / "results",
+    }
+
+    for name, path in subpkgs.items():
+        if path.exists():
+            _upsert_namespace(f"epbench.src.{name}", path)
+
+    epbench.src = src
+    for name in subpkgs:
+        full_name = f"epbench.src.{name}"
+        if full_name in sys.modules:
+            setattr(src, name, sys.modules[full_name])
+
+
+def install_llamacpp_models_wrapper(
+    base_url: str,
+    api_key: str = "not-needed",
+    verification_model_name: str = "",
+    verification_base_url: str = "",
+) -> None:
+    import importlib
+
+    try:
+        from openai import OpenAI
+    except Exception as exc:
+        raise RuntimeError(
+            "Missing dependency `openai`. Install it first: pip install openai"
+        ) from exc
+
+    models_mod = importlib.import_module("epbench.src.models.models_wrapper")
+
+    class LlamaCppModelsWrapper:
+        def __init__(self, model_name: str = "", config=None):
+            if not model_name:
+                raise ValueError("model_name is empty. Pass --model-name.")
+            url = base_url.rstrip("/")
+            if verification_model_name and verification_base_url and model_name == verification_model_name:
+                url = verification_base_url.rstrip("/")
+            if not url.endswith("/v1"):
+                url = f"{url}/v1"
+            self.model_name = model_name
+            self.client = OpenAI(base_url=url, api_key=api_key)
+
+        def generate(
+            self,
+            user_prompt: str = "Who are you?",
+            system_prompt: str = "You are a content event generator assistant.",
+            full_outputs: bool = False,
+            max_new_tokens: int = 256,
+            temperature: float = 0.2,
+            keep_reasoning: bool = False,
+        ):
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ]
+            out = self.client.chat.completions.create(
+                model=self.model_name,
+                messages=messages,
+                max_tokens=max_new_tokens,
+                temperature=temperature,
+            )
+            if full_outputs:
+                return (out, None) if keep_reasoning else out
+
+            content = out.choices[0].message.content
+            if content is None:
+                text = ""
+            elif isinstance(content, str):
+                text = content
+            elif isinstance(content, list):
+                parts = []
+                for item in content:
+                    if isinstance(item, dict):
+                        parts.append(str(item.get("text", "")))
+                    else:
+                        parts.append(str(item))
+                text = "".join(parts)
+            else:
+                text = str(content)
+
+            return (text, None) if keep_reasoning else text
+
+    models_mod.ModelsWrapper = LlamaCppModelsWrapper
+
+
+def to_jsonable(obj):
+    if isinstance(obj, set):
+        return sorted(obj)
+    if isinstance(obj, Path):
+        return str(obj)
+    return str(obj)
+
+
+def export_df(df, out_prefix: Path) -> dict:
+    out_prefix.parent.mkdir(parents=True, exist_ok=True)
+
+    csv_path = out_prefix.with_suffix(".csv")
+    jsonl_path = out_prefix.with_suffix(".jsonl")
+    parquet_path = out_prefix.with_suffix(".parquet")
+
+    df.to_csv(csv_path, index=False)
+
+    with jsonl_path.open("w", encoding="utf-8") as f:
+        for row in df.to_dict(orient="records"):
+            f.write(json.dumps(row, ensure_ascii=False, default=to_jsonable) + "\n")
+
+    parquet_written = False
+    try:
+        df.to_parquet(parquet_path, index=False)
+        parquet_written = True
+    except Exception:
+        parquet_written = False
+
+    return {
+        "csv": str(csv_path.resolve()),
+        "jsonl": str(jsonl_path.resolve()),
+        "parquet": str(parquet_path.resolve()) if parquet_written else None,
+    }
+
+
+def parse_args() -> argparse.Namespace:
+    p = argparse.ArgumentParser(
+        description="Generate episodic benchmark storybook (OLMo 3 via llama.cpp)."
+    )
+
+    p.add_argument("--project-root", type=Path, default=None)
+    p.add_argument("--episodic-repo-dir", type=Path, default=None)
+    p.add_argument("--data-folder", type=Path, default=None)
+    p.add_argument("--env-file", type=Path, default=None)
+    p.add_argument("--artifacts-dir", type=Path, default=None)
+
+    p.add_argument("--run-name", type=str, default="")
+    p.add_argument("--nb-events", type=int, default=120)
+    p.add_argument("--seed", type=int, default=0)
+    p.add_argument("--name-universe", type=str, default="default")
+    p.add_argument("--name-styles", type=str, default="default")
+    p.add_argument("--distribution-name", type=str, default="geometric")
+    p.add_argument("--distribution-param", type=float, default=0.1)
+    p.add_argument("--book-indexing", type=str, default="default")
+
+    p.add_argument("--model-name", type=str, default="")
+    p.add_argument("--max-new-tokens", type=int, default=4096)
+    p.add_argument("--temperature", type=float, default=0.2)
+    p.add_argument("--itermax", type=int, default=10)
+    p.add_argument("--direct-repair", action=argparse.BooleanOptionalAction, default=True)
+    p.add_argument("--skip-llm-verification", action=argparse.BooleanOptionalAction, default=True)
+    p.add_argument("--verification-model-name", type=str, default="")
+    p.add_argument("--verification-max-new-tokens", type=int, default=128)
+    p.add_argument("--verification-temperature", type=float, default=0.0)
+
+    p.add_argument("--backend", choices=["llamacpp_server", "existing_wrapper"], default="llamacpp_server")
+    p.add_argument("--llamacpp-base-url", type=str, default="http://127.0.0.1:8080")
+    p.add_argument("--llamacpp-api-key", type=str, default="not-needed")
+    p.add_argument("--verification-llamacpp-base-url", type=str, default="")
+
+    p.add_argument("--rechecking", action="store_true")
+    p.add_argument("--quiet", action="store_true")
+    p.add_argument("--dry-run", action="store_true")
+    p.add_argument("--verification-only", action="store_true")
+    return p.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
+
+    project_root = find_project_root(args.project_root)
+    episodic_repo_dir = (
+        args.episodic_repo_dir.resolve()
+        if args.episodic_repo_dir
+        else (project_root / "refactoring_files" / "episodic_repo")
+    )
+    data_folder = (
+        args.data_folder.resolve()
+        if args.data_folder
+        else (project_root / "refactoring_files" / "data")
+    )
+    env_file = (
+        args.env_file.resolve()
+        if args.env_file
+        else (project_root / ".env")
+    )
+    artifacts_dir = (
+        args.artifacts_dir.resolve()
+        if args.artifacts_dir
+        else (project_root / "refactoring_files" / "artifacts" / "storybook")
+    )
+
+    bootstrap_epbench(episodic_repo_dir)
+
+    if args.backend == "llamacpp_server":
+        effective_verification_model_name = args.verification_model_name or args.model_name
+        install_llamacpp_models_wrapper(
+            args.llamacpp_base_url,
+            args.llamacpp_api_key,
+            effective_verification_model_name,
+            args.verification_llamacpp_base_url,
+        )
+
+    if not args.model_name and not args.dry_run:
+        raise ValueError("Empty --model-name. Set your OLMo model name loaded in llama.cpp.")
+
+    prompt_parameters = {
+        "nb_events": args.nb_events,
+        "name_universe": args.name_universe,
+        "name_styles": args.name_styles,
+        "seed": args.seed,
+        "distribution_events": {
+            "name": args.distribution_name,
+            "param": args.distribution_param,
+        },
+    }
+    model_parameters = {
+        "model_name": args.model_name,
+        "max_new_tokens": args.max_new_tokens,
+        "temperature": args.temperature,
+        "direct_repair": args.direct_repair,
+        "skip_llm_verification": args.skip_llm_verification,
+        "verification_model_name": args.verification_model_name or args.model_name,
+        "verification_max_new_tokens": args.verification_max_new_tokens,
+        "verification_temperature": args.verification_temperature,
+        "itermax": args.itermax,
+    }
+    book_parameters = {"indexing": args.book_indexing}
+
+    if args.dry_run:
+        print(
+            json.dumps(
+                {
+                    "project_root": str(project_root),
+                    "episodic_repo_dir": str(episodic_repo_dir),
+                    "data_folder": str(data_folder),
+                    "env_file": str(env_file),
+                    "artifacts_dir": str(artifacts_dir),
+                    "prompt_parameters": prompt_parameters,
+                    "model_parameters": model_parameters,
+                    "book_parameters": book_parameters,
+                    "backend": args.backend,
+                    "llamacpp_base_url": args.llamacpp_base_url,
+                },
+                indent=2,
+            )
+        )
+        return
+
+    if args.verification_only:
+        from epbench.src.generation.verification_llm import generate_has_passed_llm_verification_func
+
+        event_indexes = list(range(args.nb_events))
+        iterations = [0] * args.nb_events
+        model_verification_parameters = {
+            "model_name": model_parameters["verification_model_name"],
+            "max_new_tokens": model_parameters["verification_max_new_tokens"],
+            "temperature": model_parameters["verification_temperature"],
+        }
+        verif_out = generate_has_passed_llm_verification_func(
+            event_indexes=event_indexes,
+            iterations=iterations,
+            prompt_parameters=prompt_parameters,
+            model_parameters=model_parameters,
+            model_verification_parameters=model_verification_parameters,
+            data_folder=data_folder,
+            env_file=env_file,
+        )
+        passed = sum(1 for x in verif_out if x[0])
+        failed = len(verif_out) - passed
+        print(f"Verification-only complete: passed {passed}/{len(verif_out)}, failed {failed}/{len(verif_out)}")
+        return
+
+    from epbench.src.generation.benchmark_generation_wrapper import BenchmarkGenerationWrapper
+
+    data_folder.mkdir(parents=True, exist_ok=True)
+    run_name = args.run_name or datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    run_dir = artifacts_dir / run_name
+    run_dir.mkdir(parents=True, exist_ok=True)
+
+    benchmark = BenchmarkGenerationWrapper(
+        prompt_parameters=prompt_parameters,
+        model_parameters=model_parameters,
+        book_parameters=book_parameters,
+        data_folder=data_folder,
+        env_file=env_file,
+        verbose=not args.quiet,
+        rechecking=args.rechecking,
+    )
+
+    (run_dir / "book.txt").write_text(str(benchmark.get_book()), encoding="utf-8")
+
+    gt_paths = export_df(benchmark.get_df_book_groundtruth(), run_dir / "df_book_groundtruth")
+    qa_paths = export_df(benchmark.get_df_qa(), run_dir / "df_qa")
+    qa_dbg_paths = export_df(benchmark.get_df_qa_debug_widespreadness(), run_dir / "df_qa_debug_widespreadness")
+
+    manifest = {
+        "created_utc": datetime.now(timezone.utc).isoformat(),
+        "run_name": run_name,
+        "backend": args.backend,
+        "llamacpp_base_url": args.llamacpp_base_url if args.backend == "llamacpp_server" else None,
+        "project_root": str(project_root),
+        "episodic_repo_dir": str(episodic_repo_dir),
+        "data_folder": str(data_folder),
+        "env_file": str(env_file),
+        "prompt_parameters": prompt_parameters,
+        "model_parameters": model_parameters,
+        "book_parameters": book_parameters,
+        "nb_chapters": int(benchmark.nb_chapters()),
+        "nb_tokens": int(benchmark.nb_tokens()),
+        "artifacts": {
+            "book_txt": str((run_dir / "book.txt").resolve()),
+            "df_book_groundtruth": gt_paths,
+            "df_qa": qa_paths,
+            "df_qa_debug_widespreadness": qa_dbg_paths,
+        },
+    }
+    (run_dir / "manifest.json").write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+    print(f"Storybook generation complete: {run_dir}")
+    print(f"Chapters: {manifest['nb_chapters']} | Tokens: {manifest['nb_tokens']}")
+
+
+if __name__ == "__main__":
+    main()

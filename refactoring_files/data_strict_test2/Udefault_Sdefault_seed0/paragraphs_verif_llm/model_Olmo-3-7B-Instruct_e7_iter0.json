@@ -1,0 +1,15 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": true,
+    "content": false
+  },
+  "{\n    \"1\": false,\n    \"2\": false,\n    \"3\": true,\n    \"4\": false\n} <|im_end|>\nThe text implies that the events take place in different locations (multipurpose hall, Snug Harbor Cultural Center, and an open atrium), and the text also mentions that the events take place on different times of the day (9:17 AM and September 27, 2025). The main character is Owen, and there are multiple events happening at the location that day."
+]
