@@ -1,0 +1,15 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": true,
+    "content": false
+  },
+  "{\n  \"1\": false,\n  \"2\": false,\n  \"3\": true,\n  \"4\": false\n} <|im_end|>\nThe text does not take place in a single geographical location (Washington Square Park is mentioned, but the plaza is also mentioned as a separate location), it does not take place in a single temporal day (the text mentions February 27, 2026, but also mentions the morning light and the crowd's laughter and the scent of cold stone and distant coffee), there is a single main character (Benjamin), and there is not a single main event happening at that location that day ("
+]

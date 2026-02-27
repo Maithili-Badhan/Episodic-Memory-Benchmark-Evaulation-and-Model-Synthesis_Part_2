@@ -1,0 +1,15 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": true,
+    "content": false
+  },
+  "{\n\"1\": false,\n\"2\": false,\n\"3\": true,\n\"4\": false\n} <|im_end|>\nThe text does not specify a single geographical location, as it mentions \"Port Jefferson\" but also \"the Community Center\", which could be in a different location. The text does not specify a single temporal day, as it mentions \"September 22, 2026\", but also \"autumn morning\", which could be any day in autumn. The text has a single main character, Henry Reed. The text does not specify a single main event happening at that location that day, as it mentions \"the"
+]

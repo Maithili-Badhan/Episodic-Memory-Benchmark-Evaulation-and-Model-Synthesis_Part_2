@@ -1,0 +1,16 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "entity",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": false,
+    "content": false
+  },
+  "{\n    \"1\": false,\n    \"2\": false,\n    \"3\": false,\n    \"4\": false\n} <|im_end|>\nThe text does not take place in a single geographical location, as it mentions the \"High Line\" which is a specific location in New York City, but also mentions \"the city's elevated heart\" which implies other locations. The text does not take place in a single temporal day, as it mentions \"March 23, 2024\" but also implies other events happening on the same day. The text has multiple main characters, as it mentions \"Logan\" and also mentions"
+]

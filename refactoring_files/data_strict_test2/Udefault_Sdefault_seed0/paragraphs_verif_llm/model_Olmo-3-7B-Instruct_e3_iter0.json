@@ -1,0 +1,15 @@
+[
+  false,
+  [
+    "location",
+    "date",
+    "content"
+  ],
+  {
+    "location": false,
+    "date": false,
+    "entity": true,
+    "content": false
+  },
+  "{\n    \"1\": false,\n    \"2\": false,\n    \"3\": true,\n    \"4\": false\n} <|im_end|>\nThe JSON response indicates that the text does not take place in a single geographical location, does not take place in a single temporal day, has a single main character, and does not have a single main event happening at that location that day."
+]

@@ -1,0 +1,842 @@
+[
+  [
+    "September 13, 2025",
+    "Bethpage Black Course",
+    "Ezra Edwards",
+    "Parkour Workshop",
+    "Demonstrated cat leaps"
+  ],
+  [
+    "September 22, 2026",
+    "American Museum of Natural History",
+    "Chloe Castillo",
+    "Fashion Show",
+    "Revealed future collections"
+  ],
+  [
+    "September 22, 2026",
+    "Port Jefferson",
+    "Henry Reed",
+    "Photography Exhibition",
+    "Explained post-processing techniques"
+  ],
+  [
+    "May 07, 2024",
+    "Hither Hills State Park",
+    "Zoe Brown",
+    "Karaoke Night",
+    "Performed with live band accompaniment"
+  ],
+  [
+    "March 23, 2024",
+    "High Line",
+    "Logan Diaz",
+    "Business Networking Event",
+    "Exchanged industry insights"
+  ],
+  [
+    "May 31, 2024",
+    "Woolworth Building",
+    "Julian Ross",
+    "Tech Hackathon",
+    "Participated in mentoring sessions"
+  ],
+  [
+    "February 27, 2026",
+    "Washington Square Park",
+    "Benjamin Green",
+    "Ice Sculpture Exhibition",
+    "Conducted ice preservation talks"
+  ],
+  [
+    "September 27, 2025",
+    "Snug Harbor Cultural Center",
+    "Owen Thomas",
+    "Parkour Workshop",
+    "Conducted spatial awareness exercises"
+  ],
+  [
+    "February 27, 2026",
+    "Statue of Liberty",
+    "Mila Gonzalez",
+    "Theater Performance",
+    "Performed dramatic scene"
+  ],
+  [
+    "October 13, 2024",
+    "Queensboro Bridge",
+    "Henry Reed",
+    "Film Festival",
+    "Hosted film poster exhibitions"
+  ],
+  [
+    "May 11, 2026",
+    "Washington Square Park",
+    "Henry Reed",
+    "Ice Sculpture Exhibition",
+    "Conducted ice-themed music performances"
+  ],
+  [
+    "May 11, 2026",
+    "High Line",
+    "Chloe Castillo",
+    "Parkour Workshop",
+    "Hosted parkour film screening"
+  ],
+  [
+    "October 13, 2024",
+    "Woolworth Building",
+    "Scarlett Thomas",
+    "Craft Beer Festival",
+    "Organized homebrewing workshops"
+  ],
+  [
+    "April 09, 2026",
+    "Snug Harbor Cultural Center",
+    "Benjamin Green",
+    "Tech Hackathon",
+    "Formed developer teams"
+  ],
+  [
+    "December 26, 2026",
+    "American Museum of Natural History",
+    "Levi Rodriguez",
+    "Astronomy Night",
+    "Hosted astronomy trivia contests"
+  ],
+  [
+    "March 23, 2024",
+    "Port Jefferson",
+    "Zoe Brown",
+    "Tech Hackathon",
+    "Tested user experience"
+  ],
+  [
+    "June 14, 2025",
+    "High Line",
+    "Zoe Brown",
+    "Tech Hackathon",
+    "Presented final projects"
+  ],
+  [
+    "January 03, 2026",
+    "St. Patrick's Cathedral",
+    "Mila Gonzalez",
+    "Theater Performance",
+    "Discussed audience interaction"
+  ],
+  [
+    "February 27, 2026",
+    "High Line",
+    "Jackson Ramos",
+    "Theater Performance",
+    "Discussed theater funding"
+  ],
+  [
+    "September 03, 2026",
+    "Brooklyn Bridge",
+    "Hazel Lewis",
+    "Historical Reenactment",
+    "Organized historical fashion shows"
+  ],
+  [
+    "February 27, 2026",
+    "Williamsburg Bridge",
+    "Julian Ross",
+    "Tech Hackathon",
+    "Discussed data privacy"
+  ],
+  [
+    "March 23, 2024",
+    "Washington Square Park",
+    "Mila Gonzalez",
+    "Archery Tournament",
+    "Hosted compound bow competition"
+  ],
+  [
+    "April 09, 2026",
+    "Brooklyn Museum",
+    "Lily Nguyen",
+    "Fashion Show",
+    "Explained styling choices"
+  ],
+  [
+    "December 03, 2026",
+    "New York Botanical Garden",
+    "Ezra Edwards",
+    "Educational Workshop",
+    "Discussed learning analytics"
+  ],
+  [
+    "September 27, 2025",
+    "One World Trade Center",
+    "Samuel Parker",
+    "Theater Performance",
+    "Discussed theater education"
+  ],
+  [
+    "June 14, 2025",
+    "Brooklyn Museum",
+    "Mila Gonzalez",
+    "Murder Mystery Dinner",
+    "Organized red herring challenge"
+  ],
+  [
+    "September 22, 2026",
+    "Williamsburg Bridge",
+    "Noah Williams",
+    "TED Talk",
+    "Used humor effectively"
+  ],
+  [
+    "October 12, 2024",
+    "Metropolitan Museum of Art",
+    "Zoe Brown",
+    "Astronomy Night",
+    "Conducted astronomy app tutorials"
+  ],
+  [
+    "October 27, 2024",
+    "American Museum of Natural History",
+    "Julian Ross",
+    "Film Festival",
+    "Hosted film trivia contests"
+  ],
+  [
+    "January 03, 2026",
+    "Yankee Stadium",
+    "Carter Stewart",
+    "Theater Performance",
+    "Performed mime act"
+  ],
+  [
+    "October 27, 2024",
+    "Port Jefferson",
+    "Carter Stewart",
+    "Ballet Performance",
+    "Discussed ballet history"
+  ],
+  [
+    "September 22, 2026",
+    "High Line",
+    "Julian Ross",
+    "Fashion Show",
+    "Revealed upcoming trends"
+  ],
+  [
+    "October 12, 2024",
+    "Fire Island National Seashore",
+    "Samuel Parker",
+    "Theater Performance",
+    "Performed ensemble piece"
+  ],
+  [
+    "October 09, 2025",
+    "High Line",
+    "Lucy Carter",
+    "Fire Dancing Performance",
+    "Demonstrated fire puppyhammer techniques"
+  ],
+  [
+    "November 13, 2026",
+    "Chelsea Market",
+    "Lillian Mendoza",
+    "Karaoke Night",
+    "Performed in different language"
+  ],
+  [
+    "September 13, 2025",
+    "Woolworth Building",
+    "Noah Williams",
+    "Theater Performance",
+    "Performed dance sequence"
+  ],
+  [
+    "November 13, 2026",
+    "Long Beach Boardwalk",
+    "Henry Reed",
+    "Fashion Show",
+    "Revealed celebrity attendees"
+  ],
+  [
+    "March 23, 2024",
+    "Yankee Stadium",
+    "Henry Reed",
+    "Tech Hackathon",
+    "Participated in code reviews"
+  ],
+  [
+    "November 13, 2026",
+    "Williamsburg Bridge",
+    "Olivia Turner",
+    "Fire Dancing Performance",
+    "Executed fire staff and sword combo"
+  ],
+  [
+    "May 11, 2026",
+    "Metropolitan Museum of Art",
+    "Samuel Parker",
+    "Educational Workshop",
+    "Discussed industry relevance"
+  ],
+  [
+    "January 26, 2025",
+    "One World Trade Center",
+    "Zoe Brown",
+    "Tech Hackathon",
+    "Discussed cloud computing"
+  ],
+  [
+    "October 13, 2024",
+    "High Line",
+    "Brooklyn Ross",
+    "Film Festival",
+    "Hosted film award ceremonies"
+  ],
+  [
+    "May 11, 2026",
+    "Williamsburg Bridge",
+    "Bella Alvarez",
+    "Astronomy Night",
+    "Organized space food tastings"
+  ],
+  [
+    "February 27, 2026",
+    "One World Trade Center",
+    "Hazel Lewis",
+    "Fashion Show",
+    "Revealed fashion sketches"
+  ],
+  [
+    "June 14, 2025",
+    "The Vessel at Hudson Yards",
+    "Scarlett Thomas",
+    "Book Signing Event",
+    "Explained narrative choices"
+  ],
+  [
+    "April 09, 2026",
+    "High Line",
+    "Scarlett Thomas",
+    "Astronomy Night",
+    "Conducted celestial navigation workshops"
+  ],
+  [
+    "March 23, 2025",
+    "One World Trade Center",
+    "Henry Reed",
+    "Debate Tournament",
+    "Conducted body language seminars"
+  ],
+  [
+    "May 28, 2025",
+    "High Line",
+    "Henry Reed",
+    "Debate Tournament",
+    "Organized cross-examination practice"
+  ],
+  [
+    "December 26, 2026",
+    "Washington Square Park",
+    "Zoe Brown",
+    "Astronomy Night",
+    "Conducted celestial navigation workshops"
+  ],
+  [
+    "September 22, 2026",
+    "Metropolitan Museum of Art",
+    "Carter Stewart",
+    "Scientific Conference",
+    "Explained statistical analysis"
+  ],
+  [
+    "May 14, 2025",
+    "Yankee Stadium",
+    "Julian Ross",
+    "Educational Workshop",
+    "Engaged in problem-solving"
+  ],
+  [
+    "November 13, 2026",
+    "Statue of Liberty",
+    "Lucy Carter",
+    "Tech Hackathon",
+    "Integrated third-party services"
+  ],
+  [
+    "July 25, 2024",
+    "Snug Harbor Cultural Center",
+    "Levi Rodriguez",
+    "Tech Hackathon",
+    "Attended hardware hacking workshop"
+  ],
+  [
+    "June 14, 2025",
+    "One World Trade Center",
+    "Levi Rodriguez",
+    "Classical Music Concert",
+    "Discussed musical interpretation"
+  ],
+  [
+    "May 28, 2025",
+    "Snug Harbor Cultural Center",
+    "Levi Rodriguez",
+    "Scientific Conference",
+    "Discussed potential applications"
+  ],
+  [
+    "September 13, 2025",
+    "American Museum of Natural History",
+    "Carter Stewart",
+    "Parkour Workshop",
+    "Organized parkour for fitness class"
+  ],
+  [
+    "November 13, 2026",
+    "Bethpage Black Course",
+    "Zoe Brown",
+    "Photography Exhibition",
+    "Discussed photography techniques"
+  ],
+  [
+    "May 11, 2026",
+    "Trinity Church",
+    "Levi Rodriguez",
+    "Classical Music Concert",
+    "Performed concerto"
+  ],
+  [
+    "September 13, 2025",
+    "Yankee Stadium",
+    "Lillian Mendoza",
+    "Fashion Show",
+    "Revealed upcoming trends"
+  ],
+  [
+    "June 14, 2025",
+    "Trinity Church",
+    "Noah Williams",
+    "Murder Mystery Dinner",
+    "Organized murder mystery weekend retreat"
+  ],
+  [
+    "July 25, 2024",
+    "Bethpage Black Course",
+    "Logan Diaz",
+    "Job Fair",
+    "Attended company presentations"
+  ],
+  [
+    "May 11, 2026",
+    "Woolworth Building",
+    "Carter Stewart",
+    "Educational Workshop",
+    "Completed assessment"
+  ],
+  [
+    "May 11, 2026",
+    "Port Jefferson",
+    "Maya Smith",
+    "Astronomy Night",
+    "Organized astrophotography workshops"
+  ],
+  [
+    "January 03, 2026",
+    "Statue of Liberty",
+    "Zoe Brown",
+    "Fire Dancing Performance",
+    "Demonstrated fire crystal ball manipulation"
+  ],
+  [
+    "March 23, 2024",
+    "Bethpage State Park",
+    "Benjamin Green",
+    "Fashion Show",
+    "Met with fashion critics"
+  ],
+  [
+    "September 13, 2025",
+    "St. Patrick's Cathedral",
+    "Henry Reed",
+    "Carnival",
+    "Watched clown performances"
+  ],
+  [
+    "August 24, 2026",
+    "Brooklyn Museum",
+    "Brooklyn Ross",
+    "Theater Performance",
+    "Discussed playwright's intent"
+  ],
+  [
+    "February 27, 2026",
+    "Museum of Modern Art",
+    "Maya Smith",
+    "Tech Product Launch",
+    "Demonstrated durability features"
+  ],
+  [
+    "April 09, 2026",
+    "Statue of Liberty",
+    "Lucy Carter",
+    "Theater Performance",
+    "Discussed set design"
+  ],
+  [
+    "November 13, 2026",
+    "Ellis Island",
+    "Julian Ross",
+    "Business Networking Event",
+    "Explained company culture"
+  ],
+  [
+    "June 14, 2025",
+    "Queensboro Bridge",
+    "Brooklyn Ross",
+    "Murder Mystery Dinner",
+    "Discussed historical accuracy"
+  ],
+  [
+    "March 23, 2024",
+    "Metropolitan Museum of Art",
+    "Scarlett Thomas",
+    "Film Festival",
+    "Hosted film technology exhibitions"
+  ],
+  [
+    "March 23, 2025",
+    "Water Mill Museum",
+    "Aurora Chavez",
+    "Tech Hackathon",
+    "Implemented blockchain solutions"
+  ],
+  [
+    "March 23, 2024",
+    "One World Trade Center",
+    "Julian Ross",
+    "Tech Hackathon",
+    "Debugged software issues"
+  ],
+  [
+    "July 21, 2024",
+    "Washington Square Park",
+    "Benjamin Green",
+    "Scientific Conference",
+    "Discussed future of the field"
+  ],
+  [
+    "September 03, 2026",
+    "One World Trade Center",
+    "Maya Smith",
+    "Ghost Tour",
+    "Hosted celebrity ghost hunter appearance"
+  ],
+  [
+    "March 23, 2024",
+    "Woolworth Building",
+    "Levi Cruz",
+    "Job Fair",
+    "Discussed diversity in workplace"
+  ],
+  [
+    "March 23, 2025",
+    "Woolworth Building",
+    "Mila Gonzalez",
+    "Tech Hackathon",
+    "Created data visualizations"
+  ],
+  [
+    "September 13, 2025",
+    "Washington Square Park",
+    "Julian Ross",
+    "Burlesque Performance",
+    "Conducted corset-making workshop"
+  ],
+  [
+    "April 09, 2026",
+    "American Museum of Natural History",
+    "Samuel Parker",
+    "Theater Performance",
+    "Discussed theater criticism"
+  ],
+  [
+    "May 11, 2026",
+    "Museum of Modern Art",
+    "Scarlett Thomas",
+    "Fashion Show",
+    "Discussed model casting"
+  ],
+  [
+    "September 03, 2026",
+    "Van Cortlandt Park",
+    "Mila Gonzalez",
+    "Educational Workshop",
+    "Engaged in critical thinking"
+  ],
+  [
+    "September 03, 2026",
+    "Washington Square Park",
+    "Levi Rodriguez",
+    "Film Festival",
+    "Hosted film technology exhibitions"
+  ],
+  [
+    "November 13, 2026",
+    "Fire Island National Seashore",
+    "Brooklyn Ross",
+    "Tech Hackathon",
+    "Networked with tech professionals"
+  ],
+  [
+    "October 27, 2024",
+    "Brooklyn Bridge",
+    "Henry Reed",
+    "Photography Exhibition",
+    "Showcased aerial photography"
+  ],
+  [
+    "May 11, 2026",
+    "The Vessel at Hudson Yards",
+    "Logan Diaz",
+    "Scientific Conference",
+    "Debated controversial theory"
+  ],
+  [
+    "October 09, 2025",
+    "American Museum of Natural History",
+    "Samuel Parker",
+    "Job Fair",
+    "Collected company information"
+  ],
+  [
+    "December 26, 2026",
+    "High Line",
+    "Mila Gonzalez",
+    "Film Festival",
+    "Conducted film critique sessions"
+  ],
+  [
+    "October 30, 2026",
+    "High Line",
+    "Julian Ross",
+    "Parkour Workshop",
+    "Conducted fear management seminar"
+  ],
+  [
+    "April 09, 2026",
+    "Queensboro Bridge",
+    "Henry Reed",
+    "Theater Performance",
+    "Discussed theater traditions"
+  ],
+  [
+    "September 27, 2025",
+    "Metropolitan Museum of Art",
+    "Scarlett Thomas",
+    "Tech Hackathon",
+    "Implemented new features"
+  ],
+  [
+    "September 03, 2026",
+    "Bethpage Black Course",
+    "Scarlett Thomas",
+    "Tech Hackathon",
+    "Formed developer teams"
+  ],
+  [
+    "January 03, 2026",
+    "Trinity Church",
+    "Olivia Turner",
+    "Debate Tournament",
+    "Hosted mock trials"
+  ],
+  [
+    "July 13, 2024",
+    "Queensboro Bridge",
+    "Lucy Carter",
+    "Farmers Market",
+    "Offered soil testing info"
+  ],
+  [
+    "March 23, 2025",
+    "High Line",
+    "Julian Ross",
+    "Archery Tournament",
+    "Hosted traditional bow competition"
+  ],
+  [
+    "October 09, 2025",
+    "Van Cortlandt Park",
+    "Henry Reed",
+    "Karaoke Night",
+    "Attempted challenging high notes"
+  ],
+  [
+    "July 31, 2025",
+    "One World Trade Center",
+    "Ezra Edwards",
+    "Tattoo Convention",
+    "Discussed cultural significance of tattoos"
+  ],
+  [
+    "April 09, 2026",
+    "Ellis Island",
+    "Jackson Ramos",
+    "Flash Mob",
+    "Performed to mashup soundtrack"
+  ],
+  [
+    "July 31, 2025",
+    "American Museum of Natural History",
+    "Levi Rodriguez",
+    "Fashion Show",
+    "Discussed sustainability in fashion"
+  ],
+  [
+    "August 24, 2026",
+    "American Museum of Natural History",
+    "Zoe Brown",
+    "Photography Exhibition",
+    "Explained conceptual photography"
+  ],
+  [
+    "November 07, 2025",
+    "Yankee Stadium",
+    "Zoe Brown",
+    "Historical Reenactment",
+    "Organized authentic markets"
+  ],
+  [
+    "October 12, 2024",
+    "Washington Square Park",
+    "Julian Ross",
+    "Photography Exhibition",
+    "Showcased landscape photos"
+  ],
+  [
+    "June 14, 2025",
+    "Port Jefferson",
+    "Henry Reed",
+    "Tech Hackathon",
+    "Tested user experience"
+  ],
+  [
+    "April 09, 2026",
+    "One World Trade Center",
+    "Brooklyn Ross",
+    "Educational Workshop",
+    "Completed peer review"
+  ],
+  [
+    "July 21, 2024",
+    "Bethpage State Park",
+    "Isaiah Bennett",
+    "Burlesque Performance",
+    "Organized burlesque-inspired fashion show"
+  ],
+  [
+    "November 07, 2025",
+    "Snug Harbor Cultural Center",
+    "Scarlett Thomas",
+    "Ice Sculpture Exhibition",
+    "Hosted ice sculpture dessert pairings"
+  ],
+  [
+    "February 22, 2025",
+    "American Museum of Natural History",
+    "Chloe Castillo",
+    "Fashion Show",
+    "Discussed fashion technology"
+  ],
+  [
+    "May 11, 2026",
+    "Statue of Liberty",
+    "Zoe Brown",
+    "Tech Hackathon",
+    "Discussed open-source development"
+  ],
+  [
+    "March 23, 2025",
+    "Metropolitan Museum of Art",
+    "Jackson Hall",
+    "Debate Tournament",
+    "Hosted debate podcast recordings"
+  ],
+  [
+    "July 13, 2024",
+    "High Line",
+    "Samuel Parker",
+    "Educational Workshop",
+    "Engaged in peer learning"
+  ],
+  [
+    "February 27, 2026",
+    "Bethpage Black Course",
+    "Levi Rodriguez",
+    "Parkour Workshop",
+    "Organized obstacle course run"
+  ],
+  [
+    "December 26, 2026",
+    "Trinity Church",
+    "Julian Ross",
+    "Fashion Show",
+    "Walked the runway"
+  ],
+  [
+    "June 08, 2026",
+    "Trinity Church",
+    "Carter Stewart",
+    "Tech Hackathon",
+    "Coded prototype applications"
+  ],
+  [
+    "June 14, 2025",
+    "Snug Harbor Cultural Center",
+    "Jackson Ramos",
+    "Karaoke Night",
+    "Attempted challenging high notes"
+  ],
+  [
+    "October 30, 2026",
+    "Washington Square Park",
+    "Mila Gonzalez",
+    "Fashion Show",
+    "Explained fabric choices"
+  ],
+  [
+    "May 28, 2025",
+    "Guggenheim Museum",
+    "Brooklyn Ross",
+    "Drone Racing Event",
+    "Presented anti-drone technology demonstrations"
+  ],
+  [
+    "May 31, 2024",
+    "Trinity Church",
+    "Levi Rodriguez",
+    "Fashion Show",
+    "Discussed sustainability in fashion"
+  ],
+  [
+    "March 23, 2025",
+    "Yankee Stadium",
+    "Levi Cruz",
+    "Tech Hackathon",
+    "Created data visualizations"
+  ],
+  [
+    "March 23, 2025",
+    "Bethpage Black Course",
+    "Bella Brown",
+    "Historical Reenactment",
+    "Hosted historical trivia contests"
+  ],
+  [
+    "February 27, 2026",
+    "Port Jefferson",
+    "Ezra Edwards",
+    "Fire Dancing Performance",
+    "Executed fire chain whip routine"
+  ]
+]
