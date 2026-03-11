@@ -1,9 +1,4 @@
 [
-  false,
-  [
-    "has_entity",
-    "has_content",
-    "single_location",
-    "correct_date"
-  ]
+  true,
+  []
 ]

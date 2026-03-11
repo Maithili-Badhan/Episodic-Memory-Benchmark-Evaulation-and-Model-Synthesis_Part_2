@@ -1,0 +1,121 @@
+chapter,date,location,entity,content,post_entities,n_date,n_location,n_entity,n_content,raw_generated_paragraph_idx,nb_paragraphs,style,idx_t,idx_s,idx_e,idx_c
+1,"September 13, 2025",Bethpage Black Course,Ezra Edwards,Parkour Workshop,"{'Noa Middleton', 'Mara Ledbetter'}",6,6,4,6,0,7,thriller,7,2,2,2
+2,"September 22, 2026",American Museum of Natural History,Chloe Castillo,Fashion Show,set(),5,9,3,13,1,7,fantasy,7,5,5,3
+3,"September 22, 2026",Port Jefferson,Henry Reed,Photography Exhibition,{'Sienna Hamrick'},5,6,12,5,2,1,detective,1,1,1,1
+4,"May 07, 2024",Hither Hills State Park,Zoe Brown,Karaoke Night,{'Reid Blunt'},1,1,11,4,3,5,mystery,1,3,3,4
+5,"March 23, 2024",High Line,Logan Diaz,Business Networking Event,set(),8,13,3,2,4,9,romance,2,2,8,8
+6,"May 31, 2024",Woolworth Building,Julian Ross,Tech Hackathon,"{'Miles Pritchett', 'Ronan Guevara'}",2,6,12,19,5,8,detective,6,8,2,3
+7,"February 27, 2026",Washington Square Park,Benjamin Green,Ice Sculpture Exhibition,{'Amira Hayes'},8,9,4,3,6,7,tragedy,7,7,5,1
+8,"September 27, 2025",Snug Harbor Cultural Center,Owen Thomas,Parkour Workshop,"{'Alma Aultman', 'Uri Wemple', 'Meredith Gardner', 'Alondra Wilkinson'}",3,6,1,6,7,5,comedy,2,4,1,1
+9,"February 27, 2026",Statue of Liberty,Mila Gonzalez,Theater Performance,"{'Hezekiah Bean', 'Sienna Lyles'}",8,5,8,11,8,8,fantasy,5,8,8,1
+10,"October 13, 2024",Queensboro Bridge,Henry Reed,Film Festival,{'Dakari Liebert'},3,4,12,6,9,6,mystery,3,6,3,4
+11,"May 11, 2026",Washington Square Park,Henry Reed,Ice Sculpture Exhibition,set(),10,9,12,3,10,10,romance,10,7,9,9
+12,"May 11, 2026",High Line,Chloe Castillo,Parkour Workshop,"{'Creed Berlin', 'Rocco Cormier', 'Lilah Hamilton'}",10,13,3,6,11,4,horror,2,2,2,3
+13,"October 13, 2024",Woolworth Building,Scarlett Thomas,Craft Beer Festival,"{'Axl Mims', 'Diem Nix'}",3,6,8,1,12,9,comedy,1,2,4,1
+14,"April 09, 2026",Snug Harbor Cultural Center,Benjamin Green,Tech Hackathon,"{'Oakley Goetz', 'Rey Pierre', 'Zander Davenport', 'Eli Groth'}",8,6,4,19,13,3,romance,3,2,3,1
+15,"December 26, 2026",American Museum of Natural History,Levi Rodriguez,Astronomy Night,"{'Jonah Kramer', 'Luka Shaffer', 'Karsyn Schaeffer'}",4,9,9,6,14,5,detective,2,1,4,5
+16,"March 23, 2024",Port Jefferson,Zoe Brown,Tech Hackathon,{'Meredith Lester'},8,6,11,19,15,3,romance,2,2,3,3
+17,"June 14, 2025",High Line,Zoe Brown,Tech Hackathon,"{'Kali Newcomb', 'Presley Lunt'}",8,13,11,19,16,2,horror,2,2,2,2
+18,"January 03, 2026",St. Patrick's Cathedral,Mila Gonzalez,Theater Performance,set(),4,2,8,11,17,10,thriller,9,10,7,5
+19,"February 27, 2026",High Line,Jackson Ramos,Theater Performance,set(),8,13,3,11,18,5,tragedy,3,1,2,2
+20,"September 03, 2026",Brooklyn Bridge,Hazel Lewis,Historical Reenactment,set(),5,2,2,3,19,9,horror,9,8,4,2
+21,"February 27, 2026",Williamsburg Bridge,Julian Ross,Tech Hackathon,"{'Cora Xiong', 'Ronan Francois'}",8,4,12,19,20,10,tragedy,8,5,3,5
+22,"March 23, 2024",Washington Square Park,Mila Gonzalez,Archery Tournament,"{'Nyla Bower', 'Delphi Parent'}",8,9,8,2,21,3,comedy,3,3,3,1
+23,"April 09, 2026",Brooklyn Museum,Lily Nguyen,Fashion Show,"{'Genevieve Burgin', 'Quill Womack'}",8,3,1,13,22,5,tragedy,3,2,4,1
+24,"December 03, 2026",New York Botanical Garden,Ezra Edwards,Educational Workshop,"{'Kylee Beard', 'Remy Waterman'}",1,1,4,7,23,2,mystery,1,1,1,2
+25,"September 27, 2025",One World Trade Center,Samuel Parker,Theater Performance,"{'Josephine Gaither', 'Nylah Zavala'}",3,9,6,11,24,2,tragedy,1,2,1,2
+26,"June 14, 2025",Brooklyn Museum,Mila Gonzalez,Murder Mystery Dinner,"{'Octavia Talley', 'London Baird', 'Nash Ensign', 'Lilah Obrien', 'Sol Schiller', 'Israel Gallo'}",8,3,8,3,25,6,tragedy,3,1,2,2
+27,"September 22, 2026",Williamsburg Bridge,Noah Williams,TED Talk,set(),5,4,3,1,26,8,detective,8,1,1,3
+28,"October 12, 2024",Metropolitan Museum of Art,Zoe Brown,Astronomy Night,"{'Lea Humphrey', 'Luka Hobson', 'Damian Bray', 'Rylee Greer'}",3,6,11,6,27,9,detective,6,1,5,5
+29,"October 27, 2024",American Museum of Natural History,Julian Ross,Film Festival,"{'Thor Larsen', 'Ingrid Partridge'}",3,9,12,6,28,2,romance,2,1,1,2
+30,"January 03, 2026",Yankee Stadium,Carter Stewart,Theater Performance,{'Evelynn Donohue'},4,6,6,11,29,6,romance,4,4,3,6
+31,"October 27, 2024",Port Jefferson,Carter Stewart,Ballet Performance,"{'Amir Woo', 'Mara Spencer'}",3,6,6,1,30,7,tragedy,5,6,4,7
+32,"September 22, 2026",High Line,Julian Ross,Fashion Show,set(),5,13,12,13,31,6,tragedy,2,2,5,6
+33,"October 12, 2024",Fire Island National Seashore,Samuel Parker,Theater Performance,"{'Kai Lipscomb', 'Pax Talley', 'Raven Wingo', 'Alistair Rudd', 'Azriel Humphrey'}",3,2,6,11,32,10,thriller,9,7,7,6
+34,"October 09, 2025",High Line,Lucy Carter,Fire Dancing Performance,{'Hamza Avila'},3,13,4,4,33,4,fantasy,2,1,4,1
+35,"November 13, 2026",Chelsea Market,Lillian Mendoza,Karaoke Night,set(),7,1,2,4,34,9,romance,4,9,7,6
+36,"September 13, 2025",Woolworth Building,Noah Williams,Theater Performance,set(),6,6,3,11,35,8,romance,4,4,8,7
+37,"November 13, 2026",Long Beach Boardwalk,Henry Reed,Fashion Show,set(),7,1,12,13,36,8,tragedy,1,8,3,4
+38,"March 23, 2024",Yankee Stadium,Henry Reed,Tech Hackathon,"{'Emilia Hooks', 'Koa Berlin'}",8,6,12,19,37,9,romance,3,8,6,3
+39,"November 13, 2026",Williamsburg Bridge,Olivia Turner,Fire Dancing Performance,{'Ronnie Vest'},7,4,2,4,38,5,horror,3,5,1,2
+40,"May 11, 2026",Metropolitan Museum of Art,Samuel Parker,Educational Workshop,"{'Daphne Ivey', 'Benson Rucker'}",10,6,6,7,39,1,thriller,1,1,1,1
+41,"January 26, 2025",One World Trade Center,Zoe Brown,Tech Hackathon,{'Vaughn Conley'},1,9,11,19,40,9,detective,3,6,3,5
+42,"October 13, 2024",High Line,Brooklyn Ross,Film Festival,set(),3,13,6,6,41,1,fantasy,1,1,1,1
+43,"May 11, 2026",Williamsburg Bridge,Bella Alvarez,Astronomy Night,"{'Sincere Albertson', 'Gracelynn Groth'}",10,4,1,6,42,2,horror,1,1,1,2
+44,"February 27, 2026",One World Trade Center,Hazel Lewis,Fashion Show,set(),8,9,2,13,43,7,tragedy,4,7,3,1
+45,"June 14, 2025",The Vessel at Hudson Yards,Scarlett Thomas,Book Signing Event,set(),8,2,8,1,44,1,tragedy,1,1,1,1
+46,"April 09, 2026",High Line,Scarlett Thomas,Astronomy Night,"{'Vada Dunning', 'Zyair Batchelor'}",8,13,8,6,45,10,thriller,9,5,5,10
+47,"March 23, 2025",One World Trade Center,Henry Reed,Debate Tournament,"{'Meredith Strand', 'Angelina Woodard'}",7,9,12,4,46,8,comedy,6,1,7,5
+48,"May 28, 2025",High Line,Henry Reed,Debate Tournament,"{'Harleigh Reno', 'Ronnie Randall'}",3,13,12,4,47,6,fantasy,5,4,5,5
+49,"December 26, 2026",Washington Square Park,Zoe Brown,Astronomy Night,"{'Vada Blaine', 'Mabel Schaffer', 'Kieran Poindexter'}",4,9,11,6,48,4,thriller,3,1,4,2
+50,"September 22, 2026",Metropolitan Museum of Art,Carter Stewart,Scientific Conference,{'Ainsley Wilcox'},5,6,6,4,49,6,detective,3,2,5,4
+51,"May 14, 2025",Yankee Stadium,Julian Ross,Educational Workshop,{'Daisy Whittington'},1,6,12,7,50,2,fantasy,2,2,2,2
+52,"November 13, 2026",Statue of Liberty,Lucy Carter,Tech Hackathon,"{'Adonis Stark', 'Mabel Navarro', 'Seth Johnston', 'Colter Jordan'}",7,5,4,19,51,4,comedy,2,1,4,3
+53,"July 25, 2024",Snug Harbor Cultural Center,Levi Rodriguez,Tech Hackathon,set(),2,6,9,19,52,10,thriller,7,6,10,7
+54,"June 14, 2025",One World Trade Center,Levi Rodriguez,Classical Music Concert,{'Cora Burch'},8,9,9,2,53,4,fantasy,4,4,2,4
+55,"May 28, 2025",Snug Harbor Cultural Center,Levi Rodriguez,Scientific Conference,{'Anna Albertson'},3,6,9,4,54,4,thriller,2,2,3,2
+56,"September 13, 2025",American Museum of Natural History,Carter Stewart,Parkour Workshop,"{'Mckenzie Lynn', 'Salem Rutherford'}",6,9,6,6,55,3,mystery,2,2,3,1
+57,"November 13, 2026",Bethpage Black Course,Zoe Brown,Photography Exhibition,set(),7,6,11,5,56,9,fantasy,5,5,1,5
+58,"May 11, 2026",Trinity Church,Levi Rodriguez,Classical Music Concert,{'Genevieve Kelley'},10,6,9,2,57,8,tragedy,8,8,5,5
+59,"September 13, 2025",Yankee Stadium,Lillian Mendoza,Fashion Show,set(),6,6,2,13,58,2,mystery,2,2,1,1
+60,"June 14, 2025",Trinity Church,Noah Williams,Murder Mystery Dinner,"{'Natalia Tennant', 'Ryleigh Russell', 'Anika Fox'}",8,6,3,3,59,2,mystery,2,1,2,1
+61,"July 25, 2024",Bethpage Black Course,Logan Diaz,Job Fair,"{'Brodie Lytle', 'Kendra Stahl'}",2,6,3,3,60,6,tragedy,4,4,5,1
+62,"May 11, 2026",Woolworth Building,Carter Stewart,Educational Workshop,"{'Emersyn Emerson', 'Jace Waddell', 'Dash Herrick'}",10,6,6,7,61,9,detective,6,4,2,8
+63,"May 11, 2026",Port Jefferson,Maya Smith,Astronomy Night,set(),10,6,3,6,62,8,thriller,8,7,4,5
+64,"January 03, 2026",Statue of Liberty,Zoe Brown,Fire Dancing Performance,"{'Alayah Montanez', 'Alec Simonson'}",4,5,11,4,63,2,detective,2,2,2,2
+65,"March 23, 2024",Bethpage State Park,Benjamin Green,Fashion Show,set(),8,2,4,13,64,5,fantasy,2,2,3,3
+66,"September 13, 2025",St. Patrick's Cathedral,Henry Reed,Carnival,set(),6,2,12,1,65,9,horror,6,6,2,3
+67,"August 24, 2026",Brooklyn Museum,Brooklyn Ross,Theater Performance,"{'Justin Valentine', 'Calvin Schaub'}",2,3,6,11,66,5,detective,2,5,1,2
+68,"February 27, 2026",Museum of Modern Art,Maya Smith,Tech Product Launch,"{'Alvaro Westbrook', 'Ophelia Ellison'}",8,2,3,1,67,2,horror,2,2,2,1
+69,"April 09, 2026",Statue of Liberty,Lucy Carter,Theater Performance,"{'Pax Langston', 'Ari Cartwright', 'Frey Matson'}",8,5,4,11,68,9,fantasy,8,2,8,7
+70,"November 13, 2026",Ellis Island,Julian Ross,Business Networking Event,"{'Jorah Cain', 'Easton Perdue'}",7,2,12,2,69,6,horror,3,4,1,2
+71,"June 14, 2025",Queensboro Bridge,Brooklyn Ross,Murder Mystery Dinner,"{'Messiah Funderburk', 'Colter Wiseman'}",8,4,6,3,70,9,detective,5,9,6,8
+72,"March 23, 2024",Metropolitan Museum of Art,Scarlett Thomas,Film Festival,"{'Urijah Vazquez', 'Genevieve Oliveira', 'Gracie Weeks', 'Milana Harkins'}",8,6,8,6,71,4,mystery,4,1,1,3
+73,"March 23, 2025",Water Mill Museum,Aurora Chavez,Tech Hackathon,set(),7,1,1,19,72,10,detective,5,3,7,3
+74,"March 23, 2024",One World Trade Center,Julian Ross,Tech Hackathon,"{'Jeremiah Skutt', 'Rocco Bloom'}",8,9,12,19,73,9,tragedy,4,9,3,6
+75,"July 21, 2024",Washington Square Park,Benjamin Green,Scientific Conference,set(),2,9,4,4,74,10,romance,8,7,1,7
+76,"September 03, 2026",One World Trade Center,Maya Smith,Ghost Tour,set(),5,9,3,1,75,5,comedy,5,3,3,5
+77,"March 23, 2024",Woolworth Building,Levi Cruz,Job Fair,{'Chaim Drury'},8,6,2,3,76,8,romance,6,8,7,6
+78,"March 23, 2025",Woolworth Building,Mila Gonzalez,Tech Hackathon,"{'Raina Perkins', 'Raven Atkinson', 'Seth Billings'}",7,6,8,19,77,2,mystery,1,1,2,1
+79,"September 13, 2025",Washington Square Park,Julian Ross,Burlesque Performance,set(),6,9,12,2,78,10,fantasy,6,8,2,6
+80,"April 09, 2026",American Museum of Natural History,Samuel Parker,Theater Performance,set(),8,9,6,11,79,7,fantasy,6,1,1,1
+81,"May 11, 2026",Museum of Modern Art,Scarlett Thomas,Fashion Show,"{'Mae Garza', 'Reid Keller'}",10,2,8,13,80,6,thriller,1,3,5,1
+82,"September 03, 2026",Van Cortlandt Park,Mila Gonzalez,Educational Workshop,{'Brooklynn Lugo'},5,2,8,7,81,10,mystery,4,10,10,4
+83,"September 03, 2026",Washington Square Park,Levi Rodriguez,Film Festival,set(),5,9,9,6,82,4,comedy,1,4,1,3
+84,"November 13, 2026",Fire Island National Seashore,Brooklyn Ross,Tech Hackathon,"{'Beatrix Padgett', 'Amara Frye'}",7,2,6,19,83,5,fantasy,1,2,4,5
+85,"October 27, 2024",Brooklyn Bridge,Henry Reed,Photography Exhibition,"{'Isabela Carney', 'Sasha Dickerson', 'Blythe Novotny'}",3,2,12,5,84,3,thriller,3,1,3,3
+86,"May 11, 2026",The Vessel at Hudson Yards,Logan Diaz,Scientific Conference,"{'Scarlet Gipson', 'Camille Roach', 'Gianluca Whitman', 'Shawn Knowlton'}",10,2,3,4,85,4,detective,1,2,3,2
+87,"October 09, 2025",American Museum of Natural History,Samuel Parker,Job Fair,{'Trey Pardo'},3,9,6,3,86,3,horror,2,1,3,1
+88,"December 26, 2026",High Line,Mila Gonzalez,Film Festival,"{'Bridgette Randolph', 'Ondine Sturgill'}",4,13,8,6,87,1,comedy,1,1,1,1
+89,"October 30, 2026",High Line,Julian Ross,Parkour Workshop,{'Greyson Beacon'},2,13,12,6,88,10,romance,2,9,9,3
+90,"April 09, 2026",Queensboro Bridge,Henry Reed,Theater Performance,"{'Damian Boddie', 'Kehlani Brito'}",8,4,12,11,89,5,fantasy,5,5,2,3
+91,"September 27, 2025",Metropolitan Museum of Art,Scarlett Thomas,Tech Hackathon,"{'Haven Doherty', 'Lev Tucker', 'Merrick Kinney'}",3,6,8,19,90,8,fantasy,3,4,1,8
+92,"September 03, 2026",Bethpage Black Course,Scarlett Thomas,Tech Hackathon,"{'Cyrus Callahan', 'Miracle Lemaster'}",5,6,8,19,91,2,tragedy,2,2,2,1
+93,"January 03, 2026",Trinity Church,Olivia Turner,Debate Tournament,"{'Zephyr Carver', 'Kassidy Tipton'}",4,6,2,4,92,2,fantasy,1,2,1,1
+94,"July 13, 2024",Queensboro Bridge,Lucy Carter,Farmers Market,"{'Shawn Dowdy', 'Roland Matthews'}",2,4,4,1,93,3,thriller,1,3,1,2
+95,"March 23, 2025",High Line,Julian Ross,Archery Tournament,"{'Aaron Godwin', 'Jensen MacLeod', 'Selah Gardner'}",7,13,12,2,94,3,comedy,1,2,1,3
+96,"October 09, 2025",Van Cortlandt Park,Henry Reed,Karaoke Night,"{'Mae Nestor', 'Remy Hollis'}",3,2,12,4,95,1,thriller,1,1,1,1
+97,"July 31, 2025",One World Trade Center,Ezra Edwards,Tattoo Convention,"{'Yasmin Medina', 'Sasha Hamrick'}",2,9,4,1,96,2,fantasy,1,2,1,2
+98,"April 09, 2026",Ellis Island,Jackson Ramos,Flash Mob,set(),8,2,3,1,97,9,thriller,1,9,7,6
+99,"July 31, 2025",American Museum of Natural History,Levi Rodriguez,Fashion Show,"{'Reign Cheek', 'Frankie Nesbitt', 'Una Bray', 'Declan Kuiper'}",2,9,9,13,98,7,tragedy,3,5,3,1
+100,"August 24, 2026",American Museum of Natural History,Zoe Brown,Photography Exhibition,"{'Presley Navarro', 'Dariel Dempsey'}",2,9,11,5,99,9,comedy,6,1,5,6
+101,"November 07, 2025",Yankee Stadium,Zoe Brown,Historical Reenactment,"{'Phoebe Hamilton', 'Raven Sisco'}",2,6,11,3,100,5,tragedy,2,4,2,3
+102,"October 12, 2024",Washington Square Park,Julian Ross,Photography Exhibition,set(),3,9,12,5,101,9,thriller,4,9,1,6
+103,"June 14, 2025",Port Jefferson,Henry Reed,Tech Hackathon,"{'Reyna Graff', 'Clara Nix'}",8,6,12,19,102,4,mystery,1,2,3,2
+104,"April 09, 2026",One World Trade Center,Brooklyn Ross,Educational Workshop,"{'Heidi Carroll', 'Abram Taber'}",8,9,6,7,103,4,tragedy,1,2,3,4
+105,"July 21, 2024",Bethpage State Park,Isaiah Bennett,Burlesque Performance,set(),2,2,1,2,104,10,detective,2,7,6,10
+106,"November 07, 2025",Snug Harbor Cultural Center,Scarlett Thomas,Ice Sculpture Exhibition,"{'Deandre Haugen', 'Hayden Reynoso', 'Ezequiel Alaniz'}",2,6,8,3,105,7,comedy,1,1,2,6
+107,"February 22, 2025",American Museum of Natural History,Chloe Castillo,Fashion Show,"{'Athena Aguilera', 'Gemma Ayers', 'Sylas Hess'}",1,9,3,13,106,10,horror,1,8,7,2
+108,"May 11, 2026",Statue of Liberty,Zoe Brown,Tech Hackathon,"{'Kira Pierre', 'Karina Stearns'}",10,5,11,19,107,5,detective,1,3,4,3
+109,"March 23, 2025",Metropolitan Museum of Art,Jackson Hall,Debate Tournament,{'Sol Hutchison'},7,6,1,4,108,8,romance,1,4,8,4
+110,"July 13, 2024",High Line,Samuel Parker,Educational Workshop,"{'Halo Waterman', 'Jamal Berlin', 'Oakley Emery', 'Juliet Paxton'}",2,13,6,7,109,8,fantasy,6,7,7,8
+111,"February 27, 2026",Bethpage Black Course,Levi Rodriguez,Parkour Workshop,{'Maci Lowery'},8,6,9,6,110,6,thriller,3,4,6,3
+112,"December 26, 2026",Trinity Church,Julian Ross,Fashion Show,"{'Brinley Vasquez', 'Colton Cyphers'}",4,6,12,13,111,2,mystery,1,2,1,1
+113,"June 08, 2026",Trinity Church,Carter Stewart,Tech Hackathon,{'Corey Goetz'},1,6,6,19,112,6,horror,2,4,5,3
+114,"June 14, 2025",Snug Harbor Cultural Center,Jackson Ramos,Karaoke Night,set(),8,6,3,4,113,10,tragedy,3,6,9,7
+115,"October 30, 2026",Washington Square Park,Mila Gonzalez,Fashion Show,"{'Mylah Hunt', 'Avah Dunning', 'Brian MacLean'}",2,9,8,13,114,2,detective,1,1,2,1
+116,"May 28, 2025",Guggenheim Museum,Brooklyn Ross,Drone Racing Event,"{'Gus Brubaker', 'Samara Bayes', 'Ainsley Ensign'}",3,1,6,1,115,8,detective,7,6,7,6
+117,"May 31, 2024",Trinity Church,Levi Rodriguez,Fashion Show,"{'Sincere Whittington', 'Declan Rojas'}",2,6,9,13,116,10,mystery,10,8,4,10
+118,"March 23, 2025",Yankee Stadium,Levi Cruz,Tech Hackathon,"{'Messiah Ritter', 'Kaya Wemple', 'Kaiden Wenger'}",7,6,2,19,117,6,fantasy,1,5,3,1
+119,"March 23, 2025",Bethpage Black Course,Bella Brown,Historical Reenactment,"{'Daphne Lester', 'Elsie Keel', 'Hezekiah Waterman'}",7,6,1,3,118,4,romance,2,1,4,3
+120,"February 27, 2026",Port Jefferson,Ezra Edwards,Fire Dancing Performance,set(),8,6,4,4,119,4,tragedy,2,2,3,1

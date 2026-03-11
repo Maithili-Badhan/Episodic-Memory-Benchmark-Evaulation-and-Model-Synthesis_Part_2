@@ -37,6 +37,13 @@ def extract_dict_results(text):
                     return value
                 if isinstance(value, list) and len(value) == 1 and isinstance(value[0], bool):
                     return value[0]
+                if isinstance(value, dict):
+                    vals = [_to_bool(v) for v in value.values()]
+                    if len(vals) == 0:
+                        return None
+                    if any(v is None for v in vals):
+                        return None
+                    return all(vals)
                 if isinstance(value, str):
                     v = value.strip().lower()
                     if v == "true":
