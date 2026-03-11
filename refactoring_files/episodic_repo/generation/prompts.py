@@ -248,9 +248,7 @@ Targets:
 Questions (answer true/false):
 1. Does the location check pass exactly as specified above?
 2. Does the date check pass exactly as specified above?
-3. Do all entity checks pass:
-   - full name placement passes exactly as specified above
-   - any secondary entity mention is formatted as "$entity_<integer>" (e.g., $entity_1)?
+3. Does the full-name placement check pass exactly as specified above?
 4. Does the detail check pass exactly as specified above?
 
 Return JSON only in this exact format:
