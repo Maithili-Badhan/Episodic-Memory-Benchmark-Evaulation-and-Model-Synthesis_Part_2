@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import types
 from datetime import datetime, timezone
@@ -152,6 +153,28 @@ def to_jsonable(obj):
         return str(obj)
     return str(obj)
 
+def sanitize_for_json(obj):
+    # Recursively normalize objects so json.dumps can serialize rows
+    # coming from pandas records (including tuple dictionary keys).
+    if isinstance(obj, dict):
+        out = {}
+        for k, v in obj.items():
+            if isinstance(k, (str, int, float, bool)) or k is None:
+                key = k
+            else:
+                key = str(k)
+            out[key] = sanitize_for_json(v)
+        return out
+    if isinstance(obj, list):
+        return [sanitize_for_json(v) for v in obj]
+    if isinstance(obj, tuple):
+        return [sanitize_for_json(v) for v in obj]
+    if isinstance(obj, set):
+        return sorted((sanitize_for_json(v) for v in obj), key=lambda x: str(x))
+    if isinstance(obj, Path):
+        return str(obj)
+    return obj
+
 
 def export_df(df, out_prefix: Path) -> dict:
     out_prefix.parent.mkdir(parents=True, exist_ok=True)
@@ -164,7 +187,8 @@ def export_df(df, out_prefix: Path) -> dict:
 
     with jsonl_path.open("w", encoding="utf-8") as f:
         for row in df.to_dict(orient="records"):
-            f.write(json.dumps(row, ensure_ascii=False, default=to_jsonable) + "\n")
+            row_safe = sanitize_for_json(row)
+            f.write(json.dumps(row_safe, ensure_ascii=False, default=to_jsonable) + "\n")
 
     parquet_written = False
     try:
@@ -178,6 +202,24 @@ def export_df(df, out_prefix: Path) -> dict:
         "jsonl": str(jsonl_path.resolve()),
         "parquet": str(parquet_path.resolve()) if parquet_written else None,
     }
+
+
+def resolve_latest_iterations(prompt_parameters: dict, model_parameters: dict, data_folder: Path, nb_events: int) -> list[int]:
+    from epbench.src.io.io import paragraph_filepath_func
+
+    iters: list[int] = []
+    iter_re = re.compile(r"_iter(\d+)\.json$")
+    for event_index in range(nb_events):
+        iter0_path = paragraph_filepath_func(0, event_index, data_folder, prompt_parameters, model_parameters)
+        prefix = iter0_path.name.replace("_iter0.json", "")
+        latest = 0
+        if iter0_path.parent.is_dir():
+            for cand in iter0_path.parent.glob(f"{prefix}_iter*.json"):
+                m = iter_re.search(cand.name)
+                if m:
+                    latest = max(latest, int(m.group(1)))
+        iters.append(latest)
+    return iters
 
 
 def parse_args() -> argparse.Namespace:
@@ -308,7 +350,12 @@ def main() -> None:
         from epbench.src.generation.verification_llm import generate_has_passed_llm_verification_func
 
         event_indexes = list(range(args.nb_events))
-        iterations = [0] * args.nb_events
+        iterations = resolve_latest_iterations(
+            prompt_parameters=prompt_parameters,
+            model_parameters=model_parameters,
+            data_folder=data_folder,
+            nb_events=args.nb_events,
+        )
         model_verification_parameters = {
             "model_name": model_parameters["verification_model_name"],
             "max_new_tokens": model_parameters["verification_max_new_tokens"],

@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-03-12T16:34:51.831787+00:00",
+  "run_name": "20260312T163425Z",
+  "backend": "llamacpp_server",
+  "llamacpp_base_url": "http://127.0.0.1:8080",
+  "project_root": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2",
+  "episodic_repo_dir": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\episodic_repo",
+  "data_folder": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\data",
+  "env_file": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\.env",
+  "prompt_parameters": {
+    "nb_events": 60,
+    "name_universe": "scifi",
+    "name_styles": "scifi",
+    "seed": 0,
+    "distribution_events": {
+      "name": "geometric",
+      "param": 0.1
+    }
+  },
+  "model_parameters": {
+    "model_name": "Olmo-3-7B-Instruct",
+    "max_new_tokens": 4096,
+    "temperature": 0.2,
+    "direct_repair": true,
+    "skip_llm_verification": false,
+    "verification_model_name": "Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf",
+    "verification_max_new_tokens": 128,
+    "verification_temperature": 0.0,
+    "itermax": 2
+  },
+  "book_parameters": {
+    "indexing": "default"
+  },
+  "nb_chapters": 57,
+  "nb_tokens": 17672,
+  "artifacts": {
+    "book_txt": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\book.txt",
+    "df_book_groundtruth": {
+      "csv": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_book_groundtruth.csv",
+      "jsonl": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_book_groundtruth.jsonl",
+      "parquet": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_book_groundtruth.parquet"
+    },
+    "df_qa": {
+      "csv": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_qa.csv",
+      "jsonl": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_qa.jsonl",
+      "parquet": null
+    },
+    "df_qa_debug_widespreadness": {
+      "csv": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_qa_debug_widespreadness.csv",
+      "jsonl": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_qa_debug_widespreadness.jsonl",
+      "parquet": "C:\\Users\\KIIT\\Documents\\Research Work\\Episodic_Memory_Part_2\\refactoring_files\\artifacts\\storybook\\20260312T163425Z\\df_qa_debug_widespreadness.parquet"
+    }
+  }
+}

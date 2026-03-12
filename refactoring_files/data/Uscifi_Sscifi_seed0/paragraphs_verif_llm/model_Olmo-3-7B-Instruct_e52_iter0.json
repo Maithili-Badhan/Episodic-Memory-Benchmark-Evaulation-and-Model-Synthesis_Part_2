@@ -1,0 +1,15 @@
+[
+  false,
+  [
+    "date",
+    "entity",
+    "content"
+  ],
+  {
+    "location": true,
+    "date": false,
+    "entity": false,
+    "content": false
+  },
+  "{\n  \"1\": true,\n  \"2\": false,\n  \"3\": false,\n  \"4\": false\n}\n<|im_end|>"
+]
