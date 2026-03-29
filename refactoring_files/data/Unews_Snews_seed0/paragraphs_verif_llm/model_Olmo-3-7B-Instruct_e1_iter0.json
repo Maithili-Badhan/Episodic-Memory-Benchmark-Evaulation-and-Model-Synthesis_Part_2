@@ -1,0 +1,14 @@
+[
+  false,
+  [
+    "entity",
+    "content"
+  ],
+  {
+    "location": true,
+    "date": true,
+    "entity": false,
+    "content": false
+  },
+  "{\n  \"1\": true,\n  \"2\": true,\n  \"3\": false,\n  \"4\": false\n}"
+]
