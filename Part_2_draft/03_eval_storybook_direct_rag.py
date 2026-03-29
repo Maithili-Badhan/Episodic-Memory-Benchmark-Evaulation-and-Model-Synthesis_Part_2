@@ -143,6 +143,22 @@ def load_existing_qidx(output_jsonl: Path) -> set[int]:
     return done
 
 
+def load_existing_rows(output_jsonl: Path) -> list[dict[str, Any]]:
+    if not output_jsonl.is_file():
+        return []
+    rows: list[dict[str, Any]] = []
+    with output_jsonl.open("r", encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                rows.append(json.loads(line))
+            except json.JSONDecodeError:
+                continue
+    return rows
+
+
 def answer_one_question(
     client: OpenAI,
     model_name: str,
@@ -166,6 +182,97 @@ def answer_one_question(
     prompt_tokens = getattr(usage, "prompt_tokens", None) if usage is not None else None
     completion_tokens = getattr(usage, "completion_tokens", None) if usage is not None else None
     return answer, prompt_tokens, completion_tokens
+
+
+def evaluate_storybook(
+    storybook_dir: Path,
+    output_root: Path,
+    args: argparse.Namespace,
+    client: OpenAI,
+) -> dict[str, Any]:
+    if not storybook_dir.is_dir():
+        raise FileNotFoundError(f"Storybook dir not found: {storybook_dir}")
+
+    book_path = storybook_dir / "book.txt"
+    if not book_path.is_file():
+        raise FileNotFoundError(f"Missing book.txt in {storybook_dir}")
+    book_text = book_path.read_text(encoding="utf-8")
+
+    df_qa = load_df_qa(storybook_dir)
+    if "question" not in df_qa.columns:
+        raise ValueError(f"df_qa in {storybook_dir} does not contain 'question' column")
+
+    if args.max_questions is not None:
+        df_qa = df_qa.head(args.max_questions)
+
+    safe_name = storybook_dir.name
+    out_jsonl = output_root / f"{safe_name}.answers.jsonl"
+    out_csv = output_root / f"{safe_name}.answers.csv"
+
+    if args.overwrite:
+        if out_jsonl.exists():
+            out_jsonl.unlink()
+        if out_csv.exists():
+            out_csv.unlink()
+
+    done_q = load_existing_qidx(out_jsonl) if args.resume and not args.overwrite else set()
+    rows = load_existing_rows(out_jsonl) if args.resume and not args.overwrite else []
+
+    total = len(df_qa)
+    print(f"[{safe_name}] total questions to consider: {total}, already done: {len(done_q)}")
+    with out_jsonl.open("a", encoding="utf-8") as f:
+        for i, qa_row in df_qa.reset_index(drop=True).iterrows():
+            q_idx = int(qa_row.get("q_idx", i))
+            if q_idx in done_q:
+                continue
+
+            question = str(qa_row["question"])
+            started = time.perf_counter()
+            answer, prompt_tokens, completion_tokens = answer_one_question(
+                client=client,
+                model_name=args.model_name,
+                book_text=book_text,
+                question=question,
+                max_tokens=args.max_tokens,
+                temperature=args.temperature,
+            )
+            elapsed = time.perf_counter() - started
+
+            out_row: dict[str, Any] = {
+                "storybook_dir": str(storybook_dir),
+                "q_idx": q_idx,
+                "question_row_index": int(i),
+                "question": question,
+                "retrieval_type": to_jsonable(qa_row.get("retrieval_type")),
+                "get": to_jsonable(qa_row.get("get")),
+                "correct_answer": to_jsonable(parse_structured(qa_row.get("correct_answer"))),
+                "llm_answer": answer,
+                "prompt_tokens": prompt_tokens,
+                "completion_tokens": completion_tokens,
+                "latency_s": round(elapsed, 4),
+                "model_name": args.model_name,
+                "max_tokens": args.max_tokens,
+                "temperature": args.temperature,
+                "created_utc": datetime.now(timezone.utc).isoformat(),
+            }
+
+            f.write(json.dumps(out_row, ensure_ascii=False) + "\n")
+            rows.append(out_row)
+            print(f"[{safe_name}] q_idx={q_idx} done in {elapsed:.2f}s")
+
+            if args.sleep_seconds > 0:
+                time.sleep(args.sleep_seconds)
+
+    df_out = pd.DataFrame(rows)
+    if not df_out.empty:
+        df_out.to_csv(out_csv, index=False)
+
+    return {
+        "storybook_dir": str(storybook_dir),
+        "output_jsonl": str(out_jsonl.resolve()),
+        "output_csv": str(out_csv.resolve()),
+        "rows_written": int(len(rows)),
+    }
 
 
 def main() -> None:
@@ -193,100 +300,13 @@ def main() -> None:
 
     for storybook_dir_raw in args.storybook_dirs:
         storybook_dir = Path(storybook_dir_raw).resolve()
-        if not storybook_dir.is_dir():
-            raise FileNotFoundError(f"Storybook dir not found: {storybook_dir}")
-
-        book_path = storybook_dir / "book.txt"
-        if not book_path.is_file():
-            raise FileNotFoundError(f"Missing book.txt in {storybook_dir}")
-        book_text = book_path.read_text(encoding="utf-8")
-
-        df_qa = load_df_qa(storybook_dir)
-        if "question" not in df_qa.columns:
-            raise ValueError(f"df_qa in {storybook_dir} does not contain 'question' column")
-
-        if args.max_questions is not None:
-            df_qa = df_qa.head(args.max_questions)
-
-        safe_name = storybook_dir.name
-        out_jsonl = output_root / f"{safe_name}.answers.jsonl"
-        out_csv = output_root / f"{safe_name}.answers.csv"
-
-        if args.overwrite:
-            if out_jsonl.exists():
-                out_jsonl.unlink()
-            if out_csv.exists():
-                out_csv.unlink()
-
-        done_q = load_existing_qidx(out_jsonl) if args.resume and not args.overwrite else set()
-        rows: list[dict[str, Any]] = []
-        if out_jsonl.is_file() and args.resume and not args.overwrite:
-            with out_jsonl.open("r", encoding="utf-8") as f:
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    try:
-                        rows.append(json.loads(line))
-                    except json.JSONDecodeError:
-                        continue
-
-        total = len(df_qa)
-        print(f"[{safe_name}] total questions to consider: {total}, already done: {len(done_q)}")
-        with out_jsonl.open("a", encoding="utf-8") as f:
-            for i, qa_row in df_qa.reset_index(drop=True).iterrows():
-                q_idx = int(qa_row.get("q_idx", i))
-                if q_idx in done_q:
-                    continue
-
-                question = str(qa_row["question"])
-                started = time.perf_counter()
-                answer, prompt_tokens, completion_tokens = answer_one_question(
-                    client=client,
-                    model_name=args.model_name,
-                    book_text=book_text,
-                    question=question,
-                    max_tokens=args.max_tokens,
-                    temperature=args.temperature,
-                )
-                elapsed = time.perf_counter() - started
-
-                out_row: dict[str, Any] = {
-                    "storybook_dir": str(storybook_dir),
-                    "q_idx": q_idx,
-                    "question_row_index": int(i),
-                    "question": question,
-                    "retrieval_type": to_jsonable(qa_row.get("retrieval_type")),
-                    "get": to_jsonable(qa_row.get("get")),
-                    "correct_answer": to_jsonable(parse_structured(qa_row.get("correct_answer"))),
-                    "llm_answer": answer,
-                    "prompt_tokens": prompt_tokens,
-                    "completion_tokens": completion_tokens,
-                    "latency_s": round(elapsed, 4),
-                    "model_name": args.model_name,
-                    "max_tokens": args.max_tokens,
-                    "temperature": args.temperature,
-                    "created_utc": datetime.now(timezone.utc).isoformat(),
-                }
-
-                f.write(json.dumps(out_row, ensure_ascii=False) + "\n")
-                rows.append(out_row)
-                print(f"[{safe_name}] q_idx={q_idx} done in {elapsed:.2f}s")
-
-                if args.sleep_seconds > 0:
-                    time.sleep(args.sleep_seconds)
-
-        df_out = pd.DataFrame(rows)
-        if not df_out.empty:
-            df_out.to_csv(out_csv, index=False)
-
         manifest["results"].append(
-            {
-                "storybook_dir": str(storybook_dir),
-                "output_jsonl": str(out_jsonl.resolve()),
-                "output_csv": str(out_csv.resolve()),
-                "rows_written": int(len(rows)),
-            }
+            evaluate_storybook(
+                storybook_dir=storybook_dir,
+                output_root=output_root,
+                args=args,
+                client=client,
+            )
         )
 
     manifest_path = output_root / "manifest.json"
