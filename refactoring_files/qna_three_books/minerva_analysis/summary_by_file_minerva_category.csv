@@ -1,0 +1,13 @@
+file,minerva_category,minerva_subtask,count,share
+news_news_llm_retry_df_qa.csv,Search,Keyed retrieval from episodic event memory,450,0.7601351351351351
+news_news_llm_retry_df_qa.csv,Compute on Sets and Lists,Temporal ordering over retrieved events,66,0.11148648648648649
+news_news_llm_retry_df_qa.csv,Stateful Processing,Latest-state retrieval in an event stream,66,0.11148648648648649
+news_news_llm_retry_df_qa.csv,Match and Compare,Co-occurrence lookup excluding anchor entity,10,0.016891891891891893
+scifi_20260312T170655Z_df_qa.csv,Search,Keyed retrieval from episodic event memory,450,0.7601351351351351
+scifi_20260312T170655Z_df_qa.csv,Compute on Sets and Lists,Temporal ordering over retrieved events,66,0.11148648648648649
+scifi_20260312T170655Z_df_qa.csv,Stateful Processing,Latest-state retrieval in an event stream,66,0.11148648648648649
+scifi_20260312T170655Z_df_qa.csv,Match and Compare,Co-occurrence lookup excluding anchor entity,10,0.016891891891891893
+thriller_20260311T152054Z_df_qa.csv,Search,Keyed retrieval from episodic event memory,520,0.771513353115727
+thriller_20260311T152054Z_df_qa.csv,Compute on Sets and Lists,Temporal ordering over retrieved events,72,0.10682492581602374
+thriller_20260311T152054Z_df_qa.csv,Stateful Processing,Latest-state retrieval in an event stream,72,0.10682492581602374
+thriller_20260311T152054Z_df_qa.csv,Match and Compare,Co-occurrence lookup excluding anchor entity,10,0.01483679525222552

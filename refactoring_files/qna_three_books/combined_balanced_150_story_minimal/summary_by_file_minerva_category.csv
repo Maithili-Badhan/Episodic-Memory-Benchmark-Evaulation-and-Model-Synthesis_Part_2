@@ -1,0 +1,22 @@
+file,minerva_category,count,share
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Search,124,0.8266666666666667
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Recall and Edit,5,0.03333333333333333
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Match and Compare,5,0.03333333333333333
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Spot the Differences,5,0.03333333333333333
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Composite,5,0.03333333333333333
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Stateful Processing,3,0.02
+news_news_llm_retry_df_qa.combined_story_minimal_150.csv,Compute on Sets and Lists,3,0.02
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Search,124,0.8266666666666667
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Composite,5,0.03333333333333333
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Match and Compare,5,0.03333333333333333
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Recall and Edit,5,0.03333333333333333
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Spot the Differences,5,0.03333333333333333
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Stateful Processing,3,0.02
+scifi_20260312T170655Z_df_qa.combined_story_minimal_150.csv,Compute on Sets and Lists,3,0.02
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Search,124,0.8266666666666667
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Spot the Differences,5,0.03333333333333333
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Match and Compare,5,0.03333333333333333
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Recall and Edit,5,0.03333333333333333
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Composite,5,0.03333333333333333
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Compute on Sets and Lists,3,0.02
+thriller_20260311T152054Z_df_qa.combined_story_minimal_150.csv,Stateful Processing,3,0.02
