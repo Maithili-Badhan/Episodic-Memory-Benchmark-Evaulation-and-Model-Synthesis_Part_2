@@ -1,0 +1,5 @@
+minerva_category,minerva_subtask,count,share
+Search,Keyed retrieval from episodic event memory,1420,0.7642626480086114
+Compute on Sets and Lists,Temporal ordering over retrieved events,204,0.10979547900968784
+Stateful Processing,Latest-state retrieval in an event stream,204,0.10979547900968784
+Match and Compare,Co-occurrence lookup excluding anchor entity,30,0.016146393972012917
