@@ -1,0 +1,6 @@
+[2026-04-02T17:14:53Z] run_start mode=dp name=scifi
+[2026-04-02T17:14:53Z] book_txt=/content/scifi_book.txt
+[2026-04-02T17:14:53Z] qa_csv=/content/scifi_20260312T170655Z_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T17:14:53Z] output=/content/outputs_qwen25_14b_dp_rag/scifi_qwen3_4b_dp.answers.jsonl
+[2026-04-02T17:14:53Z] resume_done=0 rows_total=150
+[2026-04-02T17:15:23Z] run_done mode=dp name=scifi done_ok=0

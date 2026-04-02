@@ -1,0 +1,6 @@
+[2026-04-02T17:15:36Z] run_start mode=dp name=news
+[2026-04-02T17:15:36Z] book_txt=/workspace/news_book.txt
+[2026-04-02T17:15:36Z] qa_csv=/workspace/news_news_llm_retry_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T17:15:36Z] output=/workspace/outputs_phi3_mini_4k_dp_rag/news_phi3-mini-4k_dp.answers.jsonl
+[2026-04-02T17:15:36Z] resume_done=0 rows_total=150
+[2026-04-02T17:15:45Z] run_done mode=dp name=news done_ok=0

@@ -1,0 +1,8 @@
+[2026-04-02T16:52:12Z] run_start mode=rag name=scifi
+[2026-04-02T16:52:12Z] book_txt=/content/scifi_book.txt
+[2026-04-02T16:52:12Z] qa_csv=/content/scifi_20260312T170655Z_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T16:52:12Z] output=/content/outputs_qwen25_14b_dp_rag/scifi_qwen3_4b_rag.answers.jsonl
+[2026-04-02T16:52:12Z] resume_done=0 rows_total=150
+[2026-04-02T16:52:12Z] building_rag_index embed_model=sentence-transformers/all-MiniLM-L6-v2
+[2026-04-02T16:52:20Z] chunks_indexed=405
+[2026-04-02T17:02:34Z] run_done mode=rag name=scifi done_ok=150

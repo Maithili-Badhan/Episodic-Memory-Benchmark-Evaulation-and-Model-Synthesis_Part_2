@@ -1,0 +1,127 @@
+[2026-03-30T17:21:43+00:00] run_id=qwen_rag_20260330T172143Z
+[2026-03-30T17:21:43+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-30T17:21:43+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-30T17:21:43+00:00] resume=True already_done=0
+[2026-03-30T17:21:43+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-30T17:22:46+00:00] chunks_indexed=405
+[2026-03-30T17:22:46+00:00] q=1/150 q_idx=27 retrieving=10
+[2026-03-30T17:22:55+00:00] q_idx=27 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:22:55+00:00] q=2/150 q_idx=32 retrieving=10
+[2026-03-30T17:23:02+00:00] q_idx=32 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:02+00:00] q=3/150 q_idx=27 retrieving=10
+[2026-03-30T17:23:10+00:00] q_idx=27 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:10+00:00] q=4/150 q_idx=11 retrieving=10
+[2026-03-30T17:23:17+00:00] q_idx=11 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:18+00:00] q=5/150 q_idx=22 retrieving=10
+[2026-03-30T17:23:25+00:00] q_idx=22 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:25+00:00] q=6/150 q_idx=27 retrieving=10
+[2026-03-30T17:23:32+00:00] q_idx=27 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:32+00:00] q=7/150 q_idx=18 retrieving=10
+[2026-03-30T17:23:40+00:00] q_idx=18 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:40+00:00] q=8/150 q_idx=16 retrieving=10
+[2026-03-30T17:23:47+00:00] q_idx=16 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:47+00:00] q=9/150 q_idx=25 retrieving=10
+[2026-03-30T17:23:55+00:00] q_idx=25 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:23:55+00:00] q=10/150 q_idx=26 retrieving=10
+[2026-03-30T17:24:02+00:00] q_idx=26 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:02+00:00] q=11/150 q_idx=17 retrieving=10
+[2026-03-30T17:24:10+00:00] q_idx=17 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:10+00:00] q=12/150 q_idx=25 retrieving=10
+[2026-03-30T17:24:17+00:00] q_idx=25 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:17+00:00] q=13/150 q_idx=11 retrieving=10
+[2026-03-30T17:24:25+00:00] q_idx=11 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:25+00:00] q=14/150 q_idx=15 retrieving=10
+[2026-03-30T17:24:32+00:00] q_idx=15 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:32+00:00] q=15/150 q_idx=4 retrieving=10
+[2026-03-30T17:24:40+00:00] q_idx=4 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:40+00:00] q=16/150 q_idx=23 retrieving=10
+[2026-03-30T17:24:48+00:00] q_idx=23 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:48+00:00] q=17/150 q_idx=13 retrieving=10
+[2026-03-30T17:24:55+00:00] q_idx=13 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:24:55+00:00] q=18/150 q_idx=3 retrieving=10
+[2026-03-30T17:25:02+00:00] q_idx=3 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:03+00:00] q=19/150 q_idx=4 retrieving=10
+[2026-03-30T17:25:10+00:00] q_idx=4 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:10+00:00] q=20/150 q_idx=16 retrieving=10
+[2026-03-30T17:25:17+00:00] q_idx=16 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:18+00:00] q=21/150 q_idx=28 retrieving=10
+[2026-03-30T17:25:25+00:00] q_idx=28 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:25+00:00] q=22/150 q_idx=23 retrieving=10
+[2026-03-30T17:25:32+00:00] q_idx=23 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:32+00:00] q=23/150 q_idx=1 retrieving=10
+[2026-03-30T17:25:40+00:00] q_idx=1 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:40+00:00] q=24/150 q_idx=27 retrieving=10
+[2026-03-30T17:25:47+00:00] q_idx=27 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:47+00:00] q=25/150 q_idx=18 retrieving=10
+[2026-03-30T17:25:55+00:00] q_idx=18 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:25:55+00:00] q=26/150 q_idx=30 retrieving=10
+[2026-03-30T17:26:02+00:00] q_idx=30 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:03+00:00] q=27/150 q_idx=26 retrieving=10
+[2026-03-30T17:26:10+00:00] q_idx=26 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:10+00:00] q=28/150 q_idx=28 retrieving=10
+[2026-03-30T17:26:18+00:00] q_idx=28 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:18+00:00] q=29/150 q_idx=9 retrieving=10
+[2026-03-30T17:26:25+00:00] q_idx=9 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:26+00:00] q=30/150 q_idx=26 retrieving=10
+[2026-03-30T17:26:34+00:00] q_idx=26 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:34+00:00] q=31/150 q_idx=11 retrieving=10
+[2026-03-30T17:26:41+00:00] q_idx=11 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:43+00:00] q=32/150 q_idx=19 retrieving=10
+[2026-03-30T17:26:50+00:00] q_idx=19 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:50+00:00] q=33/150 q_idx=16 retrieving=10
+[2026-03-30T17:26:57+00:00] q_idx=16 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:26:58+00:00] q=34/150 q_idx=16 retrieving=10
+[2026-03-30T17:27:05+00:00] q_idx=16 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:05+00:00] q=35/150 q_idx=29 retrieving=10
+[2026-03-30T17:27:13+00:00] q_idx=29 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:13+00:00] q=36/150 q_idx=21 retrieving=10
+[2026-03-30T17:27:20+00:00] q_idx=21 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:20+00:00] q=37/150 q_idx=20 retrieving=10
+[2026-03-30T17:27:28+00:00] q_idx=20 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:28+00:00] q=38/150 q_idx=15 retrieving=10
+[2026-03-30T17:27:35+00:00] q_idx=15 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:36+00:00] q=39/150 q_idx=4 retrieving=10
+[2026-03-30T17:27:43+00:00] q_idx=4 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:43+00:00] q=40/150 q_idx=28 retrieving=10
+[2026-03-30T17:27:51+00:00] q_idx=28 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:51+00:00] q=41/150 q_idx=24 retrieving=10
+[2026-03-30T17:27:58+00:00] q_idx=24 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:27:59+00:00] q=42/150 q_idx=32 retrieving=10
+[2026-03-30T17:28:06+00:00] q_idx=32 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:06+00:00] q=43/150 q_idx=18 retrieving=10
+[2026-03-30T17:28:14+00:00] q_idx=18 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:14+00:00] q=44/150 q_idx=35 retrieving=10
+[2026-03-30T17:28:21+00:00] q_idx=35 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:21+00:00] q=45/150 q_idx=12 retrieving=10
+[2026-03-30T17:28:29+00:00] q_idx=12 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:29+00:00] q=46/150 q_idx=18 retrieving=10
+[2026-03-30T17:28:37+00:00] q_idx=18 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:38+00:00] q=47/150 q_idx=14 retrieving=10
+[2026-03-30T17:28:45+00:00] q_idx=14 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:45+00:00] q=48/150 q_idx=26 retrieving=10
+[2026-03-30T17:28:53+00:00] q_idx=26 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:28:53+00:00] q=49/150 q_idx=20 retrieving=10
+[2026-03-30T17:29:00+00:00] q_idx=20 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:00+00:00] q=50/150 q_idx=3 retrieving=10
+[2026-03-30T17:29:08+00:00] q_idx=3 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:08+00:00] q=51/150 q_idx=26 retrieving=10
+[2026-03-30T17:29:15+00:00] q_idx=26 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:16+00:00] q=52/150 q_idx=1 retrieving=10
+[2026-03-30T17:29:23+00:00] q_idx=1 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:23+00:00] q=53/150 q_idx=25 retrieving=10
+[2026-03-30T17:29:31+00:00] q_idx=25 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:31+00:00] q=54/150 q_idx=19 retrieving=10
+[2026-03-30T17:29:38+00:00] q_idx=19 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:38+00:00] q=55/150 q_idx=16 retrieving=10
+[2026-03-30T17:29:46+00:00] q_idx=16 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:46+00:00] q=56/150 q_idx=14 retrieving=10
+[2026-03-30T17:29:53+00:00] q_idx=14 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:29:53+00:00] q=57/150 q_idx=22 retrieving=10
+[2026-03-30T17:30:00+00:00] q_idx=22 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:30:01+00:00] q=58/150 q_idx=24 retrieving=10
+[2026-03-30T17:30:08+00:00] q_idx=24 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:30:08+00:00] q=59/150 q_idx=20 retrieving=10
+[2026-03-30T17:30:15+00:00] q_idx=20 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:30:16+00:00] q=60/150 q_idx=24 retrieving=10
+[2026-03-30T17:30:23+00:00] q_idx=24 ERROR APIConnectionError: Connection error.
+[2026-03-30T17:30:23+00:00] q=61/150 q_idx=23 retrieving=10

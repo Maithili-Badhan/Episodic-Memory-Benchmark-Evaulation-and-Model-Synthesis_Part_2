@@ -1,0 +1,39 @@
+[2026-03-31T15:25:41+00:00] run_id=qwen_rag_20260331T152541Z
+[2026-03-31T15:25:41+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minerva_balanced\news_news_llm_retry_df_qa.combined_story_minerva_balanced_150.csv
+[2026-03-31T15:25:41+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-31T15:25:41+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-31T15:25:41+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T15:25:41+00:00] resume=True already_done=0
+[2026-03-31T15:25:41+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-31T15:25:53+00:00] chunks_indexed=405
+[2026-03-31T15:25:53+00:00] q=1/150 row_key=combined_q_idx:0 q_idx=27 retrieving=6
+[2026-03-31T15:34:48+00:00] q=2/150 row_key=combined_q_idx:1 q_idx=32 retrieving=6
+[2026-03-31T15:42:16+00:00] q=3/150 row_key=combined_q_idx:2 q_idx=27 retrieving=6
+[2026-03-31T15:50:17+00:00] q=4/150 row_key=combined_q_idx:3 q_idx=11 retrieving=6
+[2026-03-31T15:57:20+00:00] q=5/150 row_key=combined_q_idx:4 q_idx=22 retrieving=6
+[2026-03-31T16:02:23+00:00] q=6/150 row_key=combined_q_idx:5 q_idx=27 retrieving=6
+[2026-03-31T16:09:54+00:00] q=7/150 row_key=combined_q_idx:6 q_idx=18 retrieving=6
+[2026-03-31T16:17:07+00:00] q=8/150 row_key=combined_q_idx:7 q_idx=16 retrieving=6
+[2026-03-31T16:28:23+00:00] q=9/150 row_key=combined_q_idx:8 q_idx=25 retrieving=6
+[2026-04-01T04:23:47+00:00] run_id=qwen_rag_20260401T042347Z
+[2026-04-01T04:23:47+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minerva_balanced\news_news_llm_retry_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-01T04:23:47+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-04-01T04:23:47+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-04-01T04:23:50+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-04-01T04:23:50+00:00] resume=True already_done=8
+[2026-04-01T04:23:50+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-04-01T04:24:29+00:00] chunks_indexed=405
+[2026-04-01T04:24:31+00:00] q=9/150 row_key=combined_q_idx:8 q_idx=25 retrieving=6
+[2026-04-01T04:42:44+00:00] q_idx=25 ERROR APITimeoutError: Request timed out.
+[2026-04-01T04:42:46+00:00] q=10/150 row_key=combined_q_idx:9 q_idx=26 retrieving=6
+[2026-04-01T04:56:39+00:00] q=11/150 row_key=combined_q_idx:10 q_idx=17 retrieving=6
+[2026-04-01T05:15:15+00:00] q_idx=17 ERROR APITimeoutError: Request timed out.
+[2026-04-01T05:15:19+00:00] q=12/150 row_key=combined_q_idx:11 q_idx=25 retrieving=6
+[2026-04-01T05:50:05+00:00] q_idx=25 ERROR APITimeoutError: Request timed out.
+[2026-04-01T05:50:07+00:00] q=13/150 row_key=combined_q_idx:12 q_idx=11 retrieving=6
+[2026-04-01T06:06:31+00:00] q_idx=11 ERROR APITimeoutError: Request timed out.
+[2026-04-01T06:06:33+00:00] q=14/150 row_key=combined_q_idx:13 q_idx=15 retrieving=6
+[2026-04-01T06:24:43+00:00] q_idx=15 ERROR APITimeoutError: Request timed out.
+[2026-04-01T06:24:45+00:00] q=15/150 row_key=combined_q_idx:14 q_idx=4 retrieving=6
+[2026-04-01T06:42:57+00:00] q_idx=4 ERROR APITimeoutError: Request timed out.
+[2026-04-01T06:43:04+00:00] q=16/150 row_key=combined_q_idx:15 q_idx=23 retrieving=6

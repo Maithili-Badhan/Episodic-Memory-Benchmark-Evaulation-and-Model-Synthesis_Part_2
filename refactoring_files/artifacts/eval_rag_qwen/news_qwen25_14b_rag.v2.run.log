@@ -1,0 +1,33 @@
+[2026-03-30T17:40:51+00:00] run_id=qwen_rag_20260330T174051Z
+[2026-03-30T17:40:51+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-30T17:40:51+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-30T17:40:51+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-30T17:40:52+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-30T17:40:52+00:00] WARNING requested model 'qwen2.5-14b-instruct' not in served ids. Use one of: ['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-30T17:40:52+00:00] resume=True already_done=0
+[2026-03-30T17:40:52+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-30T17:41:14+00:00] chunks_indexed=405
+[2026-03-30T17:41:15+00:00] q=1/150 row_key=combined_q_idx:0 q_idx=27 retrieving=10
+[2026-03-30T17:52:49+00:00] q=2/150 row_key=combined_q_idx:1 q_idx=32 retrieving=10
+[2026-03-31T03:25:34+00:00] run_id=qwen_rag_20260331T032534Z
+[2026-03-31T03:25:34+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-31T03:25:34+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-31T03:25:34+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-31T03:25:34+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T03:25:34+00:00] WARNING requested model 'qwen2.5-14b-instruct' not in served ids. Use one of: ['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T03:25:34+00:00] resume=True already_done=1
+[2026-03-31T03:25:34+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-31T03:25:58+00:00] chunks_indexed=405
+[2026-03-31T03:26:01+00:00] q=2/150 row_key=combined_q_idx:1 q_idx=32 retrieving=10
+[2026-03-31T03:37:47+00:00] q_idx=32 ERROR APIConnectionError: Connection error.
+[2026-03-31T03:37:56+00:00] q=3/150 row_key=combined_q_idx:2 q_idx=27 retrieving=10
+[2026-03-31T04:51:29+00:00] run_id=qwen_rag_20260331T045129Z
+[2026-03-31T04:51:29+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-31T04:51:29+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-31T04:51:29+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-31T04:51:29+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T04:51:29+00:00] WARNING requested model 'qwen2.5-14b-instruct' not in served ids. Use one of: ['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T04:51:30+00:00] resume=True already_done=1
+[2026-03-31T04:51:30+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-31T04:52:12+00:00] chunks_indexed=405
+[2026-03-31T04:52:15+00:00] q=2/150 row_key=combined_q_idx:1 q_idx=32 retrieving=10
