@@ -1,0 +1,6 @@
+[2026-04-02T17:15:23Z] run_start mode=dp name=thriller
+[2026-04-02T17:15:23Z] book_txt=/content/book.txt
+[2026-04-02T17:15:23Z] qa_csv=/content/thriller_20260311T152054Z_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T17:15:23Z] output=/content/outputs_qwen25_14b_dp_rag/thriller_qwen3_4b_dp.answers.jsonl
+[2026-04-02T17:15:23Z] resume_done=0 rows_total=150
+[2026-04-02T17:16:33Z] run_done mode=dp name=thriller done_ok=0

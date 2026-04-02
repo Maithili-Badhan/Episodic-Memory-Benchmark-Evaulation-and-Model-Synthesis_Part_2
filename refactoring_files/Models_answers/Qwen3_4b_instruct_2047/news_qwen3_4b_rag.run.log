@@ -1,0 +1,15 @@
+[2026-04-02T16:42:45Z] run_start mode=rag name=news
+[2026-04-02T16:42:45Z] book_txt=/content/news_book.txt
+[2026-04-02T16:42:45Z] qa_csv=/content/news_news_llm_retry_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T16:42:45Z] output=/content/outputs_qwen25_14b_dp_rag/news_qwen3_4b_rag.answers.jsonl
+[2026-04-02T16:42:45Z] resume_done=0 rows_total=150
+[2026-04-02T16:42:45Z] building_rag_index embed_model=sentence-transformers/all-MiniLM-L6-v2
+[2026-04-02T16:43:09Z] chunks_indexed=405
+[2026-04-02T16:43:37Z] run_start mode=rag name=news
+[2026-04-02T16:43:37Z] book_txt=/content/news_book.txt
+[2026-04-02T16:43:37Z] qa_csv=/content/news_news_llm_retry_df_qa.combined_story_minerva_balanced_150.csv
+[2026-04-02T16:43:37Z] output=/content/outputs_qwen25_14b_dp_rag/news_qwen3_4b_rag.answers.jsonl
+[2026-04-02T16:43:37Z] resume_done=1 rows_total=150
+[2026-04-02T16:43:37Z] building_rag_index embed_model=sentence-transformers/all-MiniLM-L6-v2
+[2026-04-02T16:43:44Z] chunks_indexed=405
+[2026-04-02T16:52:12Z] run_done mode=rag name=news done_ok=150

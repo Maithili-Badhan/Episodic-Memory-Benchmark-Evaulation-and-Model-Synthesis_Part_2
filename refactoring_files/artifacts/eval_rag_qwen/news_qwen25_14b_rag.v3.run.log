@@ -1,0 +1,42 @@
+[2026-03-31T04:59:54+00:00] run_id=qwen_rag_20260331T045954Z
+[2026-03-31T04:59:54+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-31T04:59:54+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-31T04:59:54+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-31T04:59:54+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T04:59:54+00:00] resume=True already_done=0
+[2026-03-31T04:59:54+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-31T05:00:06+00:00] chunks_indexed=405
+[2026-03-31T05:00:07+00:00] q=1/150 row_key=combined_q_idx:0 q_idx=27 retrieving=6
+[2026-03-31T05:07:12+00:00] q=2/150 row_key=combined_q_idx:1 q_idx=32 retrieving=6
+[2026-03-31T05:12:56+00:00] q=3/150 row_key=combined_q_idx:2 q_idx=27 retrieving=6
+[2026-03-31T05:18:17+00:00] q=4/150 row_key=combined_q_idx:3 q_idx=11 retrieving=6
+[2026-03-31T05:23:44+00:00] q=5/150 row_key=combined_q_idx:4 q_idx=22 retrieving=6
+[2026-03-31T05:29:37+00:00] q=6/150 row_key=combined_q_idx:5 q_idx=27 retrieving=6
+[2026-03-31T05:33:36+00:00] q=7/150 row_key=combined_q_idx:6 q_idx=18 retrieving=6
+[2026-03-31T05:38:17+00:00] q=8/150 row_key=combined_q_idx:7 q_idx=16 retrieving=6
+[2026-03-31T05:41:21+00:00] q=9/150 row_key=combined_q_idx:8 q_idx=25 retrieving=6
+[2026-03-31T05:51:09+00:00] q=10/150 row_key=combined_q_idx:9 q_idx=26 retrieving=6
+[2026-03-31T05:56:36+00:00] q=11/150 row_key=combined_q_idx:10 q_idx=17 retrieving=6
+[2026-03-31T06:02:10+00:00] q=12/150 row_key=combined_q_idx:11 q_idx=25 retrieving=6
+[2026-03-31T06:08:09+00:00] q=13/150 row_key=combined_q_idx:12 q_idx=11 retrieving=6
+[2026-03-31T06:11:14+00:00] q=14/150 row_key=combined_q_idx:13 q_idx=15 retrieving=6
+[2026-03-31T06:14:24+00:00] q=15/150 row_key=combined_q_idx:14 q_idx=4 retrieving=6
+[2026-03-31T06:17:00+00:00] q=16/150 row_key=combined_q_idx:15 q_idx=23 retrieving=6
+[2026-03-31T06:20:00+00:00] q=17/150 row_key=combined_q_idx:16 q_idx=13 retrieving=6
+[2026-03-31T06:23:13+00:00] q=18/150 row_key=combined_q_idx:17 q_idx=3 retrieving=6
+[2026-03-31T06:25:55+00:00] q=19/150 row_key=combined_q_idx:18 q_idx=4 retrieving=6
+[2026-03-31T06:29:03+00:00] q=20/150 row_key=combined_q_idx:19 q_idx=16 retrieving=6
+[2026-03-31T06:34:58+00:00] q=21/150 row_key=combined_q_idx:20 q_idx=28 retrieving=6
+[2026-03-31T06:40:23+00:00] q=22/150 row_key=combined_q_idx:21 q_idx=23 retrieving=6
+[2026-03-31T12:49:28+00:00] run_id=qwen_rag_20260331T124928Z
+[2026-03-31T12:49:28+00:00] qa_csv=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\qna_three_books\combined_balanced_150_story_minimal\news_news_llm_retry_df_qa.combined_story_minimal_150.csv
+[2026-03-31T12:49:28+00:00] book_txt=C:\Users\KIIT\Documents\Research Work\Episodic_Memory_Part_2\refactoring_files\artifacts\storybook\news_llm_retry\book.txt
+[2026-03-31T12:49:28+00:00] llm_base_url=http://127.0.0.1:8080/v1
+[2026-03-31T12:49:28+00:00] server_models=['Qwen2.5-14B-Instruct-Q4_K_M.gguf']
+[2026-03-31T12:49:28+00:00] resume=True already_done=21
+[2026-03-31T12:49:28+00:00] building RAG index using sentence-transformers/all-MiniLM-L6-v2
+[2026-03-31T12:49:48+00:00] chunks_indexed=405
+[2026-03-31T12:49:49+00:00] q=22/150 row_key=combined_q_idx:21 q_idx=23 retrieving=6
+[2026-03-31T12:56:58+00:00] q=23/150 row_key=combined_q_idx:22 q_idx=1 retrieving=6
+[2026-03-31T13:00:58+00:00] q=24/150 row_key=combined_q_idx:23 q_idx=27 retrieving=6
+[2026-03-31T13:06:49+00:00] q=25/150 row_key=combined_q_idx:24 q_idx=18 retrieving=6
