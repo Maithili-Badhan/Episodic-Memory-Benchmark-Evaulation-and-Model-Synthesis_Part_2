@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+df_qa.llama_rag_book_dfqa.answers.csv,150,0.43777778,0.42

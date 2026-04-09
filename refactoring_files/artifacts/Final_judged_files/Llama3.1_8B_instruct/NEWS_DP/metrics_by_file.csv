@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+df_qa.llama_news_direct.answers.csv,150,0.47277778000000004,0.4666666666666667

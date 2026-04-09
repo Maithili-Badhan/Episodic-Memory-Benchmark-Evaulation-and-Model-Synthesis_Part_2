@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+df_qa.llama_news_rag.answers.csv,150,0.49079365333333336,0.48

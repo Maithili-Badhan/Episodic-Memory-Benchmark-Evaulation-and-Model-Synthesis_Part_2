@@ -1,0 +1,14 @@
+retrieval_type,n_rows,mean_f1,exact_match_rate
+Entities,3,1.0,1.0
+Other entities,5,1.0,1.0
+story_compare::intersection,17,1.0,1.0
+story_edit::empty,7,1.0,1.0
+story_edit::remove_one,15,0.4666666666666667,0.4666666666666667
+Event contents,11,0.45454545454545453,0.45454545454545453
+story_composite::difference_then_sort,16,0.4375,0.4375
+Spaces,7,0.42857142857142855,0.42857142857142855
+story_compute::sort_items,18,0.3888888888888889,0.3888888888888889
+Times,7,0.2857142857142857,0.2857142857142857
+Full event details,5,0.2,0.2
+story_diff::set_difference,21,0.0,0.0
+story_state::latest_chapter,18,0.0,0.0

@@ -1,0 +1,161 @@
+build: 8002 (53de59f67) with MSVC 19.40.33813.0 for x64
+system info: n_threads = 4, n_threads_batch = 4, total_threads = 8
+
+system_info: n_threads = 4 (n_threads_batch = 4) / 8 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | AVX512 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+
+init: using 7 threads for HTTP server
+start: binding port with default address family
+main: loading model
+srv    load_model: loading model '.\models\olmo3\Olmo-3-7B-Instruct-Q4_K_M.gguf'
+common_init_result: fitting params to device memory, for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on
+llama_params_fit_impl: no devices with dedicated memory found
+llama_params_fit: successfully fit params to free device memory
+llama_params_fit: fitting params to free memory took 0.56 seconds
+llama_model_loader: loaded meta data with 45 key-value pairs and 355 tensors from .\models\olmo3\Olmo-3-7B-Instruct-Q4_K_M.gguf (version GGUF V3 (latest))
+llama_model_loader: Dumping metadata keys/values. Note: KV overrides do not apply in this output.
+llama_model_loader: - kv   0:                       general.architecture str              = olmo2
+llama_model_loader: - kv   1:                               general.type str              = model
+llama_model_loader: - kv   2:                               general.name str              = Olmo-3-7B-Instruct
+llama_model_loader: - kv   3:                           general.finetune str              = Instruct
+llama_model_loader: - kv   4:                           general.basename str              = Olmo-3-7B-Instruct
+llama_model_loader: - kv   5:                       general.quantized_by str              = Unsloth
+llama_model_loader: - kv   6:                         general.size_label str              = 7B
+llama_model_loader: - kv   7:                            general.license str              = apache-2.0
+llama_model_loader: - kv   8:                           general.repo_url str              = https://huggingface.co/unsloth
+llama_model_loader: - kv   9:                   general.base_model.count u32              = 1
+llama_model_loader: - kv  10:                  general.base_model.0.name str              = Olmo 3 7B Instruct
+llama_model_loader: - kv  11:          general.base_model.0.organization str              = Allenai
+llama_model_loader: - kv  12:              general.base_model.0.repo_url str              = https://huggingface.co/allenai/Olmo-3...
+llama_model_loader: - kv  13:                               general.tags arr[str,1]       = ["unsloth"]
+llama_model_loader: - kv  14:                          general.languages arr[str,1]       = ["en"]
+llama_model_loader: - kv  15:                          olmo2.block_count u32              = 32
+llama_model_loader: - kv  16:                       olmo2.context_length u32              = 65536
+llama_model_loader: - kv  17:                     olmo2.embedding_length u32              = 4096
+llama_model_loader: - kv  18:                  olmo2.feed_forward_length u32              = 11008
+llama_model_loader: - kv  19:                 olmo2.attention.head_count u32              = 32
+llama_model_loader: - kv  20:              olmo2.attention.head_count_kv u32              = 32
+llama_model_loader: - kv  21:                       olmo2.rope.freq_base f32              = 500000.000000
+llama_model_loader: - kv  22:     olmo2.attention.layer_norm_rms_epsilon f32              = 0.000001
+llama_model_loader: - kv  23:                    olmo2.rope.scaling.type str              = yarn
+llama_model_loader: - kv  24:                  olmo2.rope.scaling.factor f32              = 8.000000
+llama_model_loader: - kv  25:             olmo2.rope.scaling.attn_factor f32              = 1.207944
+llama_model_loader: - kv  26: olmo2.rope.scaling.original_context_length u32              = 8192
+llama_model_loader: - kv  27:             olmo2.attention.sliding_window u32              = 4096
+llama_model_loader: - kv  28:     olmo2.attention.sliding_window_pattern arr[bool,32]     = [true, true, true, false, true, true,...
+llama_model_loader: - kv  29:                       tokenizer.ggml.model str              = gpt2
+llama_model_loader: - kv  30:                         tokenizer.ggml.pre str              = dbrx
+llama_model_loader: - kv  31:                      tokenizer.ggml.tokens arr[str,100278]  = ["!", "\"", "#", "$", "%", "&", "'", ...
+llama_model_loader: - kv  32:                  tokenizer.ggml.token_type arr[i32,100278]  = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, ...
+llama_model_loader: - kv  33:                      tokenizer.ggml.merges arr[str,100000]  = ["Ġ Ġ", "ĠĠ ĠĠ", "i n", "Ġ t",...
+llama_model_loader: - kv  34:                tokenizer.ggml.bos_token_id u32              = 100257
+llama_model_loader: - kv  35:                tokenizer.ggml.eos_token_id u32              = 100257
+llama_model_loader: - kv  36:            tokenizer.ggml.unknown_token_id u32              = 5809
+llama_model_loader: - kv  37:            tokenizer.ggml.padding_token_id u32              = 100277
+llama_model_loader: - kv  38:                    tokenizer.chat_template str              = {# Unsloth template fixes #}\n{%- set ...
+llama_model_loader: - kv  39:               general.quantization_version u32              = 2
+llama_model_loader: - kv  40:                          general.file_type u32              = 15
+llama_model_loader: - kv  41:                      quantize.imatrix.file str              = Olmo-3-7B-Instruct-GGUF/imatrix_unslo...
+llama_model_loader: - kv  42:                   quantize.imatrix.dataset str              = unsloth_calibration_Olmo-3-7B-Instruc...
+llama_model_loader: - kv  43:             quantize.imatrix.entries_count u32              = 224
+llama_model_loader: - kv  44:              quantize.imatrix.chunks_count u32              = 689
+llama_model_loader: - type  f32:  129 tensors
+llama_model_loader: - type q4_K:  193 tensors
+llama_model_loader: - type q6_K:   33 tensors
+print_info: file format = GGUF V3 (latest)
+print_info: file type   = Q4_K - Medium
+print_info: file size   = 4.16 GiB (4.90 BPW) 
+load: 0 unused tokens
+load: printing all EOG tokens:
+load:   - 100257 ('<|endoftext|>')
+load:   - 100265 ('<|im_end|>')
+load: special tokens cache size = 23
+load: token to piece cache size = 0.6143 MB
+print_info: arch                  = olmo2
+print_info: vocab_only            = 0
+print_info: no_alloc              = 0
+print_info: n_ctx_train           = 65536
+print_info: n_embd                = 4096
+print_info: n_embd_inp            = 4096
+print_info: n_layer               = 32
+print_info: n_head                = 32
+print_info: n_head_kv             = 32
+print_info: n_rot                 = 128
+print_info: n_swa                 = 4096
+print_info: is_swa_any            = 1
+print_info: n_embd_head_k         = 128
+print_info: n_embd_head_v         = 128
+print_info: n_gqa                 = 1
+print_info: n_embd_k_gqa          = 4096
+print_info: n_embd_v_gqa          = 4096
+print_info: f_norm_eps            = 0.0e+00
+print_info: f_norm_rms_eps        = 1.0e-06
+print_info: f_clamp_kqv           = 0.0e+00
+print_info: f_max_alibi_bias      = 0.0e+00
+print_info: f_logit_scale         = 0.0e+00
+print_info: f_attn_scale          = 0.0e+00
+print_info: n_ff                  = 11008
+print_info: n_expert              = 0
+print_info: n_expert_used         = 0
+print_info: n_expert_groups       = 0
+print_info: n_group_used          = 0
+print_info: causal attn           = 1
+print_info: pooling type          = 0
+print_info: rope type             = 2
+print_info: rope scaling          = yarn
+print_info: freq_base_train       = 500000.0
+print_info: freq_scale_train      = 0.125
+print_info: freq_base_swa         = 500000.0
+print_info: freq_scale_swa        = 1
+print_info: n_ctx_orig_yarn       = 8192
+print_info: rope_yarn_log_mul     = 0.0000
+print_info: rope_finetuned        = unknown
+print_info: model type            = 7B
+print_info: model params          = 7.30 B
+print_info: general.name          = Olmo-3-7B-Instruct
+print_info: vocab type            = BPE
+print_info: n_vocab               = 100278
+print_info: n_merges              = 100000
+print_info: BOS token             = 100257 '<|endoftext|>'
+print_info: EOS token             = 100257 '<|endoftext|>'
+print_info: EOT token             = 100265 '<|im_end|>'
+print_info: UNK token             = 5809 '�'
+print_info: PAD token             = 100277 '<|pad|>'
+print_info: LF token              = 198 'Ċ'
+print_info: FIM PRE token         = 100258 '<|fim_prefix|>'
+print_info: FIM SUF token         = 100260 '<|fim_suffix|>'
+print_info: FIM MID token         = 100259 '<|fim_middle|>'
+print_info: EOG token             = 100257 '<|endoftext|>'
+print_info: EOG token             = 100265 '<|im_end|>'
+print_info: max token length      = 256
+load_tensors: loading model tensors, this can take a while... (mmap = true, direct_io = false)
+load_tensors:   CPU_Mapped model buffer size =  4261.05 MiB
+load_tensors:   CPU_REPACK model buffer size =  2943.00 MiB
+..........................................................................................
+common_init_result: added <|endoftext|> logit bias = -inf
+common_init_result: added <|im_end|> logit bias = -inf
+llama_context: constructing llama_context
+llama_context: n_seq_max     = 1
+llama_context: n_ctx         = 2048
+llama_context: n_ctx_seq     = 2048
+llama_context: n_batch       = 2048
+llama_context: n_ubatch      = 512
+llama_context: causal_attn   = 1
+llama_context: flash_attn    = auto
+llama_context: kv_unified    = false
+llama_context: freq_base     = 500000.0
+llama_context: freq_scale    = 0.125
+llama_context: n_ctx_seq (2048) < n_ctx_train (65536) -- the full capacity of the model will not be utilized
+llama_context:        CPU  output buffer size =     0.38 MiB
+llama_kv_cache_iswa: creating non-SWA KV cache, size = 2048 cells
+llama_kv_cache:        CPU KV buffer size =   256.00 MiB
+llama_kv_cache: size =  256.00 MiB (  2048 cells,   8 layers,  1/1 seqs), K (f16):  128.00 MiB, V (f16):  128.00 MiB
+llama_kv_cache_iswa: creating     SWA KV cache, size = 2048 cells
+llama_kv_cache:        CPU KV buffer size =   768.00 MiB
+llama_kv_cache: size =  768.00 MiB (  2048 cells,  24 layers,  1/1 seqs), K (f16):  384.00 MiB, V (f16):  384.00 MiB
+sched_reserve: reserving ...
+sched_reserve: Flash Attention was auto, set to enabled
+sched_reserve:        CPU compute buffer size =   211.86 MiB
+sched_reserve: graph nodes  = 1128
+sched_reserve: graph splits = 1
+sched_reserve: reserve took 8.78 ms, sched copies = 1
+srv    load_model: initializing slots, n_slots = 1

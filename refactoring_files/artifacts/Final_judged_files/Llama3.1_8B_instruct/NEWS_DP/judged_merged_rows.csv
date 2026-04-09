@@ -1,0 +1,1325 @@
+source_answers_file,timestamp_utc,mode,row_key,row_idx,combined_q_idx,q_idx,question,retrieval_type,get,ground_truth_items,answer,identified_items,matching_scores,tp,precision,recall,f1,exact_match,judge_explanation,judge_model,judge_status,status,judge_error,raw_judge_text,minerva_category,missing_tuple_elements,source_status,source_file,n_gold,gold_bin
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:57:57+00:00,,combined_q_idx:0,0,0,27,"Story recall-and-edit: For query ""Consider all events involving both Mila Gonzalez and bridge collapse at Amman Governorate. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"The AI answer provided an empty list, which matches the absence of ground-truth items for the given query.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided an empty list, which matches the absence of ground-truth items for the given query.""
+}",Recall and Edit,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:00+00:00,,combined_q_idx:1,1,1,32,What was Benjamin Green doing the last time they were observed in the story's timeline?,Event contents,latest,['volcanic eruption'],Sipping his coffee just before dawn.,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer 'Sipping his coffee just before dawn' does not mention any event from the ground-truth item 'volcanic eruption', so there is no relevant content to identify and the score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'Sipping his coffee just before dawn' does not mention any event from the ground-truth item 'volcanic eruption', so there is no relevant content to identify and the score is 0.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:03+00:00,,combined_q_idx:2,2,2,27,"Story composite task: Use two story queries.
+A) Consider all events involving both Sofia Ramos and mass shooting at Andalusia. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Julian Ross and flash flood emergency at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) 
+- March 23, 2024
+- May 31, 2024
+- September 13, 2025
+
+B) 
+- May 31, 2024
+
+Removing common items from A) and B):
+- March 23, 2024
+- September 13, 2025",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""March 23,2024"", ""September13,2025""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""Only 'March 23, 2024' from A) does not appear in ground-truth (empty), so it's identified. 'September 13, 202",Composite,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:04+00:00,,combined_q_idx:3,3,3,11,"Story recall-and-edit: For query ""Reflect on events related to airport shutdown. Provide a list of all protagonists involved in these events, without describing the events."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"The AI answer provided an empty list as requested by the query, which matches the ground-truth of having no items to identify.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided an empty list as requested by the query, which matches the ground-truth of having no items to identify.""
+}",Recall and Edit,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:06+00:00,,combined_q_idx:4,4,4,22,"Consider all events involving both Samuel Parker and bridge collapse. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['October 12, 2024', 'September 27, 2025']",[],[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"No dates were provided in the AI answer, while two ground-truth dates exist.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No dates were provided in the AI answer, while two ground-truth dates exist.""
+}",Search,t|s,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:08+00:00,,combined_q_idx:5,5,5,27,"Consider all events involving both Carter Stewart and bridge collapse at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['January 03, 2026']",[],[],[1.0],1,0.0,1.0,0.0,0,No dates were found in the AI answer for events involving Carter Stewart and the Buenos Aires bridge collapse.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No dates were found in the AI answer for events involving Carter Stewart and the Buenos Aires bridge collapse.""
+}",Search,t,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:10+00:00,,combined_q_idx:6,6,6,18,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events involving Levi Rodriguez at Nairobi County. Provide a list of all dates when these events occurred, without describing the events."". Remove ""July 25, 2024"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['May 28, 2025']","September 27, 2025",[],[0.0],0,0.0,0.0,0.0,0,The AI answer did not identify or list any items from the ground-truth list.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not identify or list any items from the ground-truth list.""
+}",Recall and Edit,t|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:11+00:00,,combined_q_idx:7,7,7,16,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to fishing fleet loss that occurred on June 14, 2025. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to residential tower fire that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or scoring could be performed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or scoring could be performed.""
+}",Match and Compare,s|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:13+00:00,,combined_q_idx:8,8,8,25,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to water supply contamination that occurred at Minas Gerais on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",story_state::latest_chapter,latest,['0'],"There is no information about water supply contamination in Minas Gerais on April 09, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"No supporting chapters or information were found in the AI answer that reference events related to water supply contamination in Minas Gerais on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No supporting chapters or information were found in the AI answer that reference events related to water supply contamination in Minas Gerais on April 09, 2026.""
+}",Stateful Processing,ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:16+00:00,,combined_q_idx:9,9,9,26,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Levi Rodriguez and factory explosion on December 26, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Consider the events involving both Lily Nguyen and water supply contamination on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Lily Nguyen and residential tower fire on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Vermont']"", '[]']","To solve this problem, we need to follow the steps below:
+
+1. Find the events involving both Levi Rodriguez and factory explosion on December 26, 2026.
+2. List all the locations where these events took place.
+3. Find the events involving both Lily Nguyen and water supply contamination on April 09, 2026.
+4. List all the locations where these events took place.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Vermont""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The only location mentioned in the AI answer that could plausibly relate to either Levi Rodriguez or the factory explosion (December 26, 2026) is 'Vermont', which appears in the ground-truth. The rest of the AI",Spot the Differences,s,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:19+00:00,,combined_q_idx:10,10,10,17,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving bridge collapse on February 27, 2026. Provide a list of all protagonists involved in these events, without describing the events.",story_compute::sort_items,chronological,"['Jackson Ramos', 'Mila Gonzalez']","Benjamin Green, Noa Middleton","['Benjamin Green', 'Noa Middleton']","[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI listed 'Benjamin Green' and 'Noa Middleton', which do not match the ground-truth items 'Jackson Ramos' and 'Mila Gonzalez'. No names were correctly identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Benjamin Green"", ""Noa Middleton""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI listed 'Benjamin Green' and 'Noa Middleton', which do not match the ground-truth items 'Jackson Ramos' and 'Mila Gonzalez'. No names were correctly identified.""
+}",Compute on Sets and Lists,s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:22+00:00,,combined_q_idx:11,11,11,25,"Story composite task: Use two story queries.
+A) Think about the events related to factory explosion that occurred at Greater Mumbai on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to flash flood emergency that occurred at Ontario on December 03, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to factory explosion that occurred at Greater Mumbai on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Scarlett Thomas'],"A) Think about the events related to factory explosion that occurred at Greater Mumbai on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+- Logan Diaz
+
+B) Think about the events related to flash flood emergency that occurred at Ontario on December 03, 2026. List all protagonists involved in these events, without describing the events themselves.",['Logan Diaz'],[0.0],0,0.0,0.0,0.0,0,"In AI answer B, the protagonist listed is Logan Diaz, who is not mentioned in ground-truth item for A (Scarlett Thomas). So only Logan Diaz is identified as non-matching in A.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Logan Diaz""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""In AI answer B, the protagonist listed is Logan Diaz, who is not mentioned in ground-truth item for A (Scarlett Thomas). So only Logan Diaz is identified as non-matching in A.""
+}",Composite,ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:25+00:00,,combined_q_idx:12,12,12,11,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on events related to nuclear plant meltdown. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on events related to air quality emergency. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to air quality emergency. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to magnitude 9.0 earthquake. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.
+Return the intersection.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Henry Reed', 'Zoe Brown']"", '[]']","only_in_A = []
+only_in_B = []
+intersection = []
+shared_items = []
+
+A) Reflect on events related to nuclear plant meltdown. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on events related to air quality emergency. Provide a list of",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer did not provide any list for the nuclear plant meltdown or air quality emergency queries, so there are no items identified in the AI answer. The ground truth for the matching query is an empty list, so the answer matches perfectly (score 1.0).",Spot the Differences,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:28+00:00,,combined_q_idx:13,13,13,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Lily Nguyen experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,['residential tower fire'],Lily Nguyen is not mentioned in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth item ('residential tower fire') is referenced or implied in the AI answer; it does not describe any events involving Lily Nguyen or April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth item ('residential tower fire') is referenced or implied in the AI answer; it does not describe any events involving Lily Nguyen or April 09, 2026.""
+}",Compute on Sets and Lists,s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:29+00:00,,combined_q_idx:14,14,14,4,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider the location Dodoma Region. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Consider the location Bagmati Province. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or matching could be performed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or matching could be performed.""
+}",Match and Compare,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:32+00:00,,combined_q_idx:15,15,15,23,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on the experiences of Julian Ross related to volcanic eruption. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on the experiences of Brooklyn Ross related to factory explosion. List all the unique locations where these events took place, without mentioning the events themselves.
+Return the intersection.",story_compare::intersection,all,[],"Since there is no mention of Brooklyn Ross or factory explosion in the provided text, I will return the intersection of the answers to the two story queries that are actually present in the text.
+
+A) Reflect on the experiences of Julian Ross related to volcanic eruption. List all the unique locations where these events took place, without mentioning the events themselves.
+Locations: Scotland, Glen Tully
+
+B) Story state",['Glen Tully'],[],0,0.0,1.0,0.0,0,"The AI answer only lists 'Glen Tully' as a location from its answer to (A), but there are no ground-truth locations provided for either query, so the intersection is empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Glen Tully""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only lists 'Glen Tully' as a location from its answer to (A), but there are no ground-truth locations provided for either query, so the intersection is empty.""
+}",Match and Compare,t|s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:35+00:00,,combined_q_idx:16,16,16,13,"Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at Greater Mumbai on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""factory explosion"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"A violent disturbance erupted unexpectedly in the heart of a once peaceful sports arena.
+
+The crowd, gathered for what had promised to be an electrifying match, suddenly turned into a roiling mass of chaos.
+
+Shouts and the sharp clang of metal gates echoed as fans surged through narrow passages, their faces twisted with anger and confusion.
+
+Security personnel struggled to contain the growing unrest, their efforts met with relentless pushes",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""violent disturbance"", ""eruption in the heart of a once peaceful sports arena"", ""crowd turning into a roiling mass of chaos"", ""shouts"", ""sharp clang of metal gates"", ""security personnel struggling"", ""efforts met with relentless pushes""],
+  ""matching_scores"": [0, 0, 0, 0,",Recall and Edit,ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:36+00:00,,combined_q_idx:17,17,17,3,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about all events that have occurred at Alberta. Provide a list of all dates when these events took place, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the various events that have taken place at North Dakota. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Think about all events that have occurred at Alberta. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or intersection could be computed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or intersection could be computed.""
+}",Match and Compare,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:39+00:00,,combined_q_idx:18,18,18,4,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the location Luzon Region. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",story_state::latest_chapter,latest,['49'],"[2, 7] 
+
+Protagonists involved in events at Luzon Region:
+1. Benjamin Green","['2', '7']",[1.0],1,0.5,1.0,0.666667,0,"Only '2' matches the ground-truth item '49' when interpreted as a chapter index (assuming '2' is the intended match for '49', possibly due to a typo or encoding error).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""2"", ""7""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only '2' matches the ground-truth item '49' when interpreted as a chapter index (assuming '2' is the intended match for '49', possibly due to a typo or encoding error).""
+}",Stateful Processing,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:41+00:00,,combined_q_idx:19,19,19,16,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to factory explosion that occurred on December 26, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Luzon Region"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Vermont'],[],[],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not list any locations, so there are no items to match with the ground-truth item 'Vermont'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not list any locations, so there are no items to match with the ground-truth item 'Vermont'.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:43+00:00,,combined_q_idx:20,20,20,28,"Recall what happened involving Scarlett Thomas and factory explosion at Greater Mumbai on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about Scarlett Thomas or a factory explosion at Greater Mumbai on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,No ground-truth entities were provided; the AI answer states there is no information matching the query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were provided; the AI answer states there is no information matching the query.""
+}",Match and Compare,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:45+00:00,,combined_q_idx:21,21,21,23,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on the experiences of Brooklyn Ross related to factory explosion. List all the unique locations where these events took place, without mentioning the events themselves.",story_state::latest_chapter,latest,['0'],There is no mention of Brooklyn Ross related to a factory explosion in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth chapter indices were referenced or mentioned in the AI answer; therefore, no matching was possible.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth chapter indices were referenced or mentioned in the AI answer; therefore, no matching was possible.""
+}",Stateful Processing,t|s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:46+00:00,,combined_q_idx:22,22,22,1,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on December 03, 2026. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Ezra Edwards"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"1. Chloe Castillo
+2. Henry Reed
+3. Zoe Brown
+4. Logan Diaz
+5. Julian Ross
+6. Benjamin Green
+7. Noa Middleton
+8. Mara Ledbetter
+9. Owen Thomas",[],[],0,1.0,1.0,1.0,1,"No ground-truth protagonists were provided for the given date; therefore, the AI answer could not be matched.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth protagonists were provided for the given date; therefore, the AI answer could not be matched.""
+}",Recall and Edit,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:48+00:00,,combined_q_idx:23,23,23,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Julian Ross and flash flood emergency at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Samuel Parker and flash flood emergency at Auckland Region. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"There is no mention of Samuel Parker in the text. 
+
+However, there is a mention of Julian Ross in the text, and he witnessed a volcanic eruption in Scotland on May 31, 2024.
+
+There is no mention of a flash flood emergency at Buenos Aires Province or Auckland Region in the text.
+
+Since there is no intersection, the final answer is:
+
+[]",[],[],0,1.0,1.0,1.0,1,"No events matching both the names and the event type (flash flood emergency) were found in the AI answer, and the ground truth contains no items to compare.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events matching both the names and the event type (flash flood emergency) were found in the AI answer, and the ground truth contains no items to compare.""
+}",Match and Compare,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:50+00:00,,combined_q_idx:24,24,24,18,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Samuel Parker at Auckland Region. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,[],[],[],[],0,1.0,1.0,1.0,1,No events involving Samuel Parker in the Auckland Region were found in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events involving Samuel Parker in the Auckland Region were found in the AI answer.""
+}",Compute on Sets and Lists,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:52+00:00,,combined_q_idx:25,25,25,30,What is the most recent date Logan Diaz was observed or mentioned in the story's chronology?,Times,latest,"['March 23, 2024']","March 23, 2024","['March 23, 2024']",[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the ground-truth item.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""March 23, 2024""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the ground-truth item.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:53+00:00,,combined_q_idx:26,26,26,26,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider the events involving both Noah Williams and fishing fleet loss on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Chloe Castillo and wind farm destruction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],"There is no information about Noah Williams or fishing fleet loss on April 09, 2026, and there is no information about wind farm destruction on April 09, 2026.
+
+However, there is information about Chloe Castillo and a residential tower fire on September 22, 2026.
+
+A) There is no intersection for this query.
+
+B) There is no intersection for this query.",[],[],0,1.0,1.0,1.0,1,No shared locations found between the two queries as there is no information in the AI answer matching the ground-truth.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No shared locations found between the two queries as there is no information in the AI answer matching the ground-truth.""
+}",Match and Compare,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:55+00:00,,combined_q_idx:27,27,27,28,"Recall what happened involving Chloe Castillo and wind farm destruction at Nairobi County on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about Chloe Castillo and wind farm destruction at Nairobi County on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,No ground-truth information to compare; AI answer states there is no verified information about the event involving Chloe Castillo.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth information to compare; AI answer states there is no verified information about the event involving Chloe Castillo.""
+}",Match and Compare,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:58:58+00:00,,combined_q_idx:28,28,28,9,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to air quality emergency. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to magnitude 9.0 earthquake. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['September 03, 2026']"", ""['Carter Stewart', 'Levi Rodriguez']""]","Return only_in_A and only_in_B.
+
+A) 
+- September 13, 2025
+- September 22, 2026
+
+B) 
+- None",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 03, 2026""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only the ground-truth item 'September 03, 2026' matches the event date in the air quality emergency events (the AI did not list any air quality emergency dates in its answer, so it missed the ground-tr",Spot the Differences,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:01+00:00,,combined_q_idx:29,29,29,26,"Story composite task: Use two story queries.
+A) Consider the events involving both Lily Nguyen and water supply contamination on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Lily Nguyen and residential tower fire on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) 
+- Florence
+- Tuscany
+
+B) 
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split","['Florence', 'Tuscany']",[],0,0.0,1.0,0.0,0,"No ground-truth locations were provided, so all items from the AI answer were identified and scored as non-matching (0.0).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Florence"", ""Tuscany""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No ground-truth locations were provided, so all items from the AI answer were identified and scored as non-matching (0.0).""
+}",Composite,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:03+00:00,,combined_q_idx:30,30,30,11,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on events related to produce contamination outbreak. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Lillian Mendoza"" from the answer. Return only the remaining items.",story_edit::remove_one,all,['Zoe Brown'],Zoe Brown,['Zoe Brown'],[1.0],1,1.0,1.0,1.0,1,"The AI answer includes the only ground-truth item, Zoe Brown, which was present in the original answer and remains after removal of 'Lillian Mendoza'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Zoe Brown""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer includes the only ground-truth item, Zoe Brown, which was present in the original answer and remains after removal of 'Lillian Mendoza'.""
+}",Recall and Edit,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:05+00:00,,combined_q_idx:31,31,31,19,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on Carter Stewart's experiences at Buenos Aires Province. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",story_state::latest_chapter,latest,['30'],There is no mention of Carter Stewart in the provided text.,['Carter Stewart'],[0.0],0,0.0,0.0,0.0,0,The AI answer does not contain any information about Carter Stewart's experiences in Buenos Aires Province or any supporting chapters related to the query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter Stewart""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not contain any information about Carter Stewart's experiences in Buenos Aires Province or any supporting chapters related to the query.""
+}",Stateful Processing,t|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:08+00:00,,combined_q_idx:32,32,32,16,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to wind farm destruction that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['0'],"There is no information about wind farm destruction on April 09, 2026.",[],[1.0],1,0.0,1.0,0.0,0,"No supporting chapters were found or identified in the AI answer that reference events related to wind farm destruction on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No supporting chapters were found or identified in the AI answer that reference events related to wind farm destruction on April 09, 2026.""
+}",Stateful Processing,s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:11+00:00,,combined_q_idx:33,33,33,16,"Story composite task: Use two story queries.
+A) Recall the events related to residential tower fire that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to wind farm destruction that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Rajasthan'],"A) 
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmatia County
+- Split-Dalmat",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Split"", ""Dalmatia"", ""County""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer lists variations of 'Split-Dalmatia County' (with misspellings and extra spaces), while the ground-truth item is 'Raj",Composite,s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:13+00:00,,combined_q_idx:34,34,34,29,"Provide a comprehensive account of what happened involving Lily Nguyen and residential tower fire at Minas Gerais on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 23'],"There is no information about Lily Nguyen or a residential tower fire at Minas Gerais on April 09, 2026, in the provided text.",[],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not identify or reference any information related to 'Full chapter 23' or any event involving Lily Nguyen and a residential tower fire in Minas Gerais on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not identify or reference any information related to 'Full chapter 23' or any event involving Lily Nguyen and a residential tower fire in Minas Gerais on April 09, 2026.""
+}",Composite,,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:16+00:00,,combined_q_idx:35,35,35,21,"Story composite task: Use two story queries.
+A) Think about the events involving flash flood emergency at Buenos Aires Province. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to flash flood emergency that occurred at Auckland Region. Provide a list of all dates when these events took place, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Julian Ross'],"A) 
+- Chloe Castillo
+- Ezra Edwards
+- Henry Reed
+- Julian Ross
+- Kampong Cham Province
+- Logan Diaz
+- Owen Thomas
+- Zoe Brown
+
+B) 
+- May 31, 2024
+
+Removing common items from A) and B):
+- Chloe Castillo
+- Ezra Edwards
+- Henry Reed
+- Julian Ross
+- Logan Diaz
+- Owen",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe"", ""Ezra"", ""Henry"", ""Julian"", ""Logan"", ""Owen""],
+  ""matching_scores"": [1.0, 1.0, 1.0, 1.0, 1.0, 1.0],
+  ""explanation"": ""Removed 'Julian Ross'",Composite,t|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:18+00:00,,combined_q_idx:36,36,36,20,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall all events related to flash flood emergency that occurred at Auckland Region. Provide a list of all dates when these events took place, without describing the events.",story_compute::sort_items,chronological,[],[],[],[],0,1.0,1.0,1.0,1,No events found in the ground-truth for flash flood emergencies in the Auckland Region matching the query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events found in the ground-truth for flash flood emergencies in the Auckland Region matching the query.""
+}",Compute on Sets and Lists,t|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:20+00:00,,combined_q_idx:37,37,37,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Scarlett Thomas experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,['factory explosion'],There is no mention of Scarlett Thomas in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,No ground-truth item ('factory explosion') is mentioned in the AI answer; it states that there is no information about Scarlett Thomas in the provided text.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth item ('factory explosion') is mentioned in the AI answer; it states that there is no information about Scarlett Thomas in the provided text.""
+}",Compute on Sets and Lists,s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:22+00:00,,combined_q_idx:38,38,38,4,"Story recall-and-edit: Start from the answer to this story query: ""Consider the location Antioquia Department. List all protagonists that have been involved in any events at this location, without mentioning the events themselves."". Remove ""Henry Reed"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"Ezra Edwards, Zoe Brown, Logan Diaz, Julian Ross, Benjamin Green, Owen Thomas, Mila",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided for Antioquia Department story events, so nothing could be matched or removed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided for Antioquia Department story events, so nothing could be matched or removed.""
+}",Recall and Edit,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:23+00:00,,combined_q_idx:39,39,39,28,"Recall what happened involving Ezra Edwards and flash flood emergency at Ontario on December 03, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about Ezra Edwards and a flash flood emergency at Ontario on December 03, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth entities were provided; therefore, the AI answer could not identify or match any entities.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were provided; therefore, the AI answer could not identify or match any entities.""
+}",Match and Compare,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:26+00:00,,combined_q_idx:40,40,40,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Ezra Edwards at Ontario on December 03, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at Greater Mumbai on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['flash flood emergency'],"A) Recall what happened involving Ezra Edwards at Ontario on December 03, 2026. Describe the key events or activities that occurred, focusing on what happened.
+
+There is no information about Ezra Edwards at Ontario on December 03, 2026. However, there is information about Ezra Edwards at Split-Dalmatia County on an unspecified date.
+
+(i) Eyewitness accounts from are emerging regarding",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0],
+  ""explanation"": ""The AI answer does not mention any events or items related to Ezra Edwards at Ontario on December 03, 2026. There are no identified items in the AI answer that match the ground-truth item for Ezra Edwards at Ontario. The only ground-truth item is 'flash",Composite,c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:28+00:00,,combined_q_idx:41,41,41,32,What was Levi Rodriguez doing the last time they were observed in the story's timeline?,Event contents,latest,['factory explosion'],There is no mention of Levi Rodriguez in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer does not mention Levi Rodriguez, so there are no events to identify or match from the ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not mention Levi Rodriguez, so there are no events to identify or match from the ground-truth items.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:30+00:00,,combined_q_idx:42,42,42,18,"Story recall-and-edit: For query ""Consider all events involving Ella Ross at Alberta. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"The AI returned an empty list as requested by the query, which matches the ground-truth of having no events to recall.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI returned an empty list as requested by the query, which matches the ground-truth of having no events to recall.""
+}",Recall and Edit,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:32+00:00,,combined_q_idx:43,43,43,35,"Enumerate all activities that Ellie Garcia has been involved in, ordered from earliest to latest in the story's chronology.",Event contents,chronological,[],There is no mention of Ellie Garcia in the provided text.,[],[],0,1.0,1.0,1.0,1,"No information about Ellie Garcia was found in the provided text, so the AI answer did not identify any events related to her.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No information about Ellie Garcia was found in the provided text, so the AI answer did not identify any events related to her.""
+}",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:34+00:00,,combined_q_idx:44,44,44,12,"Think about what happened at Ontario on December 03, 2026. List all protagonists involved in any events at this time and place, without describing the events.",Entities,all,['Ezra Edwards'],[],[],[0.0],0,0.0,0.0,0.0,0,"No entities (protagonists) were identified in the AI answer for events at Ontario on December 03, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No entities (protagonists) were identified in the AI answer for events at Ontario on December 03, 2026.""
+}",Search,ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:36+00:00,,combined_q_idx:45,45,45,18,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events involving Julian Ross at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events."". Remove ""May 14, 2025"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"September 22, 2026","['September 22, 2026']",[],0,0.0,1.0,0.0,0,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 22, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Recall and Edit,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:38+00:00,,combined_q_idx:46,46,46,14,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Ezra Edwards on December 03, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on what Scarlett Thomas experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Ontario']"", ""['factory explosion']""]","only_in_A = ['Split-Dalmatia County']
+only_in_B = []",['Split-Dalmatia County'],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI incorrectly identified the location for Ezra Edwards' events (should be 'Ontario'), and did not list any events for Scarlett Thomas in its answer for B.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Split-Dalmatia County""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI incorrectly identified the location for Ezra Edwards' events (should be 'Ontario'), and did not list any events for Scarlett Thomas in its answer for B.""
+}",Spot the Differences,s|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:40+00:00,,combined_q_idx:47,47,47,26,"Consider the events involving both Chloe Castillo and wind farm destruction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",Spaces,all,[],[],[],[],0,1.0,1.0,1.0,1,"No locations were mentioned in the AI answer, and there are no ground-truth items to compare against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No locations were mentioned in the AI answer, and there are no ground-truth items to compare against.""
+}",Search,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:42+00:00,,combined_q_idx:48,48,48,20,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to airport customs breach that occurred at Auckland Region. Provide a list of all dates when these events took place, without describing the events.
+B) Story recall-and-edit: For query ""Think about the events involving flash flood emergency at Auckland Region. List all protagonists involved in these events, without mentioning the events themselves."", return an empty answer.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A = []
+only_in_B = []","['[]', '[]']","[1.0, 1.0]",2,1.0,1.0,1.0,1,"The AI provided empty lists for both story queries as requested, matching the ground-truth format of two empty strings.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""[]"", ""[]""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI provided empty lists for both story queries as requested, matching the ground-truth format of two empty strings.""
+}",Spot the Differences,t|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:45+00:00,,combined_q_idx:49,49,49,3,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about all events that have occurred at Maharashtra. Provide a list of all dates when these events took place, without describing the events.",story_state::latest_chapter,latest,['45'],"[3, 5]","['3', '5']",[0.0],0,0.0,0.0,0.0,0,Only the second item (5) matches the ground-truth item (45) when interpreted as a chapter index (assuming '5' is the intended match due to format mismatch).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""3"", ""5""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""Only the second item (5) matches the ground-truth item (45) when interpreted as a chapter index (assuming '5' is the intended match due to format mismatch).""
+}",Stateful Processing,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:48+00:00,,combined_q_idx:50,50,50,26,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the events involving both Benjamin Green and volcanic eruption on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider all events involving Levi Rodriguez at Nairobi County. Provide a list of all dates when these events occurred, without describing the events.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Nairobi County']"", ""['July 25, 2024', 'May 28, 2025']""]","only_in_A = Luzon Region
+only_in_B = September 27, 2025","['Luzon Region', 'September 27, 2025']","[0.0, 0.0]",0,0.0,0.0,0.0,0,AI answer does not mention any of the ground-truth items (Nairobi County or any of the dates in the ground-truth).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Luzon Region"", ""September 27, 2025""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""AI answer does not mention any of the ground-truth items (Nairobi County or any of the dates in the ground-truth).""
+}",Spot the Differences,s,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:50+00:00,,combined_q_idx:51,51,51,1,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events that happened on January 26, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.",story_compute::sort_items,chronological,['Zoe Brown'],[],[],[1.0],1,0.0,1.0,0.0,0,"No protagonists were identified in the AI answer, while the ground-truth item 'Zoe Brown' is present and matches the query.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No protagonists were identified in the AI answer, while the ground-truth item 'Zoe Brown' is present and matches the query.""
+}",Compute on Sets and Lists,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:51+00:00,,combined_q_idx:52,52,52,25,"Think about the events related to political assassination that occurred at Maharashtra on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.",Entities,all,[],"There is no information about a political assassination event occurring at Maharashtra on August 12, 2025.",[],[],0,1.0,1.0,1.0,1,No ground-truth entities were found for the specified event.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were found for the specified event.""
+}",Search,ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:54+00:00,,combined_q_idx:53,53,53,19,"Story composite task: Use two story queries.
+A) Reflect on Layla Peterson's experiences at Auckland Region. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Reflect on Carter Stewart's experiences at Buenos Aires Province. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Reflect on Layla Peterson's experiences at Auckland Region. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+
+There is no mention of Layla Peterson in the provided text. 
+
+B) Reflect on Carter Stewart's experiences at Buenos Aires Province. Describe all the key events they've been involved in at this location, focusing on",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Reflect on Carter Stewart's experiences at Buenos Aires Province. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only contains a reflection about Carter Stewart in Buenos Aires Province and does not mention",Composite,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:57+00:00,,combined_q_idx:54,54,54,16,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the events related to political assassination that occurred on August 12, 2025. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to volcanic eruption that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves."". Remove ""Buenos Aires Province"" from that answer. Return only the remaining items.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Kampong Cham Province']""]","only_in_A = []
+only_in_B = []
+
+A) There are no events related to political assassination that occurred on August 12, 2025. 
+B) There are no events related to volcanic eruption that occurred on March 23, 2024. 
+
+Since there are no common items in both sets, only_in_A and only_in_B will remain empty.",[],"[1.0, 1.0]",2,0.0,1.0,0.0,0,"The AI answer states there were no events in either case, so there are no locations to identify in either story, resulting in perfect (1.0) matches for each ground-truth item (which expects an empty list).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI answer states there were no events in either case, so there are no locations to identify in either story, resulting in perfect (1.0) matches for each ground-truth item (which expects an empty list).""
+}",Spot the Differences,s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T19:59:59+00:00,,combined_q_idx:55,55,55,14,"Consider the events involving Lily Nguyen on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",Spaces,all,['Minas Gerais'],[],[],[0.0],0,0.0,0.0,0.0,0,"No locations were identified in the AI answer, while the ground-truth specifies one location: Minas Gerais.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No locations were identified in the AI answer, while the ground-truth specifies one location: Minas Gerais.""
+}",Search,s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:01+00:00,,combined_q_idx:56,56,56,22,"Story composite task: Use two story queries.
+A) Consider all events involving both Brooklyn Ross and factory explosion. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving both Henry Reed and toxic waste spill. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Brooklyn Ross and police force strike. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Consider all events involving both Brooklyn Ross and factory explosion. Provide a list of all dates when these events occurred, without describing the events.
+- No events involving Brooklyn Ross and factory explosion were found.
+
+A) Consider all events involving both Henry Reed and toxic waste spill. Provide a list of all dates when these events occurred, without describing the events.
+- No events involving Henry Reed and toxic waste",[],[],0,1.0,1.0,1.0,1,"No events were found in the AI answer that could be compared to ground-truth items, as there are no ground-truth items provided.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events were found in the AI answer that could be compared to ground-truth items, as there are no ground-truth items provided.""
+}",Composite,t|s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:03+00:00,,combined_q_idx:57,57,57,24,"Recall what happened involving Scarlett Thomas at Greater Mumbai on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,['factory explosion'],There is no information about Scarlett Thomas in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not mention any events or items related to Scarlett Thomas in Greater Mumbai on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not mention any events or items related to Scarlett Thomas in Greater Mumbai on April 09, 2026.""
+}",Search,c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:04+00:00,,combined_q_idx:58,58,58,20,"Recall all events related to volcanic eruption that occurred at Nairobi County. Provide a list of all dates when these events took place, without describing the events.",Times,all,"['July 25, 2024', 'April 09, 2026']",[],[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,No volcanic eruption events were found for Nairobi County in the available data.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No volcanic eruption events were found for Nairobi County in the available data.""
+}",Search,t|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:06+00:00,,combined_q_idx:59,59,59,24,"Recall what happened involving Jaxon Howard at East Java on August 12, 2025. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],There is no mention of Jaxon Howard in the provided text.,[],[],0,1.0,1.0,1.0,1,"No information about Jaxon Howard or events involving him was present in the provided text, so the AI answer did not identify any relevant items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No information about Jaxon Howard or events involving him was present in the provided text, so the AI answer did not identify any relevant items.""
+}",Search,c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:09+00:00,,combined_q_idx:60,60,60,23,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on the experiences of Brooklyn Ross related to volcanic eruption. List all the unique locations where these events took place, without mentioning the events themselves.",story_state::latest_chapter,latest,['0'],"Chapter 6
+
+Unique locations:
+1. Scotland
+2. Glen Tully",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""6""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified '6' as the latest chapter index. The ground-truth item '0' was not directly matched, but the chapter index format aligns with story_state::latest_chapter. Locations were extracted from the AI answer's context, matching the",Stateful Processing,t|s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:12+00:00,,combined_q_idx:61,61,61,21,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving residential tower fire at Antioquia Department. List all protagonists involved in these events, without mentioning the events themselves.",story_state::latest_chapter,latest,['37'],"Chapter 6 
+
+Chloe Castillo",['Chloe Castillo'],[1.0],1,1.0,1.0,1.0,1,The AI identified 'Chloe Castillo' as the protagonist mentioned in the latest chapter supporting the story of a residential tower fire in Antioquia Department.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe Castillo""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Chloe Castillo' as the protagonist mentioned in the latest chapter supporting the story of a residential tower fire in Antioquia Department.""
+}",Stateful Processing,t|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:13+00:00,,combined_q_idx:62,62,62,1,"Consider all events that happened on May 07, 2024. Provide a list of all protagonists involved in any of these events, without describing the events themselves.",Entities,all,['Zoe Brown'],Zoe Brown,['Zoe Brown'],[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the ground-truth entity.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Zoe Brown""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the ground-truth entity.""
+}",Search,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:16+00:00,,combined_q_idx:63,63,63,22,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving both Henry Reed and toxic waste spill. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Brooklyn Ross and police force strike. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2025', 'May 28, 2025']"", ""['October 13, 2024']""]","only_in_A = []
+only_in_B = []
+
+A) There are no events involving both Henry Reed and toxic waste spill. 
+
+B) There are no events involving both Brooklyn Ross and police force strike.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""October 13, 2024""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""In B, the AI correctly identified the single ground-truth item (October 13, 2024) as an event involving Brooklyn Ross and police force strike (implied by the item's presence in the B ground-truth",Spot the Differences,t|s,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:18+00:00,,combined_q_idx:64,64,64,28,"Recall what happened involving Scarlett Thomas and political assassination at Maharashtra on August 12, 2025 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about Scarlett Thomas or a political assassination involving her on August 12, 2025.",[],[],0,1.0,1.0,1.0,1,No ground-truth entities were provided; the AI answer states there is no information matching the query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were provided; the AI answer states there is no information matching the query.""
+}",Match and Compare,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:19+00:00,,combined_q_idx:65,65,65,26,"Consider the events involving both Jaxon Howard and reservoir breach on August 12, 2025. List all the locations where these events took place, without describing the events themselves.",Spaces,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth locations were provided; therefore, no locations could be identified or scored.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth locations were provided; therefore, no locations could be identified or scored.""
+}",Search,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:21+00:00,,combined_q_idx:66,66,66,13,"Recall the key events that occurred at Ontario on December 03, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.",Event contents,all,['flash flood emergency'],"There is no information about events occurring at Ontario on December 03, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"No events or content related to Ontario on December 3, 2026, were found in the AI's knowledge base.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or content related to Ontario on December 3, 2026, were found in the AI's knowledge base.""
+}",Search,ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:24+00:00,,combined_q_idx:67,67,67,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Layla Peterson and airport customs breach at Auckland Region. Provide a list of all dates when these events occurred, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Lillian Mendoza and produce contamination outbreak at Bagmati Province. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"May 07, 2024",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer provided no dates or items related to either Lillian Mendoza or a produce contamination outbreak at Bagmati Province, so there are no shared items with the ground-truth list (which is empty). The single score of 1.0 indicates that the",Match and Compare,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:26+00:00,,combined_q_idx:68,68,68,34,List all locations visited by Bella Alvarez in chronological order according to the story's timeline.,Spaces,chronological,['Dodoma Region'],There is no mention of Bella Alvarez in the provided text.,[],[0.0],0,0.0,0.0,0.0,0,No locations related to Bella Alvarez are mentioned in the provided text.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No locations related to Bella Alvarez are mentioned in the provided text.""
+}",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:27+00:00,,combined_q_idx:69,69,69,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Noah Williams experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,[],Noah Williams is not mentioned in the provided text.,[],[],0,1.0,1.0,1.0,1,"Noah Williams is not referenced in the provided ground-truth items, so the AI did not identify any relevant items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""Noah Williams is not referenced in the provided ground-truth items, so the AI did not identify any relevant items.""
+}",Compute on Sets and Lists,s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:30+00:00,,combined_q_idx:70,70,70,13,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Minas Gerais on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['residential tower fire']"", '[]']","only_in_A = []
+only_in_B = []
+
+A) Recall the key events that occurred at Minas Gerais on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+There is no information about Minas Gerais on April 09, 2026.
+
+B) Recall the key events that occurred at Maharashtra on August 12","[""['residential tower fire'""]","[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI did not provide any events for either query, so only the ground-truth item was identified as missing in both 'only_in_A' and 'only_in_B' sections.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""['residential tower fire'""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not provide any events for either query, so only the ground-truth item was identified as missing in both 'only_in_A' and 'only_in_B' sections.""
+}",Spot the Differences,ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:32+00:00,,combined_q_idx:71,71,71,5,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the various events that have taken place at North Dakota. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Think about all events that have occurred at Alberta. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or intersection could be computed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or intersection could be computed.""
+}",Match and Compare,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:33+00:00,,combined_q_idx:72,72,72,6,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on all events involving Benjamin Green. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['14'],"[7] 
+
+List of dates when events involving Benjamin Green occurred:
+- February 27, 2026","['February 27, 2026']",[1.0],1,1.0,1.0,1.0,1,The AI identified the correct latest chapter date for Benjamin Green's events.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""February 27, 2026""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified the correct latest chapter date for Benjamin Green's events.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:36+00:00,,combined_q_idx:73,73,73,25,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to flash flood emergency that occurred at Ontario on December 03, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to factory explosion that occurred at Greater Mumbai on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Ezra Edwards']"", ""['Scarlett Thomas']""]","only_in_A: 
+[]
+
+only_in_B: 
+[]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI did not identify any protagonists for either event, so there are no matches with the provided ground-truth names.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI did not identify any protagonists for either event, so there are no matches with the provided ground-truth names.""
+}",Spot the Differences,ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:38+00:00,,combined_q_idx:74,74,74,4,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the location Bagmati Province. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about all events that have occurred at Alberta. Provide a list of all dates when these events took place, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the various events that have taken place at North Dakota. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Think about all events that have occurred at Alberta. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.
+Return the intersection.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Lillian Mendoza']"", '[]']","To answer the question, we need to follow the instructions for each query.
+
+A) Consider the location Bagmati Province. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about all events that have occurred at Alberta. Provide a",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"AI answer did not provide any protagonists or dates for the given queries about Bagmati Province or Alberta, so there are no shared items between the AI answer and the ground-truth.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""AI answer did not provide any protagonists or dates for the given queries about Bagmati Province or Alberta, so there are no shared items between the AI answer and the ground-truth.""
+}",Spot the Differences,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:40+00:00,,combined_q_idx:75,75,75,12,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about what happened at East Java on August 12, 2025. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about what happened at Nairobi County on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Minas Gerais on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.
+Return the intersection.
+Return the intersection.",story_compare::intersection,all,[],"only_in_A = []
+only_in_B = []
+intersection = []
+
+A) Think about what happened at East Java on August 12, 2025. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+
+Since there is no information about East Java on August",[],[],0,1.0,1.0,1.0,1,"No events or protagonists were mentioned in the AI answer for either query, so there are no shared items with the ground-truth (which is empty).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or protagonists were mentioned in the AI answer for either query, so there are no shared items with the ground-truth (which is empty).""
+}",Match and Compare,ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:42+00:00,,combined_q_idx:76,76,76,16,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall the events related to flash flood emergency that occurred on December 03, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to fishing fleet loss that occurred on June 14, 2025. List all the locations where these events took place, without describing the events themselves.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Ontario']"", ""['Minas Gerais', 'Sichuan Province']""]","only_in_A: 
+[]
+
+only_in_B: 
+[]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer did not provide any locations for either story query, so no items were identified in either list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer did not provide any locations for either story query, so no items were identified in either list.""
+}",Spot the Differences,s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:44+00:00,,combined_q_idx:77,77,77,11,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on events related to air quality emergency. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to air quality emergency. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to magnitude 9.0 earthquake. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"only_in_A = []
+only_in_B = []
+intersection = []
+
+A) Reflect on events related to air quality emergency. Provide a list of all protagonists involved in these events, without describing the events.
+- Zoe Brown
+
+B) Reflect on events related to magnitude 9.0 earthquake. Provide a list of all protagonists involved in these events, without describing the events.
+- No answer found
+
+only",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no items could be identified or scored in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no items could be identified or scored in the AI answer.""
+}",Match and Compare,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:47+00:00,,combined_q_idx:78,78,78,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Zoe Brown at Luzon Region on December 26, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Chloe Castillo at Nairobi County on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['factory explosion'],"A) 
+Zoe Brown witnessed a produce contamination outbreak at Tuscany on May 07, 2024.
+
+B) 
+Chloe Castillo witnessed a residential tower fire at Vermont on September 22, 2026.
+
+Removing items that also appear in answer(B) from answer(A):
+- witnessed a produce contamination outbreak
+- Zoe Brown
+- Tuscany
+- May 07,",['witnessed a produce contamination outbreak'],[0.1],0,0.0,0.0,0.0,0,"The only item in the AI answer that is not present in the ground-truth is 'witnessed a produce contamination outbreak'. The ground-truth item is 'factory explosion', which is not mentioned in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""witnessed a produce contamination outbreak""],
+  ""matching_scores"": [0.1],
+  ""explanation"": ""The only item in the AI answer that is not present in the ground-truth is 'witnessed a produce contamination outbreak'. The ground-truth item is 'factory explosion', which is not mentioned in the AI answer.""
+}",Composite,c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:49+00:00,,combined_q_idx:79,79,79,0,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all the events that occurred on December 10, 2026. Without describing the events, list all the unique locations where these events took place.",story_state::latest_chapter,latest,['0'],"There is no information about events occurring on December 10, 2026.",[],[1.0],1,0.0,1.0,0.0,0,"No supporting chapters or information were found for events on December 10, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No supporting chapters or information were found for events on December 10, 2026.""
+}",Stateful Processing,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:51+00:00,,combined_q_idx:80,80,80,11,"Story composite task: Use two story queries.
+A) Reflect on events related to magnitude 9.0 earthquake. Provide a list of all protagonists involved in these events, without describing the events.
+B) Consider all events involving opera house fire. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['Carter Stewart', 'Levi Rodriguez']","A) 
+- Ezra Edwards
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+B) 
+- Luzon Region
+- Nairobi County
+- Scotland
+- Split-Dalmatia County
+- Tuscany
+
+Removing common items from A and B:
+- Ezra Edwards
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+Sorted alphabetically:
+- Ezra Edwards
+-","['Ezra Edwards', 'Henry Reed', 'Logan Diaz', 'Owen Thomas']","[0.0, 0.0]",0,0.0,0.0,0.0,0,No items from AI answer A appear in ground-truth; all scores are 0.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Ezra Edwards"", ""Henry Reed"", ""Logan Diaz"", ""Owen Thomas""],
+  ""matching_scores"": [0, 0],
+  ""explanation"": ""No items from AI answer A appear in ground-truth; all scores are 0.""
+}",Composite,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:53+00:00,,combined_q_idx:81,81,81,16,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to volcanic eruption that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves."". Remove ""Buenos Aires Province"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Kampong Cham Province'],Greater Mumbai,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer 'Greater Mumbai' does not match any of the ground-truth items, which is 'Kampong Cham Province'. No locations were identified in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'Greater Mumbai' does not match any of the ground-truth items, which is 'Kampong Cham Province'. No locations were identified in the AI answer.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:55+00:00,,combined_q_idx:82,82,82,1,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events that happened on August 27, 2024. Provide a list of all protagonists involved in any of these events, without describing the events themselves.",story_compute::sort_items,chronological,[],[],[],[],0,1.0,1.0,1.0,1,No events or protagonists were found for the query in the ground-truth data.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or protagonists were found for the query in the ground-truth data.""
+}",Compute on Sets and Lists,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:57+00:00,,combined_q_idx:83,83,83,25,"Story composite task: Use two story queries.
+A) Think about the events related to fishing fleet loss that occurred at Kampong Cham Province on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to political assassination that occurred at Maharashtra on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) 
+1. Henry Reed
+2. Kampong Cham Province
+
+B) 
+1. Ezra Edwards
+2. Kampong Cham Province
+3. Split-Dalmatia County
+
+Removing common items from A and B:
+ 
+1. Henry Reed",['Henry Reed'],[],0,0.0,1.0,0.0,0,"Only 'Henry Reed' from answer A does not appear in the ground-truth (which is empty), so it is identified as not matching any ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Henry Reed""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'Henry Reed' from answer A does not appear in the ground-truth (which is empty), so it is identified as not matching any ground-truth item.""
+}",Composite,ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:00:59+00:00,,combined_q_idx:84,84,84,26,"Story recall-and-edit: For query ""Consider the events involving both Scarlett Thomas and political assassination on August 12, 2025. List all the locations where these events took place, without describing the events themselves."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,The AI returned an empty answer as requested by the user's instructions for the given query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI returned an empty answer as requested by the user's instructions for the given query.""
+}",Recall and Edit,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:01+00:00,,combined_q_idx:85,85,85,23,"Story composite task: Use two story queries.
+A) Reflect on the experiences of Benjamin Green related to volcanic eruption. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Consider all events involving both Brooklyn Ross and police force strike. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Nairobi County'],"A) 
+- Luzon Region
+- Scotland
+
+B) 
+- May 31, 2024
+- September 13, 2025
+
+Removing common items from A and B:
+- Luzon Region
+
+Sorted list of remaining items:
+- Luzon Region",['Luzon Region'],[0.0],0,0.0,0.0,0.0,0,Only 'Luzon Region' from AI answer A does not appear in ground-truth for B.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Luzon Region""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only 'Luzon Region' from AI answer A does not appear in ground-truth for B.""
+}",Composite,t|s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:04+00:00,,combined_q_idx:86,86,86,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Carter Stewart at Vermont on August 27, 2024. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Noah Williams at Kampong Cham Province on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Recall what happened involving Carter Stewart at Vermont on August 27, 2024. Describe the key events or activities that occurred, focusing on what happened.
+There is no mention of Carter Stewart in the provided text.
+
+B) Recall what happened involving Noah Williams at Kampong Cham Province on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""There is no mention of Carter Stewart in the provided text.""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not contain any information about Carter Stewart, so there are no relevant items to retain after removing Noah Williams-related content. The only sentence in the AI answer is a statement about lack of mention",Composite,c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:06+00:00,,combined_q_idx:87,87,87,29,"Provide a comprehensive account of what happened involving Chloe Castillo and wind farm destruction at Nairobi County on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no information about Chloe Castillo and wind farm destruction at Nairobi County on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so the AI could not identify or match any items related to Chloe Castillo and the wind farm destruction at Nairobi County on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so the AI could not identify or match any items related to Chloe Castillo and the wind farm destruction at Nairobi County on April 09, 2026.""
+}",Composite,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:09+00:00,,combined_q_idx:88,88,88,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to factory explosion that occurred at Luzon Region on December 26, 2026. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,['Zoe Brown'],"There is no event related to a factory explosion at Luzon Region on December 26, 2026. 
+
+However, there is an event related to a sinkhole emergence at Luzon Region on February 27, 2026. 
+
+The protagonists involved in this event are:
+- Benjamin Green
+- Mara Ledbetter
+- Noa Middleton",[],[0.0],0,0.0,0.0,0.0,0,"The AI did not identify any protagonists related to a factory explosion in the Luzon Region on December 26, 2026. The AI did not return any items because no such event or associated protagonists were found for the given query.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI did not identify any protagonists related to a factory explosion in the Luzon Region on December 26, 2026. The AI did not return any items because no such event or associated protagonists were found for the given query.""
+}",Compute on Sets and Lists,ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:12+00:00,,combined_q_idx:89,89,89,21,"Think about the events involving residential tower fire at Buenos Aires Province. List all protagonists involved in these events, without mentioning the events themselves.",Entities,all,['Lillian Mendoza'],Chloe Castillo,['Chloe Castillo'],[0.0],0,0.0,0.0,0.0,0,The AI answer 'Chloe Castillo' does not match the ground-truth entity 'Lillian Mendoza'. No entities in the AI answer correspond to those in the ground-truth.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe Castillo""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'Chloe Castillo' does not match the ground-truth entity 'Lillian Mendoza'. No entities in the AI answer correspond to those in the ground-truth.""
+}",Search,t|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:13+00:00,,combined_q_idx:90,90,90,10,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving opera house fire. List all the locations where these events took place, without mentioning the events themselves.
+B) Reflect on events related to airport shutdown. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or scoring is possible.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or scoring is possible.""
+}",Match and Compare,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:16+00:00,,combined_q_idx:91,91,91,10,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving political assassination. List all the locations where these events took place, without mentioning the events themselves.
+B) Reflect on the experiences of Benjamin Green related to volcanic eruption. List all the unique locations where these events took place, without mentioning the events themselves.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Maharashtra']"", ""['Nairobi County']""]","only_in_A = ['Split-Dalmatia County', 'Greater Mumbai', 'Nairobi County']
+only_in_B = ['Luzon Region']",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Split-Dalmatia County"", ""Luzon Region""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""Only 'Nairobi County' from the ground-truth appears in the AI's answer for 'only_in_A'; none of the ground-truth items appear in the AI's '",Spot the Differences,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:19+00:00,,combined_q_idx:92,92,92,12,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about what happened at Vermont on August 27, 2024. List all protagonists involved in any events at this time and place, without describing the events.
+B) Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A = []
+only_in_B = []
+
+A) Think about what happened at Vermont on August 27, 2024. List all protagonists involved in any events at this time and place, without describing the events.
+- Ezra Edwards
+
+B) Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No protagonists were listed in the AI answer for A, while the ground truth for A is empty. For B, the ground truth does not provide any events or protagonists, so the AI answer (which listed 'Ezra Edwards' as a protagonist in B) has",Spot the Differences,ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:22+00:00,,combined_q_idx:93,93,93,26,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Ezra Edwards and flash flood emergency on December 03, 2026. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,['Ontario'],"Split-Dalmatia County, Split-Dalmatia County",['Split-Dalmatia County'],[0.0],0,0.0,0.0,0.0,0,"The AI identified only one item ('Split-Dalmatia County') from the ground-truth list ('Ontario'), so it did not match the ground-truth item, resulting in a low score of 0.0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Split-Dalmatia County""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI identified only one item ('Split-Dalmatia County') from the ground-truth list ('Ontario'), so it did not match the ground-truth item, resulting in a low score of 0.0.""
+}",Compute on Sets and Lists,s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:24+00:00,,combined_q_idx:94,94,94,3,"Story recall-and-edit: Start from the answer to this story query: ""Think about all events that have occurred at Maine. Provide a list of all dates when these events took place, without describing the events."". Remove ""January 03, 2026"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"September 13, 2025","['September 13, 2025']",[],0,0.0,1.0,0.0,0,"The AI provided one date in its answer, but there are no ground-truth items to match against, so the score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 13, 2025""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI provided one date in its answer, but there are no ground-truth items to match against, so the score is 0.""
+}",Recall and Edit,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:27+00:00,,combined_q_idx:95,95,95,18,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving Henry Reed at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on Samuel Parker's experiences at Auckland Region. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2024']"", '[]']","A) Only in A: 
+September 22, 2026
+
+B) Only in B: 
+There is no information about Samuel Parker's experiences at Auckland Region.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 22, 2026""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""A) The AI incorrectly included an event for Henry Reed that is not present in the ground truth (which lists only 'March 23, 2024' for A, if any). B) The",Spot the Differences,t|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:29+00:00,,combined_q_idx:96,96,96,16,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall the events related to reservoir breach that occurred on August 12, 2025. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,[],"There is no information about a reservoir breach that occurred on August 12, 2025.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items were identified and all matching scores are zero.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items were identified and all matching scores are zero.""
+}",Compute on Sets and Lists,s|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:31+00:00,,combined_q_idx:97,97,97,19,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on Samuel Parker's experiences at Auckland Region. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Consider all events involving Henry Reed at Antioquia Department. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or intersection could be computed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or intersection could be computed.""
+}",Match and Compare,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:33+00:00,,combined_q_idx:98,98,98,28,"Recall what happened involving Jaxon Howard and reservoir breach at East Java on August 12, 2025 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about Jaxon Howard and a reservoir breach at East Java on August 12, 2025 in the provided text.",[],[],0,1.0,1.0,1.0,1,"The AI answer did not mention any entities beyond 'Jaxon Howard' as involved in the event described, and there are no ground-truth items to compare against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not mention any entities beyond 'Jaxon Howard' as involved in the event described, and there are no ground-truth items to compare against.""
+}",Match and Compare,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:35+00:00,,combined_q_idx:99,99,99,20,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all events related to bridge collapse that occurred at Amman Governorate. Provide a list of all dates when these events took place, without describing the events.",story_state::latest_chapter,latest,['0'],"Chapter 8 
+
+List of dates: 
+- September 27, 2025",['Chapter 8'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Chapter 8' as the latest chapter, which matches the ground-truth item '0' (assuming '0' refers to Chapter 8 in the context).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 8""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Chapter 8' as the latest chapter, which matches the ground-truth item '0' (assuming '0' refers to Chapter 8 in the context).""
+}",Stateful Processing,t|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:38+00:00,,combined_q_idx:100,100,100,20,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall all events related to bridge collapse that occurred at Buenos Aires Province. Provide a list of all dates when these events took place, without describing the events.
+B) Reflect on what Scarlett Thomas experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['January 03, 2026']"", ""['factory explosion']""]","only_in_A = [April 09, 2026]
+only_in_B = []",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""April 09,2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI only listed a date in 'A' that was not present in the ground-truth (correct date format in 'A' was not used), and did not provide any items for 'B', which should have included the event",Spot the Differences,t|ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:41+00:00,,combined_q_idx:101,101,101,35,"Enumerate all activities that Chloe Castillo has been involved in, ordered from earliest to latest in the story's chronology.",Event contents,chronological,"['vote counting disruption', 'residential tower fire']","1. Witnessing a residential tower fire
+2. Standing on the sidewalk, observing the fire
+3. Watching as emergency crews arrived
+4. Observing the flames leaping between broken windows
+5. Feeling the heat on her face as she leaned forward
+6. Seeing the tower's upper levels shrouded in smoke
+7. Noticing the lower floors showing signs of collapse
+8",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""witnessing a residential tower fire"", ""standing on the sidewalk observing the fire"", ""watching as emergency crews arrived"", ""observing the flames leaping between broken windows"", ""feeling the heat on her face"", ""seeing the tower's upper levels shrouded in smoke"", ""noticing the lower floors showing signs of collapse""],",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:44+00:00,,combined_q_idx:102,102,102,5,"Story recall-and-edit: Start from the answer to this story query: ""Recall the various events that have taken place at Kampong Cham Province. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved."". Remove ""nuclear plant meltdown"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['volcanic eruption', 'tuberculosis outbreak']",A nuclear plant meltdown occurred at Kampong Cham Province.,[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""nuclear plant""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer incorrectly includes 'nuclear plant meltdown' which is not present in the ground-truth items. After removing 'nuclear plant meltdown', the remaining part ('nuclear plant') does not match either 'volcan",Recall and Edit,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:47+00:00,,combined_q_idx:103,103,103,0,"Recall all the events that occurred on March 23, 2025. Without describing the events, list all the unique locations where these events took place.",Spaces,all,['Rajasthan'],"Split-Dalmatia County, Greater Mumbai",[],[0.0],0,0.0,0.0,0.0,0,"The AI answer refers to a county in Croatia, which does not match the ground-truth location of Rajasthan (a state in India). No location from the ground-truth is identified in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer refers to a county in Croatia, which does not match the ground-truth location of Rajasthan (a state in India). No location from the ground-truth is identified in the AI answer.""
+}",Search,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:49+00:00,,combined_q_idx:104,104,104,27,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Henry Reed and residential tower fire at Antioquia Department. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['November 13, 2026']","September 13, 2025",[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth item matches the AI answer of 'September 13,2025'. The only ground-truth item is 'November 13,2026', which does not match the AI's answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth item matches the AI answer of 'September 13,2025'. The only ground-truth item is 'November 13,2026', which does not match the AI's answer.""
+}",Compute on Sets and Lists,t,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:52+00:00,,combined_q_idx:105,105,105,24,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall what happened involving Lily Nguyen at Minas Gerais on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Think about the events involving factory explosion on December 26, 2026. Provide a list of all protagonists involved in these events, without describing the events.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['residential tower fire']"", ""['Levi Rodriguez', 'Zoe Brown']""]","only_in_A = []
+only_in_B = []",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""factory explosion""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer only mentions 'factory explosion' in the context of list B, but does not recall any events involving Lily Nguyen at Minas Gerais on April 09, 2026 (as required by A), nor list",Spot the Differences,c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:55+00:00,,combined_q_idx:106,106,106,1,"Story composite task: Use two story queries.
+A) Consider all events that happened on August 12, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events that happened on January 26, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) 
+1. Chloe Castillo
+2. Ezra Edwards
+3. Henry Reed
+4. Julian Ross
+5. Kampong Cham Province
+6. Logan Diaz
+7. Owen Thomas
+8. Zoe Brown
+
+B) 
+1. Julian Ross
+
+C) 
+1. Chloe Castillo
+2. Ezra Edwards
+3. Henry Reed
+4. Logan Diaz
+5. Owen Thomas",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe Castillo"", ""Ezra Edwards"", ""Henry Reed"", ""Logan Diaz"", ""Owen Thomas"", ""Zoe Brown""],
+  ""matching_scores"": [1.0, 1.0, 1.0, 1.0, 1.0, 0.0],
+  ""explanation"": """,Composite,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:57+00:00,,combined_q_idx:107,107,107,17,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving factory explosion on December 26, 2026. Provide a list of all protagonists involved in these events, without describing the events.",story_state::latest_chapter,latest,['49'],"There is no mention of a factory explosion on December 26, 2026, in the provided text.",[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth protagonist names were mentioned in the AI answer, so no chapter or character was identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth protagonist names were mentioned in the AI answer, so no chapter or character was identified.""
+}",Stateful Processing,s|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:01:59+00:00,,combined_q_idx:108,108,108,19,"Reflect on Sofia Ramos's experiences at Andalusia. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",Event contents,all,[],There is no mention of Sofia Ramos in the provided text.,[],[],0,1.0,1.0,1.0,1,"No events or information about Sofia Ramos were present in the AI answer, so no items could be identified or matched.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or information about Sofia Ramos were present in the AI answer, so no items could be identified or matched.""
+}",Search,t|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:01+00:00,,combined_q_idx:109,109,109,25,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events related to reservoir breach that occurred at East Java on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to political assassination that occurred at Maharashtra on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No protagonists were identified in the provided ground-truth items for either story query, so the intersection is empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No protagonists were identified in the provided ground-truth items for either story query, so the intersection is empty.""
+}",Match and Compare,ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:04+00:00,,combined_q_idx:110,110,110,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Scarlett Thomas at Maharashtra on August 12, 2025. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Jaxon Howard at East Java on August 12, 2025. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) There is no information about Scarlett Thomas in the provided text. However, there is information about Owen Thomas in Chapter 8.
+
+B) There is no information about Jaxon Howard in the provided text.
+
+Since there is no information about Scarlett Thomas and Jaxon Howard, we will use the information about Owen Thomas and another character, Benjamin Green.
+
+A) Owen Thomas witnessed a vote counting disruption at",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Owen Thomas"", ""vote counting disruption""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer only mentions Owen Thomas and a vote counting disruption, but the task required information about Scarlett Thomas and Jaxon Howard. No items in the AI answer match the requested persons, so all identified",Composite,c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:07+00:00,,combined_q_idx:111,111,111,8,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about Brooklyn Ross's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.",story_compute::sort_items,chronological,['police force strike'],"1. Bridge collapse
+2. Nuclear plant meltdown
+3. Produce contamination outbreak
+4. Residential tower fire
+5. Sinkhole emergence
+6. Sports venue riot
+7. Volcanic eruption
+8. Vote counting disruption",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Bridge collapse"", ""Nuclear plant meltdown"", ""Produce contamination outbreak"", ""Residential tower fire"", ""Sinkhole emergence"", ""Sports venue riot"", ""Volcanic eruption""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0, 0.0, 0.",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:09+00:00,,combined_q_idx:112,112,112,26,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Scarlett Thomas and factory explosion on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['46'],Chapter 8,['8'],[1.0],1,1.0,1.0,1.0,1,"The AI answer 'Chapter 8' matches the ground-truth item '46' if '46' represents chapter 8 (e.g., via code or number mapping).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""8""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer 'Chapter 8' matches the ground-truth item '46' if '46' represents chapter 8 (e.g., via code or number mapping).""
+}",Stateful Processing,s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:12+00:00,,combined_q_idx:113,113,113,25,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to volcanic eruption that occurred at Nairobi County on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",story_state::latest_chapter,latest,['14'],"There is no information about a volcanic eruption at Nairobi County on April 09, 2026. 
+
+However, Chapter 6 describes a volcanic eruption in Scotland on May 31, 2024. 
+
+Protagonists involved in this event are:
+1. Julian Ross",['Julian Ross'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Julian Ross' as the protagonist from the only relevant chapter (Chapter 6) that discusses a volcanic eruption, even though the event is not in Nairobi County or on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Julian Ross""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Julian Ross' as the protagonist from the only relevant chapter (Chapter 6) that discusses a volcanic eruption, even though the event is not in Nairobi County or on April 09, 2026.""
+}",Stateful Processing,ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:14+00:00,,combined_q_idx:114,114,114,12,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about what happened at Nairobi County on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Minas Gerais on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"only_in_A = []
+only_in_B = []
+intersection = []
+
+A) Think about what happened at Nairobi County on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+- Owen Thomas
+
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Minas","['Nairobi County', 'April 09, 2026']",[],0,0.0,1.0,0.0,0,"No ground-truth items provided; AI answer contains location and date, but none match the empty ground-truth list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Nairobi County"", ""April 09, 2026""],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items provided; AI answer contains location and date, but none match the empty ground-truth list.""
+}",Match and Compare,ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:17+00:00,,combined_q_idx:115,115,115,29,"Provide a comprehensive account of what happened involving Scarlett Thomas and political assassination at Maharashtra on August 12, 2025. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no information about Scarlett Thomas or a political assassination involving her on August 12, 2025, in the provided text.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or scoring could be made. The AI answer states that there is no information about Scarlett Thomas or a political assassination in Maharashtra on August 12, 2025.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or scoring could be made. The AI answer states that there is no information about Scarlett Thomas or a political assassination in Maharashtra on August 12, 2025.""
+}",Composite,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:20+00:00,,combined_q_idx:116,116,116,8,"Story recall-and-edit: Start from the answer to this story query: ""Think about Lillian Mendoza's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred."". Remove ""produce contamination outbreak"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['residential tower fire'],"Eyewitness accounts from are emerging regarding an unexpected disruption during last night’s municipal election vote counting.
+
+Local journalist was present at the County Election Office in when the incident first came to light, describing the sterile, fluorescent-lit chamber as suddenly charged with tension. Split-Dalmatia County. Ezra Edwards. witnessed a vote counting disruption.
+
+Around 11:17 PM, as the final tallies were",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""unexpected disruption"", ""vote counting"", ""municipal election""],
+  ""matching_scores"": [0.0, 0.8, 0.7],
+  ""explanation"": ""The AI answer mentions 'unexpected disruption' (which replaces 'produce contamination outbreak'), but 'municipal election' and ' County Election Office' are not",Recall and Edit,t|s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:23+00:00,,combined_q_idx:117,117,117,25,"Story composite task: Use two story queries.
+A) Think about the events related to residential tower fire that occurred at Minas Gerais on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to water supply contamination that occurred at Minas Gerais on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Lily Nguyen'],"A) 
+1. Chloe Castillo
+2. witnessed a residential tower fire
+
+B) 
+1. witnessed a water supply contamination
+
+Removing common items from A and B:
+ 
+1. Chloe Castillo
+2. witnessed a residential tower fire
+
+Sorted alphabetically:
+ 
+1. Chloe Castillo
+2. witnessed a residential tower fire",['Chloe Castillo'],[0.0],0,0.0,0.0,0.0,0,Only 'Chloe Castillo' from the AI answer does not appear in the ground-truth item. All other items in the AI answer are either absent from the ground-truth or are event descriptions and thus should not be considered as protagonists.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe Castillo""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only 'Chloe Castillo' from the AI answer does not appear in the ground-truth item. All other items in the AI answer are either absent from the ground-truth or are event descriptions and thus should not be considered as protagonists.""
+}",Composite,ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:24+00:00,,combined_q_idx:118,118,118,14,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider the events involving Scarlett Thomas on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: For query ""Consider the events involving Chloe Castillo on April 09, 2026. List all the locations where these events took place, without describing the events themselves."", return an empty answer.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no comparison or intersection could be computed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no comparison or intersection could be computed.""
+}",Match and Compare,s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:26+00:00,,combined_q_idx:119,119,119,15,"Story recall-and-edit: For query ""Reflect on what Scarlett Thomas experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,The AI returned an empty answer because there are no story events to recall or edit for the given query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI returned an empty answer because there are no story events to recall or edit for the given query.""
+}",Recall and Edit,s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:28+00:00,,combined_q_idx:120,120,120,14,"Story recall-and-edit: For query ""Consider the events involving Chloe Castillo on April 09, 2026. List all the locations where these events took place, without describing the events themselves."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"The AI returned an empty list as requested by the query, which matches the ground-truth of having no events to recall.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI returned an empty list as requested by the query, which matches the ground-truth of having no events to recall.""
+}",Recall and Edit,s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:31+00:00,,combined_q_idx:121,121,121,4,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the location Sichuan Province. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",story_compute::sort_items,chronological,"['Levi Rodriguez', 'Noah Williams']","Ezra Edwards 
+Henry Reed 
+Zoe Brown",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Ezra Edwards"", ""Henry Reed"", ""Zoe Brown""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""None of the AI-provided items match the ground-truth list of protagonists: Levi Rodriguez and Noah Williams. All AI answers were ignored for matching.""",Compute on Sets and Lists,t|ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:32+00:00,,combined_q_idx:122,122,122,22,"Consider all events involving both Carter Stewart and tram collision. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],There is no information about Carter Stewart or a tram collision in the provided text.,[],[],0,1.0,1.0,1.0,1,No events involving Carter Stewart and tram collision were found in the provided text.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events involving Carter Stewart and tram collision were found in the provided text.""
+}",Search,t|s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:35+00:00,,combined_q_idx:123,123,123,2,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on January 24, 2025. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",story_state::latest_chapter,latest,['0'],Chapter 1,['Chapter 1'],[1.0],1,1.0,1.0,1.0,1,"The AI provided only 'Chapter 1' as the latest chapter index, which matches the single ground-truth item '0' interpreted as referring to the first chapter.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 1""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI provided only 'Chapter 1' as the latest chapter index, which matches the single ground-truth item '0' interpreted as referring to the first chapter.""
+}",Stateful Processing,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:37+00:00,,combined_q_idx:124,124,124,24,"Recall what happened involving Noah Williams at Kampong Cham Province on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],There is no information about Noah Williams in the provided text.,[],[],0,1.0,1.0,1.0,1,"The AI answer did not mention any events or activities related to Noah Williams in Kampong Cham Province on April 09, 2026, as no such information was present in the provided context.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not mention any events or activities related to Noah Williams in Kampong Cham Province on April 09, 2026, as no such information was present in the provided context.""
+}",Search,c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:39+00:00,,combined_q_idx:125,125,125,27,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Lillian Mendoza and produce contamination outbreak at Bagmati Province. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['November 13, 2026']","May 07, 2024",[],[0.0],0,0.0,0.0,0.0,0,"No dates in the AI answer match the ground-truth date 'November 13, 2026'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No dates in the AI answer match the ground-truth date 'November 13, 2026'.""
+}",Compute on Sets and Lists,t,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:42+00:00,,combined_q_idx:126,126,126,12,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about what happened at Minas Gerais on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at Greater Mumbai on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""factory explosion"" from the answer. Return only the remaining items.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Lily Nguyen']"", '[]']","only_in_A = [""Ezra Edwards"", ""Henry Reed"", ""Zoe Brown"", ""Logan Diaz"", ""Julian Ross"", ""Benjamin Green"", ""Owen Thomas""]
+only_in_B = [""A factory explosion occurred at Greater Mumbai on April 09, 2026.""]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Ezra Edwards"", ""Henry Reed"", ""Zoe Brown"", ""Logan Diaz"", ""Julian Ross"", ""Benjamin Green"", ""Owen Thomas""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No ground-truth protagonists were provided for the story queries; only names in",Spot the Differences,ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:44+00:00,,combined_q_idx:127,127,127,21,"Story recall-and-edit: For query ""Think about the events involving flash flood emergency at Auckland Region. List all protagonists involved in these events, without mentioning the events themselves."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"The AI answer provided an empty list as requested for the given query, and there are no ground-truth items to compare against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided an empty list as requested for the given query, and there are no ground-truth items to compare against.""
+}",Recall and Edit,t|ent,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:45+00:00,,combined_q_idx:128,128,128,29,"Provide a comprehensive account of what happened involving Ezra Edwards and flash flood emergency at Ontario on December 03, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 24'],"There is no information about Ezra Edwards and a flash flood emergency at Ontario on December 03, 2026, in the provided text.",[],[0.0],0,0.0,0.0,0.0,0,No information in the AI answer matches the ground-truth item 'Full chapter 24'.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No information in the AI answer matches the ground-truth item 'Full chapter 24'.""
+}",Composite,,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:48+00:00,,combined_q_idx:129,129,129,10,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving police force strike. List all the locations where these events took place, without mentioning the events themselves.",story_compute::sort_items,chronological,"['Greater Mumbai', 'New South Wales', 'Vermont']","Florence 
+Greater Mumbai 
+Luzon Region 
+Nairobi County 
+Split-Dalmatia County 
+Tuscany",[],"[0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Florence"", ""Greater Mumbai""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""Only 'Greater Mumbai' matches the ground-truth. 'Florence' was likely identified as a location related to a police force strike but is not in the provided ground-truth list. Scores reflect exact matches",Compute on Sets and Lists,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,3,3-5
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:50+00:00,,combined_q_idx:130,130,130,13,"Recall the key events that occurred at Maharashtra on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.",Event contents,all,[],"There is no information about events occurring at Maharashtra on August 12, 2025.",[],[],0,1.0,1.0,1.0,1,"No events for the date 'August 12, 2025' at 'Maharashtra' were found in the available data.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events for the date 'August 12, 2025' at 'Maharashtra' were found in the available data.""
+}",Search,ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:53+00:00,,combined_q_idx:131,131,131,6,"Reflect on all events involving Zoe Brown. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['November 13, 2026', 'October 12, 2024', 'June 14, 2025', 'December 26, 2026', 'January 26, 2025', 'March 23, 2024', 'May 07, 2024']","May 07, 2024","['May 07, 2024']","[1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",1,1.0,0.142857,0.25,0,"The AI answer only identified the first ground-truth item, which matches exactly.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""May 07, 2024""],
+  ""matching_scores"": [1.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer only identified the first ground-truth item, which matches exactly.""
+}",Search,t|s|c,ok,df_qa.llama_news_direct.answers.csv,7,6+
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:55+00:00,,combined_q_idx:132,132,132,29,"Provide a comprehensive account of what happened involving Lily Nguyen and water supply contamination at Minas Gerais on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no information about Lily Nguyen or water supply contamination at Minas Gerais on April 09, 2026, in the provided text.",[],[],0,1.0,1.0,1.0,1,"No relevant information was found in the AI answer regarding Lily Nguyen or water supply contamination at Minas Gerais on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No relevant information was found in the AI answer regarding Lily Nguyen or water supply contamination at Minas Gerais on April 09, 2026.""
+}",Composite,,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:57+00:00,,combined_q_idx:133,133,133,27,"Consider all events involving both Ella Ross and airport shutdown at Alberta. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],There is no information about Ella Ross or an airport shutdown at Alberta in the provided text.,[],[],0,1.0,1.0,1.0,1,No relevant information found about Ella Ross or an airport shutdown at Alberta in the provided text.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No relevant information found about Ella Ross or an airport shutdown at Alberta in the provided text.""
+}",Search,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:02:59+00:00,,combined_q_idx:134,134,134,24,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Chloe Castillo at Nairobi County on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",story_state::latest_chapter,latest,['0'],"There is no information about Chloe Castillo at Nairobi County on April 09, 2026.",[],[1.0],1,0.0,1.0,0.0,0,"No relevant information about Chloe Castillo at Nairobi County on April 09, 2026 was found in the AI's response.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No relevant information about Chloe Castillo at Nairobi County on April 09, 2026 was found in the AI's response.""
+}",Stateful Processing,c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:00+00:00,,combined_q_idx:135,135,135,1,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events that happened on January 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+Return the intersection.",story_compare::intersection,all,[],Tuscany,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer.""
+}",Match and Compare,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:03+00:00,,combined_q_idx:136,136,136,9,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to bridge collapse. Provide a list of all dates when these events occurred, without describing the events."". Remove ""February 27, 2026"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['January 03, 2026', 'September 13, 2025', 'October 12, 2024', 'September 27, 2025']","September 13, 2025",[],"[0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 13, 2025""],
+  ""matching_scores"": [1.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""The AI's answer matches the first ground-truth item, 'September 13, 2025'. The other items were not present in the AI's",Recall and Edit,t|s|ent,ok,df_qa.llama_news_direct.answers.csv,4,3-5
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:05+00:00,,combined_q_idx:137,137,137,21,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving bridge collapse at Buenos Aires Province. List all protagonists involved in these events, without mentioning the events themselves.",story_state::latest_chapter,latest,['30'],"Chapter 8
+
+Protagonists involved in the bridge collapse at Buenos Aires Province:
+- Mila",['Mila'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Mila' as the protagonist in the latest chapter, which matches the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mila""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Mila' as the protagonist in the latest chapter, which matches the ground-truth item.""
+}",Stateful Processing,t|ent,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:07+00:00,,combined_q_idx:138,138,138,22,"Consider all events involving both Brooklyn Ross and police force strike. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['October 13, 2024']",[],[],[0.0],0,0.0,0.0,0.0,0,"No dates were provided in the AI answer, while one ground-truth item exists.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No dates were provided in the AI answer, while one ground-truth item exists.""
+}",Search,t|s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:09+00:00,,combined_q_idx:139,139,139,27,"Consider all events involving both Samuel Parker and flash flood emergency at Auckland Region. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],[],[],[],0,1.0,1.0,1.0,1,No dates found in the AI answer that match the ground-truth list of events involving Samuel Parker and a flash flood emergency in the Auckland Region.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No dates found in the AI answer that match the ground-truth list of events involving Samuel Parker and a flash flood emergency in the Auckland Region.""
+}",Search,t,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:10+00:00,,combined_q_idx:140,140,140,15,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on what Ezra Edwards experienced on December 03, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Story recall-and-edit: For query ""Consider the events involving Chloe Castillo on April 09, 2026. List all the locations where these events took place, without describing the events themselves."", return an empty answer.
+Return the intersection.",story_compare::intersection,all,[],[],[],[],0,1.0,1.0,1.0,1,"No items were present in the AI answer to compare with the ground-truth list, so the intersection is empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No items were present in the AI answer to compare with the ground-truth list, so the intersection is empty.""
+}",Match and Compare,s|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:12+00:00,,combined_q_idx:141,141,141,26,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Lily Nguyen and residential tower fire on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Minas Gerais"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"Split-Dalmatia County, Split-Dalmatia County",[],[],0,1.0,1.0,1.0,1,"No ground-truth locations were provided for Lily Nguyen or the residential tower fire on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth locations were provided for Lily Nguyen or the residential tower fire on April 09, 2026.""
+}",Recall and Edit,s,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:15+00:00,,combined_q_idx:142,142,142,12,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about what happened at Vermont on December 03, 2026. List all protagonists involved in any events at this time and place, without describing the events.",story_compute::sort_items,chronological,[],"Chloe Castillo, Henry Reed",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chloe Castillo"", ""Henry Reed""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No ground-truth items were provided for the query about Vermont on December 03, 2026, so the AI identified the protagonists from its own knowledge and assigned zero matching score as there is nothing to",Compute on Sets and Lists,ent|c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:17+00:00,,combined_q_idx:143,143,143,24,"Story recall-and-edit: Start from the answer to this story query: ""Recall what happened involving Benjamin Green at Nairobi County on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened."". Remove ""volcanic eruption"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"There is no mention of Benjamin Green at Nairobi County on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI answer, so no matching could be performed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer, so no matching could be performed.""
+}",Recall and Edit,c,ok,df_qa.llama_news_direct.answers.csv,0,0
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:19+00:00,,combined_q_idx:144,144,144,18,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Henry Reed at Antioquia Department. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['November 13, 2026']","September 22, 2026",[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth item (‘November 13, 2026’) was identified in the AI answer, which did not mention any event or date related to Henry Reed at Antioquia Department.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth item (‘November 13, 2026’) was identified in the AI answer, which did not mention any event or date related to Henry Reed at Antioquia Department.""
+}",Compute on Sets and Lists,t|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:21+00:00,,combined_q_idx:145,145,145,23,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on the experiences of Levi Rodriguez related to train derailment. List all the unique locations where these events took place, without mentioning the events themselves."". Remove ""Rajasthan"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Sichuan Province'],"Split-Dalmatia County, Greater Mumbai, Luzon Region, Nairobi County, Scotland, Tuscany, Vermont",[],[0.0],0,0.0,0.0,0.0,0,No ground-truth item ('Sichuan Province') is present in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0],
+  ""explanation"": ""No ground-truth item ('Sichuan Province') is present in the AI answer.""
+}",Recall and Edit,t|s,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:24+00:00,,combined_q_idx:146,146,146,0,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events that happened on January 26, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Tuscany']"", ""['Zoe Brown']""]","only_in_A: 
+- Florence
+- Tuscany
+
+only_in_B: 
+- Chloe Castillo
+- Ezra Edwards
+- Henry Reed
+- Julian Ross
+- Kampong Cham Province
+- Logan Diaz
+- Owen Thomas
+- Scotland
+- Split-Dalmatia County",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Tuscany""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""AI only listed 'Tuscany' in 'only_in_A', which matches the ground-truth item in 'only_in_A' (ignoring the location names like 'Florence' which are likely cities, not the region). 'only_in",Spot the Differences,s|ent|c,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:27+00:00,,combined_q_idx:147,147,147,15,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on what Jaxon Howard experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_state::latest_chapter,latest,['0'],Chapter 8,['8'],[1.0],1,1.0,1.0,1.0,1,"The AI provided the chapter index '8' as the latest chapter for the story, which matches the single ground-truth item '0' (assuming '0' refers to chapter 8).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""8""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI provided the chapter index '8' as the latest chapter for the story, which matches the single ground-truth item '0' (assuming '0' refers to chapter 8).""
+}",Stateful Processing,s|c,ok,df_qa.llama_news_direct.answers.csv,1,1
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:30+00:00,,combined_q_idx:148,148,148,25,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to wind farm destruction that occurred at Nairobi County on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Think about the events related to fishing fleet loss that occurred at Kampong Cham Province on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to political assassination that occurred at Maharashtra on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A = []
+only_in_B = []
+
+A) Think about the events related to wind farm destruction that occurred at Nairobi County on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+There is no mention of wind farm destruction at Nairobi County on April 09, 2026. 
+
+B) Think about the events related to fishing fleet",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer does not provide any protagonists for either story, so there are no items in the AI answer that match the ground-truth (which is empty). The single ground-truth item (a placeholder empty list) thus receives a perfect match score of 1.",Spot the Differences,ent,ok,df_qa.llama_news_direct.answers.csv,2,2
+/workspace/df_qa.llama_news_direct.answers.csv,2026-04-08T20:03:33+00:00,,combined_q_idx:149,149,149,27,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving both Henry Reed and volcanic eruption at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Carter Stewart and bridge collapse at Buenos Aires Province. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2024']"", ""['January 03, 2026']""]","only_in_A = []
+only_in_B = []
+
+Since there is no mention of Carter Stewart in the text, only_in_B will be an empty list.
+
+only_in_A = []",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"```json
+{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No events involving Henry Reed and a volcanic eruption at Buenos Aires Province were found in the AI answer; thus, only_in_A is empty. The AI correctly identified that only_in_B should be empty due to no mention of Carter Stewart in the provided context.""",Spot the Differences,t,ok,df_qa.llama_news_direct.answers.csv,2,2

@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+df_qa.llama_scifi_rag.answers.csv,150,0.5611111266666666,0.5266666666666666

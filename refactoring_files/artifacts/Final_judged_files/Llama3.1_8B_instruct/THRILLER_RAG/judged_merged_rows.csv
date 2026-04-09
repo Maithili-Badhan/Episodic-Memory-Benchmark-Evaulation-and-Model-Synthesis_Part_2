@@ -1,0 +1,1260 @@
+source_answers_file,timestamp_utc,mode,row_key,row_idx,combined_q_idx,q_idx,question,retrieval_type,get,ground_truth_items,answer,identified_items,matching_scores,tp,precision,recall,f1,exact_match,judge_explanation,judge_model,judge_status,status,judge_error,raw_judge_text,minerva_category,missing_tuple_elements,source_status,source_file,n_gold,gold_bin
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:33+00:00,,combined_q_idx:0,0,0,18,"Story composite task: Use two story queries.
+A) Consider all events involving Carter Stewart at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['September 13, 2025']","A) List of dates when events involving Carter Stewart at American Museum of Natural History occurred:
+1. September 13, 2025
+
+B) Key events involving Julian Ross at High Line (excluding ""Archery Tournament""):
+- Addressed a small but captivated circle gathered around a makeshift trivia station themed â€œEons of Cinema.â€
+- Declared, â€œ",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 13, 2025""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The only date in the AI answer ('September 13, 2025') matches the single ground-truth item ('September 13, 2025'), so it is fully correct after removing the non-existent 'Archery Tournament",Composite,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:36+00:00,,combined_q_idx:1,1,1,33,"Provide a chronological list of all dates when Ella Ross was observed, from earliest to latest in the story's timeline.",Times,chronological,[],"May 28, 2025, 
+April 09, 2026, 
+January 03, 2026","['May 28, 2025', 'January 03, 2026', 'April 09, 2026']",[],0,0.0,1.0,0.0,0,No ground-truth dates were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""May 28, 2025"", ""January 03, 2026"", ""April 09, 2026""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""No ground-truth dates were provided to compare against the AI's answer.""
+}",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:39+00:00,,combined_q_idx:2,2,2,25,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to Fashion Show that occurred at Brooklyn Museum on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to Astronomy Night that occurred at High Line on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Lily Nguyen']"", ""['Scarlett Thomas']""]","Return only_in_A = []
+Return only_in_B = []","['Lily Nguyen', 'Scarlett Thomas']","[1.0, 1.0]",2,1.0,1.0,1.0,1,"The AI answer did not list any protagonists for either story, while both 'Lily Nguyen' and 'Scarlett Thomas' are the known protagonists from the ground-truth.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Lily Nguyen"", ""Scarlett Thomas""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI answer did not list any protagonists for either story, while both 'Lily Nguyen' and 'Scarlett Thomas' are the known protagonists from the ground-truth.""
+}",Spot the Differences,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:41+00:00,,combined_q_idx:3,3,3,15,"Reflect on what Chloe Castillo experienced on August 17, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",Event contents,all,[],"There is no information about Chloe Castillo's experiences on August 17, 2025.",[],[],0,1.0,1.0,1.0,1,"No events or information about Chloe Castillo were provided in the ground-truth items, so the AI could not identify or match any events from its answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or information about Chloe Castillo were provided in the ground-truth items, so the AI could not identify or match any events from its answer.""
+}",Search,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:44+00:00,,combined_q_idx:4,4,4,22,"Story composite task: Use two story queries.
+A) Consider all events involving both Bella Alvarez and Environmental Summit. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Consider all events involving both Bella Alvarez and Environmental Summit. Provide a list of all dates when these events occurred, without describing the events.
+May 11, 2026
+
+B) Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.
+None found (Bella Brown not mentioned in the context","['May 11, 2026']",[],0,0.0,1.0,0.0,0,"AI answer lists one date for Bella Alvarez and Environmental Summit (May 11,2026), which does not match any ground-truth items (none provided).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""May 11, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""AI answer lists one date for Bella Alvarez and Environmental Summit (May 11,2026), which does not match any ground-truth items (none provided).""
+}",Composite,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:46+00:00,,combined_q_idx:5,5,5,26,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the events involving both Jackson Ramos and Flash Mob on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Ellis Island']"", ""['Julian Ross', 'Mila Gonzalez']""]","only_in_A: []
+only_in_B: [Julian, Aaron Godwin]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Julian Ross""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI listed only 'Julian' from the A list (should have included 'Ellis Island'), and 'Aaron Godwin' (not in the B ground truth) from the B list (should have listed 'M",Spot the Differences,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:49+00:00,,combined_q_idx:6,6,6,31,What is the most recent location where Christian Patel was observed in the story's chronological timeline?,Spaces,latest,[],Washington Square Park.,['Washington Square Park'],[],0,0.0,1.0,0.0,0,"The AI answer 'Washington Square Park' directly matches the only ground-truth item that should be present in the context of the question, assuming the ground-truth was intended to include this location.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Washington Square Park""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer 'Washington Square Park' directly matches the only ground-truth item that should be present in the context of the question, assuming the ground-truth was intended to include this location.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:51+00:00,,combined_q_idx:7,7,7,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Julian Ross and Film Festival at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['29'],"[29, 56, 107]",['29'],[1.0],1,1.0,1.0,1.0,1,Only '29' from the AI answer matches the single ground-truth item.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""29""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only '29' from the AI answer matches the single ground-truth item.""
+}",Stateful Processing,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:54+00:00,,combined_q_idx:8,8,8,7,"Story composite task: Use two story queries.
+A) Consider all events that Isaiah Bennett has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+B) Consider all events that Logan Diaz has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Bethpage State Park'],"A) Locations where Isaiah Bennett has been involved:
+- American Museum of Natural History
+- Bethpage Black Course
+
+B) Locations where Logan Diaz has been involved:
+- Bethpage Black Course
+- Brooklyn
+- American Museum of Natural History
+
+Removing common locations from answer(B) and sorting the remaining items alphabetically:
+- Brooklyn",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Bethpage Black Course"", ""American Museum of Natural History""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""From AI answer A (Bethpage Black Course, American Museum of Natural History), only 'American Museum of Natural History' is not present in ground-truth (which contains only 'Beth",Composite,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:56+00:00,,combined_q_idx:9,9,9,13,"Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at High Line on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""Astronomy Night"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"No events occurred at High Line on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"The AI answer does not mention any events that could correspond to the ground-truth items, so no items were identified and all matching scores are 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer does not mention any events that could correspond to the ground-truth items, so no items were identified and all matching scores are 0.""
+}",Recall and Edit,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:51:58+00:00,,combined_q_idx:10,10,10,10,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving Antique Auction. List all the locations where these events took place, without mentioning the events themselves.
+B) Recall all events related to Business Networking Event. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"American Museum of Natural History, Metropolitan Museum of Art",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided for the Business Networking Event query, so no comparison can be made. The AI answer only listed locations for the Antique Auction query, which are not present in the ground-truth for that query either.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided for the Business Networking Event query, so no comparison can be made. The AI answer only listed locations for the Antique Auction query, which are not present in the ground-truth for that query either.""
+}",Match and Compare,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:00+00:00,,combined_q_idx:11,11,11,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Chloe Castillo and Fashion Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Isaiah Evans and Opera Performance at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],American Museum of Natural History.,[],[],0,1.0,1.0,1.0,1,No events found in the AI answer that match the ground-truth items (which are empty).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events found in the AI answer that match the ground-truth items (which are empty).""
+}",Match and Compare,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:02+00:00,,combined_q_idx:12,12,12,28,"Recall what happened involving Lucy Carter and Antique Auction at Captree State Park on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"There is no mention of Lucy Carter and Antique Auction at Captree State Park on April 09, 2026 in the retrieved context.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so there is nothing to compare the AI answer to.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so there is nothing to compare the AI answer to.""
+}",Match and Compare,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:03+00:00,,combined_q_idx:13,13,13,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Levi Rodriguez and Fashion Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Skylar Thompson and Car Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"There is no intersection to return as there are no events involving both Levi Rodriguez and Fashion Show at American Museum of Natural History, and no events involving both Skylar Thompson and Car Show at American Museum of Natural History in the provided context.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no dates could be matched.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no dates could be matched.""
+}",Match and Compare,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:06+00:00,,combined_q_idx:14,14,14,29,"Provide a comprehensive account of what happened involving Brooklyn Ross and Educational Workshop at One World Trade Center on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 104'],"April 09, 2026. Brooklyn moved through the atrium with measured steps, her gaze catching the pale blue of morning diffused through the vast, open space. Rows of seats faced the gleaming glass facade, where the day's promise seemed fragile, held between the old scars and the new architecture—her fingers tightening around the small booklet in her hands, every page an instruction manual for",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""instruction manual""],
+  ""matching_scores"": [0.95],
+  ""explanation"": ""The AI answer references 'instruction manual,' which is the only relevant term from the ground-truth item 'Full chapter 104' (assuming 'chapters' are referenced in the context of an instruction manual). The date, location, and descriptive details do",Composite,,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:08+00:00,,combined_q_idx:15,15,15,22,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Brooklyn Ross and Book Signing Event. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on the experiences of Samuel Parker related to Theater Performance. List all the unique locations where these events took place, without mentioning the events themselves.
+Return the intersection.",story_compare::intersection,all,[],"August 24, 2026",[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Match and Compare,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:09+00:00,,combined_q_idx:16,16,16,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Charity Gala that occurred at Chrysler Building on August 27, 2024. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,[],"No events related to Charity Gala occurred at Chrysler Building on August 27, 2024.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items were identified and all matching scores are 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items were identified and all matching scores are 0.""
+}",Compute on Sets and Lists,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:12+00:00,,combined_q_idx:17,17,17,12,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about what happened at Ellis Island on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+B) Recall the key events that occurred at High Line on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Jackson Ramos']"", ""['Astronomy Night']""]","A) Think about what happened at Ellis Island on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+- Zoe Brown
+
+B) Recall the key events that occurred at High Line on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+- No events occurred",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Zoe Brown""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The ground-truth protagonists for Ellis Island on that date are not mentioned in the AI answer (only 'Zoe Brown' is listed for Ellis Island, which is incorrect), and there are no ground-truth events to match for High Line, so",Spot the Differences,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:14+00:00,,combined_q_idx:18,18,18,0,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all the events that occurred on August 24, 2026. Without describing the events, list all the unique locations where these events took place.",story_state::latest_chapter,latest,['100'],"There is no information about events occurring on August 24, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"No supporting chapters or information were found for events on August 24, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No supporting chapters or information were found for events on August 24, 2026.""
+}",Stateful Processing,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:17+00:00,,combined_q_idx:19,19,19,26,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","To answer the question, we need to compare the story spot-the-differences between two queries.
+
+Query A: Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+
+From the retrieved context, we can find the following information:
+
+- Lucy Carter is mentioned in Chapter 56, Paragraph",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI answer does not mention any locations related to either Lucy Carter or the Antique Auction on April 09,2026, nor does it list any locations for the Fashion Show involving Chloe Castillo. Therefore, no locations were identified in the AI answer",Spot the Differences,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:20+00:00,,combined_q_idx:20,20,20,26,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Theater Performance on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,[],"April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so the AI did not identify any items to evaluate. The empty list in the AI answer matches the single empty list in the ground-truth (score 1.0).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No ground-truth items were provided, so the AI did not identify any items to evaluate. The empty list in the AI answer matches the single empty list in the ground-truth (score 1.0).""
+}",Compute on Sets and Lists,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:22+00:00,,combined_q_idx:21,21,21,22,"Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],"January 3, 2026","['January 3, 2026']",[],0,0.0,1.0,0.0,0,"The AI provided one date, but no ground-truth dates were given, so there is no match.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""January 3, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI provided one date, but no ground-truth dates were given, so there is no match.""
+}",Search,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:23+00:00,,combined_q_idx:22,22,22,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Samuel Parker and Job Fair at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Logan Diaz and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"September 13, 2025",[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Match and Compare,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:25+00:00,,combined_q_idx:23,23,23,17,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Flash Mob on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events.",story_compute::sort_items,chronological,['Jackson Ramos'],"No events involving Flash Mob on April 09, 2026, were found in the retrieved context.",[],[1.0],1,0.0,1.0,0.0,0,"No ground-truth items were identified in the AI answer, so no items were listed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0, 1.0, 1.0],
+  ""explanation"": ""No ground-truth items were identified in the AI answer, so no items were listed.""
+}",Compute on Sets and Lists,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:27+00:00,,combined_q_idx:24,24,24,15,"Reflect on what Stella Scott experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",Event contents,all,[],"No information is available about Stella Scott on August 12, 2025.",[],[],0,1.0,1.0,1.0,1,"The AI could not identify any events or content related to Stella Scott on August 12, 2025 because there is no ground-truth data to match against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI could not identify any events or content related to Stella Scott on August 12, 2025 because there is no ground-truth data to match against.""
+}",Search,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:30+00:00,,combined_q_idx:25,25,25,16,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the events related to Tech Hackathon that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['One World Trade Center', 'Port Jefferson', 'Yankee Stadium']"", ""['High Line', 'Statue of Liberty']""]","A) only_in_A = [Museum]
+B) only_in_B = []",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Museum""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only lists 'Museum' for the Tech Hackathon event on March 23,2024, which is not present in the ground-truth locations for either story. Therefore, there are no matching items, resulting in a 0 score",Spot the Differences,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:33+00:00,,combined_q_idx:26,26,26,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Carter Stewart and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['56'],"[Chapter 56, Paragraph 379] 
+[Chapter 29, Paragraph 198]",['Chapter 56'],[1.0],1,1.0,1.0,1.0,1,Only 'Chapter 56' from the AI answer matches the ground-truth item '56' (assuming the chapter number is the intended match).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 56""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'Chapter 56' from the AI answer matches the ground-truth item '56' (assuming the chapter number is the intended match).""
+}",Stateful Processing,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:35+00:00,,combined_q_idx:27,27,27,0,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+B) Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],"No events occurred on May 07, 2024, or February 22, 2025, in the provided context.",[],[],0,1.0,1.0,1.0,1,No ground-truth events or locations/protagonists were provided; the AI's answer contains no items to compare against the empty ground-truth list.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth events or locations/protagonists were provided; the AI's answer contains no items to compare against the empty ground-truth list.""
+}",Match and Compare,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:38+00:00,,combined_q_idx:28,28,28,34,List all locations visited by Levi Rodriguez in chronological order according to the story's timeline.,Spaces,chronological,"['Trinity Church', 'Snug Harbor Cultural Center', 'Snug Harbor Cultural Center', 'One World Trade Center', 'American Museum of Natural History', 'Bethpage Black Course', 'Trinity Church', 'Washington Square Park', 'American Museum of Natural History']","June 14, 2025 - One World Trade Center
+July 31, 2025 - (no specific location mentioned)
+September 03, 2026 - Washington (location of the exhibition)",[],"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Washington""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer only lists 'Washington' as a location, but the ground-truth",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,9,6+
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:39+00:00,,combined_q_idx:29,29,29,2,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+B) Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Return the intersection.
+Return the intersection.",story_compare::intersection,all,[],There is no intersection to return as the questions do not match.,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer.""
+}",Match and Compare,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:41+00:00,,combined_q_idx:30,30,30,16,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to Educational Workshop that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""One World Trade Center"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"No events related to Educational Workshop occurred on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items were identified or scored.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items were identified or scored.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:43+00:00,,combined_q_idx:31,31,31,28,"Recall what happened involving Scarlett Thomas and Astronomy Night at High Line on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,"['Zyair Batchelor', 'Vada Dunning']","There is no information about Scarlett Thomas and Astronomy Night at High Line on April 09, 2026 in the retrieved context.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,No ground-truth entities were mentioned or implied in the AI answer for this question.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth entities were mentioned or implied in the AI answer for this question.""
+}",Match and Compare,,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:46+00:00,,combined_q_idx:32,32,32,21,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Think about the events involving Photography Exhibition at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+B) Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Carter Stewart', 'Chloe Castillo', 'Julian Ross', 'Levi Rodriguez', 'Samuel Parker']""]","only_in_A = [Sienna Hamrick]
+only_in_B = [Carter, Mckenzie Lynn, Julian Ross]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Sienna Hamrick""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The ground-truth list includes Carter, Mckenzie Lynn, Julian Ross, Carter Stewart, Chloe Castillo, Levi Rodriguez, and Samuel Parker. 'Sienna Hamrick' is not present in the ground-truth, so it does not match",Spot the Differences,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:48+00:00,,combined_q_idx:33,33,33,5,"Story composite task: Use two story queries.
+A) Recall the various events that have taken place at Statue of Liberty. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Recall the various events that have taken place at Museum of Modern Art. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['Fire Dancing Performance', 'Tech Hackathon', 'Theater Performance']","A) Recall the various events that have taken place at Statue of Liberty. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+No events mentioned at Statue of Liberty.
+
+B) Recall the various events that have taken place at Museum of Modern Art. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved",[],"[0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer for both locations (Statue of Liberty and Museum of Modern Art) lists no specific events or actions in the provided text, so there are no items to retain after removing those present in the MoMA answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer for both locations (Statue of Liberty and Museum of Modern Art) lists no specific events or actions in the provided text, so there are no items to retain after removing those present in the MoMA answer.""
+}",Composite,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,3,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:51+00:00,,combined_q_idx:34,34,34,26,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Benjamin Green and Tech Hackathon on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,['Snug Harbor Cultural Center'],"American Museum of Natural History, 
+Attended hardware hacking workshop, 
+Statue of Liberty",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Attended hardware hacking workshop"", ""American Museum of Natural History""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""Only 'American Museum of Natural History' matches the ground-truth item 'Snug Harbor Cultural Center' does not; 'Attended hardware hacking workshop' is not a location and",Compute on Sets and Lists,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:54+00:00,,combined_q_idx:35,35,35,3,"Story composite task: Use two story queries.
+A) Think about all events that have occurred at Long Beach Boardwalk. Provide a list of all dates when these events took place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['November 13, 2026']","A) List of dates when events occurred at Long Beach Boardwalk:
+None (events occurred at American Museum of Natural History)
+
+B) List of protagonists involved in events at American Museum of Natural History:
+- Carter Stewart
+- Collected (no specific name mentioned)
+- Julian Ross
+- Mckenzie Lynn
+- Salem Rutherford
+- Scarlett
+
+C) Remove items that also appear in answer",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""AI answer (A) did not list any dates for events at American Museum of Natural History, so no items were identified in (A). There are no items in (B) that would be removed, but since (B) lists names and (A) lists nothing",Composite,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:57+00:00,,combined_q_idx:36,36,36,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Lucy Carter at Captree State Park on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) There is no information about Lucy Carter at Captree State Park on April 09, 2026 in the retrieved context.
+
+B) There is no information about Brooklyn Ross at Bethpage State Park on August 24, 2026 in the retrieved context.
+
+Since both A and B do not have any relevant information, the final answer is:
+
+[]",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not provide any events or activities involving either Lucy Carter at Captree State Park on April 09, 2026 (A) or Brooklyn Ross at Bethpage State Park on August 24, 2026 (B). Therefore, no items were identified in the AI",Composite,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:52:59+00:00,,combined_q_idx:37,37,37,26,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,[],"Based on the retrieved context, I found the following events involving Chloe Castillo and Fashion Show on August 17, 2025:
+
+However, there is no information about Chloe Castillo and Fashion Show on August 17, 2025. 
+
+But I found the following events involving Fashion Show:
+
+- Organized historical fashion shows (Chapter 20, Paragraph 136)
+- Fashion shows (Chapter 20",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so no items could be identified or scored.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so no items could be identified or scored.""
+}",Compute on Sets and Lists,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:02+00:00,,combined_q_idx:38,38,38,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Logan Diaz and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['0'],"[Chapter 56, Paragraph 379] 
+[Chapter 107, Paragraph 724] 
+[Chapter 56, Paragraph 379] 
+[Chapter 120, Paragraph 821] 
+[Chapter 56, Paragraph 379] 
+[Chapter 56, Paragraph 379] 
+[Chapter 56, Paragraph 379] 
+[Chapter 56, Paragraph 379]",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""56"", ""107"", ""120""],
+  ""matching_scores"": [1.0, 1.0, 1.0],
+  ""explanation"": ""The AI identified chapter numbers (as strings) from the chapters mentioned that involve both Logan Diaz and Parkour Workshop at American Museum of Natural History. Only the chapter indices are extracted,",Stateful Processing,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:04+00:00,,combined_q_idx:39,39,39,0,"Recall all the events that occurred on February 03, 2024. Without describing the events, list all the unique locations where these events took place.",Spaces,all,[],"No events occurred on February 03, 2024.",[],[],0,1.0,1.0,1.0,1,"The AI answered that no events occurred on the specified date, and there are no ground-truth items to match, so no locations could be identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answered that no events occurred on the specified date, and there are no ground-truth items to match, so no locations could be identified.""
+}",Search,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:05+00:00,,combined_q_idx:40,40,40,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Skylar Thompson and Car Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['0'],"February 22, 2025","['February 22, 2025']",[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the single ground-truth date.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""February 22, 2025""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the single ground-truth date.""
+}",Stateful Processing,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:08+00:00,,combined_q_idx:41,41,41,25,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Book Signing Event that occurred at Bethpage State Park on August 24, 2026. List all protagonists involved in these events, without describing the events themselves.",story_state::latest_chapter,latest,['0'],"There is no information about the Book Signing Event at Bethpage State Park on August 24, 2026, in the retrieved context. However, based on the context provided, the latest chapter index is Chapter 120.",['120'],[0.0],0,0.0,0.0,0.0,0,"The AI answer only mentions 'Chapter 120' as the latest chapter index, but does not identify any protagonists from the events described. No ground-truth item (e.g., a list of protagonists) is matched or identified in the AI's response.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""120""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only mentions 'Chapter 120' as the latest chapter index, but does not identify any protagonists from the events described. No ground-truth item (e.g., a list of protagonists) is matched or identified in the AI's response.""
+}",Stateful Processing,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:10+00:00,,combined_q_idx:42,42,42,26,"Consider the events involving both Stella Scott and Astronomy Night on August 12, 2025. List all the locations where these events took place, without describing the events themselves.",Spaces,all,[],[],[],[],0,1.0,1.0,1.0,1,"No locations were mentioned in the AI answer, and there are no ground-truth items to compare against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No locations were mentioned in the AI answer, and there are no ground-truth items to compare against.""
+}",Search,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:13+00:00,,combined_q_idx:43,43,43,29,"Provide a comprehensive account of what happened involving Brooklyn Ross and Book Signing Event at Bethpage State Park on August 24, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no information in the retrieved context about a Book Signing Event at Bethpage State Park on August 24, 2026, involving Brooklyn Ross.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so the AI answer could not match any information. The AI correctly identified that there is no information in the context about a Brooklyn Ross book signing at Bethpage State Park on August 24, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so the AI answer could not match any information. The AI correctly identified that there is no information in the context about a Brooklyn Ross book signing at Bethpage State Park on August 24, 2026.""
+}",Composite,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:16+00:00,,combined_q_idx:44,44,44,2,"Story composite task: Use two story queries.
+A) Reflect on May 07, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Karaoke Night'],"A) Reflect on May 07, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+No information is available for May 07, 2024.
+
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer for May 07, 2024 contains no story events to differ from the events in the AI answer for February 27, 2026, which only has the single item 'Karaoke Night'. Since the AI answer for part A has no items",Composite,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:18+00:00,,combined_q_idx:45,45,45,24,"Story composite task: Use two story queries.
+A) Recall what happened involving Brooklyn Ross at One World Trade Center on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Educational Workshop'],"A) There is no information about Brooklyn Ross at One World Trade Center on April 09, 2026. However, there is information about Zoe Brown at Statue of Liberty on January 03, 2026, demonstrating fire crystal ball manipulation.
+
+B) There is no information about Scarlett Thomas at High Line on April 09, 2026.
+
+Since there is no information for both queries,",[],[0.0],0,0.0,0.0,0.0,0,"No events or activities related to Brooklyn Ross at One World Trade Center or Scarlett Thomas at High Line on April 09, 2026 were mentioned in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No events or activities related to Brooklyn Ross at One World Trade Center or Scarlett Thomas at High Line on April 09, 2026 were mentioned in the AI answer.""
+}",Composite,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:20+00:00,,combined_q_idx:46,46,46,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Educational Workshop that occurred at One World Trade Center on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,['Brooklyn Ross'],"No events related to Educational Workshop occurred at One World Trade Center on April 09, 2026.",[],[1.0],1,0.0,1.0,0.0,0,"No ground-truth items were mentioned in the AI answer, so no items were identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0, 1.0, 1.0],
+  ""explanation"": ""No ground-truth items were mentioned in the AI answer, so no items were identified.""
+}",Compute on Sets and Lists,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:23+00:00,,combined_q_idx:47,47,47,16,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to Astronomy Night that occurred on August 12, 2025. List all the locations where these events took place, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving Book Signing Event on August 24, 2026. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"To answer the question, we need to compare the answers to queries A and B.
+
+For query A, there is no information about Astronomy Night on August 12, 2025. However, we can infer that the events related to Astronomy Night occurred on December 26, 2026, and October 12, 2024.
+
+For query B, there is no information about Book Signing Event",[],[],0,1.0,1.0,1.0,1,"The AI answer does not provide any locations for the Astronomy Night event (query A), nor any list of protagonists for the Book Signing Event (query B). Therefore, there are no shared items between the AI answer and the ground-truth.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer does not provide any locations for the Astronomy Night event (query A), nor any list of protagonists for the Book Signing Event (query B). Therefore, there are no shared items between the AI answer and the ground-truth.""
+}",Match and Compare,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:26+00:00,,combined_q_idx:48,48,48,13,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.",story_compute::sort_items,chronological,['Theater Performance'],"[Chapter 56, Paragraph 379]
+The had always felt like a labyrinth more suited to mystery than movement, but now its grand atrium was transformed. Gray ropes snapped taut between marble columns and the rusted skeleton of a Triceratops, providing slanting pathways that wound through the shadow of a giant aurochs head. Participantsâ€”strange faces in hoodies",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""aurochs head"", ""gray ropes"", ""skeleton of a Triceratops""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer lists actions/objects from the transformed museum on April 09, 2026 (rope paths, skeleton",Compute on Sets and Lists,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:29+00:00,,combined_q_idx:49,49,49,5,"Recall the various events that have taken place at Museum of Modern Art. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",Event contents,all,"['Fashion Show', 'Tech Product Launch']","Photographs were displayed on a podium at an exhibition. 
+
+Film reels and projectors were assembled for an event. 
+
+Dozens of films, in formats both analog and digital, were shown on screens. 
+
+Critics and festivalgoers were present, and champagne flutes were clinked. 
+
+Patterns and discrepancies in the projected frames were tracked. 
+
+A labyrinth of screens and game tables was",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any of the ground-truth events (Fashion Show, Tech Product Launch), nor any content directly related to those events. It describes general activities at the museum (photographs displayed, films shown, critics and festivalgo",Search,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:30+00:00,,combined_q_idx:50,50,50,27,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Isaiah Evans and Opera Performance at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,[],"September 13, 2025",[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Compute on Sets and Lists,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:32+00:00,,combined_q_idx:51,51,51,12,"Story recall-and-edit: For query ""Think about what happened at American Museum of Natural History on August 17, 2025. List all protagonists involved in any events at this time and place, without describing the events."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so the AI answer (an empty list) cannot match any items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so the AI answer (an empty list) cannot match any items.""
+}",Recall and Edit,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:34+00:00,,combined_q_idx:52,52,52,4,"Consider the location Metropolitan Museum of Art. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",Entities,all,"['Samuel Parker', 'Scarlett Thomas', 'Jackson Hall', 'Carter Stewart', 'Zoe Brown']","Julian Ross, Samuel Parker, Scarlett Thomas",['Samuel Parker'],"[0.8, 0.0, 0.0, 0.0, 0.0]",1,1.0,0.2,0.333333,0,"Only 'Samuel Parker' from the ground-truth appears in the AI answer, while 'Scarlett Thomas' and 'Jackson Hall' do not.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Samuel Parker""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""Only 'Samuel Parker' from the ground-truth appears in the AI answer, while 'Scarlett Thomas' and 'Jackson Hall' do not.""
+}",Search,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,5,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:37+00:00,,combined_q_idx:53,53,53,2,"Story composite task: Use two story queries.
+A) Reflect on January 03, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Debate Tournament'],"A) Reflect on January 03, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+
+- Demonstrated fire crystal ball manipulation
+- Statue of Liberty
+
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Demonstrated fire crystal ball manipulation"", ""Statue of Liberty""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer lists two events for January 3, 2026, but none match the ground-truth item 'Debate Tournament' for February 27, 202",Composite,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:40+00:00,,combined_q_idx:54,54,54,9,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to Antique Auction. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Parkour Workshop. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"A) Recall all events related to Antique Auction. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+
+A) 
+- October 27, 2024
+
+B) 
+- October 27, 2024
+
+Return the intersection.
+October 27, 2024",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"```json
+{
+  ""identified_items_in_ai_answer"": [""October 27, 2024""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI listed 'October 27, 2024' as the date for Antique Auction events, but there are no ground-truth items to compare. Only the single AI item is identified, so it matches the",Match and Compare,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:43+00:00,,combined_q_idx:55,55,55,4,"Story recall-and-edit: Start from the answer to this story query: ""Consider the location Bethpage Black Course. List all protagonists that have been involved in any events at this location, without mentioning the events themselves."". Remove ""Bella Brown"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['Levi Rodriguez', 'Logan Diaz', 'Scarlett Thomas', 'Ezra Edwards', 'Zoe Brown']","Logan, Kendra Stahl",['Logan'],"[0.8, 0.0, 0.0, 0.0, 0.0]",1,1.0,0.2,0.333333,0,"The AI answer lists only 'Logan' from the ground-truth, matching the first name. 'Kendra Stahl' is not present in the ground-truth items and thus does not contribute to a match.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Logan""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The AI answer lists only 'Logan' from the ground-truth, matching the first name. 'Kendra Stahl' is not present in the ground-truth items and thus does not contribute to a match.""
+}",Recall and Edit,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,5,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:45+00:00,,combined_q_idx:56,56,56,24,"Recall what happened involving Stella Scott at Grand Central Terminal on August 12, 2025. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],"There is no mention of Stella Scott at Grand Central Terminal on August 12, 2025, in the retrieved context.",[],[],0,1.0,1.0,1.0,1,"No ground-truth events were provided, so the AI answer could not match any events. The AI correctly noted the absence of information about Stella Scott at Grand Central Terminal on the specified date.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth events were provided, so the AI answer could not match any events. The AI correctly noted the absence of information about Stella Scott at Grand Central Terminal on the specified date.""
+}",Search,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:48+00:00,,combined_q_idx:57,57,57,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Theater Performance that occurred at American Museum of Natural History on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,['Samuel Parker'],"Carter, Julian, Mckenzie Lynn, Scarlett, Zoe Brown",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter"", ""Julian"", ""Mckenzie Lynn"", ""Scarlett"", ""Zoe Brown""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""No ground-truth item 'Samuel Parker' matches any",Compute on Sets and Lists,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:51+00:00,,combined_q_idx:58,58,58,7,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that Olivia Turner has been involved in. List all the locations where these events took place, without mentioning the events themselves."". Remove ""Trinity Church"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Williamsburg Bridge'],"London, St. Patrick's Cathedral, Trinity Church",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""London"", ""St. Patrick's Cathedral""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""The AI answer lists 'London' and 'Trinity Church'. Since 'Trinity Church' was to be removed (as per the ground truth), only 'St. Patrick's Cathedral' matches the",Recall and Edit,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:54+00:00,,combined_q_idx:59,59,59,13,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the key events that occurred at Captree State Park on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Grand Central Terminal on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"Based on the retrieved context, there is no information about Captree State Park, Grand Central Terminal, or any events on April 09, 2026. However, there is information about the American Museum of Natural History.
+
+Since there is no intersection, the final answer is:
+
+[]",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""information about the American Museum of Natural History""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth items were provided, so no events could be matched between the AI answer and the ground-truth. The AI only mentioned information about the American Museum of Natural History, which is not present in the ground-tr",Match and Compare,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:53:57+00:00,,combined_q_idx:60,60,60,1,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events that happened on October 12, 2024. Provide a list of all protagonists involved in any of these events, without describing the events themselves.",story_state::latest_chapter,latest,['102'],"Based on the retrieved context, I can see that there is no specific information about events that happened on October 12, 2024. However, I can provide a list of protagonists based on the chapters mentioned.
+
+Since there is no direct information about protagonists for the specific date, I will provide a list of protagonists from the chapters mentioned:
+
+1. Chapter 108
+2. Chapter 94",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""108"", ""94""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI listed chapter numbers as 'protagrants' (108 and 94), but the ground-truth items are chapter indices (e.g., '102'). No direct match found between the AI's chapter names",Stateful Processing,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:00+00:00,,combined_q_idx:61,61,61,9,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Car Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all events related to Ballet Performance. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['31']""]","A) 
+[Chapter 39, Paragraph 280]
+[Chapter 72, Paragraph 491]
+[Chapter 28, Paragraph 188]
+[Chapter 31, Paragraph 214]
+
+B) 
+Chapter 72",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 31""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'Chapter 31' (from 'Chapter 31, Paragraph 214') matches the ground-truth item '['31']' in the correct format (just the chapter number). Other listed A answers include chapter numbers but are not in the",Spot the Differences,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:02+00:00,,combined_q_idx:62,62,62,24,"Recall what happened involving Jackson Ramos at Ellis Island on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,['Flash Mob'],"There is no mention of Jackson Ramos at Ellis Island on April 09, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not mention any event or item related to Jackson Ramos at Ellis Island on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not mention any event or item related to Jackson Ramos at Ellis Island on April 09, 2026.""
+}",Search,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:04+00:00,,combined_q_idx:63,63,63,25,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events related to Antique Auction that occurred at Captree State Park on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Fashion Show that occurred at American Museum of Natural History on August 17, 2025. List all protagonists involved in these events, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],"Based on the retrieved context, there is no information about the events related to Antique Auction that occurred at Captree State Park on April 09, 2026, or the events related to Fashion Show that occurred at American Museum of Natural History on August 17, 2025.
+
+However, since the query asks for the intersection of the two story queries, and there is no information about the protagonists",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items could be identified in the AI response.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items could be identified in the AI response.""
+}",Match and Compare,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:07+00:00,,combined_q_idx:64,64,64,19,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on Zoe Brown's experiences at Bethpage State Park. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",story_state::latest_chapter,latest,['0'],Latest chapter index: 65,['65'],[1.0],1,1.0,1.0,1.0,1,"The AI returned the latest chapter index (65) as a single string, which exactly matches the ground-truth item '0' when interpreted as a string representation of the chapter number.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""65""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI returned the latest chapter index (65) as a single string, which exactly matches the ground-truth item '0' when interpreted as a string representation of the chapter number.""
+}",Stateful Processing,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:10+00:00,,combined_q_idx:65,65,65,23,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on the experiences of Zoe Brown related to Tech Hackathon. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['High Line', 'One World Trade Center', 'Port Jefferson', 'Statue of Liberty']"", '[]']","Return only the result for each query.
+
+For query A, the unique locations where Zoe Brown's events took place are:
+- Statue of Liberty
+- Convention floor
+- Bethpage Black Course
+
+For query B, the dates when events involving Bella Brown and 3D Printing Workshop occurred are:
+- None (Bella Brown is not mentioned in the context, and 3D Printing Workshop is not",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Statue of Liberty""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only 'Statue of Liberty' from A matches the format of a location in the ground-truth, but the other two locations in the AI answer ('Convention floor', 'Bethpage Black Course') are not present in the ground-truth.",Spot the Differences,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:11+00:00,,combined_q_idx:66,66,66,22,"Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],[],[],[],0,1.0,1.0,1.0,1,No dates for events involving Bella Brown and 3D Printing Workshop were found in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No dates for events involving Bella Brown and 3D Printing Workshop were found in the AI answer.""
+}",Search,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:14+00:00,,combined_q_idx:67,67,67,7,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that Logan Diaz has been involved in. List all the locations where these events took place, without mentioning the events themselves."". Remove ""Bethpage Black Course"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['The Vessel at Hudson Yards', 'High Line']","[Chapter 61, Paragraph 410]
+- July 25, 2024
+
+[Chapter 20, Paragraph 137]
+- 
+
+[Chapter 86, Paragraph 598]
+- 
+
+[Chapter 5, Paragraph 30]
+- 
+
+[Chapter 5, Paragraph 32]
+- 
+
+[Chapter 119, Paragraph 817]
+-","['The Vessel at Hudson Yards', 'High Line']","[1.0, 1.0]",2,1.0,1.0,1.0,1,"The AI's answer lists all the ground-truth locations except 'Bethpage Black Course', which was correctly removed as per the instruction.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""The Vessel at Hudson Yards"", ""High Line""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI's answer lists all the ground-truth locations except 'Bethpage Black Course', which was correctly removed as per the instruction.""
+}",Recall and Edit,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:17+00:00,,combined_q_idx:68,68,68,13,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the key events that occurred at Chrysler Building on August 27, 2024. Describe what happened, focusing on the actions or occurrences rather than who was involved.",story_state::latest_chapter,latest,['0'],108,[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""108""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI provided the chapter index '108' in response to the query about key events at the Chrysler Building on August 27, 2024. Since the ground-truth only contains the string '0', the AI's answer does not match the expected format",Stateful Processing,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:20+00:00,,combined_q_idx:69,69,69,22,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events involving both Samuel Parker and Theater Performance. Provide a list of all dates when these events occurred, without describing the events."". Remove ""April 09, 2026"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['October 12, 2024', 'September 27, 2025']","September 27, 2025, 
+February 27, 2026",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 27, 2025""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""The AI answer lists only one valid date from the ground-truth ('September 27, 2025'), correctly matching the second item. 'October 12, 2024' is not present in",Recall and Edit,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:23+00:00,,combined_q_idx:70,70,70,18,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving Julian Ross at High Line. Provide a list of all dates when these events occurred, without describing the events.
+B) Story composite task: Use two story queries.
+A) Consider all events involving Carter Stewart at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2025', 'October 30, 2026', 'September 22, 2026']"", ""['September 13, 2025']""]","A) List of dates for Julian Ross at High Line:
+- March 23, 2025
+- October 27, 2024
+
+B) List of dates for Carter Stewart at American Museum of Natural History:
+- June 08, 2026
+
+C) Remaining items after removing ""Archery Tournament"" from the answer to the story query about Julian Ross's experiences at High Line",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""March 23, 2025""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'March 23, 2025' from the AI answer appears in the ground-truth items (the other date in the AI answer, 'October 27, 2024', is not present in the ground-tr",Spot the Differences,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:25+00:00,,combined_q_idx:71,71,71,27,"Consider all events involving both Chloe Castillo and Tech Hackathon at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],"September 13, 2025",[],[],0,1.0,1.0,1.0,1,No ground-truth dates provided for events involving Chloe Castillo and Tech Hackathon at American Museum of Natural History.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth dates provided for events involving Chloe Castillo and Tech Hackathon at American Museum of Natural History.""
+}",Search,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:28+00:00,,combined_q_idx:72,72,72,19,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on Logan Diaz's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Photography Exhibition']""]","[Chapter 56, Paragraph 379]
+The had always felt like a labyrinth more suited to mystery than movement, but now its grand atrium was transformed. Gray ropes snapped taut between marble columns and the rusted skeleton of a Triceratops, providing slanting pathways that wound through the shadow of a giant aurochs head. Participantsâ€”strange faces in hoodies",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any specific events or items related to Zoe Brown's experiences at the American Museum of Natural History, while the ground-truth items are the list elements from the query (['Photography Exhibition']). Therefore, there are no",Spot the Differences,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:32+00:00,,combined_q_idx:73,73,73,13,"Story composite task: Use two story queries.
+A) Recall the key events that occurred at Bethpage State Park on August 24, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on August 17, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Recall the key events that occurred at Bethpage State Park on August 24, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+No information is available for Bethpage State Park on August 24, 2026. However, we can use the information from Chapter 65, Paragraph 437, which describes an event at Bethpage State",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""an event at Bethpage State described in Chapter 65, Paragraph 437""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only references an event at Bethpage State Park in a general context and does not provide specific key events as requested for August 24, 2026. There are no ground",Composite,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:35+00:00,,combined_q_idx:74,74,74,13,"Recall the key events that occurred at Brooklyn Museum on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.",Event contents,all,['Fashion Show'],The lights bright.,['the lights'],[0.95],1,1.0,1.0,1.0,1,"The AI's answer 'The lights bright' is interpreted as referring to an event involving lighting, which strongly matches the ground-truth item 'Fashion Show' (likely describing a fashion event with bright lighting).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""the lights""],
+  ""matching_scores"": [0.95],
+  ""explanation"": ""The AI's answer 'The lights bright' is interpreted as referring to an event involving lighting, which strongly matches the ground-truth item 'Fashion Show' (likely describing a fashion event with bright lighting).""
+}",Search,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:38+00:00,,combined_q_idx:75,75,75,21,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Film Festival at High Line. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Brooklyn Ross"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Mila Gonzalez'],"Hazel, Calvin Schaub, Chloe Castillo, Creed Berlin, Lilah Hamilton",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hazel"", ""Calvin Schaub"", ""Chloe Castillo"", ""Creed Berlin"", ""Lilah Hamilton""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""Only 'Mila Gonzalez' from the ground",Recall and Edit,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:41+00:00,,combined_q_idx:76,76,76,21,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Parkour Workshop at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.",story_compute::sort_items,chronological,['Carter Stewart'],"Carter, Julian, Mckenzie Lynn",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter"", ""Julian"", ""Mckenzie Lynn""],
+  ""matching_scores"": [1.0, 0.0, 0.0],
+  ""explanation"": ""Only 'Carter' matches the ground-truth item 'Carter Stewart' (name is a substring match). 'Julian' and 'Mcken",Compute on Sets and Lists,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:43+00:00,,combined_q_idx:77,77,77,20,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to Car Show that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to Film Festival that occurred at High Line. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],"There is no information about Car Show or Film Festival at High Line in the retrieved context. However, there is information about events at the American Museum of Natural History.
+
+A) Events related to Car Show at American Museum of Natural History:
+- September 13, 2025
+
+B) Events related to Film Festival at High Line:
+- No information available
+
+Since there is no intersection, the final",[],[],0,1.0,1.0,1.0,1,"No events found for either query in the AI answer, so there are no shared items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events found for either query in the AI answer, so there are no shared items.""
+}",Match and Compare,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:46+00:00,,combined_q_idx:78,78,78,11,"Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.",Entities,all,"['Mila Gonzalez', 'Julian Ross']","Julian Ross, Mila, Aaron Godwin, Delphi Parent, Selah Gardner, Jensen MacLeod",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mila"", ""Julian Ross""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI identified Mila Gonzalez as 'Mila' and correctly identified 'Julian Ross' from the ground-truth list, while 'Aaron Godwin', 'Delphi Parent', and 'Selah",Search,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:49+00:00,,combined_q_idx:79,79,79,22,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Aurora Chavez and Tech Hackathon. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['73'],"Based on the retrieved context, I can see that there is no information about Aurora Chavez and Tech Hackathon. However, I can still provide a minimal answer based on the available context.
+
+Since there is no relevant information, I will return the latest chapter index from the supporting chapters.
+
+Latest Chapter Index: 109",['109'],[1.0],1,1.0,1.0,1.0,1,"The AI answer did not identify any events involving Aurora Chavez and Tech Hackathon in the provided context, but it correctly extracted the chapter index '109' from the supporting chapters as the latest chapter, matching the format and content of the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""109""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer did not identify any events involving Aurora Chavez and Tech Hackathon in the provided context, but it correctly extracted the chapter index '109' from the supporting chapters as the latest chapter, matching the format and content of the ground-truth item.""
+}",Stateful Processing,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:51+00:00,,combined_q_idx:80,80,80,17,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Educational Workshop on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Brooklyn Ross"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],Chloe Castillo,[],[],0,1.0,1.0,1.0,1,No ground-truth protagonists provided; the AI answer 'Chloe Castillo' does not match any listed items.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth protagonists provided; the AI answer 'Chloe Castillo' does not match any listed items.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:54+00:00,,combined_q_idx:81,81,81,24,"Recall what happened involving Chloe Castillo at Queensboro Bridge on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],"No information is found in the context about Chloe Castillo at Queensboro Bridge on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"The AI answer did not identify any events or items related to Chloe Castillo at Queensboro Bridge on April 09, 2026, as there is no information available in the context to support such a claim.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not identify any events or items related to Chloe Castillo at Queensboro Bridge on April 09, 2026, as there is no information available in the context to support such a claim.""
+}",Search,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:54:57+00:00,,combined_q_idx:82,82,82,4,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",story_compute::sort_items,chronological,"['Carter Stewart', 'Chloe Castillo', 'Julian Ross', 'Levi Rodriguez', 'Samuel Parker', 'Zoe Brown']","Carter, Hazel, Julian Ross, Mckenzie Lynn",[],"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter"", ""Hazel""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""Only 'Carter' and 'Hazel' partially match ground-truth names (Carter Stewart, Chloe Castillo), but neither fully matches any ground-truth item. All other names in the AI answer ('",Compute on Sets and Lists,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,6,6+
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:00+00:00,,combined_q_idx:83,83,83,1,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Chloe Castillo"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],Mara Ledbetter,[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mara Ledbetter""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer provided only one protagonist name, 'Mara Ledbetter', which matches the single ground-truth item if we assume 'Mara Ledbetter' is the intended ground-truth entry (though none was listed). Since the ground-tr",Recall and Edit,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:02+00:00,,combined_q_idx:84,84,84,25,"Think about the events related to Astronomy Night that occurred at High Line on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",Entities,all,['Scarlett Thomas'],"There is no information about Astronomy Night at High Line on April 09, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not mention any names or entities related to the events of Astronomy Night at High Line on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not mention any names or entities related to the events of Astronomy Night at High Line on April 09, 2026.""
+}",Search,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:05+00:00,,combined_q_idx:85,85,85,25,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Fashion Show that occurred at American Museum of Natural History on August 17, 2025. List all protagonists involved in these events, without describing the events themselves.",story_state::latest_chapter,latest,['0'],[Chapter 56],['Chapter 56'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Chapter 56' as the latest chapter supporting the Fashion Show event at the American Museum of Natural History on August 17, 2025, which matches the ground-truth item '0'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 56""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Chapter 56' as the latest chapter supporting the Fashion Show event at the American Museum of Natural History on August 17, 2025, which matches the ground-truth item '0'.""
+}",Stateful Processing,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:08+00:00,,combined_q_idx:86,86,86,22,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Bella Alvarez and Astronomy Night. Provide a list of all dates when these events occurred, without describing the events.
+B) Story composite task: Use two story queries.
+A) Consider all events involving both Chloe Castillo and Fashion Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",story_compare::intersection,all,[],"A) Consider all events involving both Bella Alvarez and Astronomy Night. Provide a list of all dates when these events occurred, without describing the events.
+- May 11, 2026
+
+B) Consider all events involving both Chloe Castillo and Fashion Show. Provide a list of all dates when these events occurred, without describing the events.
+- No information available for Chloe Castillo and Fashion Show.
+
+B)","['May 11, 2026']",[],0,0.0,1.0,0.0,0,"No dates are provided in the ground-truth items (which are empty), so the only item from the AI answer does not match any ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""May 11, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No dates are provided in the ground-truth items (which are empty), so the only item from the AI answer does not match any ground-truth item.""
+}",Match and Compare,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:11+00:00,,combined_q_idx:87,87,87,26,"Story composite task: Use two story queries.
+A) Consider the events involving both Brooklyn Ross and Educational Workshop on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Benjamin Green and Tech Hackathon on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['One World Trade Center'],"A) 
+Locations: 
+- Brooklyn Museum
+- Statue of Liberty
+
+B) 
+Locations: 
+- American Museum of Natural History
+- High Line
+
+Removing common locations from A) and B):
+- Brooklyn Museum
+- Statue of Liberty
+
+Sorted alphabetically:
+- Brooklyn Museum
+- Statue of Liberty","['Brooklyn Museum', 'Statue of Liberty']",[1.0],1,0.5,1.0,0.666667,0,Items in A) not present in B): 'Brooklyn Museum' and 'Statue of Liberty' from A) do not match any ground-truth location in B).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Brooklyn Museum"", ""Statue of Liberty""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""Items in A) not present in B): 'Brooklyn Museum' and 'Statue of Liberty' from A) do not match any ground-truth location in B).""
+}",Composite,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:15+00:00,,combined_q_idx:88,88,88,14,"Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Queensboro Bridge'],"A) Locations where events involving Henry Reed on April 09, 2026, took place:
+- Port Jefferson
+
+B) Key events involving Henry Reed on April 09, 2026:
+- Explained post-processing techniques
+
+A) Locations where events involving Henry Reed on April 09, 2026, took place:
+- Port Jefferson
+
+B) Key events involving Henry Reed on April",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Port Jefferson""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The only location mentioned in the AI answer that is also present in the ground-truth is 'Port Jefferson', which matches the single ground-truth item. All items in the AI answer that are not in the ground-truth are empty (none removed).",Composite,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:17+00:00,,combined_q_idx:89,89,89,3,"Think about all events that have occurred at Brooklyn Bridge Park. Provide a list of all dates when these events took place, without describing the events.",Times,all,[],"October 13, 2024, September 03, 2026","['September 03, 2026']",[],0,0.0,1.0,0.0,0,"The AI provided two dates, but none match the ground-truth list which is empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 03, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI provided two dates, but none match the ground-truth list which is empty.""
+}",Search,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:20+00:00,,combined_q_idx:90,90,90,4,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the location One World Trade Center. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Brooklyn Ross', 'Ezra Edwards', 'Hazel Lewis', 'Henry Reed', 'Julian Ross', 'Levi Rodriguez', 'Maya Smith', 'Samuel Parker', 'Zoe Brown']"", ""['High Line', 'Statue of Liberty']""]","only_in_A = [Zoe Brown, Samuel]
+only_in_B = []",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [
+    ""Zoe Brown"",
+    ""Samuel""
+  ],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer only lists two names from the first ground-truth list (A), missing 'Brooklyn Ross', 'Ezra Edwards', 'Hazel Lewis', 'Henry",Spot the Differences,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:23+00:00,,combined_q_idx:91,91,91,9,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Parkour Workshop. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['February 27, 2026', 'May 11, 2026', 'October 30, 2026', 'September 13, 2025', 'September 27, 2025']"", ""['Julian Ross', 'Mila Gonzalez']""]","A) 
+- January 03, 2026
+
+B) 
+- Julian
+- Selah Gardner
+- Jensen MacLeod",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""January 03, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI only listed 'January 03, 2026' for Parkour Workshop, while the ground-truth includes multiple dates; for Archery Tournament, the AI listed three names, while the ground-truth lists two,",Spot the Differences,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:27+00:00,,combined_q_idx:92,92,92,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Samuel Parker at American Museum of Natural History on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Theater Performance']"", '[]']","There is no information about Brooklyn Ross at Bethpage State Park on August 24, 2026. 
+
+However, there is information about Julian Ross at American Museum of Natural History. 
+
+Comparing the two story queries:
+A) Recall what happened involving Samuel Parker at American Museum of Natural History on April 09, 2026. Describe the key events or activities that occurred, focusing on what",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""There is no information about Brooklyn Ross at Bethpage State Park on August 24, 2026.""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not mention Brooklyn Ross at all, and the ground truth for A is about Samuel Parker at a different location and date. The only text in",Spot the Differences,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:30+00:00,,combined_q_idx:93,93,93,25,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Think about the events related to Flash Mob that occurred at Ellis Island on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Jackson Ramos']"", ""['Astronomy Night']""]","only_in_A = ['Jackson', 'Flash Mob']
+only_in_B = []",['Jackson Ramos'],"[0.97, 0.0]",1,1.0,0.5,0.666667,0,"The AI only correctly identified 'Jackson Ramos' from query A (it extracted the name but not the full title), while it did not mention any item from ground-truth for query B, so the B score is low.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Jackson Ramos""],
+  ""matching_scores"": [0.97],
+  ""explanation"": ""The AI only correctly identified 'Jackson Ramos' from query A (it extracted the name but not the full title), while it did not mention any item from ground-truth for query B, so the B score is low.""
+}",Spot the Differences,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:32+00:00,,combined_q_idx:94,94,94,24,"Recall what happened involving Chloe Castillo at American Museum of Natural History on August 17, 2025. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],"No information is available about Chloe Castillo at the American Museum of Natural History on August 17, 2025.",[],[],0,1.0,1.0,1.0,1,"The AI answer does not mention any events or activities related to Chloe Castillo at the American Museum of Natural History on August 17, 2025, so there are no items to match from the ground-truth list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer does not mention any events or activities related to Chloe Castillo at the American Museum of Natural History on August 17, 2025, so there are no items to match from the ground-truth list.""
+}",Search,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:35+00:00,,combined_q_idx:95,95,95,17,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Tech Hackathon on March 23, 2024. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Henry Reed"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['Julian Ross', 'Zoe Brown']",Carter Stewart,[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer, 'Carter Stewart', does not match any of the ground-truth items ('Julian Ross', 'Zoe Brown'), so no scores are assigned.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer, 'Carter Stewart', does not match any of the ground-truth items ('Julian Ross', 'Zoe Brown'), so no scores are assigned.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:38+00:00,,combined_q_idx:96,96,96,26,"Story composite task: Use two story queries.
+A) Consider the events involving both Brooklyn Ross and Book Signing Event on August 24, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"A) Consider the events involving both Brooklyn Ross and Book Signing Event on August 24, 2026. List all the locations where these events took place, without describing the events themselves.
+- Brooklyn
+
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Brooklyn""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI listed 'Brooklyn' as a location for the Brooklyn Ross event in A), which does not appear in the ground-truth (which is empty). There is one item in the AI answer, so the difference score is 1.0 (",Composite,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:41+00:00,,combined_q_idx:97,97,97,35,"Enumerate all activities that Benjamin Green has been involved in, ordered from earliest to latest in the story's chronology.",Event contents,chronological,"['Fashion Show', 'Scientific Conference', 'Ice Sculpture Exhibition', 'Tech Hackathon']","1. Coding
+2. Attending a conference (Washington Square Park)
+3. Designing an obstacle course (Bethpage Black Course)
+4. Participating in a park event (wildflowers stage)",[],"[0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer does not mention any of the ground-truth events (Fashion Show, Scientific Conference, Ice Sculpture Exhibition, Tech Hackathon).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any of the ground-truth events (Fashion Show, Scientific Conference, Ice Sculpture Exhibition, Tech Hackathon).""
+}",Compute on Sets and Lists,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,4,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:43+00:00,,combined_q_idx:98,98,98,17,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving Book Signing Event on August 24, 2026. Provide a list of all protagonists involved in these events, without describing the events.",story_state::latest_chapter,latest,['0'],"Based on the retrieved context, I can see that there is no information about a ""Book Signing Event on August 24, 2026"". However, I can provide a list of all chapter indices from the supporting chapters.
+
+ Latest chapter index: 120
+ List of chapter indices: [38, 46, 94, 108, 109, 120, 120, 94",['120'],[1.0],1,1.0,1.0,1.0,1,"The AI answer only lists the latest chapter index ('120'), which matches the single ground-truth item ('120').",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""120""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer only lists the latest chapter index ('120'), which matches the single ground-truth item ('120').""
+}",Stateful Processing,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:46+00:00,,combined_q_idx:99,99,99,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Astronomy Night that occurred at Grand Central Terminal on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,[],"Levi, Luka Shaffer, Zoe Brown","['Levi', 'Luka Shaffer', 'Zoe Brown']",[],0,0.0,1.0,0.0,0,"No ground-truth items were provided, so the AI-generated names could not be matched to any known items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Levi"", ""Luka Shaffer"", ""Zoe Brown""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""No ground-truth items were provided, so the AI-generated names could not be matched to any known items.""
+}",Compute on Sets and Lists,ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:50+00:00,,combined_q_idx:100,100,100,20,"Story composite task: Use two story queries.
+A) Recall all events related to Film Festival that occurred at High Line. Provide a list of all dates when these events took place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Parkour Workshop at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['December 26, 2026', 'October 13, 2024']","A) Recall all events related to Film Festival that occurred at High Line. Provide a list of all dates when these events took place, without describing the events.
+- October 27, 2024
+
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+- Carter
+- Ingrid Partridge
+- Julian Ross
+- Mcken",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""October 27, 2024""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer lists only one date for Film Festival at High Line (October 27, 2024), which matches the single date in the ground-truth (October 13, 2024) in terms of being a",Composite,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:53+00:00,,combined_q_idx:101,101,101,23,"Reflect on the experiences of Samuel Parker related to Theater Performance. List all the unique locations where these events took place, without mentioning the events themselves.",Spaces,all,"['One World Trade Center', 'American Museum of Natural History', 'Fire Island National Seashore']","One World Trade Center, Metropolitan Museum of Art, American Museum of Natural History",[],"[0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""One World Trade Center"", ""American Museum of Natural History""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI answer correctly identifies two of the three ground-truth locations, matching 'One World Trade Center' and 'American Museum of Natural History' exactly, but does not mention 'Met",Search,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,3,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:55:56+00:00,,combined_q_idx:102,102,102,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Jackson Ramos experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,['Flash Mob'],"FINAL ANSWER:
+[April 09, 2026]
+- Debate podcast recordings
+- Debate strategies
+- Digital displays blinking in time with Carter's pulse
+- Event kicked off with a quick briefing
+- Festival staff from past events
+- Film poster exhibitions
+- Gallery spaces with banners announcing the 2025 National Debate Invitational
+- Hosted debate podcast recordings
+- Hosted film",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter's pulse"", ""debate podcast recordings"", ""festival staff"", ""film"", ""film poster"", ""hosted film"", ""hosted debate podcast recordings""],
+  ""matching_scores"": [0.0, 1.0, 0.0, 0.0, 0.0, 1.0,",Compute on Sets and Lists,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:00+00:00,,combined_q_idx:103,103,103,10,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Fashion Show. List all the locations where these events took place, without mentioning the events themselves.",story_state::latest_chapter,latest,['117'],Chapter 20,[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""20""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified '20' as the latest chapter index, which matches the single ground-truth chapter number '117' when interpreted as a chapter number (assuming chapters are numbered sequentially and '117' refers to chapter 20 in a 100-chapter story",Stateful Processing,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:02+00:00,,combined_q_idx:104,104,104,28,"Recall what happened involving Brooklyn Ross and Educational Workshop at One World Trade Center on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,"['Abram Taber', 'Heidi Carroll']","There is no mention of an event involving Brooklyn Ross and an Educational Workshop at One World Trade Center on April 09, 2026.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"No entities other than Brooklyn Ross and Educational Workshop are mentioned in the AI answer, and there is no reference to an event on April 09, 2026 at One World Trade Center.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No entities other than Brooklyn Ross and Educational Workshop are mentioned in the AI answer, and there is no reference to an event on April 09, 2026 at One World Trade Center.""
+}",Match and Compare,,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:05+00:00,,combined_q_idx:105,105,105,30,What is the most recent date Levi Rodriguez was observed or mentioned in the story's chronology?,Times,latest,"['December 26, 2026']","September 03, 2026.","['September 03, 2026']",[0.0],0,0.0,0.0,0.0,0,"The AI answer refers to 'September 03, 2026', while the latest date in the ground-truth is 'December 26, 2026'. There is no match.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 03, 2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer refers to 'September 03, 2026', while the latest date in the ground-truth is 'December 26, 2026'. There is no match.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:08+00:00,,combined_q_idx:106,106,106,13,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Grand Central Terminal on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Theater Performance']""]","Return only_in_A = []
+Return only_in_B = []",[],"[1.0, 0.0]",1,0.0,0.5,0.0,0,"The AI answer did not provide any events for either location, so there are no differences to identify; full match (1.0) for the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer did not provide any events for either location, so there are no differences to identify; full match (1.0) for the ground-truth item.""
+}",Spot the Differences,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:10+00:00,,combined_q_idx:107,107,107,15,"Story recall-and-edit: For query ""Reflect on what Mila Diaz experienced on August 27, 2024. Describe all the key events they were involved in, focusing on what happened rather than where it occurred."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"No story events were provided in the query, so the AI returned an empty answer as there is nothing to recall or edit.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No story events were provided in the query, so the AI returned an empty answer as there is nothing to recall or edit.""
+}",Recall and Edit,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:13+00:00,,combined_q_idx:108,108,108,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Lily Nguyen at Brooklyn Museum on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story composite task: Use two story queries.
+A) Recall what happened involving Brooklyn Ross at One World Trade Center on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Fashion Show']"", ""['Educational Workshop']""]","only_in_A = ['Brooklyn Museum', 'Lily Nguyen']
+only_in_B = ['Brooklyn Ross', 'High Line', 'One World Trade Center', 'Scarlett Thomas']","['Brooklyn Museum', 'Lily Nguyen']","[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer contains only items from the first story (A), none from the second story (B), so all matching scores are 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Brooklyn Museum"", ""Lily Nguyen""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer contains only items from the first story (A), none from the second story (B), so all matching scores are 0.""
+}",Spot the Differences,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:14+00:00,,combined_q_idx:109,109,109,13,"Story recall-and-edit: For query ""Recall the key events that occurred at American Museum of Natural History on August 17, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved."", return an empty answer.",story_edit::empty,all,[],[],[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI answer, which was also empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer, which was also empty.""
+}",Recall and Edit,ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:17+00:00,,combined_q_idx:110,110,110,14,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Mila Diaz on August 27, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Queensboro Bridge']""]","To answer the question, we need to first identify the answers to the two story queries.
+
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+From the retrieved context, we can see that there is no information about Henry Reed on April 09, 2026. However, we can",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""explanation"": ""AI answer for Henry Reed on April 09, 2026 does not provide any locations (no events identified), so no items from the ground-truth appear in the AI answer for either query. Therefore, all ground-truth items are not present in the AI answer."",
+  ""matching_scores"": [0.0, 0.0],
+  ""identified",Spot the Differences,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:20+00:00,,combined_q_idx:111,111,111,19,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",story_compute::sort_items,chronological,['Photography Exhibition'],"Collected company information, Demonstrated fire crystal ball manipulation, Organized historical fashion shows, Organized the authentic markets.",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Collected company information"", ""Demonstrated fire crystal ball manipulation"", ""Organized historical fashion shows"", ""Organized the authentic markets""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""None of the AI-generated items match the ground-truth",Compute on Sets and Lists,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:22+00:00,,combined_q_idx:112,112,112,15,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on what Benjamin Green experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Stella Scott experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return the intersection.",story_compare::intersection,all,[],"A) Reflect on what Benjamin Green experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+No information about Benjamin Green is found in the retrieved context.
+
+B) Reflect on what Stella Scott experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened",[],[],0,1.0,1.0,1.0,1,"The ground-truth items list is empty, so there are no items to match in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The ground-truth items list is empty, so there are no items to match in the AI answer.""
+}",Match and Compare,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:24+00:00,,combined_q_idx:113,113,113,17,"Think about the events involving Fashion Show on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events.",Entities,all,['Lily Nguyen'],[],[],[0.0],0,0.0,0.0,0.0,0,"No protagonists were identified in the AI answer for the Fashion Show event on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No protagonists were identified in the AI answer for the Fashion Show event on April 09, 2026.""
+}",Search,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:26+00:00,,combined_q_idx:114,114,114,24,"Story recall-and-edit: Start from the answer to this story query: ""Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened."". Remove ""Astronomy Night"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"There is no mention of Scarlett Thomas at High Line on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI answer; therefore, no matching scores can be generated.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer; therefore, no matching scores can be generated.""
+}",Recall and Edit,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:28+00:00,,combined_q_idx:115,115,115,28,"Recall what happened involving Brooklyn Ross and Book Signing Event at Bethpage State Park on August 24, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"There is no information about a Book Signing Event at Bethpage State Park on August 24, 2026, involving Brooklyn Ross.",[],[],0,1.0,1.0,1.0,1,"No ground-truth entities were provided, so no comparison could be made. The AI answer states there is no information about the event involving Brooklyn Ross.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were provided, so no comparison could be made. The AI answer states there is no information about the event involving Brooklyn Ross.""
+}",Match and Compare,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:31+00:00,,combined_q_idx:116,116,116,15,"Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Theater Performance'],"A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+
+Unfortunately, there is no information about Henry Reed's experiences on April 09, 2026. However, based on the provided context, we can infer that Henry Reed is a person who is involved in various events",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""no information about Henry Reed's experiences on April 09, 2026"", ""involvement in various events""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any specific events or locations related to Henry Reed on April 09, 2026. Therefore",Composite,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:34+00:00,,combined_q_idx:117,117,117,21,"Think about the events involving Fashion Show at Bethpage Black Course. List all protagonists involved in these events, without mentioning the events themselves.",Entities,all,[],"Hazel Lewis, Bella, Bethpage Black Course.","['Hazel Lewis', 'Bella']",[],0,0.0,1.0,0.0,0,"The AI listed all named protagonists (Hazel Lewis and Bella) mentioned in the context of the Fashion Show at Bethpage Black Course, as no ground-truth entities were provided.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hazel Lewis"", ""Bella""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""The AI listed all named protagonists (Hazel Lewis and Bella) mentioned in the context of the Fashion Show at Bethpage Black Course, as no ground-truth entities were provided.""
+}",Search,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:37+00:00,,combined_q_idx:118,118,118,19,"Reflect on Ezra Edwards's experiences at Bethpage Black Course. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",Event contents,all,['Parkour Workshop'],"Ezra Edwards's experiences at Bethpage Black Course include:
+
+- Designing an obstacle course with daunting features.
+- Watching runners navigate the course, with the course itself seeming to watch the runners.
+- Unraveling stories written in skin and sharing his own with those ready to listen.
+- Observing Sasha Hamrick sketch a Hamsa hand on a tourist's wrist.
+- Pausing at",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Designing an obstacle course with daunting features"", ""Watching runners navigate the course"", ""Unraveling stories written in skin"", ""Sharing his own stories with others"", ""Pausing at (unclear context, but listed as an event)""],
+  ""matching_scores"": [1.0, 0.8, 1.0,",Search,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:39+00:00,,combined_q_idx:119,119,119,18,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving Zoe Brown at Bethpage State Park. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Henry Reed's experiences at Port Jefferson. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Photography Exhibition"" from that answer. Return only the remaining items.
+Return the intersection.",story_compare::intersection,all,[],"A) Consider all events involving Zoe Brown at Bethpage State Park. Provide a list of all dates when these events occurred, without describing the events.
+- January 03, 2026
+
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Henry Reed's experiences at Port Jefferson. Describe all the key events they've been involved in at this location,",[],[],0,1.0,1.0,1.0,1,"Ground-truth items are empty, so no items from the AI answer can be identified as matching.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""Ground-truth items are empty, so no items from the AI answer can be identified as matching.""
+}",Match and Compare,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:41+00:00,,combined_q_idx:120,120,120,26,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Lily Nguyen and Fashion Show on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Brooklyn Museum"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],High Line,['High Line'],[],0,0.0,1.0,0.0,0,"The AI answer lists only 'High Line', which is the only location mentioned in the provided answer. Since there are no ground-truth items, the score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""High Line""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer lists only 'High Line', which is the only location mentioned in the provided answer. Since there are no ground-truth items, the score is 0.""
+}",Recall and Edit,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:44+00:00,,combined_q_idx:121,121,121,29,"Provide a comprehensive account of what happened involving Stella Scott and Astronomy Night at Grand Central Terminal on August 12, 2025. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no mention of Stella Scott or Astronomy Night at Grand Central Terminal on August 12, 2025, in the retrieved context.",[],[],0,1.0,1.0,1.0,1,"No relevant information was found in the AI answer or in the provided ground-truth items about Stella Scott and Astronomy Night at Grand Central Terminal on August 12, 2025.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No relevant information was found in the AI answer or in the provided ground-truth items about Stella Scott and Astronomy Night at Grand Central Terminal on August 12, 2025.""
+}",Composite,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:48+00:00,,combined_q_idx:122,122,122,9,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to Film Festival. Provide a list of all dates when these events occurred, without describing the events."". Remove ""December 26, 2026"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['March 23, 2024', 'September 03, 2026', 'October 13, 2024', 'October 27, 2024']","October 13, 2024
+October 27, 2024
+February 22, 2025
+January 03, 2026",[],"[0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""October 27, 2024""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""Only 'October 27, 2024' from the ground truth appears in the AI answer; 'October 13, 2024' is present but incorrectly formatted (missing month), and the other dates in the AI answer",Recall and Edit,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,4,3-5
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:51+00:00,,combined_q_idx:123,123,123,20,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall all events related to Photography Exhibition that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.",story_compute::sort_items,chronological,"['August 24, 2026']","February 22, 2025, 
+September 13, 2025","['February 22, 2025', 'September 13, 2025']",[0.0],0,0.0,0.0,0.0,0,No ground-truth event dates for the Photography Exhibition at the American Museum of Natural History were found in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""February 22, 2025"", ""September 13, 2025""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No ground-truth event dates for the Photography Exhibition at the American Museum of Natural History were found in the AI answer.""
+}",Compute on Sets and Lists,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:54+00:00,,combined_q_idx:124,124,124,16,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to Tech Hackathon that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the events related to Tech Hackathon that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"Based on the retrieved context, I will evaluate the story match-and-compare query.
+
+For query A) Recall the events related to Tech Hackathon that occurred on April 09, 2026, there is no mention of Tech Hackathon in the retrieved context. However, I can find a mention of a Tech Hackathon in Chapter 113, Paragraph 770, but it's not related to",[],[],0,1.0,1.0,1.0,1,"No events or locations related to Tech Hackathon on April 09, 2026 or Theater Performance on February 27, 2026 were mentioned in the AI answer, so there are no shared items between the AI answer and the ground-truth.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events or locations related to Tech Hackathon on April 09, 2026 or Theater Performance on February 27, 2026 were mentioned in the AI answer, so there are no shared items between the AI answer and the ground-truth.""
+}",Match and Compare,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:56+00:00,,combined_q_idx:125,125,125,28,"Recall what happened involving Chloe Castillo and Theater Performance at Queensboro Bridge on April 09, 2026 and list only who else was involved (if anyone).",Other entities,all,[],"No information is found in the retrieved context about an event involving Chloe Castillo and Theater Performance at Queensboro Bridge on April 09, 2026.",[],[],0,1.0,1.0,1.0,1,"No relevant information found in the provided context about an event involving Chloe Castillo and a Theater Performance at Queensboro Bridge on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No relevant information found in the provided context about an event involving Chloe Castillo and a Theater Performance at Queensboro Bridge on April 09, 2026.""
+}",Match and Compare,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:56:59+00:00,,combined_q_idx:126,126,126,19,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['Fashion Show', 'Parkour Workshop']","Julian Ross's experiences at High Line include:
+
+- He hosted a traditional bow competition.
+- The sun beat down on the makeshift archery range, casting long shadows across the concrete and steel of the elevated park.
+- Selah Gardner, a lanky guy with a mullet, was currently attempting to string his bow, while Jensen MacLeod, a petite woman with a clipboard, looked on with",['Fashion Show'],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer only includes 'Archery Tournament,' which is to be removed. The ground truth item 'Fashion Show' does not appear in the AI's answer, so its matching score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Fashion Show""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only includes 'Archery Tournament,' which is to be removed. The ground truth item 'Fashion Show' does not appear in the AI's answer, so its matching score is 0.""
+}",Recall and Edit,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:02+00:00,,combined_q_idx:127,127,127,8,"Think about Ava Gray's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.",Event contents,all,[],"Moved through a throng with a clipboard, challenging chaos with her crisp dress. 
+Brushed a prehistoric mammoth's tusk, thinking about patterns and silhouettes. 
+Adjusted a portable star chart projector, mapping constellations for the uninitiated. 
+Adjusted her sketchbook, feeling the crowd's vibrations and the silence between hope and reveal. 
+Witnessed a clue in a",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""moved through a throng with a clipboard"", ""challenging chaos with her crisp dress"", ""brushed a prehistoric mammoth's tusk"", ""mapping constellations for the uninitiated"", ""adjusted her sketchbook"", ""feeling the crowd's vibrations and the silence between hope and reveal""],
+  ""matching_scores"": [0",Search,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:04+00:00,,combined_q_idx:128,128,128,31,What is the most recent location where Ezra Edwards was observed in the story's chronological timeline?,Spaces,latest,['New York Botanical Garden'],Port Jefferson.,['Port Jefferson'],[0.0],0,0.0,0.0,0.0,0,"The AI answer 'Port Jefferson' does not match the ground-truth item 'New York Botanical Garden', resulting in a low matching score of 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Port Jefferson""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'Port Jefferson' does not match the ground-truth item 'New York Botanical Garden', resulting in a low matching score of 0.""
+}",Stateful Processing,t|s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:06+00:00,,combined_q_idx:129,129,129,21,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving Opera Performance at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to Photography Exhibition that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],American Museum of Natural History,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Match and Compare,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:08+00:00,,combined_q_idx:130,130,130,20,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to Parkour Workshop that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events."". Remove ""September 13, 2025"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"February 27, 2026, 
+January 03, 2026",[],[],0,1.0,1.0,1.0,1,"The AI identified two dates in its answer, but there are no ground-truth items to match against, so all scores are 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI identified two dates in its answer, but there are no ground-truth items to match against, so all scores are 0.""
+}",Recall and Edit,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:11+00:00,,combined_q_idx:131,131,131,19,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on Henry Reed's experiences at Port Jefferson. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Photography Exhibition"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Tech Hackathon'],"Henry Reed's experiences at Port Jefferson include:
+
+- Stepping into a modest gallery with an open window, where he took his place at the front of a crowded room.
+- Explaining post-processing techniques with quiet confidence and patience, showing how a raw image can transform into something hauntingly new.
+- Trying to ignore whispering behind him, but feeling a sense of scrutiny that tightened his chest.
+-",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer does not mention 'Tech Hackathon', so there are no events from the ground-truth to remove. The instruction to remove 'Photography Exhibition' was not present in the AI's answer, hence the full ground-truth item is considered correctly present (",Recall and Edit,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:13+00:00,,combined_q_idx:132,132,132,26,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Henry Reed and Theater Performance on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Queensboro Bridge"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],Washington Square Park,['Washington Square Park'],[],0,0.0,1.0,0.0,0,"The AI answer provided only one location ('Washington Square Park'), which does not match any of the ground-truth items (none were provided).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Washington Square Park""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provided only one location ('Washington Square Park'), which does not match any of the ground-truth items (none were provided).""
+}",Recall and Edit,s,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:15+00:00,,combined_q_idx:133,133,133,16,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""High Line"" from the answer. Return only the remaining items.",story_edit::remove_one,all,['Statue of Liberty'],"There is no information about events related to Theater Performance that occurred on February 27, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"No ground-truth items (e.g., 'Statue of Liberty') were identified in the AI answer, so no matching scores are generated.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items (e.g., 'Statue of Liberty') were identified in the AI answer, so no matching scores are generated.""
+}",Recall and Edit,s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:17+00:00,,combined_q_idx:134,134,134,20,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall all events related to Astronomy Night that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.",story_compute::sort_items,chronological,"['December 26, 2026']","February 22, 2025, December 26, 2026","['December 26, 2026']",[1.0],1,1.0,1.0,1.0,1,"The AI identified the only ground-truth item, 'December 26,2026', which matches exactly in content (ignoring spacing) and order.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""December 26, 2026""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified the only ground-truth item, 'December 26,2026', which matches exactly in content (ignoring spacing) and order.""
+}",Compute on Sets and Lists,t|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:20+00:00,,combined_q_idx:135,135,135,14,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Brooklyn Ross on December 03, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Queensboro Bridge']""]","To solve this problem, we need to first find the answers to the two story queries.
+
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+From the retrieved context, we can see that there is no information about Henry Reed on April 09, 2026. However, we do",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"The AI answer does not provide any locations for events involving Henry Reed on April 09, 2026, so there are no items in the AI answer that match the ground-truth location 'Queensboro Bridge'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not provide any locations for events involving Henry Reed on April 09, 2026, so there are no items in the AI answer that match the ground-truth location 'Queensboro Bridge'.""
+}",Spot the Differences,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:23+00:00,,combined_q_idx:136,136,136,29,"Provide a comprehensive account of what happened involving Samuel Parker and Theater Performance at American Museum of Natural History on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 80'],"There is insufficient evidence in the retrieved context to provide a comprehensive account of what happened involving Samuel Parker and Theater Performance at American Museum of Natural History on April 09, 2026.",[],[0.0],0,0.0,0.0,0.0,0,"No information or context about Samuel Parker or a theater performance at the American Museum of Natural History on April 09, 2026 was provided in the AI's answer, so it could not identify or match any ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No information or context about Samuel Parker or a theater performance at the American Museum of Natural History on April 09, 2026 was provided in the AI's answer, so it could not identify or match any ground-truth items.""
+}",Composite,,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:25+00:00,,combined_q_idx:137,137,137,2,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on May 28, 2025. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",story_state::latest_chapter,latest,['116'],"There is no information about the date ""May 28, 2025"" in the retrieved context.",[],[1.0],1,0.0,1.0,0.0,0,"No events or information related to May 28,2025 were present in the context, so the AI did not identify any supporting chapter indices for this date.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No events or information related to May 28,2025 were present in the context, so the AI did not identify any supporting chapter indices for this date.""
+}",Stateful Processing,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:27+00:00,,combined_q_idx:138,138,138,2,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on August 27, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",story_state::latest_chapter,latest,['0'],"There is no information about the date ""August 27, 2024"" in the retrieved context.",[],[1.0],1,0.0,1.0,0.0,0,"No key events were described in the AI answer, so no supporting chapter indices could be identified for the query about August 27,2024.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""No key events were described in the AI answer, so no supporting chapter indices could be identified for the query about August 27,2024.""
+}",Stateful Processing,s|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:30+00:00,,combined_q_idx:139,139,139,5,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall the various events that have taken place at Bethpage Black Course. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Historical Reenactment', 'Job Fair', 'Parkour Workshop', 'Photography Exhibition', 'Tech Hackathon']"", ""['Theater Performance']""]","only_in_A = ['Logan lingered beside a refreshment stand, watching the hands of time move inexorably forward', 'The clock in the center of the room pulsed red, counting down the seconds before the first interview began', 'He knew the eyes of some were on himâ€”not for leadership, but because he was the one whoâ€™d mapped out the obstacle",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Logan lingered beside a refreshment stand"", ""the eyes of some were on him"", ""mapped out the obstacle""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any of the ground-truth items (Historical Reenact",Spot the Differences,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:33+00:00,,combined_q_idx:140,140,140,18,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Samuel Parker at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['87'],"[Chapter 80, Paragraph 554] 
+[Chapter 107, Paragraph 724] 
+[Chapter 40, Paragraph 283]","['Chapter 107', 'Chapter 40']",[1.0],1,0.5,1.0,0.666667,0,"Only the chapter indices were extracted from the AI answer, while the ground truth provides only chapter numbers (ignoring paragraph info).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 107"", ""Chapter 40""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""Only the chapter indices were extracted from the AI answer, while the ground truth provides only chapter numbers (ignoring paragraph info).""
+}",Stateful Processing,t|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:35+00:00,,combined_q_idx:141,141,141,24,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.",story_compute::sort_items,chronological,[],"There is no information about Brooklyn Ross at Bethpage State Park on August 24, 2026.",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided, so the AI could not identify or match any items related to Brooklyn Ross at Bethpage State Park on August 24, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided, so the AI could not identify or match any items related to Brooklyn Ross at Bethpage State Park on August 24, 2026.""
+}",Compute on Sets and Lists,c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:37+00:00,,combined_q_idx:142,142,142,5,"Story recall-and-edit: Start from the answer to this story query: ""Recall the various events that have taken place at Long Beach Boardwalk. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved."". Remove ""Fashion Show"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"[Chapter 20, Paragraph 137]
+This particular event promised to blur the line between past and present, history and memory. She moved through the throng, clipboard pressed against her chest, her own crisp linen dress a silent challenge to the chaos surrounding her.
+
+[Chapter 20, Paragraph 136]
+Hazel knew this was no ordinary gathering. She had organized these historical events for years,",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI answer, so no items were identified and all matching scores are empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer, so no items were identified and all matching scores are empty.""
+}",Recall and Edit,t|ent|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:39+00:00,,combined_q_idx:143,143,143,29,"Provide a comprehensive account of what happened involving Lucy Carter and Antique Auction at Captree State Park on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],"There is no mention of Lucy Carter and Antique Auction at Captree State Park on April 09, 2026, in the retrieved context.",[],[],0,1.0,1.0,1.0,1,"No relevant information was found in the AI answer regarding Lucy Carter and an Antique Auction at Captree State Park on April 09, 2026.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No relevant information was found in the AI answer regarding Lucy Carter and an Antique Auction at Captree State Park on April 09, 2026.""
+}",Composite,,ok,df_qa.llama_rag_book_dfqa.answers.csv,0,0
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:42+00:00,,combined_q_idx:144,144,144,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Levi Rodriguez and Astronomy Night at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['15'],"[12, 2025, 2026]",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""2026""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only '2026' from the AI answer matches the ground-truth item '15' if we assume '15' refers to the year 2015 (possible typo), but there is no clear date match. The AI listed '2026' as",Stateful Processing,t,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:45+00:00,,combined_q_idx:145,145,145,9,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Archery Tournament. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving Antique Auction. List all the locations where these events took place, without mentioning the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2024', 'March 23, 2025']"", '[]']","A) Recall all events related to Archery Tournament. Provide a list of all dates when these events occurred, without describing the events.
+- Chapter 95, Paragraph 644
+- Chapter 91, Paragraph 628
+- Chapter 67, Paragraph 456
+- Chapter 22, Paragraph 157
+
+B) Consider all events involving Antique Auction. List all the locations where these events took",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"```json
+{
+  ""identified_items_in_ai_answer"": [""March 23, 2024"", ""March 23, 2025""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""Only the two dates from the Antique Auction query are present in the AI answer (the rest are unrelated to Antique Auction), so only the first ground",Spot the Differences,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:47+00:00,,combined_q_idx:146,146,146,14,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving Jackson Ramos on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,['Ellis Island'],Metropolitan Museum of Art,['Ellis Island'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Ellis Island' as the only relevant location for events involving Jackson Ramos on April 09, 2026, matching the ground-truth exactly.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Ellis Island""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Ellis Island' as the only relevant location for events involving Jackson Ramos on April 09, 2026, matching the ground-truth exactly.""
+}",Compute on Sets and Lists,s|c,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:50+00:00,,combined_q_idx:147,147,147,22,"Story composite task: Use two story queries.
+A) Consider all events involving both Chloe Castillo and Fashion Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,"['February 22, 2025', 'September 22, 2026']","A) Events involving both Chloe Castillo and Fashion Show:
+- October 27, 2024
+
+B) Events involving both Benjamin Green and Karaoke Night:
+- No events found (Benjamin Green and Karaoke Night not mentioned in the context)
+
+Since there are no common dates between A and B, the remaining items are the same as A. 
+
+Sorted list of remaining items:
+- October",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""October""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The only date from AI answer A that is not excluded by B is 'October', which is the month part of the date 'October 27, 2024'. All ground-truth items ('February 22, 2025' and 'September",Composite,t|s,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:53+00:00,,combined_q_idx:148,148,148,9,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Business Networking Event. Provide a list of all dates when these events occurred, without describing the events.
+B) Recall all events related to Antique Auction. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['March 23, 2024', 'November 13, 2026']"", '[]']","A) January 03, 2026, March 23, 2024
+
+B)",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""March 23, 2024""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI only correctly identified one of the two Antique Auction dates (none were listed for Business Networking Event), so the matching score for the ground-truth item present is 1.0; the missing one is not present in the",Spot the Differences,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,2,2
+/workspace/df_qa.llama_rag_book_dfqa.answers.csv,2026-04-08T19:57:55+00:00,,combined_q_idx:149,149,149,9,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all events related to Ballet Performance. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['31'],"[Chapter 31, Chapter 107, Chapter 91, Chapter 108] 
+
+List of dates: 
+- October 27, 2024
+- February 22, 2025",['Chapter 31'],[1.0],1,1.0,1.0,1.0,1,"The AI listed only 'Chapter 31' as the supporting chapter for the Ballet Performance, matching the single ground-truth chapter.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Chapter 31""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI listed only 'Chapter 31' as the supporting chapter for the Ballet Performance, matching the single ground-truth chapter.""
+}",Stateful Processing,t|s|ent,ok,df_qa.llama_rag_book_dfqa.answers.csv,1,1
