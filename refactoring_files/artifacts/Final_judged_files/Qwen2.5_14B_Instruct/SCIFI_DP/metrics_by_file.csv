@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+scifi_qwen25_14b_dp.answers.jsonl,150,0.48455556,0.4666666666666667

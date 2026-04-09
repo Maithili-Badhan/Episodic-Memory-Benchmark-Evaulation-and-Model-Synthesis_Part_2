@@ -1,0 +1,2 @@
+n_rows,mean_f1,median_f1,mean_precision,mean_recall,exact_match_rate
+150,0.490794,0.142857,0.494444,0.553333,0.48

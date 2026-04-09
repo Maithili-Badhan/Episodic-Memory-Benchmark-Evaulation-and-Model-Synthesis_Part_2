@@ -1,0 +1,14 @@
+retrieval_type,n_rows,mean_f1,exact_match_rate
+Other entities,5,1.0,1.0
+story_edit::empty,7,1.0,1.0
+story_compare::intersection,17,1.0,1.0
+Full event details,5,0.6,0.6
+Event contents,10,0.5,0.5
+story_composite::difference_then_sort,16,0.5,0.5
+story_edit::remove_one,15,0.4666666666666667,0.4666666666666667
+Spaces,5,0.4,0.4
+story_compute::sort_items,18,0.3333333333333333,0.3333333333333333
+Times,9,0.3333333333333333,0.3333333333333333
+Entities,4,0.25,0.25
+story_diff::set_difference,21,0.0,0.0
+story_state::latest_chapter,18,0.0,0.0

@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+news_qwen25_14b_rag.answers.jsonl,150,0.5066666799999999,0.47333333333333333

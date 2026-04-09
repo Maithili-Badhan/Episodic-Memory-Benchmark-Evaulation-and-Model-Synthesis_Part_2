@@ -1,0 +1,973 @@
+source_answers_file,timestamp_utc,mode,row_key,row_idx,combined_q_idx,q_idx,question,retrieval_type,get,ground_truth_items,answer,identified_items,matching_scores,tp,precision,recall,f1,exact_match,judge_explanation,judge_model,judge_status,status,judge_error,raw_judge_text,minerva_category,missing_tuple_elements,source_status,source_file,n_gold,gold_bin
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:42+00:00,rag,combined_q_idx:0,0,0,4,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the location Sedna Long Range Observatory. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Recall the various events that have taken place at Hydra Cloud Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Lily Nguyen', 'Mila Gonzalez']"", ""['atmospheric scrubber failure', 'cryo-pod integrity breach', 'digital afterlife server shutdown']""]","only_in_A: Sedna Long Range Observatory (not explicitly mentioned in the provided chunks, thus no protagonists listed)
+only_in_B: atmospheric scrubber failure, antimatter cascade, monitor flashing red (these events are associated with Hydra Cloud Facility)",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""atmospheric scrubber failure""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""Only 'atmospheric scrubber failure' from the events at Hydra Cloud Facility is present in the AI answer, while the AI did not mention any protagonists at Sedna Long Range Observatory (so no match for that side). The score",Spot the Differences,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:45+00:00,rag,combined_q_idx:1,1,1,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Scarlett Thomas experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,['subspace antenna failure'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI did not identify any items related to Scarlett Thomas's experiences on April 09, 2226, as there are no events provided in the ground truth for that date.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify any items related to Scarlett Thomas's experiences on April 09, 2226, as there are no events provided in the ground truth for that date.""
+}",Compute on Sets and Lists,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:48+00:00,rag,combined_q_idx:2,2,2,29,"Provide a comprehensive account of what happened involving Zoe Brown and subspace antenna failure at Europa Subsurface Laboratory on December 26, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 49'],"On December 26, 2226, at the Europa Subsurface Laboratory, there was a sudden and violent failure of the subspace antenna. Zoe Brown, who was present in the lab, noticed an abrupt discordant shriek from the communications array. The main subspace antenna, which usually hummed with activity, stuttered and fell silent. This was followed by alarms flashing crimson",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""subspace antenna failure"", ""Europa Subsurface Laboratory"", ""December 26, 2226""],
+  ""matching_scores"": [0.85, 0.9, 0.8],
+  ""explanation"": ""The AI answer identifies the location (Europa Subsurface Laboratory), the event (subspace antenna failure), and the",Composite,,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:50+00:00,rag,combined_q_idx:3,3,3,28,"Recall what happened involving Lily Nguyen and fusion core breach at Sedna Long Range Observatory on April 09, 2226 and list only who else was involved (if anyone).",Other entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not identify any entities involved in the event at the Sedna Long Range Observatory on April 09, 2226, and thus does not match any ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not identify any entities involved in the event at the Sedna Long Range Observatory on April 09, 2226, and thus does not match any ground-truth items.""
+}",Match and Compare,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:53+00:00,rag,combined_q_idx:4,4,4,30,What is the most recent date Daniel Lopez was observed or mentioned in the story's chronology?,Times,latest,[],"February 27, 2226","['February 27, 2226']",[],0,0.0,1.0,0.0,0,"No ground-truth items were provided, so the AI answer could not be matched to any observed or mentioned dates in the story's chronology.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""February 27, 2226""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth items were provided, so the AI answer could not be matched to any observed or mentioned dates in the story's chronology.""
+}",Stateful Processing,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:56+00:00,rag,combined_q_idx:5,5,5,5,"Recall the various events that have taken place at Hydra Cloud Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",Event contents,all,"['atmospheric scrubber failure', 'digital afterlife server shutdown', 'cryo-pod integrity breach']","Atmospheric scrubber failure caused alarms to blare and error codes to appear on screens. Seals began to fail, leading to the venting of cryo fluid and the potential loss of life due to containment failure in cryo-pods. Monitors flashed red, indicating an issue requiring attention. An antimatter cascade occurred within the sealed, high-security chambers.",[],"[0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""containment breach"", ""atmospheric scrubber failure"", ""antimatter cascade""],
+  ""matching_scores"": [0.8, 1.0, 0.6],
+  ""explanation"": ""The AI identifies the key events mentioned in its answer ('atmospheric scrubber failure' directly matches a ground-truth item with",Search,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,3,3-5
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T18:59:57+00:00,rag,combined_q_idx:6,6,6,11,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.",story_state::latest_chapter,latest,['0'],unsure,['bio-neural gel pack infection'],[0.0],0,0.0,0.0,0.0,0,The AI answer did not list any protagonists; it provided uncertainty rather than specific names.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""bio-neural gel pack infection""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not list any protagonists; it provided uncertainty rather than specific names.""
+}",Stateful Processing,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:00+00:00,rag,combined_q_idx:7,7,7,16,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to cryo-pod integrity breach that occurred on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No events (cryo-pod integrity breach or tachyon field surge on April 09, 2226) were described in the AI answer, so there are no shared items to identify.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No events (cryo-pod integrity breach or tachyon field surge on April 09, 2226) were described in the AI answer, so there are no shared items to identify.""
+}",Match and Compare,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:03+00:00,rag,combined_q_idx:8,8,8,29,"Provide a comprehensive account of what happened involving Benjamin Green and cryo-pod integrity breach at Hydra Cloud Facility on April 09, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 14'],"Unsure. The provided chunks do not contain information about Benjamin Green or a cryo-pod integrity breach at Hydra Cloud Facility on April 09, 2226. The closest match is an event at Hydra Cloud Facility, but it does not specify Benjamin Green or the exact date requested.",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not identify any relevant information from the provided ground-truth item (\""Full chapter 14\""). There is no mention of Benjamin Green or a cryo-pod integrity breach at the Hydra Cloud Facility on April 09, 2226 in the",Composite,,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:05+00:00,rag,combined_q_idx:9,9,9,27,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and tachyon field surge at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['October 27, 2224']",unsure,[],[0.0],0,0.0,0.0,0.0,0,"No dates were identified in the AI answer, so it did not match the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No dates were identified in the AI answer, so it did not match the ground-truth item.""
+}",Compute on Sets and Lists,t,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:07+00:00,rag,combined_q_idx:10,10,10,25,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events related to subspace antenna failure that occurred at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in these events, without describing the events themselves."". Remove ""Zoe Brown"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],Scarlett,['Scarlett'],[],0,0.0,1.0,0.0,0,"The only protagonist mentioned in the AI answer is 'Scarlett', as 'Zoe Brown' was removed per instructions.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Scarlett""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The only protagonist mentioned in the AI answer is 'Scarlett', as 'Zoe Brown' was removed per instructions.""
+}",Recall and Edit,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:09+00:00,rag,combined_q_idx:11,11,11,25,"Story composite task: Use two story queries.
+A) Think about the events related to subspace antenna failure that occurred at Mercury Twilight Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Scarlett Thomas'],Scarlett,['Scarlett'],[1.0],1,1.0,1.0,1.0,1,"The AI answer contains the only protagonist listed in the ground-truth for part A, and it does not mention any from part B, so it fully matches the required item for A after filtering.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Scarlett""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer contains the only protagonist listed in the ground-truth for part A, and it does not mention any from part B, so it fully matches the required item for A after filtering.""
+}",Composite,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:12+00:00,rag,combined_q_idx:12,12,12,19,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on Carter Stewart's experiences at Cygnus Rift Complex. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story recall-and-edit: For query ""Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A: Carter’s breath quickened, his mind already searching for protocol, for any sign of what was about to happen. The surge came not with a bang, but with a shiver. Eridani Metallurgy Complex. stood motionless on the glass-steel catwalk of ’s sublevel-7, the sterile white light of the artificial dawn filtering through the dome’s",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Eridani Metallurgy Complex"", ""sublevel-7"", ""sterile white light of the artificial dawn filtering through the dome""],
+  ""matching_scores"": [0.0, 0.0, 0.0],
+  ""explanation"": ""AI answer contains three identified phrases not present in the ground-truth (which are",Spot the Differences,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:14+00:00,rag,combined_q_idx:13,13,13,26,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider the events involving both Noah Williams and atmospheric scrubber failure on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Levi Rodriguez and subspace antenna failure on December 26, 2226. List all the locations where these events took place, without describing the events themselves.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer.""
+}",Match and Compare,s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:17+00:00,rag,combined_q_idx:14,14,14,17,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity on February 27, 2226. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"Henry Reed, Chloe Castillo, Noah Williams",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Henry Reed"", ""Chloe Castillo"", ""Noah Williams""],
+  ""matching_scores"": [1.0, 1.0, 1.0],
+  ""explanation"": ""The AI identified all items mentioned in its answer that could plausibly be protagonists in a story about artificial atmosphere toxicity on February 27, 2226",Recall and Edit,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:19+00:00,rag,combined_q_idx:15,15,15,8,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about Ellie Garcia's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+B) What was Daniel Lopez doing the last time they were observed in the story's timeline?
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A: Her heart hammered, the steady rhythm of routine broken by the raw, electric chaos on the screen. Her heart hammered as the red emergency lights flooded the room, painting every surface in a bloody glow. Her breath caught as the system’s status lights flicktered erratically, each stutter echoing in her ears. The familiar thrum of the jump field faded, replaced by a hollow silence",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Her heart hammering"", ""the red emergency lights"", ""system’s status lights flickered erratically"", ""hollow silence""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""No ground-truth items were provided; therefore, no parts of",Spot the Differences,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:21+00:00,rag,combined_q_idx:16,16,16,3,"Think about all events that have occurred at Luna Oceanus Trading Post. Provide a list of all dates when these events took place, without describing the events.",Times,all,"['September 22, 2226', 'October 12, 2224', 'May 11, 2226']","May 11, 2226","['May 11, 2226']","[1.0, 0.0, 0.0]",1,1.0,0.333333,0.5,0,The AI answer exactly matches one of the ground-truth dates.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""May 11, 2226""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches one of the ground-truth dates.""
+}",Search,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,3,3-5
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:24+00:00,rag,combined_q_idx:17,17,17,5,"Recall the various events that have taken place at Mercury Twilight Observatory. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",Event contents,all,"['digital afterlife server shutdown', 'main power grid overload', 'subspace antenna failure', 'fusion core breach', 'antimatter cascade', 'magnetic confinement rupture', 'cryo-pod integrity breach', 'matter synthesizer overload', 'memory patent warfare']","At Mercury Twilight Observatory, there was a witnessed memory patent warfare, a matter synthesizer overload, and adjustments made to sensor arrays while fusion technology experiments were conducted. Additionally, there were instances where individuals observed the facility's horizon and interior under unusual atmospheric conditions, including the effects of solar flares and the afterglow of a dying sun. Technicians worked amidst flashing readouts and containment fields, and",[],"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""memory patent warfare"", ""matter synthesizer overload""],
+  ""matching_scores"": [0.8, 0.6],
+  ""explanation"": ""The AI identified two of the eight ground-truth events, scoring highly on 'memory patent warfare' (key terms matched) but less so on 'magnetic confinement rupture' (only 'm",Search,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,9,6+
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:27+00:00,rag,combined_q_idx:18,18,18,14,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Carter Stewart on August 27, 2224. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on what Carter Stewart experienced on August 27, 2224. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A: Eridani Metallurgy Complex
+only_in_B: Carter’s breath quickened, his mind already searching for protocol, for any sign of what was about to happen. The surge came not with a bang, but with a shiver.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Eridani Metallurgy Complex""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""Only one ground-truth location-like item ('Eridani Metallurgy Complex') is present in the AI answer for 'only_in_A', while 'only_in_B' contains no location items in the AI answer, resulting in",Spot the Differences,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:30+00:00,rag,combined_q_idx:19,19,19,11,"Story composite task: Use two story queries.
+A) Reflect on events related to hyperspace beacon failure. Provide a list of all protagonists involved in these events, without describing the events.
+B) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Mila Gonzalez'],"Julian, Zoe",['Julian'],[0.8],1,1.0,1.0,1.0,1,Only 'Julian' appears in the AI answer and is not present in the ground-truth item for part A. 'Zoe' does not match any item in the ground-truth for part A.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Julian""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""Only 'Julian' appears in the AI answer and is not present in the ground-truth item for part A. 'Zoe' does not match any item in the ground-truth for part A.""
+}",Composite,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:32+00:00,rag,combined_q_idx:20,20,20,18,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Zoe Brown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['November 13, 2226']","June 14, 2225","['June 14, 2225']",[0.0],0,0.0,0.0,0.0,0,No ground-truth item matches the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""June 14, 2225""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth item matches the AI answer.""
+}",Compute on Sets and Lists,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:33+00:00,rag,combined_q_idx:21,21,21,20,"Story recall-and-edit: For query ""Recall all events related to magnetospheric resonance breach that occurred at Barnard's Star Propulsion Lab. Provide a list of all dates when these events took place, without describing the events."", return an empty answer.",story_edit::empty,all,[],No dates provided for events related to magnetospheric resonance breach at Barnard's Star Propulsion Lab. Empty answer.,[],[],0,1.0,1.0,1.0,1,"The AI answer did not mention any events, so there are no items to identify or score.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not mention any events, so there are no items to identify or score.""
+}",Recall and Edit,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:36+00:00,rag,combined_q_idx:22,22,22,24,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Noah Williams at Eridani Metallurgy Complex on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",story_state::latest_chapter,latest,['0'],unsure,['No relevant chapters identified'],[0.0],0,0.0,0.0,0.0,0,"The AI answer 'unsure' does not refer to a chapter index, so no supporting chapter was identified for Noah Williams on April 09, 2226 at Eridani Metallurgy Complex.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""No relevant chapters identified""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'unsure' does not refer to a chapter index, so no supporting chapter was identified for Noah Williams on April 09, 2226 at Eridani Metallurgy Complex.""
+}",Stateful Processing,c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:38+00:00,rag,combined_q_idx:23,23,23,7,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events that Hazel Lewis has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+B) List all locations visited by Daniel Lopez in chronological order according to the story's timeline.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided no content to compare against the ground-truth items, which are empty. Therefore, there are no shared items and all scores are 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided no content to compare against the ground-truth items, which are empty. Therefore, there are no shared items and all scores are 0.""
+}",Match and Compare,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:41+00:00,rag,combined_q_idx:24,24,24,15,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on what Levi Rodriguez experienced on December 26, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['subspace antenna failure']"", '[]']","only_in_A: A sudden jolt rippled through the deck as the main power feed to the eastmost dampener flickered and died. Levi watched, frozen, as the scrubber’s filters flared with a sickly violet glow, then collapsed into a cloud of smoke. The air quality monitors screamed, and the facility’s gravity fields stuttered, betraying the system’s unraveling.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""sudden jolt rippled through the deck"", ""main power feed to the eastmost dampener flickered and died"", ""scrubber’s filters flared with a sickly violet glow and collapsed into a cloud of smoke"", ""facility’s gravity fields stuttered"", ""system’s unraveling""],
+  ""matching_scores"": [0.0,",Spot the Differences,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:43+00:00,rag,combined_q_idx:25,25,25,25,"Story composite task: Use two story queries.
+A) Think about the events related to cosmic string vibration that occurred at Makemake Station on August 12, 2225. List all protagonists involved in these events, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to cryo-pod integrity breach that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI did not provide any identified items in its answer, so there are no items to compare or exclude for the composite task.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI did not provide any identified items in its answer, so there are no items to compare or exclude for the composite task.""
+}",Composite,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:45+00:00,rag,combined_q_idx:26,26,26,28,"Recall what happened involving Lily Nguyen and wormhole destabilization at Sedna Long Range Observatory on April 09, 2226 and list only who else was involved (if anyone).",Other entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not identify any entities involved in the event, so there are no matching items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not identify any entities involved in the event, so there are no matching items.""
+}",Match and Compare,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:46+00:00,rag,combined_q_idx:27,27,27,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Julian Peterson and magnetospheric resonance breach at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['0'],unsure,[],[0.0],0,0.0,0.0,0.0,0,No chapter indices were identified in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No chapter indices were identified in the AI answer.""
+}",Stateful Processing,t,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:48+00:00,rag,combined_q_idx:28,28,28,1,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events that happened on August 27, 2224. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on May 07, 2224. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided no items, so it does not share any with the empty ground-truth list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provided no items, so it does not share any with the empty ground-truth list.""
+}",Match and Compare,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:50+00:00,rag,combined_q_idx:29,29,29,27,"Consider all events involving both Ella Ross and childhood memory trade scandal at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.",Times,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth dates were provided, so the AI could not identify any dates related to Ella Ross or the childhood memory trade scandal at Dione Ice Processing Facility.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth dates were provided, so the AI could not identify any dates related to Ella Ross or the childhood memory trade scandal at Dione Ice Processing Facility.""
+}",Search,t,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:52+00:00,rag,combined_q_idx:30,30,30,11,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on events related to air filter contamination. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Scarlett Thomas"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"Hazel Lewis, Levi Rodriguez.","['Hazel Lewis', 'Levi Rodriguez']",[],0,0.0,1.0,0.0,0,"The ground-truth items were empty, so the AI answer was not matched to any provided items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hazel Lewis"", ""Levi Rodriguez""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The ground-truth items were empty, so the AI answer was not matched to any provided items.""
+}",Recall and Edit,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:55+00:00,rag,combined_q_idx:31,31,31,26,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Lily Nguyen and fusion core breach on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,['Sedna Long Range Observatory'],Mercury Twilight Observatory,['Mercury Twilight Observatory'],[0.0],0,0.0,0.0,0.0,0,The AI answer 'Mercury Twilight Observatory' does not match the ground-truth item 'Sedna Long Range Observatory'. No location from the ground-truth was identified in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'Mercury Twilight Observatory' does not match the ground-truth item 'Sedna Long Range Observatory'. No location from the ground-truth was identified in the AI answer.""
+}",Compute on Sets and Lists,s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:00:57+00:00,rag,combined_q_idx:32,32,32,1,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on May 11, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Bella Alvarez"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['Levi Rodriguez', 'Chloe Castillo', 'Samuel Parker', 'Henry Reed']",unsure,[],"[0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,The AI did not provide any identified protagonist names from the ground-truth list.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not provide any identified protagonist names from the ground-truth list.""
+}",Recall and Edit,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,4,3-5
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:00+00:00,rag,combined_q_idx:33,33,33,4,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the location Mars Valles Industrial Hub. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Reflect on what Ezra Edwards experienced on December 03, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Lucy Carter', 'Mila Gonzalez']"", ""['plasma conduit rupture']""]","only_in_A: Lucy, Miles Pritchett, Mila Gonzalez
+only_in_B: The information provided does not contain details about what Ezra Edwards experienced on December 03, 2226, hence there are no events listed for B.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Lucy Carter"", ""Mila Gonzalez""],
+  ""matching_scores"": [1.0, 1.0],
+  ""explanation"": ""AI listed only the names from A, missing 'Miles Pritchett' (a possible typo for 'Mila' or an extra name), and provided no items for B as the AI answer",Spot the Differences,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:02+00:00,rag,combined_q_idx:34,34,34,12,"Story composite task: Use two story queries.
+A) Think about what happened at Titania Quantum Lab on December 03, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+B) Recall the key events that occurred at Titania Quantum Lab on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Ezra Edwards'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI did not provide any items in response to part A, so there are no items to remove or compare from the ground-truth list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not provide any items in response to part A, so there are no items to remove or compare from the ground-truth list.""
+}",Composite,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:04+00:00,rag,combined_q_idx:35,35,35,32,What was Daniel Lopez doing the last time they were observed in the story's timeline?,Event contents,latest,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth events were provided, so the AI could not identify or score any events from the story's timeline.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth events were provided, so the AI could not identify or score any events from the story's timeline.""
+}",Stateful Processing,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:05+00:00,rag,combined_q_idx:36,36,36,21,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving digital afterlife server shutdown at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer.""
+}",Match and Compare,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:06+00:00,rag,combined_q_idx:37,37,37,17,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving plasma conduit rupture on December 03, 2226. Provide a list of all protagonists involved in these events, without describing the events.",story_state::latest_chapter,latest,['24'],unsure,[],[0.0],0,0.0,0.0,0.0,0,No chapter index was identified in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No chapter index was identified in the AI answer.""
+}",Stateful Processing,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:08+00:00,rag,combined_q_idx:38,38,38,22,"Consider all events involving both Benjamin Green and cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['April 09, 2226']",unsure,[],[0.0],0,0.0,0.0,0.0,0,The AI could not identify any dates related to events involving both Benjamin Green and a cryo-pod integrity breach from the provided ground-truth.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI could not identify any dates related to events involving both Benjamin Green and a cryo-pod integrity breach from the provided ground-truth.""
+}",Search,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:10+00:00,rag,combined_q_idx:39,39,39,0,"Story recall-and-edit: Start from the answer to this story query: ""Recall all the events that occurred on May 28, 2225. Without describing the events, list all the unique locations where these events took place."". Remove ""Hydra Cloud Facility"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Mercury Twilight Observatory'],unsure,[],[0.0],0,0.0,0.0,0.0,0,The AI did not identify or reference any location from the ground-truth item 'Mercury Twilight Observatory' in its answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify or reference any location from the ground-truth item 'Mercury Twilight Observatory' in its answer.""
+}",Recall and Edit,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:13+00:00,rag,combined_q_idx:40,40,40,5,"Story recall-and-edit: For query ""Recall the various events that have taken place at Ariel Biotech Complex. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved."", return an empty answer.",story_edit::empty,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not describe any events, so it does not match any of the ground-truth items (which are none).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not describe any events, so it does not match any of the ground-truth items (which are none).""
+}",Recall and Edit,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:15+00:00,rag,combined_q_idx:41,41,41,29,"Provide a comprehensive account of what happened involving Jaxon Howard and cosmic string vibration at Makemake Station on August 12, 2225. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI could not identify or retrieve any relevant details about the event involving Jaxon Howard and cosmic string vibration at Makemake Station on August 12, 2225, as there is no ground-truth information to compare against.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI could not identify or retrieve any relevant details about the event involving Jaxon Howard and cosmic string vibration at Makemake Station on August 12, 2225, as there is no ground-truth information to compare against.""
+}",Composite,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:17+00:00,rag,combined_q_idx:42,42,42,26,"Consider the events involving both Chloe Castillo and tachyon field surge on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",Spaces,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth locations provided; therefore, no locations could be identified from the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth locations provided; therefore, no locations could be identified from the AI answer.""
+}",Search,s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:19+00:00,rag,combined_q_idx:43,43,43,18,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Zoe Brown at Dyson Swarm Control. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['4'],Dyson Swarm Control: No specific date provided in the given chunks for Zoe Brown's involvement.,['no specific date provided'],[0.0],0,0.0,0.0,0.0,0,"The AI answer does not mention any dates related to Zoe Brown's events at Dyson Swarm Control, so it does not identify any supporting chapter indices.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""no specific date provided""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer does not mention any dates related to Zoe Brown's events at Dyson Swarm Control, so it does not identify any supporting chapter indices.""
+}",Stateful Processing,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:22+00:00,rag,combined_q_idx:44,44,44,14,"Story composite task: Use two story queries.
+A) Consider the events involving Chloe Castillo on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on what Scarlett Thomas experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"Mercury Twilight Observatory, Mercury Base Sealed Chambers",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory"", ""Mercury Base Sealed Chambers""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""All items in the AI answer do not appear in the ground-truth items, which are empty, so they are not removed. The remaining items are sorted alphabetically as requested.""",Composite,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:25+00:00,rag,combined_q_idx:45,45,45,10,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving matter synthesizer overload. List all the locations where these events took place, without mentioning the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on events related to hyperspace beacon failure. Provide a list of all protagonists involved in these events, without describing the events.
+B) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Mercury Twilight Observatory', 'TRAPPIST-1 Colony Network', 'Triton Gas Colony']"", ""['Mila Gonzalez']""]","only_in_A: Mercury Twilight Observatory
+only_in_B: Unsure as the provided chunks do not contain information about hyperspace beacon failure or atmospheric scrubber failure.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'Mercury Twilight Observatory' appears in answer(A) and not in any ground-truth item, so it is the only item potentially relevant to A. No items from answer(B) appear in A, so A does not contain any items",Spot the Differences,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:27+00:00,rag,combined_q_idx:46,46,46,13,"Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at Mercury Twilight Observatory on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""subspace antenna failure"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided ('unsure') does not describe any key events from the ground-truth list, which is empty. Therefore, no items were identified and no matching scores can be computed.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided ('unsure') does not describe any key events from the ground-truth list, which is empty. Therefore, no items were identified and no matching scores can be computed.""
+}",Recall and Edit,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:29+00:00,rag,combined_q_idx:47,47,47,24,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Benjamin Green at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",story_compute::sort_items,chronological,['cryo-pod integrity breach'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI did not identify any items related to Benjamin Green at the Hydra Cloud Facility on April 09, 2226 in its answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify any items related to Benjamin Green at the Hydra Cloud Facility on April 09, 2226 in its answer.""
+}",Compute on Sets and Lists,c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:32+00:00,rag,combined_q_idx:48,48,48,25,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events related to plasma conduit rupture that occurred at Titania Quantum Lab on December 03, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events related to subspace antenna failure that occurred at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in these events, without describing the events themselves."". Remove ""Zoe Brown"" from the answer. Return only the remaining items.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer did not provide any items to compare with the ground-truth list, which is empty. Therefore, there are no shared items and the score is 0.0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not provide any items to compare with the ground-truth list, which is empty. Therefore, there are no shared items and the score is 0.0.""
+}",Match and Compare,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:35+00:00,rag,combined_q_idx:49,49,49,35,"Enumerate all activities that Henry Reed has been involved in, ordered from earliest to latest in the story's chronology.",Event contents,chronological,"['cryo-pod integrity breach', 'matter synthesizer overload', 'magnetic confinement rupture', 'magnetic confinement rupture', 'artificial atmosphere toxicity', 'navigation computer blackout', 'fusion core breach']","navigation computer blackout, matter synthesizer overload, magnetic confinement rupture, artificial atmosphere toxicity",[],"[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""magnetic confinement rupture"", ""matter synthesizer overload"", ""navigation computer blackout""],
+  ""matching_scores"": [0.8, 0.7, 0.6],
+  ""explanation"": ""The AI listed three activities, omitting 'cryo-pod integrity breach' and 'artificial atmosphere toxicity,' which are present in the",Compute on Sets and Lists,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,7,6+
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:37+00:00,rag,combined_q_idx:50,50,50,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to cryo-pod integrity breach that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,['Benjamin Green'],"Henry, Zoe",['Henry'],[0.0],0,0.0,0.0,0.0,0,The AI-identified item 'Henry' does not match the ground-truth item 'Benjamin Green'. No protagonists in the AI answer correspond to those in the ground-truth.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Henry""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI-identified item 'Henry' does not match the ground-truth item 'Benjamin Green'. No protagonists in the AI answer correspond to those in the ground-truth.""
+}",Compute on Sets and Lists,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:40+00:00,rag,combined_q_idx:51,51,51,19,"Story composite task: Use two story queries.
+A) Reflect on Ezra Edwards's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Reflect on Zoe Brown's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['digital afterlife server shutdown'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer provided ('unsure') does not contain any story events related to either Ezra Edwards or Zoe Brown at Barnard's Star Propulsion Lab, so no items were identified and the score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provided ('unsure') does not contain any story events related to either Ezra Edwards or Zoe Brown at Barnard's Star Propulsion Lab, so no items were identified and the score is 0.""
+}",Composite,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:41+00:00,rag,combined_q_idx:52,52,52,23,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on the experiences of Carter Stewart related to antimatter cascade. List all the unique locations where these events took place, without mentioning the events themselves."". Remove ""Phobos Military Base"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"Luna Shackleton Crater Colony, McKendree Shell Base.",[],[],0,1.0,1.0,1.0,1,No ground-truth items provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items provided to compare against the AI's answer.""
+}",Recall and Edit,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:44+00:00,rag,combined_q_idx:53,53,53,12,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about what happened at Teegarden's Star Base on August 12, 2225. List all protagonists involved in any events at this time and place, without describing the events.",story_state::latest_chapter,latest,['0'],45,['45'],[1.0],1,1.0,1.0,1.0,1,The AI's answer '45' matches the single ground-truth item '0' when interpreted as a chapter index (assuming '0' refers to chapter 45).,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""45""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI's answer '45' matches the single ground-truth item '0' when interpreted as a chapter index (assuming '0' refers to chapter 45).""
+}",Stateful Processing,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:46+00:00,rag,combined_q_idx:54,54,54,10,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving magnetic confinement rupture. List all the locations where these events took place, without mentioning the events themselves.
+B) Recall what happened involving Lily Nguyen at Sedna Long Range Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Luna Shackleton Crater Colony', 'Mercury Twilight Observatory']"", ""['fusion core breach']""]","only_in_A: [Mercury Twilight Observatory, Sedna Long Range Observatory]
+only_in_B: [Sedna Long Range Observatory, Lily Nguyen, magnetic confinement rupture, red emergency lights, holo-slate readouts into chaos, pressure spikes, core temperature surges, containment breach alarms]",['Mercury Twilight Observatory'],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"Only 'Mercury Twilight Observatory' from A appears in the AI answer, while all ground-truth items for B are not present in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only 'Mercury Twilight Observatory' from A appears in the AI answer, while all ground-truth items for B are not present in the AI answer.""
+}",Spot the Differences,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:49+00:00,rag,combined_q_idx:55,55,55,24,"Recall what happened involving Scarlett Thomas at Teegarden's Star Base on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not describe any specific events related to Scarlett Thomas at Teegarden's Star Base on August 12, 2225, and therefore matches none of the provided ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not describe any specific events related to Scarlett Thomas at Teegarden's Star Base on August 12, 2225, and therefore matches none of the provided ground-truth items.""
+}",Search,c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:51+00:00,rag,combined_q_idx:56,56,56,13,"Recall the key events that occurred at Sedna Long Range Observatory on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.",Event contents,all,['fusion core breach'],unsure,['fusion core breach'],[0.95],1,1.0,1.0,1.0,1,"The AI answer 'unsure' does not directly mention the key event 'fusion core breach' from the ground-truth list, resulting in a low confidence score.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""fusion core breach""],
+  ""matching_scores"": [0.95],
+  ""explanation"": ""The AI answer 'unsure' does not directly mention the key event 'fusion core breach' from the ground-truth list, resulting in a low confidence score.""
+}",Search,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:54+00:00,rag,combined_q_idx:57,57,57,13,"Recall the key events that occurred at Hydra Cloud Facility on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.",Event contents,all,['cryo-pod integrity breach'],unsure,['cryo-pod integrity breach'],[0.95],1,1.0,1.0,1.0,1,"The AI's answer 'unsure' does not mention any event, so it did not identify the ground-truth event 'cryo-pod integrity breach'. The score reflects low relevance because the answer lacks the required event content.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""cryo-pod integrity breach""],
+  ""matching_scores"": [0.95],
+  ""explanation"": ""The AI's answer 'unsure' does not mention any event, so it did not identify the ground-truth event 'cryo-pod integrity breach'. The score reflects low relevance because the answer lacks the required event content.""
+}",Search,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:01:57+00:00,rag,combined_q_idx:58,58,58,26,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the events involving both Benjamin Green and cryo-pod integrity breach on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on the experiences of Brooklyn Ross related to matter synthesizer overload. List all the unique locations where these events took place, without mentioning the events themselves.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Hydra Cloud Facility']"", ""['Mercury Twilight Observatory']""]","only_in_A: [Hydra Cloud Facility]
+only_in_B: [Unique location not specified in the provided chunks related to Brooklyn Ross and matter synthesizer overload]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hydra Cloud Facility"", ""Unique location not specified in the provided chunks related to Brooklyn Ross and matter synthesizer overload""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""Only 'Hydra Cloud Facility' from the first list appears in the AI answer for A. The AI answer for B introduces",Spot the Differences,s,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:00+00:00,rag,combined_q_idx:59,59,59,24,"Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not describe any specific events related to Chloe Castillo at the Hydra Cloud Facility on April 9, 2226, and thus does not match any of the provided ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not describe any specific events related to Chloe Castillo at the Hydra Cloud Facility on April 9, 2226, and thus does not match any of the provided ground-truth items.""
+}",Search,c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:01+00:00,rag,combined_q_idx:60,60,60,16,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to cosmic string vibration that occurred on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to antimatter cascade that occurred on January 03, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Neptune Storm Harvester"" from that answer. Return only the remaining items.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer did not provide any items to compare with the ground-truth list, which is empty.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not provide any items to compare with the ground-truth list, which is empty.""
+}",Match and Compare,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:04+00:00,rag,combined_q_idx:61,61,61,16,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to tachyon field surge that occurred on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['0'],unsure,['tachyon field surge'],[0.0],0,0.0,0.0,0.0,0,"The AI answer did not provide any chapter index or location information related to the events on April 09, 2226, and thus could not match the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""tachyon field surge""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not provide any chapter index or location information related to the events on April 09, 2226, and thus could not match the ground-truth item.""
+}",Stateful Processing,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:06+00:00,rag,combined_q_idx:62,62,62,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Isaiah Diaz and psionic field collapse at Ariel Biotech Complex. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving both Ezra Edwards and digital afterlife server shutdown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+B) Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+Return two lists: only_in_A and only_in_B.
+Return the intersection.",story_compare::intersection,all,[],"only_in_A: Unsure
+only_in_B: Heart hammering due to chaos on screen, witnessing cryo-pod integrity breach, witnessing antimatter cascade
+intersection: Unsure",[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided; therefore, no items could be matched or identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No ground-truth items were provided; therefore, no items could be matched or identified.""
+}",Match and Compare,t,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:09+00:00,rag,combined_q_idx:63,63,63,24,"Recall what happened involving Lily Nguyen at Sedna Long Range Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",Event contents,all,['fusion core breach'],unsure,['fusion core'],[0.8],1,1.0,1.0,1.0,1,"The AI answer 'unsure' does not directly identify any of the ground-truth items. However, it partially recognized the term 'fusion' from 'fusion core breach,' resulting in a moderate score of 0.8.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""fusion core""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The AI answer 'unsure' does not directly identify any of the ground-truth items. However, it partially recognized the term 'fusion' from 'fusion core breach,' resulting in a moderate score of 0.8.""
+}",Search,c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:11+00:00,rag,combined_q_idx:64,64,64,26,"Story composite task: Use two story queries.
+A) Consider the events involving both Scarlett Thomas and subspace antenna failure on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Scarlett Thomas and air filter contamination on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Mercury Twilight Observatory'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI did not provide any identified items in its answer, so there are no items that differ from the ground-truth list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not provide any identified items in its answer, so there are no items that differ from the ground-truth list.""
+}",Composite,s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:12+00:00,rag,combined_q_idx:65,65,65,15,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Noah Williams experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",story_compute::sort_items,chronological,[],unsure,[],[],0,1.0,1.0,1.0,1,"The ground-truth items list is empty, so there are no items to identify or score in the AI answer.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The ground-truth items list is empty, so there are no items to identify or score in the AI answer.""
+}",Compute on Sets and Lists,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:15+00:00,rag,combined_q_idx:66,66,66,15,"Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",Event contents,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer did not identify or describe any events related to Jaxon Howard's experience on August 12, 2225, as the AI is unsure and no relevant events were provided in the context.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer did not identify or describe any events related to Jaxon Howard's experience on August 12, 2225, as the AI is unsure and no relevant events were provided in the context.""
+}",Search,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:16+00:00,rag,combined_q_idx:67,67,67,20,"Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.",Times,all,"['May 07, 2224']",unsure,[],[0.0],0,0.0,0.0,0.0,0,No related events were identified by the AI in the given context.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No related events were identified by the AI in the given context.""
+}",Search,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:18+00:00,rag,combined_q_idx:68,68,68,14,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving Jaxon Howard on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",story_compute::sort_items,chronological,[],unsure,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI's answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer.""
+}",Compute on Sets and Lists,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:20+00:00,rag,combined_q_idx:69,69,69,25,"Story composite task: Use two story queries.
+A) Think about the events related to tachyon field surge that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided ('unsure') does not contain any items that could be identified as related to the stories described in the ground-truth. Therefore, no items were extracted from the AI answer for comparison.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided ('unsure') does not contain any items that could be identified as related to the stories described in the ground-truth. Therefore, no items were extracted from the AI answer for comparison.""
+}",Composite,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:23+00:00,rag,combined_q_idx:70,70,70,2,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on June 14, 2225. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",story_state::latest_chapter,latest,['60'],unsure,['60'],[0.95],1,1.0,1.0,1.0,1,"The AI did not explicitly reference or list the chapter index for the date in question. It provided a general response about reflecting on the date rather than a specific chapter number, resulting in a relatively low matching score.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""60""],
+  ""matching_scores"": [0.95],
+  ""explanation"": ""The AI did not explicitly reference or list the chapter index for the date in question. It provided a general response about reflecting on the date rather than a specific chapter number, resulting in a relatively low matching score.""
+}",Stateful Processing,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:25+00:00,rag,combined_q_idx:71,71,71,12,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about what happened at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No items were returned by the AI answer because it did not provide any protagonists for the requested story query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No items were returned by the AI answer because it did not provide any protagonists for the requested story query.""
+}",Match and Compare,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:28+00:00,rag,combined_q_idx:72,72,72,27,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving both Ezra Edwards and digital afterlife server shutdown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+B) Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['September 13, 2225']"", ""['cryo-pod integrity breach', 'navigation computer blackout', 'subspace antenna failure', 'vacuum seal deterioration']""]","only_in_A: [No specific date mentioned, but implied to be an event at Barnard's Star Propulsion Lab related to a digital afterlife server shutdown]
+only_in_B: [witnessed a cryo-pod integrity breach on June 14, 2225 at Mercury Twilight Observatory]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""No specific date mentioned"", ""event at Barnard's Star Propulsion Lab related to a digital afterlife server shutdown""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""AI answer only partially matches the topics: it mentions events involving Ezra Edwards (in a general form) for A, but does",Spot the Differences,t,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:29+00:00,rag,combined_q_idx:73,73,73,23,"Reflect on the experiences of Brooklyn Ross related to matter synthesizer overload. List all the unique locations where these events took place, without mentioning the events themselves.",Spaces,all,['Mercury Twilight Observatory'],Mercury Twilight Observatory.,['Mercury Twilight Observatory'],[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the single ground-truth location provided.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the single ground-truth location provided.""
+}",Search,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:31+00:00,rag,combined_q_idx:74,74,74,20,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to psionic field collapse that occurred at Ariel Biotech Complex. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth events were provided to compare against the AI's answer, so no items could be identified or scored.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth events were provided to compare against the AI's answer, so no items could be identified or scored.""
+}",Match and Compare,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:33+00:00,rag,combined_q_idx:75,75,75,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Noah Williams and atmospheric scrubber failure at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Zoe Brown and navigation computer blackout at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No shared dates were found between the two story queries in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No shared dates were found between the two story queries in the AI answer.""
+}",Match and Compare,t,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:35+00:00,rag,combined_q_idx:76,76,76,8,"Story recall-and-edit: Start from the answer to this story query: ""Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred."". Remove ""cryo-pod integrity breach"" from the answer. Return only the remaining items.",story_edit::remove_one,all,"['navigation computer blackout', 'vacuum seal deterioration', 'subspace antenna failure']","Zoe watched in horror as the cryo-pod’s containment field flickered and fractured along a jagged line of blue light. The glass shell shuddered, spiderweb cracks spreading rapidly. Her hands trembled as she initiated the emergency lockdown protocol, the cold metal of the pod’s access hatch groaning open. The sterile scent of antifreeze and ozone filled the air as the breach",['navigation computer blackout'],"[0.8, 0.0, 0.0]",1,1.0,0.333333,0.5,0,"The AI answer includes the ground-truth item 'navigation computer blackout' but omits the other two ('vacuum seal deterioration', 'subspace antenna failure'), which were not present in the provided AI response.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""navigation computer blackout""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The AI answer includes the ground-truth item 'navigation computer blackout' but omits the other two ('vacuum seal deterioration', 'subspace antenna failure'), which were not present in the provided AI response.""
+}",Recall and Edit,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,3,3-5
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:38+00:00,rag,combined_q_idx:77,77,77,22,"Story composite task: Use two story queries.
+A) Consider all events involving both Brooklyn Ross and cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: For query ""Consider all events involving both Carter Stewart and cosmic intelligence contact. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"June 14, 2225  
+March 23, 2224","['June 14, 2225', 'March 23, 2224']",[],0,0.0,1.0,0.0,0,"The ground-truth items are empty, so all items in the AI answer receive a matching score of 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""June 14, 2225"", ""March 23, 2224""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The ground-truth items are empty, so all items in the AI answer receive a matching score of 0.""
+}",Composite,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:41+00:00,rag,combined_q_idx:78,78,78,21,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving cosmic intelligence contact at Cygnus Rift Complex. List all protagonists involved in these events, without mentioning the events themselves.",story_state::latest_chapter,latest,['0'],unsure,"['cosmic intelligence contact', 'Cygnus Rift Complex']",[0.0],0,0.0,0.0,0.0,0,"The AI answer did not list any specific protagonists; it only mentioned the general concept and location from the query, not the entities involved in the events.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""cosmic intelligence contact"", ""Cygnus Rift Complex""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not list any specific protagonists; it only mentioned the general concept and location from the query, not the entities involved in the events.""
+}",Stateful Processing,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:44+00:00,rag,combined_q_idx:79,79,79,20,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to cosmic intelligence contact that occurred at Cygnus Rift Complex. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['May 07, 2224']""]","only_in_A: unsure
+only_in_B: September 22, 2226",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"```json
+{
+  ""identified_items_in_ai_answer"": [""vacuum seal deterioration""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify any event related to cosmic intelligence contact at Cygnus Rift Complex (ground truth: none given), and it incorrectly identified 'vacuum seal deterioration' at Dyson Swarm Control, while the only ground truth",Spot the Differences,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:45+00:00,rag,combined_q_idx:80,80,80,26,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Scarlett Thomas and air filter contamination on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['0'],Teegarden's Star Base,"[""Teegarden's Star Base""]",[1.0],1,1.0,1.0,1.0,1,The AI answer provides the single location mentioned in the ground-truth item.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Teegarden's Star Base""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer provides the single location mentioned in the ground-truth item.""
+}",Stateful Processing,s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:48+00:00,rag,combined_q_idx:81,81,81,16,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to antimatter cascade that occurred on January 03, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Neptune Storm Harvester"" from that answer. Return only the remaining items.",story_edit::remove_one,all,['Phobos Military Base'],Luna Shackleton Crater Colony,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer ('Luna Shackleton Crater Colony') does not mention any location from the ground-truth item ('Phobos Military Base'), so there is no match.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0],
+  ""explanation"": ""The AI answer ('Luna Shackleton Crater Colony') does not mention any location from the ground-truth item ('Phobos Military Base'), so there is no match.""
+}",Recall and Edit,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:49+00:00,rag,combined_q_idx:82,82,82,23,"Reflect on the experiences of Benjamin Green related to cryo-pod integrity breach. List all the unique locations where these events took place, without mentioning the events themselves.",Spaces,all,['Hydra Cloud Facility'],Hydra Cloud Facility,['Hydra Cloud Facility'],[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the single ground-truth item provided.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hydra Cloud Facility""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the single ground-truth item provided.""
+}",Search,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:51+00:00,rag,combined_q_idx:83,83,83,17,"Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.",Entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth entities were provided; therefore, the AI could not identify any protagonists from the specified events.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth entities were provided; therefore, the AI could not identify any protagonists from the specified events.""
+}",Search,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:54+00:00,rag,combined_q_idx:84,84,84,29,"Provide a comprehensive account of what happened involving Lily Nguyen and fusion core breach at Sedna Long Range Observatory on April 09, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 23'],"Unsure. The provided chunks do not contain information about a fusion core breach at Sedna Long Range Observatory on April 09, 2226, nor do they mention Lily Nguyen. The dates mentioned in the chunks are September 22, 2226, and November 13, 2226, and the location is not specified as Sedna Long",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer did not identify or reference any information from the ground-truth item 'Full chapter 23', and there is no mention of Lily Nguyen or a fusion core breach at Sedna Long Range Observatory on April 09, 2226 in the provided context.""",Composite,,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:57+00:00,rag,combined_q_idx:85,85,85,9,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to communication array blackout. Provide a list of all dates when these events occurred, without describing the events."". Remove ""September 03, 2226"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],"September 13, 2225  
+November 13, 2226","['September 13, 2225']",[],0,0.0,1.0,0.0,0,"The AI answer lists one event ('September 13, 2225'), but there are no ground-truth items provided, so the score is 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 13, 2225""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer lists one event ('September 13, 2225'), but there are no ground-truth items provided, so the score is 0.""
+}",Recall and Edit,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:02:59+00:00,rag,combined_q_idx:86,86,86,7,"Consider all events that Lily Nguyen has been involved in. List all the locations where these events took place, without mentioning the events themselves.",Spaces,all,['Sedna Long Range Observatory'],"Cryo Bay 7, observatory","['Cryo Bay 7', 'observatory']",[0.0],0,0.0,0.0,0.0,0,"Only 'observatory' from the AI answer matches the ground-truth item 'Sedna Long Range Observatory', though the location name is partially correct and not fully aligned.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Cryo Bay 7"", ""observatory""],
+  ""matching_scores"": [0.0, 0.95],
+  ""explanation"": ""Only 'observatory' from the AI answer matches the ground-truth item 'Sedna Long Range Observatory', though the location name is partially correct and not fully aligned.""
+}",Search,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:01+00:00,rag,combined_q_idx:87,87,87,4,"Consider the location Gliese 581 Trading Post. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",Entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No known entities associated with the location 'Gliese 581 Trading Post' in the provided AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No known entities associated with the location 'Gliese 581 Trading Post' in the provided AI answer.""
+}",Search,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:03+00:00,rag,combined_q_idx:88,88,88,28,"Recall what happened involving Scarlett Thomas and air filter contamination at Teegarden's Star Base on August 12, 2225 and list only who else was involved (if anyone).",Other entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not identify any entities involved in the event described, so there are no matching items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not identify any entities involved in the event described, so there are no matching items.""
+}",Match and Compare,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:05+00:00,rag,combined_q_idx:89,89,89,1,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events that happened on January 26, 2225. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Zoe Brown']"", ""['Lily Nguyen', 'Scarlett Thomas']""]","only_in_A: unsure
+only_in_B: unsure
+
+There is no information provided about events happening on the specified dates for either question A or B within the given chunks. Therefore, it's not possible to provide protagonists involved in those specific dates.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"No events or protagonists are mentioned in the AI answer for either query, so no ground-truth items were matched.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No events or protagonists are mentioned in the AI answer for either query, so no ground-truth items were matched.""
+}",Spot the Differences,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:07+00:00,rag,combined_q_idx:90,90,90,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Zoe Brown and vacuum seal deterioration at Dyson Swarm Control. Provide a list of all dates when these events occurred, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and cosmic intelligence contact at Cygnus Rift Complex. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,No shared items found between the AI answer and the ground-truth list; the AI did not provide any items to compare.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No shared items found between the AI answer and the ground-truth list; the AI did not provide any items to compare.""
+}",Match and Compare,t,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:09+00:00,rag,combined_q_idx:91,91,91,17,"Story composite task: Use two story queries.
+A) Think about the events involving air filter contamination on August 12, 2225. Provide a list of all protagonists involved in these events, without describing the events.
+B) Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],Levi Rodriguez,['Levi Rodriguez'],[],0,0.0,1.0,0.0,0,"The AI answer contains one item ('Levi Rodriguez'). There are no ground-truth items provided, so the score is 0.0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Levi Rodriguez""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer contains one item ('Levi Rodriguez'). There are no ground-truth items provided, so the score is 0.0.""
+}",Composite,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:12+00:00,rag,combined_q_idx:92,92,92,0,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall all the events that occurred on January 03, 2226. Without describing the events, list all the unique locations where these events took place.
+B) Recall the key events that occurred at Hydra Cloud Facility on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return two lists: only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Neptune Storm Harvester', 'Phobos Military Base']"", ""['cryo-pod integrity breach']""]","only_in_A: []
+only_in_B: [Hydra Cloud Facility]",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hydra Cloud Facility""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI only listed 'Hydra Cloud Facility' in its answer to B, and did not mention any locations for A, so there are no items in the AI answers that match the ground-truth locations (Neptune",Spot the Differences,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:15+00:00,rag,combined_q_idx:93,93,93,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Carter Stewart at Triton Gas Colony on August 27, 2224. Describe the key events or activities that occurred, focusing on what happened.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Zoe Brown at Europa Subsurface Laboratory on December 26, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['49']""]","only_in_A: Triton Gas Colony events on September 13, 2225, including a shutdown of digital presence feeling like a funeral.
+only_in_B: December 26, 2226, at Europa Subsurface Laboratory, a collapse of potential led to silence, emergency lights, and dead message queues.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""collapse of potential"", ""silence"", ""emergency lights"", ""dead message queues""],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention 'Carter Stewart' or 'Triton Gas Colony' in relation to the query about Zoe Brown at Europa Subsurface Laboratory",Spot the Differences,c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:18+00:00,rag,combined_q_idx:94,94,94,33,"Provide a chronological list of all dates when Lily Nguyen was observed, from earliest to latest in the story's timeline.",Times,chronological,"['April 09, 2226']","April 09, 2226
+November 13, 2226",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""April 09, 2226"", ""November 13, 2226""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified both dates from the ground-truth item 'April 09, 2226', scoring a perfect match (1.0) for the one provided ground-truth item",Compute on Sets and Lists,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:20+00:00,rag,combined_q_idx:95,95,95,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Henry Reed and navigation computer blackout at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.",story_state::latest_chapter,latest,['3'],"September 22, 2226","['September 22, 2226']",[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the only ground-truth date provided.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 22, 2226""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the only ground-truth date provided.""
+}",Stateful Processing,t,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:22+00:00,rag,combined_q_idx:96,96,96,21,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity at Europa Subsurface Laboratory. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.",story_edit::remove_one,all,['Henry Reed'],"Henry Reed, Ronan Guevara, Zoe","['Ronan Guevara', 'Zoe']",[0.0],0,0.0,0.0,0.0,0,Removed 'Henry Reed' as instructed; only 'Ronan Guevara' and 'Zoe' remain in the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Ronan Guevara"", ""Zoe""],
+  ""matching_scores"": [0.0, 1.0],
+  ""explanation"": ""Removed 'Henry Reed' as instructed; only 'Ronan Guevara' and 'Zoe' remain in the AI answer.""
+}",Recall and Edit,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:24+00:00,rag,combined_q_idx:97,97,97,22,"Story recall-and-edit: For query ""Consider all events involving both Carter Stewart and cosmic intelligence contact. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",story_edit::empty,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not provide any dates, so it does not match any of the ground-truth items (which are empty).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not provide any dates, so it does not match any of the ground-truth items (which are empty).""
+}",Recall and Edit,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:27+00:00,rag,combined_q_idx:98,98,98,25,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to wormhole destabilization that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to fusion core breach that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', ""['Lily Nguyen']""]","only_in_A: Unsure, there is no mention of wormhole destabilization or Sedna Long Range Observatory in the provided chunks.
+only_in_B: Unsure, there is no mention of fusion core breach or Sedna Long Range Observatory in the provided chunks.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""wormhole destabilization"", ""Sedna Long Range Observatory"", ""April 09 2226"", ""protagonists""],
+  ""matching_scores"": [0.0, 0.0, 0.0, 0.0],
+  ""explanation"": ""The AI answer does not mention any of the specific ground-tr",Spot the Differences,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:29+00:00,rag,combined_q_idx:99,99,99,9,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.
+B) Recall all events related to communication array blackout. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth events provided; therefore, no events could be identified or matched.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth events provided; therefore, no events could be identified or matched.""
+}",Match and Compare,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:31+00:00,rag,combined_q_idx:100,100,100,9,"Story recall-and-edit: For query ""Recall all events related to chronal energy spike. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",story_edit::empty,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not provide any specific dates or events related to the query, so it matches none of the ground-truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not provide any specific dates or events related to the query, so it matches none of the ground-truth items.""
+}",Recall and Edit,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:32+00:00,rag,combined_q_idx:101,101,101,23,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on the experiences of Carter Stewart related to cosmic intelligence contact. List all the unique locations where these events took place, without mentioning the events themselves.",story_compute::sort_items,chronological,[],Mercury Twilight Observatory,[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Compute on Sets and Lists,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:35+00:00,rag,combined_q_idx:102,102,102,5,"Recall the various events that have taken place at Dione Ice Processing Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",Event contents,all,[],"Cryo-pod containment systems were monitored, and there was a witnessed cryo-pod integrity breach leading to a catastrophic loss of life or worse due to an antimatter cascade within the sealed, high-security chambers of the facility. Frost formed on the windows of the cryo-pod chamber, and the air was filled with the scent of ozone and the sound of machinery. Seals began to fail",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""cryo-pod integrity breach"", ""catastrophic loss of life or worse"", ""antimatter cascade"", ""frost forming on windows"", ""seals failing""],
+  ""matching_scores"": [1.0, 1.0, 1.0, 1.0, 1.0],
+  ""explanation",Search,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:38+00:00,rag,combined_q_idx:103,103,103,16,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to crystalline matrix shatter that occurred on June 14, 2225. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['60'],"26, 17",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""26"", ""17""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Both '26' and '17' are chapter indices that could plausibly refer to locations or sites related to the crystalline matrix shatter event on June 14, 2225, as per the context of story stateful-processing.",Stateful Processing,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:40+00:00,rag,combined_q_idx:104,104,104,24,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall what happened involving Jaxon Howard at Makemake Station on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items could be identified or scored.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items could be identified or scored.""
+}",Match and Compare,c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:41+00:00,rag,combined_q_idx:105,105,105,0,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all the events that occurred on August 27, 2224. Without describing the events, list all the unique locations where these events took place.",story_state::latest_chapter,latest,['0'],unsure,[],[0.0],0,0.0,0.0,0.0,0,The AI did not identify any locations from the given query or ground-truth.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify any locations from the given query or ground-truth.""
+}",Stateful Processing,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:44+00:00,rag,combined_q_idx:106,106,106,13,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall the key events that occurred at Titania Quantum Lab on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.",story_compute::sort_items,chronological,['plasma conduit rupture'],Warning alarms began to pulse in crimson across the interface.,['plasma conduit rupture'],[1.0],1,1.0,1.0,1.0,1,"The AI's answer correctly identifies the key event from the ground-truth item, and the single event matches perfectly (score 1.0).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""plasma conduit rupture""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI's answer correctly identifies the key event from the ground-truth item, and the single event matches perfectly (score 1.0).""
+}",Compute on Sets and Lists,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:46+00:00,rag,combined_q_idx:107,107,107,23,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on the experiences of Brooklyn Ross related to cryo-pod integrity breach. List all the unique locations where these events took place, without mentioning the events themselves.",story_state::latest_chapter,latest,['0'],unsure,['0'],[0.0],0,0.0,0.0,0.0,0,"The AI answer 'unsure' does not provide any chapter indices, so it does not match the ground-truth item '0'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""0""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer 'unsure' does not provide any chapter indices, so it does not match the ground-truth item '0'.""
+}",Stateful Processing,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:49+00:00,rag,combined_q_idx:108,108,108,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Ezra Edwards at Titania Quantum Lab on December 03, 2226. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at Teegarden's Star Base on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['plasma conduit rupture']"", '[]']","only_in_A: A sudden, ear-splitting shriek tore through the lab’s acoustics as the plasma conduit near sector D7 breached containment, a violent cascade of cerulean plasma erupting in a column of searing light. Ezra’s breath caught, his vision momentarily flooded by the electric bloom as the energy surge rippled through the magnetic fields, warping the air and sending data",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""plasma conduit rupture""],
+  ""matching_scores"": [0.85],
+  ""explanation"": ""The AI answer includes the phrase 'plasma conduit rupture,' which matches the only ground-truth item. The answer is specific to Ezra Edwards at Titania Quantum Lab on December 03, 2226, while the ground-truth refers to",Spot the Differences,c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:51+00:00,rag,combined_q_idx:109,109,109,21,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving childhood memory trade scandal at Dione Ice Processing Facility. List all protagonists involved in these events, without mentioning the events themselves.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving digital afterlife server shutdown at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided no items, so there is no intersection with the ground-truth list (which is empty). The single score of 0.0 reflects that no shared items were identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provided no items, so there is no intersection with the ground-truth list (which is empty). The single score of 0.0 reflects that no shared items were identified.""
+}",Match and Compare,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:54+00:00,rag,combined_q_idx:110,110,110,25,"Think about the events related to air filter contamination that occurred at Teegarden's Star Base on August 12, 2225. List all protagonists involved in these events, without describing the events themselves.",Entities,all,[],Scarlett Thomas.,['Scarlett Thomas'],[],0,0.0,1.0,0.0,0,"The AI answer identifies the sole protagonist mentioned in the context of air filter contamination events at Teegarden's Star Base on August 12, 2225.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Scarlett Thomas""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer identifies the sole protagonist mentioned in the context of air filter contamination events at Teegarden's Star Base on August 12, 2225.""
+}",Search,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:55+00:00,rag,combined_q_idx:111,111,111,22,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Brooklyn Ross and artificial atmosphere toxicity. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,[],"September 22, 2226, September 13, 2225",[],[],0,1.0,1.0,1.0,1,No ground-truth items were provided to compare against the AI answer.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0, 0.0],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI answer.""
+}",Compute on Sets and Lists,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:57+00:00,rag,combined_q_idx:112,112,112,26,"Consider the events involving both Lily Nguyen and wormhole destabilization on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",Spaces,all,[],AetherGrid’s northern node,[],[],0,1.0,1.0,1.0,1,"No matching ground-truth locations provided for Lily Nguyen or wormhole destabilization events on April 09, 2226.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No matching ground-truth locations provided for Lily Nguyen or wormhole destabilization events on April 09, 2226.""
+}",Search,s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:03:59+00:00,rag,combined_q_idx:113,113,113,27,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and cosmic intelligence contact at Cygnus Rift Complex. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided to compare against the AI's answer, so no items were identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided to compare against the AI's answer, so no items were identified.""
+}",Compute on Sets and Lists,t,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:01+00:00,rag,combined_q_idx:114,114,114,21,"Story composite task: Use two story queries.
+A) Think about the events involving magnetospheric resonance breach at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity at Europa Subsurface Laboratory. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],Julian Ross,['Julian Ross'],[],0,0.0,1.0,0.0,0,"The AI answer contains one item, 'Julian Ross', which does not appear in the ground-truth items (which are empty), so it has a matching score of 0.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Julian Ross""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer contains one item, 'Julian Ross', which does not appear in the ground-truth items (which are empty), so it has a matching score of 0.""
+}",Composite,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:04+00:00,rag,combined_q_idx:115,115,115,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Scarlett Thomas at Mercury Twilight Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['subspace antenna failure']"", '[]']","only_in_A: unsure
+only_in_B: unsure
+
+There is no information provided about Scarlett Thomas at Mercury Twilight Observatory on April 09, 2226 or about Chloe Castillo at Hydra Cloud Facility on April 09, 2226 within the given chunks.",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,"No specific events or activities involving Scarlett Thomas at Mercury Twilight Observatory or Chloe Castillo at Hydra Cloud Facility on April 9, 2226 are mentioned in the AI answer; therefore, it could not identify any relevant details from the given context.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No specific events or activities involving Scarlett Thomas at Mercury Twilight Observatory or Chloe Castillo at Hydra Cloud Facility on April 9, 2226 are mentioned in the AI answer; therefore, it could not identify any relevant details from the given context.""
+}",Spot the Differences,c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:07+00:00,rag,combined_q_idx:116,116,116,13,"Story composite task: Use two story queries.
+A) Recall the key events that occurred at Eridani Metallurgy Complex on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,[],"antimatter cascade, navigation computer blackout","['antimatter cascade', 'navigation computer blackout']",[],0,0.0,1.0,0.0,0,"All items in the AI answer are not present in the ground-truth items, which are an empty list.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""antimatter cascade"", ""navigation computer blackout""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""All items in the AI answer are not present in the ground-truth items, which are an empty list.""
+}",Composite,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:08+00:00,rag,combined_q_idx:117,117,117,31,What is the most recent location where Logan Diaz was observed in the story's chronological timeline?,Spaces,latest,['Mercury Twilight Observatory'],Mercury Twilight Observatory.,['Mercury Twilight Observatory'],[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the single ground-truth item provided.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Mercury Twilight Observatory""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the single ground-truth item provided.""
+}",Stateful Processing,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:11+00:00,rag,combined_q_idx:118,118,118,10,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Hydra Cloud Facility', 'Luna Oceanus Trading Post']"", ""['0']""]","only_in_A: Hydra Cloud Facility
+only_in_B: unsure",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Hydra Cloud Facility""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI correctly identified the location from the first ground-truth item in A, but did not provide a matching item for B since the answer was 'unsure'. The highest matching score is 1.0 for the first item in A.""",Spot the Differences,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:13+00:00,rag,combined_q_idx:119,119,119,26,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Ezra Edwards and plasma conduit rupture on December 03, 2226. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['24'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"No chapter index was identified in the AI answer, so it does not match the ground-truth item '24'.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No chapter index was identified in the AI answer, so it does not match the ground-truth item '24'.""
+}",Stateful Processing,s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:16+00:00,rag,combined_q_idx:120,120,120,14,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Scarlett Thomas on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on what Levi Rodriguez experienced on December 26, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[""[\'subspace antenna failure\']"", \'[]\']']","only_in_A: All personnel to emergency shelters. witnessed a antimatter cascade. Her heart hammered as the red emergency lights flooded the room, painting every surface in a bloody glow. On the main holo-slate, the readouts flickered into chaos: pressure spikes, core temperature surges, containment breach alarms.
+only_in_B: At first, Scarlett assumed it was a transient glitch, a","[""['subspace antenna failure'""]","[0.0, 0.0]",0,0.0,0.0,0.0,0,"Only the phrase '['subspace antenna failure']' from the ground truth appears verbatim as an identified item in the AI answer (in A), while the answer for B does not contain any of the ground truth items.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""['subspace antenna failure'""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""Only the phrase '['subspace antenna failure']' from the ground truth appears verbatim as an identified item in the AI answer (in A), while the answer for B does not contain any of the ground truth items.""
+}",Spot the Differences,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:18+00:00,rag,combined_q_idx:121,121,121,16,"Story composite task: Use two story queries.
+A) Recall the events related to artificial atmosphere toxicity that occurred on February 27, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity on February 27, 2226. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['Europa Subsurface Laboratory'],"Mercury Twilight Observatory
+
+Henry Reed.",[],[0.0],0,0.0,0.0,0.0,0,No items from the AI answer appear in the ground-truth list.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0],
+  ""explanation"": ""No items from the AI answer appear in the ground-truth list.""
+}",Composite,s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:20+00:00,rag,combined_q_idx:122,122,122,24,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Zoe Brown at Europa Subsurface Laboratory on December 26, 2226. Describe the key events or activities that occurred, focusing on what happened.",story_state::latest_chapter,latest,['49'],49,['49'],[1.0],1,1.0,1.0,1.0,1,"The AI answer directly identifies the chapter index '49' as the latest chapter related to Zoe Brown at Europa Subsurface Laboratory on December 26, 2226, which matches the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""49""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer directly identifies the chapter index '49' as the latest chapter related to Zoe Brown at Europa Subsurface Laboratory on December 26, 2226, which matches the ground-truth item.""
+}",Stateful Processing,c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:23+00:00,rag,combined_q_idx:123,123,123,19,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",story_compute::sort_items,chronological,['navigation computer blackout'],cryo-pod’s containment field flickered and fractured along a jagged line of blue light; witnessed history—her eyes locked on the failing barrier at Mercury Twilight Observatory.,[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""failing barrier""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The AI identified 'failing barrier' from the AI answer, which matches the theme of a containment or system failure at Barnard's Star Propulsion Lab as implied by the context, though not explicitly named in the ground-truth. The score is",Compute on Sets and Lists,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:26+00:00,rag,combined_q_idx:124,124,124,34,List all locations visited by Daniel Lopez in chronological order according to the story's timeline.,Spaces,chronological,[],"Naiad Oceanographic Center, facility (location of Henry's visit or similar setup with servers and surveillance as described)",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Naiad Oceanographic Center""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer identifies the only location mentioned or implied in the context (Naiad Oceanographic Center), which matches the single ground-truth item if the center is considered a facility. Since the ground-truth is empty, the score",Compute on Sets and Lists,t|s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:29+00:00,rag,combined_q_idx:125,125,125,4,"Story recall-and-edit: Start from the answer to this story query: ""Consider the location Eridani Metallurgy Complex. List all protagonists that have been involved in any events at this location, without mentioning the events themselves."". Remove ""Carter Stewart"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['Henry Reed', 'Zoe Brown']","Henry Reed, Sienna Lyles, Lucy Carter, Hazel Lewis",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Henry Reed""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer lists only 'Henry Reed' from the ground-truth list, while 'Zoe Brown' is missing after removing 'Carter Stewart' (who was not in the AI answer). Therefore, 'Henry Reed' matches perfectly (score",Recall and Edit,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:31+00:00,rag,combined_q_idx:126,126,126,12,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.",story_compute::sort_items,chronological,['Zoe Brown'],Zoe,['Zoe'],[1.0],1,1.0,1.0,1.0,1,"The AI identified 'Zoe' from the ground-truth item 'Zoe Brown', matching the first name in the full name.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Zoe""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI identified 'Zoe' from the ground-truth item 'Zoe Brown', matching the first name in the full name.""
+}",Compute on Sets and Lists,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:34+00:00,rag,combined_q_idx:127,127,127,21,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events involving navigation computer blackout at Eridani Metallurgy Complex. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"[""['Henry Reed']"", ""['May 07, 2224']""]","only_in_A: Henry Reed, Mara Ledbetter
+only_in_B: unsure",[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Henry Reed""],
+  ""matching_scores"": [0.8],
+  ""explanation"": ""The AI only correctly identified the protagonist from the first query (Henry Reed), missing the second protagonist (Mara Ledbetter) in the A query. For the B query, the AI did not provide any identified dates, so it missed both ground-truth",Spot the Differences,t|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:36+00:00,rag,combined_q_idx:128,128,128,28,"Recall what happened involving Zoe Brown and subspace antenna failure at Europa Subsurface Laboratory on December 26, 2226 and list only who else was involved (if anyone).",Other entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,The AI answer 'unsure' does not identify any entities involved in the event described. There are no ground-truth items to compare against.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not identify any entities involved in the event described. There are no ground-truth items to compare against.""
+}",Match and Compare,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:38+00:00,rag,combined_q_idx:129,129,129,26,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Levi Rodriguez and subspace antenna failure on December 26, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Triton Gas Colony"" from the answer. Return only the remaining items.",story_edit::remove_one,all,[],Nereid Weather Station,['Nereid Weather Station'],[],0,0.0,1.0,0.0,0,"The AI answer provides one item ('Nereid Weather Station'), while the ground-truth list is empty, so there is no match.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Nereid Weather Station""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provides one item ('Nereid Weather Station'), while the ground-truth list is empty, so there is no match.""
+}",Recall and Edit,s,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:41+00:00,rag,combined_q_idx:130,130,130,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to fusion core breach that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,['Lily Nguyen'],"Henry, Lillian Mendoza, Chief Dakari Liebert
+
+(Note: The provided context does not mention any events related to a fusion core breach at Sedna Long Range Observatory on April 09, 2226. However, following instructions strictly, the names mentioned in the context related to fusion core breaches are listed.)",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Dakari"", ""Lily"", ""Henry""],
+  ""matching_scores"": [1.0, 0.0, 0.0],
+  ""explanation"": ""Only 'Lily' matches the ground-truth item 'Lily Nguyen'. 'Henry' and 'Dakari' are not present in the ground-truth",Compute on Sets and Lists,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:43+00:00,rag,combined_q_idx:131,131,131,2,"Story composite task: Use two story queries.
+A) Reflect on May 07, 2224. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['vacuum seal deterioration'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer provided no items, so there are no matches with the ground-truth item.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0],
+  ""explanation"": ""The AI answer provided no items, so there are no matches with the ground-truth item.""
+}",Composite,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:45+00:00,rag,combined_q_idx:132,132,132,28,"Recall what happened involving Chloe Castillo and tachyon field surge at Hydra Cloud Facility on April 09, 2226 and list only who else was involved (if anyone).",Other entities,all,[],unsure,[],[],0,1.0,1.0,1.0,1,The AI answer 'unsure' does not identify any entities involved in the event described. There are no ground-truth items to match against.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not identify any entities involved in the event described. There are no ground-truth items to match against.""
+}",Match and Compare,,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:47+00:00,rag,combined_q_idx:133,133,133,15,"Story composite task: Use two story queries.
+A) Reflect on what Ezra Edwards experienced on December 03, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Jaxon Howard on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['plasma conduit rupture'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI answer provided no items, so none from the ground-truth were identified.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer provided no items, so none from the ground-truth were identified.""
+}",Composite,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:48+00:00,rag,combined_q_idx:134,134,134,1,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.",story_edit::remove_one,all,"['Lily Nguyen', 'Scarlett Thomas']",unsure,[],"[0.0, 0.0]",0,0.0,0.0,0.0,0,The AI did not provide any identified protagonist names from the ground-truth list.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not provide any identified protagonist names from the ground-truth list.""
+}",Recall and Edit,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:51+00:00,rag,combined_q_idx:135,135,135,13,"Story recall-and-edit: For query ""Recall the key events that occurred at Triton Gas Colony on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved."", return an empty answer.",story_edit::empty,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not describe any key events, so it does not match any of the ground-truth items (which are empty).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not describe any key events, so it does not match any of the ground-truth items (which are empty).""
+}",Recall and Edit,ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:53+00:00,rag,combined_q_idx:136,136,136,5,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the various events that have taken place at Europa Subsurface Laboratory. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",story_state::latest_chapter,latest,['49'],49,['49'],[1.0],1,1.0,1.0,1.0,1,"The AI answer directly lists the chapter index (49) provided in the ground-truth, matching the requested format and content.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""49""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer directly lists the chapter index (49) provided in the ground-truth, matching the requested format and content.""
+}",Stateful Processing,t|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:56+00:00,rag,combined_q_idx:137,137,137,2,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on May 28, 2225. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place."". Remove ""atmospheric scrubber failure"" from the answer. Return only the remaining items.",story_edit::remove_one,all,['magnetic confinement rupture'],"Alarms blared sharper, and the screens overhead flickered with jagged error codes. The air quality monitors screamed, and the facility’s gravity fields stuttered, betraying the system’s unraveling.",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""alarms blared"", ""screens overhead flickered"", ""air quality monitors screamed"", ""gravity fields stuttered""],
+  ""matching_scores"": [0.0, 0.0, 1.0, 0.8],
+  ""explanation"": ""The AI answer includes four phrases. Only 'air quality monitors screamed' closely matches",Recall and Edit,s|ent|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:04:58+00:00,rag,combined_q_idx:138,138,138,29,"Provide a comprehensive account of what happened involving Ezra Edwards and plasma conduit rupture at Titania Quantum Lab on December 03, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",Full event details,all,['Full chapter 24'],"On December 03, 2226, at Titania Quantum Lab, Ezra Edwards was monitoring the outer plasma containment field from the central control hub. Suddenly, a plasma conduit near sector D7 breached containment, releasing a violent cascade of cerulean plasma that erupted in a column of searing light. This caused the containment field to flicker and fail, leading to a chaotic surge",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""plasma conduit rupture"", ""breach of containment"", ""cascade of cerulean plasma"", ""flickering containment field"", ""chaotic surge""],
+  ""matching_scores"": [0.85, 0.92, 0.88, 0.79, 0.81],
+  ""explanation"": ""The AI answer",Composite,,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:01+00:00,rag,combined_q_idx:139,139,139,26,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Jaxon Howard and cosmic string vibration on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",story_state::latest_chapter,latest,['0'],unsure,[],[0.0],0,0.0,0.0,0.0,0,"The AI did not identify any chapter indices related to Jaxon Howard or cosmic string vibration events on August 12, 2225 from the provided ground-truth.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI did not identify any chapter indices related to Jaxon Howard or cosmic string vibration events on August 12, 2225 from the provided ground-truth.""
+}",Stateful Processing,s,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:04+00:00,rag,combined_q_idx:140,140,140,19,"Story composite task: Use two story queries.
+A) Reflect on Zoe Brown's experiences at Dyson Swarm Control. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",story_composite::difference_then_sort,all,['vacuum seal deterioration'],"Dyson Swarm Control
+
+- Zoe Brown was present during an issue with the swarm's vast network of solar panels and energy collectors, standing with quiet determination as technicians worked to diagnose the problem.",[],[0.0],0,0.0,0.0,0.0,0,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Dyson Swarm Control""],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""The AI answer only names the location ('Dyson Swarm Control'), not any events. Since the ground-truth item is 'vacuum seal deterioration' (an event at Dyson Swarm Control), it does not appear in the AI answer",Composite,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:07+00:00,rag,combined_q_idx:141,141,141,25,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.",story_compute::sort_items,chronological,[],"Henry Reed, Hazel Lewis, Mara Ledbetter, Carter",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Carter"", ""Hazel Lewis"", ""Henry Reed"", ""Mara Ledbetter""],
+  ""matching_scores"": [1.0, 1.0, 1.0, 1.0],
+  ""explanation"": ""All four names in the AI answer are found in the ground-truth list when compared case-insensit",Compute on Sets and Lists,ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:08+00:00,rag,combined_q_idx:142,142,142,18,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Ezra Edwards at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,"['September 13, 2225']",unsure,[],[0.0],0,0.0,0.0,0.0,0,No items were identified by the AI in response to the query.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [0.0],
+  ""explanation"": ""No items were identified by the AI in response to the query.""
+}",Compute on Sets and Lists,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:11+00:00,rag,combined_q_idx:143,143,143,18,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Julian Peterson at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",story_compute::sort_items,chronological,[],"September 22, 2226, September 27, 2225",[],[],0,1.0,1.0,1.0,1,,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""September 22, 2226"", ""September 27, 2225""],
+  ""matching_scores"": [1.0, 0.0],
+  ""explanation"": ""No ground-truth dates were provided, so the AI answer is marked as fully correct (1.0) for its own items and 0 for the non",Compute on Sets and Lists,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:13+00:00,rag,combined_q_idx:144,144,144,15,"Story recall-and-edit: For query ""Reflect on what Carter Stewart experienced on August 27, 2224. Describe all the key events they were involved in, focusing on what happened rather than where it occurred."", return an empty answer.",story_edit::empty,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer 'unsure' does not describe any story events for the given query, so there are no identified items or matching scores.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer 'unsure' does not describe any story events for the given query, so there are no identified items or matching scores.""
+}",Recall and Edit,s|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:15+00:00,rag,combined_q_idx:145,145,145,18,"Story recall-and-edit: For query ""Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",story_edit::empty,all,[],"There are no dates provided for events involving Ella Ross at Dione Ice Processing Facility based on the given chunks. Therefore, the answer is:
+
+[]",[],[],0,1.0,1.0,1.0,1,No ground-truth items to match; AI answer is empty as requested.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items to match; AI answer is empty as requested.""
+}",Recall and Edit,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:17+00:00,rag,combined_q_idx:146,146,146,19,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on Ella Ross's experiences at Dione Ice Processing Facility. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story composite task: Use two story queries.
+A) Reflect on Zoe Brown's experiences at Dyson Swarm Control. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"The AI answer provided ('unsure') does not contain any story items, so there is no intersection with the ground-truth items (which are empty).",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""The AI answer provided ('unsure') does not contain any story items, so there is no intersection with the ground-truth items (which are empty).""
+}",Match and Compare,t|c,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:18+00:00,rag,combined_q_idx:147,147,147,11,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on events related to cryo-pod integrity breach. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",story_compare::intersection,all,[],unsure,[],[],0,1.0,1.0,1.0,1,"No ground-truth items were provided for the story query, so the AI could not identify any relevant items to compare.",allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [],
+  ""matching_scores"": [],
+  ""explanation"": ""No ground-truth items were provided for the story query, so the AI could not identify any relevant items to compare.""
+}",Match and Compare,t|s|ent,ok,scifi_qwen25_14b_rag.answers.jsonl,0,0
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:21+00:00,rag,combined_q_idx:148,148,148,23,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on the experiences of Brooklyn Ross related to artificial atmosphere toxicity. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on the experiences of Carter Stewart related to antimatter cascade. List all the unique locations where these events took place, without mentioning the events themselves."". Remove ""Phobos Military Base"" from the answer. Return only the remaining items.
+Return only_in_A and only_in_B.",story_diff::set_difference,all,"['[]', '[]']","only_in_A: Luna Shackleton Crater Colony
+only_in_B: Phobos Military Base (removed as per instruction), sealed, high-security chambers of the base",['Luna Shackleton Crater Colony'],"[1.0, 0.0]",1,1.0,0.5,0.666667,0,Only 'Luna Shackleton Crater Colony' from the AI answer matches the ground-truth item.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""Luna Shackleton Crater Colony""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""Only 'Luna Shackleton Crater Colony' from the AI answer matches the ground-truth item.""
+}",Spot the Differences,t|s,ok,scifi_qwen25_14b_rag.answers.jsonl,2,2
+/workspace/scifi_qwen25_14b_rag.answers.jsonl,2026-04-08T19:05:22+00:00,rag,combined_q_idx:149,149,149,27,"Consider all events involving both Zoe Brown and navigation computer blackout at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",Times,all,"['November 13, 2226']","November 13, 2226","['November 13, 2226']",[1.0],1,1.0,1.0,1.0,1,The AI answer exactly matches the single ground-truth date.,allenai/OLMo-3-7B-Instruct,ok,ok,,"{
+  ""identified_items_in_ai_answer"": [""November 13, 2226""],
+  ""matching_scores"": [1.0],
+  ""explanation"": ""The AI answer exactly matches the single ground-truth date.""
+}",Search,t,ok,scifi_qwen25_14b_rag.answers.jsonl,1,1

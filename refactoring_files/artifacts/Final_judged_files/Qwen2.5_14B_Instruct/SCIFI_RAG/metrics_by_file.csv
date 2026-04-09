@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+scifi_qwen25_14b_rag.answers.jsonl,150,0.4844444466666667,0.47333333333333333

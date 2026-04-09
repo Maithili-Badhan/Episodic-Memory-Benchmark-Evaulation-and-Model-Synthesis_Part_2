@@ -1,0 +1,662 @@
+row_key,q_idx,combined_q_idx,question,correct_answer,answer,status,error,latency_sec
+combined_q_idx:0,18,0,"Story composite task: Use two story queries.
+A) Consider all events involving Carter Stewart at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""September 13, 2025""]","A) [List of dates when events involving Carter Stewart at American Museum of Natural History occurred]
+- September 13, 2025
+
+B) [Key events involving Julian Ross at High Line, without dates]
+- Exchanged industry insights
+- Listened as a young team of three nervously presented their app
+- Participated in mentoring sessions
+
+C) [Remaining items from A after removing",ok,,5.321
+combined_q_idx:1,33,1,"Provide a chronological list of all dates when Ella Ross was observed, from earliest to latest in the story's timeline.",set(),[],ok,,0.091
+combined_q_idx:2,25,2,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to Fashion Show that occurred at Brooklyn Museum on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to Astronomy Night that occurred at High Line on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Lily Nguyen""], ""only_in_B"": [""Scarlett Thomas""]}","only_in_A = []
+only_in_B = []
+
+Since there is no information about Astronomy Night at High Line on April 09, 2026, only_in_B will be empty.
+
+only_in_A = ['Chloe Castillo']
+only_in_B = []",ok,,1.484
+combined_q_idx:3,15,3,"Reflect on what Chloe Castillo experienced on August 17, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",set(),"Chloe Castillo was not involved in any events on August 17, 2025.",ok,,0.563
+combined_q_idx:4,22,4,"Story composite task: Use two story queries.
+A) Consider all events involving both Bella Alvarez and Environmental Summit. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) 
+September 13, 2025
+
+B) 
+No events involving both Bella Brown and 3D Printing Workshop were found in the text.
+
+Since there are no common items between A and B, the final answer is:
+
+September 13, 2025",ok,,1.608
+combined_q_idx:5,26,5,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the events involving both Jackson Ramos and Flash Mob on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Ellis Island""], ""only_in_B"": [""Julian Ross"", ""Mila Gonzalez""]}","only_in_A = []
+only_in_B = ['Ezra Edwards', 'Chloe Castillo', 'Henry Reed', 'Zoe Brown', 'Logan Diaz', 'Julian Ross']",ok,,1.194
+combined_q_idx:6,31,6,What is the most recent location where Christian Patel was observed in the story's chronological timeline?,set(),There is no mention of Christian Patel in the provided text.,ok,,0.389
+combined_q_idx:7,27,7,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Julian Ross and Film Festival at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",29,"[2, 6]",ok,,0.255
+combined_q_idx:8,7,8,"Story composite task: Use two story queries.
+A) Consider all events that Isaiah Bennett has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+B) Consider all events that Logan Diaz has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Bethpage State Park""]","A) 
+- Bethpage Black Course
+- Hither Hills State Park
+- Port Jefferson
+- American Museum of Natural History
+
+B) 
+- High Line
+- Port Jefferson
+
+Removing items that also appear in answer(B) from answer(A):
+- Bethpage Black Course
+- Hither Hills State Park
+- American Museum of Natural History
+
+Sorted alphabetically:
+- American Museum of Natural",ok,,2.255
+combined_q_idx:9,13,9,"Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at High Line on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""Astronomy Night"" from the answer. Return only the remaining items.",set(),"Logan paused at the threshold, his breath visible in the faint chill, catching the scent of jasmine from a flickering centerpiece as he adjusted the cuff of his dark jacket. He had worn it with a sense of occasion he hadn’t known he possessed, the fabric soft against his skin as it caught the occasional glint of light from above. 
+
+Beneath the arches of the High Line",ok,,2.218
+combined_q_idx:10,10,10,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving Antique Auction. List all the locations where these events took place, without mentioning the events themselves.
+B) Recall all events related to Business Networking Event. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),[],ok,,0.149
+combined_q_idx:11,27,11,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Chloe Castillo and Fashion Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Isaiah Evans and Opera Performance at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),[],ok,,0.127
+combined_q_idx:12,28,12,"Recall what happened involving Lucy Carter and Antique Auction at Captree State Park on April 09, 2026 and list only who else was involved (if anyone).",set(),"There is no information about Lucy Carter and Antique Auction at Captree State Park on April 09, 2026 in the provided text.",ok,,0.833
+combined_q_idx:13,27,13,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Levi Rodriguez and Fashion Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Skylar Thompson and Car Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),[],ok,,0.163
+combined_q_idx:14,29,14,"Provide a comprehensive account of what happened involving Brooklyn Ross and Educational Workshop at One World Trade Center on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 104'},"There is no information about Brooklyn Ross and an Educational Workshop at One World Trade Center on April 09, 2026, in the provided text.",ok,,0.895
+combined_q_idx:15,22,15,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Brooklyn Ross and Book Signing Event. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on the experiences of Samuel Parker related to Theater Performance. List all the unique locations where these events took place, without mentioning the events themselves.
+Return the intersection.",set(),[],ok,,0.146
+combined_q_idx:16,25,16,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Charity Gala that occurred at Chrysler Building on August 27, 2024. List all protagonists involved in these events, without describing the events themselves.",[],[],ok,,0.126
+combined_q_idx:17,12,17,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about what happened at Ellis Island on April 09, 2026. List all protagonists involved in any events at this time and place, without describing the events.
+B) Recall the key events that occurred at High Line on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Jackson Ramos""], ""only_in_B"": [""Astronomy Night""]}","only_in_A = ['Ezra Edwards', 'Noa Middleton', 'Mara Ledbetter', 'Bethpage Black Course', 'Chloe Castillo', 'American Museum of Natural History', 'September 13, 2025', 'September 22, 2026']
+only_in_B = []",ok,,1.798
+combined_q_idx:18,0,18,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all the events that occurred on August 24, 2026. Without describing the events, list all the unique locations where these events took place.",100,"There is no information about events occurring on August 24, 2026.",ok,,0.52
+combined_q_idx:19,26,19,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": []}","only_in_A = []
+only_in_B = []
+
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Locations in A: None (Lucy Carter and Antique Auction not found in the text)
+
+B) Story compute-on-lists: For this story query answer, sort",ok,,2.275
+combined_q_idx:20,26,20,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Theater Performance on April 09, 2026. List all the locations where these events took place, without describing the events themselves.",[],American Museum of Natural History,ok,,0.238
+combined_q_idx:21,22,21,"Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.",set(),[],ok,,0.104
+combined_q_idx:22,27,22,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Samuel Parker and Job Fair at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Logan Diaz and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),[],ok,,0.171
+combined_q_idx:23,17,23,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Flash Mob on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events.","[""Jackson Ramos""]",[],ok,,0.131
+combined_q_idx:24,15,24,"Reflect on what Stella Scott experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",set(),There is no mention of Stella Scott in the provided text.,ok,,0.403
+combined_q_idx:25,16,25,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the events related to Tech Hackathon that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.","{""only_in_A"": [""One World Trade Center"", ""Port Jefferson"", ""Yankee Stadium""], ""only_in_B"": [""High Line"", ""Statue of Liberty""]}","only_in_A = []
+only_in_B = []
+
+Since there is no information about Tech Hackathon on March 23, 2024, or Theater Performance on February 27, 2026, the lists are empty.
+
+only_in_A = []
+only_in_B = []",ok,,1.62
+combined_q_idx:26,27,26,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Carter Stewart and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",56,[],ok,,0.119
+combined_q_idx:27,0,27,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+B) Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Return the intersection.",set(),[],ok,,0.162
+combined_q_idx:28,34,28,List all locations visited by Levi Rodriguez in chronological order according to the story's timeline.,"['Trinity Church', 'Snug Harbor Cultural Center', 'Snug Harbor Cultural Center', 'One World Trade Center', 'American Museum of Natural History', 'Bethpage Black Course', 'Trinity Church', 'Washington Square Park', 'American Museum of Natural History']",There is no mention of Levi Rodriguez in the provided text.,ok,,0.385
+combined_q_idx:29,2,29,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all the events that occurred on May 07, 2024. Without describing the events, list all the unique locations where these events took place.
+B) Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+Return the intersection.
+Return the intersection.",set(),[],ok,,0.248
+combined_q_idx:30,16,30,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to Educational Workshop that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""One World Trade Center"" from the answer. Return only the remaining items.",set(),Bethpage Black Course,ok,,0.208
+combined_q_idx:31,28,31,"Recall what happened involving Scarlett Thomas and Astronomy Night at High Line on April 09, 2026 and list only who else was involved (if anyone).","{'Vada Dunning', 'Zyair Batchelor'}",[],ok,,0.107
+combined_q_idx:32,21,32,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Think about the events involving Photography Exhibition at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+B) Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Carter Stewart"", ""Chloe Castillo"", ""Julian Ross"", ""Levi Rodriguez"", ""Samuel Parker""]}","only_in_A: 
+- Chloe Castillo
+
+only_in_B: 
+- Ezra Edwards",ok,,0.597
+combined_q_idx:33,5,33,"Story composite task: Use two story queries.
+A) Recall the various events that have taken place at Statue of Liberty. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Recall the various events that have taken place at Museum of Modern Art. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Fire Dancing Performance"", ""Tech Hackathon"", ""Theater Performance""]","A) Statue of Liberty events:
+- A cat leap was performed.
+- A crowd watched intently.
+- A group of people gathered to see Ezra Edwards show the cat leap again.
+- Ezra Edwards stepped onto the first wall.
+- Ezra Edwards rolled onto his knees, braced against the stone, and pushed off.
+- Ezra Edwards landed lightly, rolling into the next sequence.
+- Ezra Edwards was",ok,,2.265
+combined_q_idx:34,26,34,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Benjamin Green and Tech Hackathon on April 09, 2026. List all the locations where these events took place, without describing the events themselves.","[""Snug Harbor Cultural Center""]",[],ok,,0.129
+combined_q_idx:35,3,35,"Story composite task: Use two story queries.
+A) Think about all events that have occurred at Long Beach Boardwalk. Provide a list of all dates when these events took place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""November 13, 2026""]","A) 
+1. September 13, 2025
+2. September 22, 2026
+
+B) 
+1. Chloe Castillo
+2. Henry Reed
+3. Julian Ross
+4. Logan Diaz
+
+C) 
+1. Ezra Edwards
+2. Mara Ledbetter
+3. Noa Middleton",ok,,1.893
+combined_q_idx:36,24,36,"Story composite task: Use two story queries.
+A) Recall what happened involving Lucy Carter at Captree State Park on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) There is no information about Lucy Carter at Captree State Park on April 09, 2026. 
+
+B) There is no information about Brooklyn Ross at Bethpage State Park on August 24, 2026.
+
+Since there is no information for both queries, the final answer is an empty list.",ok,,1.867
+combined_q_idx:37,26,37,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.",[],American Museum of Natural History,ok,,0.237
+combined_q_idx:38,27,38,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Logan Diaz and Parkour Workshop at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",0,"[3, 6]",ok,,0.252
+combined_q_idx:39,0,39,"Recall all the events that occurred on February 03, 2024. Without describing the events, list all the unique locations where these events took place.",set(),[],ok,,0.106
+combined_q_idx:40,27,40,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Skylar Thompson and Car Show at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",0,[],ok,,0.126
+combined_q_idx:41,25,41,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Book Signing Event that occurred at Bethpage State Park on August 24, 2026. List all protagonists involved in these events, without describing the events themselves.",0,1,ok,,0.105
+combined_q_idx:42,26,42,"Consider the events involving both Stella Scott and Astronomy Night on August 12, 2025. List all the locations where these events took place, without describing the events themselves.",set(),[],ok,,0.104
+combined_q_idx:43,29,43,"Provide a comprehensive account of what happened involving Brooklyn Ross and Book Signing Event at Bethpage State Park on August 24, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",set(),"There is no information about a Brooklyn Ross and Book Signing Event at Bethpage State Park on August 24, 2026, in the provided text.",ok,,0.945
+combined_q_idx:44,2,44,"Story composite task: Use two story queries.
+A) Reflect on May 07, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Karaoke Night""]","A) Reflect on May 07, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+
+- cheap lager was consumed
+- conversation rippled through the trees
+- fireflies blinked
+- laughter rippled through the trees
+- music spilled from speakers
+- nerves were taut in Zoe's",ok,,2.317
+combined_q_idx:45,24,45,"Story composite task: Use two story queries.
+A) Recall what happened involving Brooklyn Ross at One World Trade Center on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Educational Workshop""]","A) There is no information about Brooklyn Ross at One World Trade Center on April 09, 2026. 
+
+B) There is no information about Scarlett Thomas at High Line on April 09, 2026.
+
+Since both answers are empty, the final answer is also empty.",ok,,1.732
+combined_q_idx:46,25,46,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Educational Workshop that occurred at One World Trade Center on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.","[""Brooklyn Ross""]",[],ok,,0.131
+combined_q_idx:47,16,47,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to Astronomy Night that occurred on August 12, 2025. List all the locations where these events took place, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving Book Signing Event on August 24, 2026. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",set(),[],ok,,0.172
+combined_q_idx:48,13,48,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.","[""Theater Performance""]",[],ok,,0.128
+combined_q_idx:49,5,49,"Recall the various events that have taken place at Museum of Modern Art. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.","{'Tech Product Launch', 'Fashion Show'}","The events that have taken place at the Museum of Modern Art are:
+
+1. A fashion show where designers unveiled their future collections, and Chloe Castillo revealed her designs destined to shape tomorrow.
+2. A presentation by Henry Reed, where he explained post-processing techniques and how the same raw image can transform into something hauntingly new.",ok,,1.88
+combined_q_idx:50,27,50,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Isaiah Evans and Opera Performance at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",[],[],ok,,0.129
+combined_q_idx:51,12,51,"Story recall-and-edit: For query ""Think about what happened at American Museum of Natural History on August 17, 2025. List all protagonists involved in any events at this time and place, without describing the events."", return an empty answer.",set(),[],ok,,0.117
+combined_q_idx:52,4,52,"Consider the location Metropolitan Museum of Art. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.","{'Carter Stewart', 'Jackson Hall', 'Zoe Brown', 'Samuel Parker', 'Scarlett Thomas'}",[],ok,,0.102
+combined_q_idx:53,2,53,"Story composite task: Use two story queries.
+A) Reflect on January 03, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Reflect on February 27, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Debate Tournament""]","A) Reflect on January 03, 2026. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+
+- A timer glowed on every screen, counting down the seconds until competition rules took full force.
+- A woman nearby adjusted her pearl earring, catching his eye with a knowing tilt of her head.
+-",ok,,2.345
+combined_q_idx:54,9,54,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to Antique Auction. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Parkour Workshop. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.
+Return the intersection.",set(),"Since there are no events related to Antique Auction, Parkour Workshop, or Archery Tournament in the provided text, the answers to the queries are empty sets.
+
+However, based on the queries, we can infer that the intersection of the sets would be an empty set, as there are no common events or protagonists among the queries.
+
+So, the final answer is:
+
+Intersection: []",ok,,2.331
+combined_q_idx:55,4,55,"Story recall-and-edit: Start from the answer to this story query: ""Consider the location Bethpage Black Course. List all protagonists that have been involved in any events at this location, without mentioning the events themselves."". Remove ""Bella Brown"" from the answer. Return only the remaining items.","{'Levi Rodriguez', 'Logan Diaz', 'Ezra Edwards', 'Scarlett Thomas', 'Zoe Brown'}",Ezra Edwards,ok,,0.211
+combined_q_idx:56,24,56,"Recall what happened involving Stella Scott at Grand Central Terminal on August 12, 2025. Describe the key events or activities that occurred, focusing on what happened.",set(),"There is no mention of Stella Scott at Grand Central Terminal on August 12, 2025, in the provided text.",ok,,0.773
+combined_q_idx:57,25,57,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Theater Performance that occurred at American Museum of Natural History on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.","[""Samuel Parker""]",[],ok,,0.13
+combined_q_idx:58,7,58,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that Olivia Turner has been involved in. List all the locations where these events took place, without mentioning the events themselves."". Remove ""Trinity Church"" from that answer. Return only the remaining items.",{'Williamsburg Bridge'},"Bethpage Black Course
+Port Jefferson
+Hither Hills State Park
+High Line
+The city",ok,,0.636
+combined_q_idx:59,13,59,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the key events that occurred at Captree State Park on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Grand Central Terminal on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.
+Return the intersection.",set(),"Since there is no mention of Captree State Park, Grand Central Terminal, or American Museum of Natural History on the specified dates, the intersection is empty.",ok,,1.073
+combined_q_idx:60,1,60,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events that happened on October 12, 2024. Provide a list of all protagonists involved in any of these events, without describing the events themselves.",102,[],ok,,0.127
+combined_q_idx:61,9,61,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Car Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all events related to Ballet Performance. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""31""]}",[],ok,,0.168
+combined_q_idx:62,24,62,"Recall what happened involving Jackson Ramos at Ellis Island on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",{'Flash Mob'},"There is no mention of Jackson Ramos at Ellis Island on April 09, 2026, in the provided text.",ok,,0.827
+combined_q_idx:63,25,63,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events related to Antique Auction that occurred at Captree State Park on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Fashion Show that occurred at American Museum of Natural History on August 17, 2025. List all protagonists involved in these events, without describing the events themselves.
+Return the intersection.",set(),[],ok,,0.261
+combined_q_idx:64,19,64,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on Zoe Brown's experiences at Bethpage State Park. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",0,Chapter 4,ok,,0.224
+combined_q_idx:65,23,65,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on the experiences of Zoe Brown related to Tech Hackathon. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [""High Line"", ""One World Trade Center"", ""Port Jefferson"", ""Statue of Liberty""], ""only_in_B"": []}","Return only_in_A and only_in_B.
+
+only_in_A = ['Hither Hills State Park']
+only_in_B = []",ok,,0.885
+combined_q_idx:66,22,66,"Consider all events involving both Bella Brown and 3D Printing Workshop. Provide a list of all dates when these events occurred, without describing the events.",set(),[],ok,,0.162
+combined_q_idx:67,7,67,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that Logan Diaz has been involved in. List all the locations where these events took place, without mentioning the events themselves."". Remove ""Bethpage Black Course"" from the answer. Return only the remaining items.","{'The Vessel at Hudson Yards', 'High Line'}","1. Port Jefferson
+2. American Museum of Natural History
+3. Hither Hills State Park
+4. High Line
+5. The city (no specific location mentioned)",ok,,1.262
+combined_q_idx:68,13,68,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the key events that occurred at Chrysler Building on August 27, 2024. Describe what happened, focusing on the actions or occurrences rather than who was involved.",0,"There is no information about the Chrysler Building on August 27, 2024, in the provided text.",ok,,0.731
+combined_q_idx:69,22,69,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events involving both Samuel Parker and Theater Performance. Provide a list of all dates when these events occurred, without describing the events."". Remove ""April 09, 2026"" from the answer. Return only the remaining items.","{'September 27, 2025', 'October 12, 2024'}","September 13, 2025",ok,,0.293
+combined_q_idx:70,18,70,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving Julian Ross at High Line. Provide a list of all dates when these events occurred, without describing the events.
+B) Story composite task: Use two story queries.
+A) Consider all events involving Carter Stewart at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.","{""only_in_A"": [""March 23, 2025"", ""October 30, 2026"", ""September 22, 2026""], ""only_in_B"": [""September 13, 2025""]}","A) [List of dates for Julian Ross at High Line]
+- September 22, 2026
+
+B) [List of dates for Carter Stewart at American Museum of Natural History]
+- September 22, 2026
+
+A) [Story composite task: Key events involving Julian Ross at High Line]
+- Participated in mentoring sessions
+
+B) [Story recall-and-edit: Key events",ok,,2.456
+combined_q_idx:71,27,71,"Consider all events involving both Chloe Castillo and Tech Hackathon at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",set(),"September 22, 2026",ok,,0.284
+combined_q_idx:72,19,72,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on Logan Diaz's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Photography Exhibition""]}",[],ok,,0.217
+combined_q_idx:73,13,73,"Story composite task: Use two story queries.
+A) Recall the key events that occurred at Bethpage State Park on August 24, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on August 17, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) Recall the key events that occurred at Bethpage State Park on August 24, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+- The instructor gestured for Ezra to step onto the first wall.
+- The surface was cold stone, slightly rough under Ezra's palms.
+- A thin wind picked up, tangling strands of hair against Ezra",ok,,2.381
+combined_q_idx:74,13,74,"Recall the key events that occurred at Brooklyn Museum on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.",{'Fashion Show'},"No events occurred at Brooklyn Museum on April 09, 2026.",ok,,0.497
+combined_q_idx:75,21,75,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Film Festival at High Line. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Brooklyn Ross"" from that answer. Return only the remaining items.",{'Mila Gonzalez'},Logan Diaz,ok,,0.185
+combined_q_idx:76,21,76,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Parkour Workshop at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.","[""Carter Stewart""]","Ezra Edwards
+Noa Middleton",ok,,0.315
+combined_q_idx:77,20,77,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to Car Show that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to Film Festival that occurred at High Line. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",set(),[],ok,,0.17
+combined_q_idx:78,11,78,"Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.","{'Julian Ross', 'Mila Gonzalez'}",Ezra Edwards,ok,,0.18
+combined_q_idx:79,22,79,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Aurora Chavez and Tech Hackathon. Provide a list of all dates when these events occurred, without describing the events.",73,"[2, 6]",ok,,0.255
+combined_q_idx:80,17,80,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Educational Workshop on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Brooklyn Ross"" from the answer. Return only the remaining items.",set(),Ezra Edwards,ok,,0.215
+combined_q_idx:81,24,81,"Recall what happened involving Chloe Castillo at Queensboro Bridge on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.",set(),"There is no information about Chloe Castillo at Queensboro Bridge on April 09, 2026.",ok,,0.639
+combined_q_idx:82,4,82,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the location American Museum of Natural History. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.","[""Carter Stewart"", ""Chloe Castillo"", ""Julian Ross"", ""Levi Rodriguez"", ""Samuel Parker"", ""Zoe Brown""]",Chloe Castillo,ok,,0.178
+combined_q_idx:83,1,83,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on February 22, 2025. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Chloe Castillo"" from the answer. Return only the remaining items.",set(),"Ezra Edwards
+Noa Middleton
+Mara Ledbetter",ok,,0.475
+combined_q_idx:84,25,84,"Think about the events related to Astronomy Night that occurred at High Line on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.",{'Scarlett Thomas'},[],ok,,0.109
+combined_q_idx:85,25,85,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events related to Fashion Show that occurred at American Museum of Natural History on August 17, 2025. List all protagonists involved in these events, without describing the events themselves.",0,"1 
+Chloe Castillo",ok,,0.241
+combined_q_idx:86,22,86,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Bella Alvarez and Astronomy Night. Provide a list of all dates when these events occurred, without describing the events.
+B) Story composite task: Use two story queries.
+A) Consider all events involving both Chloe Castillo and Fashion Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",set(),"A) September 13, 2025
+B) September 22, 2026
+
+A) September 22, 2026
+B) May 07, 2024
+
+Removing items that also appear in answer(B) from answer(A):
+September 13, 2025
+
+Sorted alphabetically:
+September 13, 2025",ok,,2.249
+combined_q_idx:87,26,87,"Story composite task: Use two story queries.
+A) Consider the events involving both Brooklyn Ross and Educational Workshop on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Benjamin Green and Tech Hackathon on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""One World Trade Center""]","A) 
+- Bethpage Black Course
+- Brooklyn
+
+B) 
+- Brooklyn
+- Tech Hackathon
+
+Removing common items from A) and sorting the remaining items alphabetically:
+- Bethpage Black Course",ok,,1.344
+combined_q_idx:88,14,88,"Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Queensboro Bridge""]","A) 
+- Port Jefferson
+
+B) 
+- Port Jefferson
+
+A) 
+- Port Jefferson
+
+B) 
+- Port Jefferson
+
+Removing items that appear in both lists:
+- Port Jefferson
+
+Sorted alphabetically:
+- Port Jefferson",ok,,1.566
+combined_q_idx:89,3,89,"Think about all events that have occurred at Brooklyn Bridge Park. Provide a list of all dates when these events took place, without describing the events.",set(),"September 13, 2025",ok,,0.278
+combined_q_idx:90,4,90,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the location One World Trade Center. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Brooklyn Ross"", ""Ezra Edwards"", ""Hazel Lewis"", ""Henry Reed"", ""Julian Ross"", ""Levi Rodriguez"", ""Maya Smith"", ""Samuel Parker"", ""Zoe Brown""], ""only_in_B"": [""High Line"", ""Statue of Liberty""]}","only_in_A = ['Logan Diaz']
+only_in_B = []",ok,,0.529
+combined_q_idx:91,9,91,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Parkour Workshop. Provide a list of all dates when these events occurred, without describing the events.
+B) Reflect on events related to Archery Tournament. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [""February 27, 2026"", ""May 11, 2026"", ""October 30, 2026"", ""September 13, 2025"", ""September 27, 2025""], ""only_in_B"": [""Julian Ross"", ""Mila Gonzalez""]}","Return only_in_A = ['September 13, 2025']
+Return only_in_B = []",ok,,0.696
+combined_q_idx:92,24,92,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Samuel Parker at American Museum of Natural History on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Theater Performance""], ""only_in_B"": []}","Since there is no mention of Samuel Parker or Brooklyn Ross in the provided text, the answer will be an empty set.
+
+Set: 
+{}",ok,,0.929
+combined_q_idx:93,25,93,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Think about the events related to Flash Mob that occurred at Ellis Island on April 09, 2026. List all protagonists involved in these events, without describing the events themselves.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Jackson Ramos""], ""only_in_B"": [""Astronomy Night""]}","only_in_A = []
+only_in_B = []",ok,,0.418
+combined_q_idx:94,24,94,"Recall what happened involving Chloe Castillo at American Museum of Natural History on August 17, 2025. Describe the key events or activities that occurred, focusing on what happened.",set(),"There is no information about Chloe Castillo at American Museum of Natural History on August 17, 2025. However, there is information about Chloe Castillo at the American Museum of Natural History on September 22, 2026.
+
+According to the text, Chloe Castillo was at the American Museum of Natural History on September 22, 2026. The key events or activities that occurred involving Chloe Castillo",ok,,2.355
+combined_q_idx:95,17,95,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving Tech Hackathon on March 23, 2024. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Henry Reed"" from that answer. Return only the remaining items.","{'Julian Ross', 'Zoe Brown'}",Logan Diaz,ok,,0.188
+combined_q_idx:96,26,96,"Story composite task: Use two story queries.
+A) Consider the events involving both Brooklyn Ross and Book Signing Event on August 24, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving both Lucy Carter and Antique Auction on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Chloe Castillo and Fashion Show on August 17, 2025. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) Bethpage Black Course, American Museum of Natural History
+
+B) American Museum of Natural History
+
+A) American Museum of Natural History
+
+B) American Museum of Natural History
+
+A) American Museum of Natural History
+
+B) American Museum of Natural History
+
+A) American Museum of Natural History
+
+B) American Museum of Natural History
+
+A) American Museum of Natural History
+
+B) American",ok,,2.531
+combined_q_idx:97,35,97,"Enumerate all activities that Benjamin Green has been involved in, ordered from earliest to latest in the story's chronology.","['Fashion Show', 'Scientific Conference', 'Ice Sculpture Exhibition', 'Tech Hackathon']",[],ok,,0.103
+combined_q_idx:98,17,98,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving Book Signing Event on August 24, 2026. Provide a list of all protagonists involved in these events, without describing the events.",0,[1],ok,,0.175
+combined_q_idx:99,25,99,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to Astronomy Night that occurred at Grand Central Terminal on August 12, 2025. List all protagonists involved in these events, without describing the events themselves.",[],[],ok,,0.132
+combined_q_idx:100,20,100,"Story composite task: Use two story queries.
+A) Recall all events related to Film Festival that occurred at High Line. Provide a list of all dates when these events took place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events involving Parkour Workshop at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""December 26, 2026"", ""October 13, 2024""]","A) 
+1. September 13, 2025
+2. September 22, 2026
+
+B) 
+1. Chloe Castillo
+2. Ezra Edwards
+3. Mara Ledbetter
+4. Noa Middleton
+
+A) 
+1. September 13, 2025
+2. September 22, 2026
+
+B) 
+1. Chloe Castillo
+2",ok,,2.434
+combined_q_idx:101,23,101,"Reflect on the experiences of Samuel Parker related to Theater Performance. List all the unique locations where these events took place, without mentioning the events themselves.","{'One World Trade Center', 'American Museum of Natural History', 'Fire Island National Seashore'}",[],ok,,0.112
+combined_q_idx:102,15,102,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Jackson Ramos experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.","[""Flash Mob""]",[],ok,,0.135
+combined_q_idx:103,10,103,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Fashion Show. List all the locations where these events took place, without mentioning the events themselves.",117,"[2] 
+American Museum of Natural History",ok,,0.355
+combined_q_idx:104,28,104,"Recall what happened involving Brooklyn Ross and Educational Workshop at One World Trade Center on April 09, 2026 and list only who else was involved (if anyone).","{'Heidi Carroll', 'Abram Taber'}",[],ok,,0.112
+combined_q_idx:105,30,105,What is the most recent date Levi Rodriguez was observed or mentioned in the story's chronology?,"['December 26, 2026']","September 22, 2026",ok,,0.271
+combined_q_idx:106,13,106,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the key events that occurred at Grand Central Terminal on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Recall the key events that occurred at American Museum of Natural History on April 09, 2026. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Theater Performance""]}","only_in_A = []
+only_in_B = []
+
+A) Recall the key events that occurred at Grand Central Terminal on August 12, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+There is no mention of Grand Central Terminal on August 12, 2025.
+
+B) Recall the key events that occurred at American Museum of Natural History on April",ok,,2.463
+combined_q_idx:107,15,107,"Story recall-and-edit: For query ""Reflect on what Mila Diaz experienced on August 27, 2024. Describe all the key events they were involved in, focusing on what happened rather than where it occurred."", return an empty answer.",set(),[],ok,,0.124
+combined_q_idx:108,24,108,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Lily Nguyen at Brooklyn Museum on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Story composite task: Use two story queries.
+A) Recall what happened involving Brooklyn Ross at One World Trade Center on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Fashion Show""], ""only_in_B"": [""Educational Workshop""]}","To solve this problem, we need to compare the two story queries and find the differences.
+
+Answer (A) is about Brooklyn Ross at One World Trade Center on April 09, 2026, but there is no mention of Brooklyn Ross in the provided text. However, there is a mention of Brooklyn in Chapter 1, but it's not related to the query.
+
+Answer (B) is",ok,,2.496
+combined_q_idx:109,13,109,"Story recall-and-edit: For query ""Recall the key events that occurred at American Museum of Natural History on August 17, 2025. Describe what happened, focusing on the actions or occurrences rather than who was involved."", return an empty answer.",set(),[],ok,,0.124
+combined_q_idx:110,14,110,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Mila Diaz on August 27, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Queensboro Bridge""]}","To solve this problem, we need to follow the steps below:
+
+1. Find the answers to the two story queries:
+   A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+   B) Consider the events involving Henry Reed on April 09, 2026. List all the locations",ok,,2.581
+combined_q_idx:111,19,111,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at American Museum of Natural History. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.","[""Photography Exhibition""]","1. Chloe stood near the wings, her fingers brushing the cool bronze of a prehistoric mammoth's tusk. Her mind raced with imagesâ€”how the patterns she'd conceived would unfurl on the skin of the models, how the silhouettes would defy gravity as they did the laws of physics.
+2. Each model moved with a grace that suggested they walked not on earth,",ok,,2.447
+combined_q_idx:112,15,112,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on what Benjamin Green experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Stella Scott experienced on August 12, 2025. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return the intersection.",set(),[],ok,,0.168
+combined_q_idx:113,17,113,"Think about the events involving Fashion Show on April 09, 2026. Provide a list of all protagonists involved in these events, without describing the events.",{'Lily Nguyen'},[],ok,,0.11
+combined_q_idx:114,24,114,"Story recall-and-edit: Start from the answer to this story query: ""Recall what happened involving Scarlett Thomas at High Line on April 09, 2026. Describe the key events or activities that occurred, focusing on what happened."". Remove ""Astronomy Night"" from the answer. Return only the remaining items.",set(),There is no mention of Scarlett Thomas in the provided text.,ok,,0.442
+combined_q_idx:115,28,115,"Recall what happened involving Brooklyn Ross and Book Signing Event at Bethpage State Park on August 24, 2026 and list only who else was involved (if anyone).",set(),[],ok,,0.109
+combined_q_idx:116,15,116,"Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Theater Performance""]","A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+
+Henry Reed explained post-processing techniques, using quiet confidence and patience to thread through the low conversations like a detective's explanation of a crime scene.
+
+B) Consider the events involving Henry Reed on April 09, 202",ok,,2.402
+combined_q_idx:117,21,117,"Think about the events involving Fashion Show at Bethpage Black Course. List all protagonists involved in these events, without mentioning the events themselves.",set(),"Ezra Edwards, Noa Middleton, Mara Ledbetter",ok,,0.429
+combined_q_idx:118,19,118,"Reflect on Ezra Edwards's experiences at Bethpage Black Course. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.",{'Parkour Workshop'},"Ezra Edwards's experiences at Bethpage Black Course include:
+
+- Arriving at the course with a small group watching intently
+- Adjusting the lanyard around his neck and catching a glimpse of his own name
+- Being referred to by the crowd as ""he's really doing it""
+- Being instructed by a tall and wiry coach to step onto the first wall
+- Feeling",ok,,2.386
+combined_q_idx:119,18,119,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving Zoe Brown at Bethpage State Park. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on Henry Reed's experiences at Port Jefferson. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Photography Exhibition"" from that answer. Return only the remaining items.
+Return the intersection.",set(),[],ok,,0.219
+combined_q_idx:120,26,120,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Lily Nguyen and Fashion Show on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Brooklyn Museum"" from the answer. Return only the remaining items.",set(),[],ok,,0.134
+combined_q_idx:121,29,121,"Provide a comprehensive account of what happened involving Stella Scott and Astronomy Night at Grand Central Terminal on August 12, 2025. Include all relevant details about the event(s), including what occurred and any other pertinent information.",set(),"There is no mention of Stella Scott or Astronomy Night at Grand Central Terminal on August 12, 2025, in the provided text.",ok,,0.89
+combined_q_idx:122,9,122,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to Film Festival. Provide a list of all dates when these events occurred, without describing the events."". Remove ""December 26, 2026"" from the answer. Return only the remaining items.","{'September 03, 2026', 'March 23, 2024', 'October 27, 2024', 'October 13, 2024'}","September 13, 2025",ok,,0.314
+combined_q_idx:123,20,123,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall all events related to Photography Exhibition that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.","[""August 24, 2026""]","September 22, 2026",ok,,0.3
+combined_q_idx:124,16,124,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to Tech Hackathon that occurred on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Recall the events related to Tech Hackathon that occurred on March 23, 2024. List all the locations where these events took place, without describing the events themselves.
+B) Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves.
+Return only_in_A and only_in_B.
+Return the intersection.",set(),"To answer the question, we need to compare the answers to the two story queries.
+
+For query A) Recall the events related to Tech Hackathon that occurred on April 09, 2026, there is no information about a Tech Hackathon on April 09, 2026. However, we can compare the answers to query B) Recall the events related to Tech Hackathon that occurred on",ok,,2.545
+combined_q_idx:125,28,125,"Recall what happened involving Chloe Castillo and Theater Performance at Queensboro Bridge on April 09, 2026 and list only who else was involved (if anyone).",set(),[],ok,,0.111
+combined_q_idx:126,19,126,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on Julian Ross's experiences at High Line. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Archery Tournament"" from that answer. Return only the remaining items.","{'Parkour Workshop', 'Fashion Show'}",Participated in mentoring sessions.,ok,,0.311
+combined_q_idx:127,8,127,"Think about Ava Gray's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.",set(),"Ava Gray's experiences include:
+
+- Participating in a cat leap demonstration on a stone wall, where they rolled onto their knees and pushed off, feeling weightless and then landing lightly.
+- Performing with a live band accompaniment at Hither Hills State Park, singing with a shaky voice that eventually swelled with hidden reserves.
+- Participating in a mentoring session at a tech competition, where",ok,,2.38
+combined_q_idx:128,31,128,What is the most recent location where Ezra Edwards was observed in the story's chronological timeline?,['New York Botanical Garden'],Bethpage Black Course,ok,,0.184
+combined_q_idx:129,21,129,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving Opera Performance at American Museum of Natural History. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to Photography Exhibition that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",set(),[],ok,,0.173
+combined_q_idx:130,20,130,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to Parkour Workshop that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events."". Remove ""September 13, 2025"" from the answer. Return only the remaining items.",set(),[],ok,,0.133
+combined_q_idx:131,19,131,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on Henry Reed's experiences at Port Jefferson. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred."". Remove ""Photography Exhibition"" from that answer. Return only the remaining items.",{'Tech Hackathon'},"Henry Reed's experiences at Port Jefferson involved him taking his place at the front of a crowded room, explaining with quiet confidence and patience how the same raw image could transform into something hauntingly new through the subtle art of post-processing techniques.",ok,,1.482
+combined_q_idx:132,26,132,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Henry Reed and Theater Performance on April 09, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""Queensboro Bridge"" from the answer. Return only the remaining items.",set(),Port Jefferson,ok,,0.149
+combined_q_idx:133,16,133,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to Theater Performance that occurred on February 27, 2026. List all the locations where these events took place, without describing the events themselves."". Remove ""High Line"" from the answer. Return only the remaining items.",{'Statue of Liberty'},[],ok,,0.124
+combined_q_idx:134,20,134,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall all events related to Astronomy Night that occurred at American Museum of Natural History. Provide a list of all dates when these events took place, without describing the events.","[""December 26, 2026""]","September 22, 2026",ok,,0.298
+combined_q_idx:135,14,135,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Brooklyn Ross on December 03, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Queensboro Bridge""]}","To solve this problem, we need to follow the steps below:
+
+1. Find the locations for each query:
+   A) Consider the events involving Brooklyn Ross on December 03, 2026. List all the locations where these events took place, without describing the events themselves.
+   B) Consider the events involving Henry Reed on April 09, 2026. List all the locations where these",ok,,2.635
+combined_q_idx:136,29,136,"Provide a comprehensive account of what happened involving Samuel Parker and Theater Performance at American Museum of Natural History on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 80'},"There is no information about Samuel Parker and Theater Performance at American Museum of Natural History on April 09, 2026, in the provided text.",ok,,0.983
+combined_q_idx:137,2,137,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on May 28, 2025. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",116,"There is no information about May 28, 2025, in the provided text.",ok,,0.639
+combined_q_idx:138,2,138,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on August 27, 2024. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",0,"There is no information about August 27, 2024, in the provided text.",ok,,0.609
+combined_q_idx:139,5,139,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall the various events that have taken place at Bethpage Black Course. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+B) Reflect on what Henry Reed experienced on April 09, 2026. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Historical Reenactment"", ""Job Fair"", ""Parkour Workshop"", ""Photography Exhibition"", ""Tech Hackathon""], ""only_in_B"": [""Theater Performance""]}","only_in_A = ['demonstrated cat leaps', 'showed the cat leap again', 'stepped onto the first wall', 'rolled onto knees', 'pushed off', 'landed lightly', 'rolled into the next sequence']
+only_in_B = []",ok,,1.781
+combined_q_idx:140,18,140,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Samuel Parker at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",87,[],ok,,0.124
+combined_q_idx:141,24,141,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Brooklyn Ross at Bethpage State Park on August 24, 2026. Describe the key events or activities that occurred, focusing on what happened.",[],[],ok,,0.137
+combined_q_idx:142,5,142,"Story recall-and-edit: Start from the answer to this story query: ""Recall the various events that have taken place at Long Beach Boardwalk. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved."". Remove ""Fashion Show"" from the answer. Return only the remaining items.",set(),Ezra Edwards performed a cat leap on the Bethpage Black Course.,ok,,0.528
+combined_q_idx:143,29,143,"Provide a comprehensive account of what happened involving Lucy Carter and Antique Auction at Captree State Park on April 09, 2026. Include all relevant details about the event(s), including what occurred and any other pertinent information.",set(),"There is no information about Lucy Carter and Antique Auction at Captree State Park on April 09, 2026, in the provided text.",ok,,0.957
+combined_q_idx:144,27,144,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Levi Rodriguez and Astronomy Night at American Museum of Natural History. Provide a list of all dates when these events occurred, without describing the events.",15,"[1, 2]",ok,,0.266
+combined_q_idx:145,9,145,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Archery Tournament. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving Antique Auction. List all the locations where these events took place, without mentioning the events themselves.
+Return only_in_A and only_in_B.","{""only_in_A"": [""March 23, 2024"", ""March 23, 2025""], ""only_in_B"": []}","Return only_in_A = []
+Return only_in_B = []",ok,,0.48
+combined_q_idx:146,14,146,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving Jackson Ramos on April 09, 2026. List all the locations where these events took place, without describing the events themselves.","[""Ellis Island""]",[],ok,,0.128
+combined_q_idx:147,22,147,"Story composite task: Use two story queries.
+A) Consider all events involving both Chloe Castillo and Fashion Show. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Benjamin Green and Karaoke Night. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""February 22, 2025"", ""September 22, 2026""]","A) 
+September 22, 2026
+
+B) 
+No events involving both Benjamin Green and Karaoke Night were found in the text.
+
+Since there are no common items between A and B, the final answer is:
+
+September 22, 2026",ok,,1.726
+combined_q_idx:148,9,148,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to Business Networking Event. Provide a list of all dates when these events occurred, without describing the events.
+B) Recall all events related to Antique Auction. Provide a list of all dates when these events occurred, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [""March 23, 2024"", ""November 13, 2026""], ""only_in_B"": []}","Return only_in_A and only_in_B.
+
+only_in_A = []
+only_in_B = []
+
+Since there are no events related to Business Networking Event and Antique Auction in the provided text, both lists are empty.",ok,,1.376
+combined_q_idx:149,9,149,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all events related to Ballet Performance. Provide a list of all dates when these events occurred, without describing the events.",31,"[5] 
+
+List of dates for Ballet Performance events:
+- March 23, 2024",ok,,0.688

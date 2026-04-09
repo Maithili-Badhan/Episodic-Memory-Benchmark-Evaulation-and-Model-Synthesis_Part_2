@@ -1,0 +1,646 @@
+row_key,q_idx,combined_q_idx,question,correct_answer,answer,status,error,latency_sec
+combined_q_idx:0,4,0,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the location Sedna Long Range Observatory. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Recall the various events that have taken place at Hydra Cloud Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Lily Nguyen"", ""Mila Gonzalez""], ""only_in_B"": [""atmospheric scrubber failure"", ""cryo-pod integrity breach"", ""digital afterlife server shutdown""]}","Return only_in_A = []
+Return only_in_B = []",ok,,3.709
+combined_q_idx:1,15,1,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Scarlett Thomas experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.","[""subspace antenna failure""]","(i) witnessed a digital afterlife server shutdown.
+(ii) witnessed a fusion core breach.
+(iii) witnessed a navigation computer blackout.
+(iv) witnessed a vacuum seal deterioration.
+(v) witnessed a main power grid overload.
+(vi) witnessed a cryo-pod integrity breach.
+(vii) witnessed a artificial atmosphere toxicity.
+(viii) witnessed a digital afterlife server shutdown.
+(ix) witnessed a",ok,,2.774
+combined_q_idx:2,29,2,"Provide a comprehensive account of what happened involving Zoe Brown and subspace antenna failure at Europa Subsurface Laboratory on December 26, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 49'},"There is no information about Zoe Brown and subspace antenna failure at Europa Subsurface Laboratory on December 26, 2226.",ok,,0.974
+combined_q_idx:3,28,3,"Recall what happened involving Lily Nguyen and fusion core breach at Sedna Long Range Observatory on April 09, 2226 and list only who else was involved (if anyone).",set(),[],ok,,0.119
+combined_q_idx:4,30,4,What is the most recent date Daniel Lopez was observed or mentioned in the story's chronology?,set(),"September 13, 2225",ok,,0.302
+combined_q_idx:5,5,5,"Recall the various events that have taken place at Hydra Cloud Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.","{'cryo-pod integrity breach', 'digital afterlife server shutdown', 'atmospheric scrubber failure'}","A digital afterlife server shutdown occurred, and the air was thick with tension as the technicians struggled to comprehend the magnitude of what was happening.",ok,,1.046
+combined_q_idx:6,11,6,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.",0,"[1, 6]",ok,,0.301
+combined_q_idx:7,16,7,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to cryo-pod integrity breach that occurred on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",set(),Nereid Weather Station,ok,,0.311
+combined_q_idx:8,29,8,"Provide a comprehensive account of what happened involving Benjamin Green and cryo-pod integrity breach at Hydra Cloud Facility on April 09, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 14'},"There is no information about Benjamin Green and a cryo-pod integrity breach at Hydra Cloud Facility on April 09, 2226.",ok,,1.064
+combined_q_idx:9,27,9,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and tachyon field surge at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.","[""October 27, 2224""]","September 22, 2226",ok,,0.351
+combined_q_idx:10,25,10,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events related to subspace antenna failure that occurred at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in these events, without describing the events themselves."". Remove ""Zoe Brown"" from the answer. Return only the remaining items.",set(),"Ezra Edwards, Chloe Castillo, Henry Reed, Logan Diaz, Julian Ross, Benjamin Green, Owen Thomas",ok,,0.867
+combined_q_idx:11,25,11,"Story composite task: Use two story queries.
+A) Think about the events related to subspace antenna failure that occurred at Mercury Twilight Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Scarlett Thomas""]","A) 
+1. Logan Diaz
+2. Sienna Hamrick
+
+B) 
+1. Henry Reed
+
+Final Answer:
+1. Logan Diaz
+2. Sienna Hamrick",ok,,1.456
+combined_q_idx:12,19,12,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on Carter Stewart's experiences at Cygnus Rift Complex. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story recall-and-edit: For query ""Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": []}","only_in_A = [""Cygnus Rift Complex"", ""Carter Stewart""]
+only_in_B = []",ok,,0.883
+combined_q_idx:13,26,13,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider the events involving both Noah Williams and atmospheric scrubber failure on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Consider the events involving both Levi Rodriguez and subspace antenna failure on December 26, 2226. List all the locations where these events took place, without describing the events themselves.
+Return the intersection.",set(),[],ok,,0.175
+combined_q_idx:14,17,14,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity on February 27, 2226. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.",set(),Ronan Guevara,ok,,0.271
+combined_q_idx:15,8,15,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about Ellie Garcia's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+B) What was Daniel Lopez doing the last time they were observed in the story's timeline?
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": []}","Return only_in_A = [""cryo-pod integrity breach"", ""artificial atmosphere toxicity"", ""digital afterlife server shutdown"", ""antimatter cascade""]
+Return only_in_B = []",ok,,1.469
+combined_q_idx:16,3,16,"Think about all events that have occurred at Luna Oceanus Trading Post. Provide a list of all dates when these events took place, without describing the events.","{'May 11, 2226', 'September 22, 2226', 'October 12, 2224'}",[],ok,,0.115
+combined_q_idx:17,5,17,"Recall the various events that have taken place at Mercury Twilight Observatory. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.","{'main power grid overload', 'memory patent warfare', 'magnetic confinement rupture', 'antimatter cascade', 'cryo-pod integrity breach', 'matter synthesizer overload', 'subspace antenna failure', 'fusion core breach', 'digital afterlife server shutdown'}","The events that have taken place at Mercury Twilight Observatory include:
+
+- A main power grid overload, resulting in error messages flashing on the screens and technicians working feverishly to contain the situation.
+- The air was thick with an eerie silence, broken only by the faint hum of machinery in the distance, and the technicians were huddled around a central console, their voices hushed as they worked to troubleshoot",ok,,2.921
+combined_q_idx:18,14,18,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Carter Stewart on August 27, 2224. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on what Carter Stewart experienced on August 27, 2224. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": []}","only_in_A = []
+only_in_B = []
+
+A) There are no events involving Carter Stewart on August 27, 2224.",ok,,1.15
+combined_q_idx:19,11,19,"Story composite task: Use two story queries.
+A) Reflect on events related to hyperspace beacon failure. Provide a list of all protagonists involved in these events, without describing the events.
+B) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Mila Gonzalez""]","A) 
+- Ezra Edwards
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+B) 
+- Europa Subsurface Laboratory
+- Eridani Metallurgy Complex
+- Hydra Cloud Facility
+- Triton Gas Colony
+
+Removing common items from A) and B):
+- Ezra Edwards
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+Sorted alphabetically:
+- Ezra Edwards",ok,,3.024
+combined_q_idx:20,18,20,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Zoe Brown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.","[""November 13, 2226""]","May 07, 2224, September 13, 2225",ok,,0.649
+combined_q_idx:21,20,21,"Story recall-and-edit: For query ""Recall all events related to magnetospheric resonance breach that occurred at Barnard's Star Propulsion Lab. Provide a list of all dates when these events took place, without describing the events."", return an empty answer.",set(),[],ok,,0.136
+combined_q_idx:22,24,22,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Noah Williams at Eridani Metallurgy Complex on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",0,Chapter 5,ok,,0.21
+combined_q_idx:23,7,23,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events that Hazel Lewis has been involved in. List all the locations where these events took place, without mentioning the events themselves.
+B) List all locations visited by Daniel Lopez in chronological order according to the story's timeline.
+Return the intersection.",set(),"Barnard's Star Propulsion Lab, Triton Gas Colony, Eridani Metallurgy Complex, Dyson Swarm Control, Mercury Twilight Observatory, Nereid Weather Station, Europa Subsurface Laboratory, Hydra Cloud Facility",ok,,1.778
+combined_q_idx:24,15,24,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on what Levi Rodriguez experienced on December 26, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.","{""only_in_A"": [""subspace antenna failure""], ""only_in_B"": []}","only_in_A = [""digital afterlife server shutdown"", ""witnessed a digital afterlife server shutdown""]
+only_in_B = []",ok,,1.148
+combined_q_idx:25,25,25,"Story composite task: Use two story queries.
+A) Think about the events related to cosmic string vibration that occurred at Makemake Station on August 12, 2225. List all protagonists involved in these events, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to cryo-pod integrity breach that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) Ezra Edwards, Henry Reed, Logan Diaz, Owen Thomas
+
+B) Julian Ross, Logan Diaz, Owen Thomas
+
+Removing common items from A) and B), we get:
+Ezra Edwards, Henry Reed
+
+Sorted alphabetically:
+Ezra Edwards, Henry Reed",ok,,2.342
+combined_q_idx:26,28,26,"Recall what happened involving Lily Nguyen and wormhole destabilization at Sedna Long Range Observatory on April 09, 2226 and list only who else was involved (if anyone).",set(),[],ok,,0.122
+combined_q_idx:27,27,27,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Julian Peterson and magnetospheric resonance breach at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",0,"[1, 5]",ok,,0.327
+combined_q_idx:28,1,28,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events that happened on August 27, 2224. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on May 07, 2224. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",set(),"A) Consider all events that happened on August 27, 2224. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+
+No events occurred on August 27, 2224.
+
+B) Story composite task: Use two story queries.
+A) Reflect on May 07, 2224. Describe all the key events that occurred on this date",ok,,3.224
+combined_q_idx:29,27,29,"Consider all events involving both Ella Ross and childhood memory trade scandal at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.",set(),[],ok,,0.121
+combined_q_idx:30,11,30,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on events related to air filter contamination. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Scarlett Thomas"" from the answer. Return only the remaining items.",set(),"Ezra Edwards, Chloe Castillo, Henry Reed, Zoe Brown, Logan Diaz, Julian Ross, Benjamin Green, Owen Thomas",ok,,1.054
+combined_q_idx:31,26,31,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving both Lily Nguyen and fusion core breach on April 09, 2226. List all the locations where these events took place, without describing the events themselves.","[""Sedna Long Range Observatory""]","Eridani Metallurgy Complex, Triton Gas Colony",ok,,0.562
+combined_q_idx:32,1,32,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on May 11, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Bella Alvarez"" from that answer. Return only the remaining items.","{'Chloe Castillo', 'Levi Rodriguez', 'Henry Reed', 'Samuel Parker'}",Ezra Edwards,ok,,0.258
+combined_q_idx:33,4,33,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the location Mars Valles Industrial Hub. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.
+B) Reflect on what Ezra Edwards experienced on December 03, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Lucy Carter"", ""Mila Gonzalez""], ""only_in_B"": [""plasma conduit rupture""]}","only_in_A = ['Ezra Edwards']
+only_in_B = []",ok,,0.716
+combined_q_idx:34,12,34,"Story composite task: Use two story queries.
+A) Think about what happened at Titania Quantum Lab on December 03, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+B) Recall the key events that occurred at Titania Quantum Lab on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Ezra Edwards""]","A) List all protagonists involved in any events at Titania Quantum Lab on December 03, 2226:
+- Ezra Edwards
+- Noa Middleton
+
+B) Recall the key events that occurred at Titania Quantum Lab on December 03, 2226:
+- witnessed a digital afterlife server shutdown.
+
+A) Remove all items that also appear in answer(B):
+- Ezra Edwards
+-",ok,,3.256
+combined_q_idx:35,32,35,What was Daniel Lopez doing the last time they were observed in the story's timeline?,set(),There is no mention of Daniel Lopez in the story's timeline.,ok,,0.572
+combined_q_idx:36,21,36,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving digital afterlife server shutdown at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",set(),"Ezra Edwards, Owen Thomas",ok,,0.415
+combined_q_idx:37,17,37,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving plasma conduit rupture on December 03, 2226. Provide a list of all protagonists involved in these events, without describing the events.",24,"[1, 2, 7]",ok,,0.446
+combined_q_idx:38,22,38,"Consider all events involving both Benjamin Green and cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.","{'April 09, 2226'}","May 31, 2224",ok,,0.352
+combined_q_idx:39,0,39,"Story recall-and-edit: Start from the answer to this story query: ""Recall all the events that occurred on May 28, 2225. Without describing the events, list all the unique locations where these events took place."". Remove ""Hydra Cloud Facility"" from that answer. Return only the remaining items.",{'Mercury Twilight Observatory'},Barnard's Star Propulsion Lab,ok,,0.411
+combined_q_idx:40,5,40,"Story recall-and-edit: For query ""Recall the various events that have taken place at Ariel Biotech Complex. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved."", return an empty answer.",set(),[],ok,,0.144
+combined_q_idx:41,29,41,"Provide a comprehensive account of what happened involving Jaxon Howard and cosmic string vibration at Makemake Station on August 12, 2225. Include all relevant details about the event(s), including what occurred and any other pertinent information.",set(),"There is no information about Jaxon Howard and cosmic string vibration at Makemake Station on August 12, 2225, in the provided text.",ok,,1.332
+combined_q_idx:42,26,42,"Consider the events involving both Chloe Castillo and tachyon field surge on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",set(),Triton Gas Colony,ok,,0.282
+combined_q_idx:43,18,43,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving Zoe Brown at Dyson Swarm Control. Provide a list of all dates when these events occurred, without describing the events.",4,[4],ok,,0.212
+combined_q_idx:44,14,44,"Story composite task: Use two story queries.
+A) Consider the events involving Chloe Castillo on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on what Scarlett Thomas experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) 
+- Barnard's Star Propulsion Lab
+- Triton Gas Colony
+
+B) 
+- witnessed a fusion core breach.
+- Chloe's eyes locked onto the frantic face of Noa Middleton, his eyes wide with desperation as he tried to coordinate the response efforts.
+- The fusion core's containment field was failing, its integrity compromised by a catastrophic failure of the plasma injectors, and",ok,,3.32
+combined_q_idx:45,10,45,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving matter synthesizer overload. List all the locations where these events took place, without mentioning the events themselves.
+B) Story composite task: Use two story queries.
+A) Reflect on events related to hyperspace beacon failure. Provide a list of all protagonists involved in these events, without describing the events.
+B) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Mercury Twilight Observatory"", ""TRAPPIST-1 Colony Network"", ""Triton Gas Colony""], ""only_in_B"": [""Mila Gonzalez""]}","only_in_A = ['Barnard's Star Propulsion Lab', 'Eridani Metallurgy Complex', 'Hydra Cloud Facility']
+only_in_B = []",ok,,1.573
+combined_q_idx:46,13,46,"Story recall-and-edit: Start from the answer to this story query: ""Recall the key events that occurred at Mercury Twilight Observatory on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved."". Remove ""subspace antenna failure"" from the answer. Return only the remaining items.",set(),The main power grid overloaded.,ok,,0.344
+combined_q_idx:47,24,47,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall what happened involving Benjamin Green at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.","[""cryo-pod integrity breach""]","Chapter 7
+
+(i) The air was thick with an otherworldly scent, like ozone and burning plastic, as I stood at the edge of the vast, dark cavern. The flickering lights of the laboratory's emergency systems cast eerie shadows on the walls, making it seem as though the very rock itself was twisting in agony. (ii) I felt a creeping sense of dread as I g",ok,,3.277
+combined_q_idx:48,25,48,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events related to plasma conduit rupture that occurred at Titania Quantum Lab on December 03, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events related to subspace antenna failure that occurred at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in these events, without describing the events themselves."". Remove ""Zoe Brown"" from the answer. Return only the remaining items.
+Return the intersection.",set(),[],ok,,0.244
+combined_q_idx:49,35,49,"Enumerate all activities that Henry Reed has been involved in, ordered from earliest to latest in the story's chronology.","['cryo-pod integrity breach', 'matter synthesizer overload', 'magnetic confinement rupture', 'magnetic confinement rupture', 'artificial atmosphere toxicity', 'navigation computer blackout', 'fusion core breach']","1. witnessed a navigation computer blackout
+2. witnessed a navigation computer blackout",ok,,0.681
+combined_q_idx:50,25,50,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to cryo-pod integrity breach that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.","[""Benjamin Green""]","Julian Ross 
+Owen Thomas",ok,,0.389
+combined_q_idx:51,19,51,"Story composite task: Use two story queries.
+A) Reflect on Ezra Edwards's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Reflect on Zoe Brown's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""digital afterlife server shutdown""]","A) Reflect on Ezra Edwards's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+
+- witnessed a digital afterlife server shutdown.
+- paused mid-step, his breath fogging the glass of the observation window overlooking the humming core.
+- The sterile white lights cast sharp shadows across the",ok,,3.423
+combined_q_idx:52,23,52,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on the experiences of Carter Stewart related to antimatter cascade. List all the unique locations where these events took place, without mentioning the events themselves."". Remove ""Phobos Military Base"" from the answer. Return only the remaining items.",set(),"- Eridani Metallurgy Complex
+- Triton Gas Colony
+- Dyson Swarm Control
+- Mercury Twilight Observatory
+- Nereid Weather Station
+- Europa Subsurface Laboratory
+- Hydra Cloud Facility",ok,,1.913
+combined_q_idx:53,12,53,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about what happened at Teegarden's Star Base on August 12, 2225. List all protagonists involved in any events at this time and place, without describing the events.",0,"[1, 2, 3, 4, 5, 6, 7, 8, 9]",ok,,1.254
+combined_q_idx:54,10,54,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving magnetic confinement rupture. List all the locations where these events took place, without mentioning the events themselves.
+B) Recall what happened involving Lily Nguyen at Sedna Long Range Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Luna Shackleton Crater Colony"", ""Mercury Twilight Observatory""], ""only_in_B"": [""fusion core breach""]}","only_in_A = ['Eridani Metallurgy Complex', 'Dyson Swarm Control', 'Mercury Twilight Observatory', 'Europa Subsurface Laboratory', 'Hydra Cloud Facility']
+only_in_B = []",ok,,2.03
+combined_q_idx:55,24,55,"Recall what happened involving Scarlett Thomas at Teegarden's Star Base on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.",set(),"There is no mention of Scarlett Thomas at Teegarden's Star Base on August 12, 2225.",ok,,1.071
+combined_q_idx:56,13,56,"Recall the key events that occurred at Sedna Long Range Observatory on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.",{'fusion core breach'},"There is no information about Sedna Long Range Observatory on April 09, 2226.",ok,,0.9
+combined_q_idx:57,13,57,"Recall the key events that occurred at Hydra Cloud Facility on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.",{'cryo-pod integrity breach'},"There is no information about Hydra Cloud Facility on April 09, 2226.",ok,,0.808
+combined_q_idx:58,26,58,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider the events involving both Benjamin Green and cryo-pod integrity breach on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Reflect on the experiences of Brooklyn Ross related to matter synthesizer overload. List all the unique locations where these events took place, without mentioning the events themselves.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Hydra Cloud Facility""], ""only_in_B"": [""Mercury Twilight Observatory""]}","only_in_A = ['Nereid Weather Station']
+only_in_B = []",ok,,0.854
+combined_q_idx:59,24,59,"Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",set(),"There is no information about Chloe Castillo at Hydra Cloud Facility on April 09, 2226.",ok,,0.948
+combined_q_idx:60,16,60,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall the events related to cosmic string vibration that occurred on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to antimatter cascade that occurred on January 03, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Neptune Storm Harvester"" from that answer. Return only the remaining items.
+Return the intersection.",set(),[],ok,,0.38
+combined_q_idx:61,16,61,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to tachyon field surge that occurred on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",0,"[1, 7]",ok,,0.444
+combined_q_idx:62,27,62,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Isaiah Diaz and psionic field collapse at Ariel Biotech Complex. Provide a list of all dates when these events occurred, without describing the events.
+B) Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving both Ezra Edwards and digital afterlife server shutdown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+B) Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+Return two lists: only_in_A and only_in_B.
+Return the intersection.",set(),"only_in_A = []
+only_in_B = []
+intersection = []
+
+A) Consider all events involving both Isaiah Diaz and psionic field collapse at Ariel Biotech Complex. Provide a list of all dates when these events occurred, without describing the events.
+There is no mention of Isaiah Diaz or psionic field collapse at Ariel Biotech Complex in the text.
+
+B) Think about Zoe Brown's experiences. Describe",ok,,3.758
+combined_q_idx:63,24,63,"Recall what happened involving Lily Nguyen at Sedna Long Range Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.",{'fusion core breach'},"There is no mention of Lily Nguyen at Sedna Long Range Observatory on April 09, 2226.",ok,,1.059
+combined_q_idx:64,26,64,"Story composite task: Use two story queries.
+A) Consider the events involving both Scarlett Thomas and subspace antenna failure on April 09, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Scarlett Thomas and air filter contamination on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Mercury Twilight Observatory""]","A) 
+1. Barnard's Star Propulsion Lab
+2. Triton Gas Colony
+
+B) 
+1. Barnard's Star Propulsion Lab
+2. Triton Gas Colony
+
+Removing common items from A) and B):
+ 
+1. Triton Gas Colony
+
+Sorted alphabetically:
+ 
+1. Triton Gas Colony",ok,,3.246
+combined_q_idx:65,15,65,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on what Noah Williams experienced on April 09, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",[],"(i) witnessed a digital afterlife server shutdown.
+(ii) witnessed a fusion core breach.
+(iii) witnessed a navigation computer blackout.
+(iv) witnessed a vacuum seal deterioration.
+(v) witnessed a main power grid overload.
+(vi) witnessed a cryo-pod integrity breach.
+(vii) witnessed a artificial atmosphere toxicity.
+(viii) witnessed a digital afterlife server shutdown.
+(ix) witnessed a",ok,,3.645
+combined_q_idx:66,15,66,"Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.",set(),There is no mention of Jaxon Howard in the provided text.,ok,,0.657
+combined_q_idx:67,20,67,"Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.","{'May 07, 2224'}","May 07, 2224",ok,,0.393
+combined_q_idx:68,14,68,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider the events involving Jaxon Howard on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",[],"Eridani Metallurgy Complex
+Hydra Cloud Facility
+Nereid Weather Station",ok,,0.892
+combined_q_idx:69,25,69,"Story composite task: Use two story queries.
+A) Think about the events related to tachyon field surge that occurred at Hydra Cloud Facility on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) 
+1. Owen Thomas
+2. Zoe Brown
+
+B) 
+1. Chloe Castillo
+2. Ezra Edwards
+3. Henry Reed
+4. Logan Diaz
+5. Noa Middleton
+
+Removing common items from A and B:
+1. Owen Thomas
+2. Zoe Brown
+
+Sorted alphabetically:
+1. Owen Thomas
+2. Zoe Brown",ok,,3.375
+combined_q_idx:70,2,70,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on June 14, 2225. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.",60,Chapter 7,ok,,0.234
+combined_q_idx:71,12,71,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about what happened at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+Return the intersection.",set(),[],ok,,0.253
+combined_q_idx:72,27,72,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Consider all events involving both Ezra Edwards and digital afterlife server shutdown at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+B) Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""September 13, 2225""], ""only_in_B"": [""cryo-pod integrity breach"", ""navigation computer blackout"", ""subspace antenna failure"", ""vacuum seal deterioration""]}","only_in_A = [September 13, 2225]
+only_in_B = [a vacuum seal deterioration, a faulty seal on one of the]",ok,,1.494
+combined_q_idx:73,23,73,"Reflect on the experiences of Brooklyn Ross related to matter synthesizer overload. List all the unique locations where these events took place, without mentioning the events themselves.",{'Mercury Twilight Observatory'},- Dyson Swarm Control,ok,,0.285
+combined_q_idx:74,20,74,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to psionic field collapse that occurred at Ariel Biotech Complex. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.",set(),"May 07, 2224",ok,,0.454
+combined_q_idx:75,27,75,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Noah Williams and atmospheric scrubber failure at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.
+B) Consider all events involving both Zoe Brown and navigation computer blackout at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),"September 22, 2226",ok,,0.43
+combined_q_idx:76,8,76,"Story recall-and-edit: Start from the answer to this story query: ""Think about Zoe Brown's experiences. Describe all the key events they've been involved in, focusing on what happened rather than when or where it occurred."". Remove ""cryo-pod integrity breach"" from the answer. Return only the remaining items.","{'navigation computer blackout', 'vacuum seal deterioration', 'subspace antenna failure'}","- witnessed a vacuum seal deterioration.
+- Zoe grasped the root of the problem: a faulty seal on one of the 
+- The team at  was on high alert due to the swarm's vast network of solar panels and energy collectors being a marvel of engineering but not immune to the ravages of time and wear.
+- The room's tension was palpable as the team's collective focus shifted to",ok,,3.468
+combined_q_idx:77,22,77,"Story composite task: Use two story queries.
+A) Consider all events involving both Brooklyn Ross and cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.
+B) Story recall-and-edit: For query ""Consider all events involving both Carter Stewart and cosmic intelligence contact. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) May 31, 2224
+
+B) 
+
+Since answer(B) is empty, we will remove no items from answer(A). The remaining items are:
+
+May 31, 2224",ok,,1.887
+combined_q_idx:78,21,78,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Think about the events involving cosmic intelligence contact at Cygnus Rift Complex. List all protagonists involved in these events, without mentioning the events themselves.",0,"[1, 5, 7]",ok,,0.47
+combined_q_idx:79,20,79,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall all events related to cosmic intelligence contact that occurred at Cygnus Rift Complex. Provide a list of all dates when these events took place, without describing the events.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""May 07, 2224""]}","only_in_A = []
+only_in_B = []
+
+A) Recall all events related to cosmic intelligence contact that occurred at Cygnus Rift Complex. Provide a list of all dates when these events took place, without describing the events.
+There are no events related to cosmic intelligence contact at Cygnus Rift Complex in the text.
+
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson",ok,,3.443
+combined_q_idx:80,26,80,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Scarlett Thomas and air filter contamination on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",0,"[1, 7]",ok,,0.358
+combined_q_idx:81,16,81,"Story recall-and-edit: Start from the answer to this story query: ""Recall the events related to antimatter cascade that occurred on January 03, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Neptune Storm Harvester"" from that answer. Return only the remaining items.",{'Phobos Military Base'},Eridani Metallurgy Complex,ok,,0.405
+combined_q_idx:82,23,82,"Reflect on the experiences of Benjamin Green related to cryo-pod integrity breach. List all the unique locations where these events took place, without mentioning the events themselves.",{'Hydra Cloud Facility'},Nereid Weather Station,ok,,0.287
+combined_q_idx:83,17,83,"Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.",set(),[],ok,,0.126
+combined_q_idx:84,29,84,"Provide a comprehensive account of what happened involving Lily Nguyen and fusion core breach at Sedna Long Range Observatory on April 09, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 23'},"There is no information about Lily Nguyen and a fusion core breach at Sedna Long Range Observatory on April 09, 2226.",ok,,1.223
+combined_q_idx:85,9,85,"Story recall-and-edit: Start from the answer to this story query: ""Recall all events related to communication array blackout. Provide a list of all dates when these events occurred, without describing the events."". Remove ""September 03, 2226"" from the answer. Return only the remaining items.",set(),"September 22, 2226",ok,,0.388
+combined_q_idx:86,7,86,"Consider all events that Lily Nguyen has been involved in. List all the locations where these events took place, without mentioning the events themselves.",{'Sedna Long Range Observatory'},"- Barnard's Star Propulsion Lab
+- Triton Gas Colony
+- Eridani Metallurgy Complex
+- Dyson Swarm Control
+- Mercury Twilight Observatory
+- Nereid Weather Station
+- Europa Subsurface Laboratory
+- Hydra Cloud Facility",ok,,2.226
+combined_q_idx:87,4,87,"Consider the location Gliese 581 Trading Post. List all protagonists that have been involved in any events at this location, without mentioning the events themselves.",set(),[],ok,,0.116
+combined_q_idx:88,28,88,"Recall what happened involving Scarlett Thomas and air filter contamination at Teegarden's Star Base on August 12, 2225 and list only who else was involved (if anyone).",set(),[],ok,,0.121
+combined_q_idx:89,1,89,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events that happened on January 26, 2225. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Zoe Brown""], ""only_in_B"": [""Lily Nguyen"", ""Scarlett Thomas""]}","only_in_A = []
+only_in_B = []
+
+A) Consider all events that happened on January 26, 2225. Provide a list of all protagonists involved in any of these events, without describing the events themselves.
+There are no events on January 26, 2225.
+
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened",ok,,3.449
+combined_q_idx:90,27,90,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Consider all events involving both Zoe Brown and vacuum seal deterioration at Dyson Swarm Control. Provide a list of all dates when these events occurred, without describing the events.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and cosmic intelligence contact at Cygnus Rift Complex. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),"March 23, 2224",ok,,0.443
+combined_q_idx:91,17,91,"Story composite task: Use two story queries.
+A) Think about the events involving air filter contamination on August 12, 2225. Provide a list of all protagonists involved in these events, without describing the events.
+B) Think about the events involving tachyon field surge on April 09, 2226. Provide a list of all protagonists involved in these events, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) 
+- Ezra Edwards
+- Chloe Castillo
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+B) 
+- Chloe Castillo
+- Henry Reed
+- Logan Diaz
+- Owen Thomas
+
+Removing common items from A) and B):
+- Ezra Edwards
+
+Sorted alphabetically:
+- Ezra Edwards",ok,,2.658
+combined_q_idx:92,0,92,"Story spot-the-difference: Compare the answers to these two story queries and list differences.
+A) Recall all the events that occurred on January 03, 2226. Without describing the events, list all the unique locations where these events took place.
+B) Recall the key events that occurred at Hydra Cloud Facility on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+Return two lists: only_in_A and only_in_B.","{""only_in_A"": [""Neptune Storm Harvester"", ""Phobos Military Base""], ""only_in_B"": [""cryo-pod integrity breach""]}","only_in_A = ['Triton Gas Colony', 'Eridani Metallurgy Complex', 'Dyson Swarm Control', 'Mercury Twilight Observatory', 'Nereid Weather Station', 'Europa Subsurface Laboratory']
+only_in_B = ['Hydra Cloud Facility']",ok,,2.461
+combined_q_idx:93,24,93,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Carter Stewart at Triton Gas Colony on August 27, 2224. Describe the key events or activities that occurred, focusing on what happened.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Zoe Brown at Europa Subsurface Laboratory on December 26, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""49""]}","only_in_A = []
+only_in_B = []
+
+A) There is no mention of Carter Stewart at Triton Gas Colony on August 27, 2224. 
+
+B) There is no mention of Zoe Brown at Europa Subsurface Laboratory on December 26, 2226.",ok,,2.484
+combined_q_idx:94,33,94,"Provide a chronological list of all dates when Lily Nguyen was observed, from earliest to latest in the story's timeline.","['April 09, 2226']",[],ok,,0.117
+combined_q_idx:95,27,95,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider all events involving both Henry Reed and navigation computer blackout at Eridani Metallurgy Complex. Provide a list of all dates when these events occurred, without describing the events.",3,[9],ok,,0.224
+combined_q_idx:96,21,96,"Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity at Europa Subsurface Laboratory. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.",{'Henry Reed'},Ronan Guevara,ok,,0.312
+combined_q_idx:97,22,97,"Story recall-and-edit: For query ""Consider all events involving both Carter Stewart and cosmic intelligence contact. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",set(),[],ok,,0.127
+combined_q_idx:98,25,98,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events related to wormhole destabilization that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+B) Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to fusion core breach that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""Lily Nguyen""]}","only_in_A = []
+only_in_B = []
+
+Since there is no mention of Sedna Long Range Observatory in the provided text, both only_in_A and only_in_B will be empty lists.",ok,,1.784
+combined_q_idx:99,9,99,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall all events related to cryo-pod integrity breach. Provide a list of all dates when these events occurred, without describing the events.
+B) Recall all events related to communication array blackout. Provide a list of all dates when these events occurred, without describing the events.
+Return the intersection.",set(),"May 31, 2224",ok,,0.414
+combined_q_idx:100,9,100,"Story recall-and-edit: For query ""Recall all events related to chronal energy spike. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",set(),[],ok,,0.128
+combined_q_idx:101,23,101,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on the experiences of Carter Stewart related to cosmic intelligence contact. List all the unique locations where these events took place, without mentioning the events themselves.",[],"Barnard's Star Propulsion Lab
+Dyson Swarm Control
+Eridani Metallurgy Complex
+Europa Subsurface Laboratory
+Hydra Cloud Facility
+Mercury Twilight Observatory
+Nereid Weather Station
+Triton Gas Colony",ok,,2.132
+combined_q_idx:102,5,102,"Recall the various events that have taken place at Dione Ice Processing Facility. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",set(),"A vacuum seal deterioration occurred, threatening the integrity of the Dyson Swarm's network of solar panels and energy collectors.",ok,,1.02
+combined_q_idx:103,16,103,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the events related to crystalline matrix shatter that occurred on June 14, 2225. List all the locations where these events took place, without describing the events themselves.",60,"[2, 4, 7]",ok,,0.469
+combined_q_idx:104,24,104,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Recall what happened involving Jaxon Howard at Makemake Station on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return the intersection.",set(),[],ok,,0.19
+combined_q_idx:105,0,105,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall all the events that occurred on August 27, 2224. Without describing the events, list all the unique locations where these events took place.",0,"[1, 5, 7]",ok,,0.453
+combined_q_idx:106,13,106,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Recall the key events that occurred at Titania Quantum Lab on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.","[""plasma conduit rupture""]","(i) The air was thick with an otherworldly scent, like ozone and burning plastic, as I stood at the edge of the vast, dark cavern. The flickering lights of the laboratory's emergency systems cast eerie shadows on the walls, making it seem as though the very rock itself was twisting in agony. 
+
+(ii) I felt a creeping sense of dread as I gazed out into the",ok,,3.318
+combined_q_idx:107,23,107,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on the experiences of Brooklyn Ross related to cryo-pod integrity breach. List all the unique locations where these events took place, without mentioning the events themselves.",0,Nereid Weather Station,ok,,0.3
+combined_q_idx:108,24,108,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Ezra Edwards at Titania Quantum Lab on December 03, 2226. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Scarlett Thomas at Teegarden's Star Base on August 12, 2225. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.","{""only_in_A"": [""plasma conduit rupture""], ""only_in_B"": []}","only_in_A = [""Ezra Edwards"", ""Titania Quantum Lab"", ""December 03, 2226"", ""A digital afterlife server shutdown""]
+only_in_B = []",ok,,1.697
+combined_q_idx:109,21,109,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving childhood memory trade scandal at Dione Ice Processing Facility. List all protagonists involved in these events, without mentioning the events themselves.
+B) Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Think about the events involving digital afterlife server shutdown at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return the intersection.
+Return the intersection.",set(),[],ok,,0.252
+combined_q_idx:110,25,110,"Think about the events related to air filter contamination that occurred at Teegarden's Star Base on August 12, 2225. List all protagonists involved in these events, without describing the events themselves.",set(),[],ok,,0.143
+combined_q_idx:111,22,111,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Brooklyn Ross and artificial atmosphere toxicity. Provide a list of all dates when these events occurred, without describing the events.",[],"February 27, 2226",ok,,0.373
+combined_q_idx:112,26,112,"Consider the events involving both Lily Nguyen and wormhole destabilization on April 09, 2226. List all the locations where these events took place, without describing the events themselves.",set(),[],ok,,0.126
+combined_q_idx:113,27,113,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving both Carter Stewart and cosmic intelligence contact at Cygnus Rift Complex. Provide a list of all dates when these events occurred, without describing the events.",[],"February 27, 2226, 
+March 23, 2224, 
+May 07, 2224, 
+May 31, 2224, 
+September 13, 2225, 
+September 22, 2226, 
+September 27, 2225",ok,,2.596
+combined_q_idx:114,21,114,"Story composite task: Use two story queries.
+A) Think about the events involving magnetospheric resonance breach at Barnard's Star Propulsion Lab. List all protagonists involved in these events, without mentioning the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity at Europa Subsurface Laboratory. List all protagonists involved in these events, without mentioning the events themselves."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) Ezra Edwards, Henry Reed, Logan Diaz, Owen Thomas
+
+B) Benjamin Green, Ronan Guevara
+
+Removing items that also appear in answer(B) from answer(A):
+Ezra Edwards, Henry Reed, Logan Diaz, Owen Thomas
+
+Removing Benjamin Green from answer(B):
+Ronan Guevara
+
+Sorted alphabetically:
+Ezra Edwards, Henry Reed, Logan Diaz,",ok,,3.445
+combined_q_idx:115,24,115,"Story spot-the-differences: Compare answers of these two story queries.
+A) Recall what happened involving Scarlett Thomas at Mercury Twilight Observatory on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+B) Recall what happened involving Chloe Castillo at Hydra Cloud Facility on April 09, 2226. Describe the key events or activities that occurred, focusing on what happened.
+Return only_in_A and only_in_B.","{""only_in_A"": [""subspace antenna failure""], ""only_in_B"": []}","only_in_A: 
+Set()
+
+only_in_B: 
+Set()",ok,,0.719
+combined_q_idx:116,13,116,"Story composite task: Use two story queries.
+A) Recall the key events that occurred at Eridani Metallurgy Complex on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+B) Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.",[],"A) Recall the key events that occurred at Eridani Metallurgy Complex on April 09, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved.
+- A main power grid overload occurred.
+- The fluorescent lights above hummed in unison, casting an eerie glow over the sterile control room.
+- Shadows danced across the walls as technicians scur",ok,,3.377
+combined_q_idx:117,31,117,What is the most recent location where Logan Diaz was observed in the story's chronological timeline?,['Mercury Twilight Observatory'],Mercury Twilight Observatory,ok,,0.235
+combined_q_idx:118,10,118,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider all events involving atmospheric scrubber failure. List all the locations where these events took place, without mentioning the events themselves.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Hydra Cloud Facility"", ""Luna Oceanus Trading Post""], ""only_in_B"": [""0""]}","only_in_A = [""Triton Gas Colony"", ""Europa Subsurface Laboratory"", ""Hydra Cloud Facility""]
+only_in_B = [8]",ok,,1.429
+combined_q_idx:119,26,119,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Ezra Edwards and plasma conduit rupture on December 03, 2226. List all the locations where these events took place, without describing the events themselves.",24,"[1, 2]",ok,,0.352
+combined_q_idx:120,14,120,"Story spot-the-differences: Compare answers of these two story queries.
+A) Consider the events involving Scarlett Thomas on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+B) Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on what Levi Rodriguez experienced on December 26, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Reflect on what Jaxon Howard experienced on August 12, 2225. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+Return only_in_A and only_in_B.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": [""['subspace antenna failure']"", ""[]""]}","only_in_A = []
+only_in_B = []
+
+Since there is no mention of Scarlett Thomas, Levi Rodriguez, or Jaxon Howard in the provided text, the final answer will be empty sets.",ok,,1.884
+combined_q_idx:121,16,121,"Story composite task: Use two story queries.
+A) Recall the events related to artificial atmosphere toxicity that occurred on February 27, 2226. List all the locations where these events took place, without describing the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Think about the events involving artificial atmosphere toxicity on February 27, 2226. Provide a list of all protagonists involved in these events, without describing the events."". Remove ""Benjamin Green"" from the answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""Europa Subsurface Laboratory""]","A) 
+Europa Subsurface Laboratory
+
+B) 
+Julian Ross, Ronan Guevara
+
+C) 
+Europa Subsurface Laboratory",ok,,1.442
+combined_q_idx:122,24,122,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall what happened involving Zoe Brown at Europa Subsurface Laboratory on December 26, 2226. Describe the key events or activities that occurred, focusing on what happened.",49,Chapter 7,ok,,0.216
+combined_q_idx:123,19,123,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Reflect on Zoe Brown's experiences at Barnard's Star Propulsion Lab. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.","[""navigation computer blackout""]","(i) witnessed a digital afterlife server shutdown.
+(ii) witnessed a vacuum seal deterioration.
+(iii) witnessed a digital afterlife server shutdown.
+(iv) witnessed a vacuum seal deterioration.",ok,,1.641
+combined_q_idx:124,34,124,List all locations visited by Daniel Lopez in chronological order according to the story's timeline.,set(),There is no mention of Daniel Lopez in the provided text.,ok,,0.583
+combined_q_idx:125,4,125,"Story recall-and-edit: Start from the answer to this story query: ""Consider the location Eridani Metallurgy Complex. List all protagonists that have been involved in any events at this location, without mentioning the events themselves."". Remove ""Carter Stewart"" from that answer. Return only the remaining items.","{'Henry Reed', 'Zoe Brown'}",Henry Reed,ok,,0.193
+combined_q_idx:126,12,126,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about what happened at Europa Subsurface Laboratory on December 26, 2226. List all protagonists involved in any events at this time and place, without describing the events.","[""Zoe Brown""]","Benjamin Green, Ronan Guevara",ok,,0.488
+combined_q_idx:127,21,127,"Story spot-the-differences: Compare answers of these two story queries.
+A) Think about the events involving navigation computer blackout at Eridani Metallurgy Complex. List all protagonists involved in these events, without mentioning the events themselves.
+B) Recall all events related to vacuum seal deterioration that occurred at Dyson Swarm Control. Provide a list of all dates when these events took place, without describing the events.
+Return only_in_A and only_in_B.","{""only_in_A"": [""Henry Reed""], ""only_in_B"": [""May 07, 2224""]}","Return only_in_A = ['Henry Reed']
+Return only_in_B = ['May 07, 2224']",ok,,1.118
+combined_q_idx:128,28,128,"Recall what happened involving Zoe Brown and subspace antenna failure at Europa Subsurface Laboratory on December 26, 2226 and list only who else was involved (if anyone).",set(),[],ok,,0.128
+combined_q_idx:129,26,129,"Story recall-and-edit: Start from the answer to this story query: ""Consider the events involving both Levi Rodriguez and subspace antenna failure on December 26, 2226. List all the locations where these events took place, without describing the events themselves."". Remove ""Triton Gas Colony"" from the answer. Return only the remaining items.",set(),"Dyson Swarm Control, Eridani Metallurgy Complex",ok,,0.654
+combined_q_idx:130,25,130,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to fusion core breach that occurred at Sedna Long Range Observatory on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.","[""Lily Nguyen""]","Chloe Castillo 
+Noa Middleton",ok,,0.403
+combined_q_idx:131,2,131,"Story composite task: Use two story queries.
+A) Reflect on May 07, 2224. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place.
+B) Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""vacuum seal deterioration""]","A) 
+1. A digital afterlife server shutdown
+2. A main power grid overload
+3. A vacuum seal deterioration
+4. A cryo-pod integrity breach
+5. A fusion core breach
+6. A navigation computer blackout
+7. An artificial atmosphere toxicity
+8. An antimatter cascade
+
+B) 
+1. Chloe Castillo
+2. Henry Reed
+3.",ok,,3.511
+combined_q_idx:132,28,132,"Recall what happened involving Chloe Castillo and tachyon field surge at Hydra Cloud Facility on April 09, 2226 and list only who else was involved (if anyone).",set(),[],ok,,0.129
+combined_q_idx:133,15,133,"Story composite task: Use two story queries.
+A) Reflect on what Ezra Edwards experienced on December 03, 2226. Describe all the key events they were involved in, focusing on what happened rather than where it occurred.
+B) Consider the events involving Jaxon Howard on August 12, 2225. List all the locations where these events took place, without describing the events themselves.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""plasma conduit rupture""]","A) 
+- witnessed a digital afterlife server shutdown.
+- The sterile white lights cast sharp shadows across the polished floors, broken only by the pulsing blue glow of the main data terminal array.
+- Something in the air felt different—thicker, charged—as if the silence itself was holding its breath.
+- He moved closer to the containment bay, where the digital afterlife servers thrummed",ok,,3.497
+combined_q_idx:134,1,134,"Story recall-and-edit: Start from the answer to this story query: ""Consider all events that happened on April 09, 2226. Provide a list of all protagonists involved in any of these events, without describing the events themselves."". Remove ""Benjamin Green"" from that answer. Return only the remaining items.","{'Scarlett Thomas', 'Lily Nguyen'}","Ezra Edwards, Chloe Castillo, Henry Reed, Zoe Brown, Logan Diaz, Julian Ross, Ronan Guevara, Owen Thomas",ok,,1.291
+combined_q_idx:135,13,135,"Story recall-and-edit: For query ""Recall the key events that occurred at Triton Gas Colony on December 03, 2226. Describe what happened, focusing on the actions or occurrences rather than who was involved."", return an empty answer.",set(),[],ok,,0.145
+combined_q_idx:136,5,136,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Recall the various events that have taken place at Europa Subsurface Laboratory. Describe what happened during these events, focusing on the actions or occurrences rather than the timing or people involved.",49,Chapter 7,ok,,0.232
+combined_q_idx:137,2,137,"Story recall-and-edit: Start from the answer to this story query: ""Reflect on May 28, 2225. Describe all the key events that occurred on this date, focusing on what happened rather than who was involved or where it took place."". Remove ""atmospheric scrubber failure"" from the answer. Return only the remaining items.",{'magnetic confinement rupture'},"(i) The hum of cooling servers echoed through the sterile corridors of Barnard's Star Propulsion Lab, a low-frequency pulse that had grown oddly discordant in the morning’s stillness. The sterile white lights cast sharp shadows across the polished floors, broken only by the pulsing blue glow of the main data terminal array. Something in the air felt different—thicker, charged—as if the silence",ok,,3.488
+combined_q_idx:138,29,138,"Provide a comprehensive account of what happened involving Ezra Edwards and plasma conduit rupture at Titania Quantum Lab on December 03, 2226. Include all relevant details about the event(s), including what occurred and any other pertinent information.",{'Full chapter 24'},"There is no information about Ezra Edwards and a plasma conduit rupture at Titania Quantum Lab on December 03, 2226, in the provided text.",ok,,1.407
+combined_q_idx:139,26,139,"Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Consider the events involving both Jaxon Howard and cosmic string vibration on August 12, 2225. List all the locations where these events took place, without describing the events themselves.",0,"[1, 7]",ok,,0.366
+combined_q_idx:140,19,140,"Story composite task: Use two story queries.
+A) Reflect on Zoe Brown's experiences at Dyson Swarm Control. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.","[""vacuum seal deterioration""]","A) Reflect on Zoe Brown's experiences at Dyson Swarm Control. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+
+Zoe Brown witnessed a vacuum seal deterioration at Dyson Swarm Control. The team at Dyson Swarm Control was on high alert due to a critical failure: a vacuum seal deterioration that threatened to compromise the entire swarm",ok,,3.488
+combined_q_idx:141,25,141,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Think about the events related to atmospheric scrubber failure that occurred at Eridani Metallurgy Complex on April 09, 2226. List all protagonists involved in these events, without describing the events themselves.",[],"Henry Reed, Logan Diaz",ok,,0.321
+combined_q_idx:142,18,142,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Ezra Edwards at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.","[""September 13, 2225""]","September 13, 2225",ok,,0.37
+combined_q_idx:143,18,143,"Story compute-on-lists: For this story query answer, sort all returned items in ascending alphabetical order.
+Query: Consider all events involving Julian Peterson at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.",[],"May 31, 2224, September 13, 2225",ok,,0.71
+combined_q_idx:144,15,144,"Story recall-and-edit: For query ""Reflect on what Carter Stewart experienced on August 27, 2224. Describe all the key events they were involved in, focusing on what happened rather than where it occurred."", return an empty answer.",set(),There is no mention of Carter Stewart in the provided text.,ok,,0.619
+combined_q_idx:145,18,145,"Story recall-and-edit: For query ""Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events."", return an empty answer.",set(),[],ok,,0.129
+combined_q_idx:146,19,146,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on Ella Ross's experiences at Dione Ice Processing Facility. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Story composite task: Use two story queries.
+A) Reflect on Zoe Brown's experiences at Dyson Swarm Control. Describe all the key events they've been involved in at this location, focusing on what happened rather than when it occurred.
+B) Consider all events involving Ella Ross at Dione Ice Processing Facility. Provide a list of all dates when these events occurred, without describing the events.
+Take answer(A), remove all items that also appear in answer(B), then return the remaining items sorted alphabetically.
+Return the intersection.",set(),"Intersection: 
+
+- witnessed a digital afterlife server shutdown
+- witnessed a fusion core breach
+- witnessed a navigation computer blackout
+- witnessed a vacuum seal deterioration",ok,,1.614
+combined_q_idx:147,11,147,"Story match-and-compare: Compare answers of these two story queries and list only shared items.
+A) Reflect on events related to cryo-pod integrity breach. Provide a list of all protagonists involved in these events, without describing the events.
+B) Story stateful-processing: For this story query, return only the latest chapter index from supporting chapters.
+Query: Reflect on events related to bio-neural gel pack infection. Provide a list of all protagonists involved in these events, without describing the events.
+Return the intersection.",set(),[],ok,,0.172
+combined_q_idx:148,23,148,"Story spot-the-differences: Compare answers of these two story queries.
+A) Reflect on the experiences of Brooklyn Ross related to artificial atmosphere toxicity. List all the unique locations where these events took place, without mentioning the events themselves.
+B) Story recall-and-edit: Start from the answer to this story query: ""Reflect on the experiences of Carter Stewart related to antimatter cascade. List all the unique locations where these events took place, without mentioning the events themselves."". Remove ""Phobos Military Base"" from the answer. Return only the remaining items.
+Return only_in_A and only_in_B.","{""only_in_A"": [], ""only_in_B"": []}","only_in_A = ['Europa Subsurface Laboratory']
+only_in_B = []",ok,,0.833
+combined_q_idx:149,27,149,"Consider all events involving both Zoe Brown and navigation computer blackout at Barnard's Star Propulsion Lab. Provide a list of all dates when these events occurred, without describing the events.","{'November 13, 2226'}","May 07, 2224",ok,,0.38

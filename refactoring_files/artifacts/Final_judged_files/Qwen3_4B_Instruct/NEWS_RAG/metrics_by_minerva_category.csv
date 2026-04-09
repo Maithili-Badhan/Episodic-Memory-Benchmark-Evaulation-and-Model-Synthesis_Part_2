@@ -1,0 +1,8 @@
+minerva_category,n_rows,mean_f1,exact_match_rate
+Composite,21,0.5238095238095238,0.5238095238095238
+Compute on Sets and Lists,20,0.375,0.35
+Match and Compare,21,1.0,1.0
+Recall and Edit,22,0.5909090909090909,0.5909090909090909
+Search,22,0.6212121363636364,0.5909090909090909
+Spot the Differences,21,0.03174604761904762,0.0
+Stateful Processing,20,0.23333335000000002,0.2

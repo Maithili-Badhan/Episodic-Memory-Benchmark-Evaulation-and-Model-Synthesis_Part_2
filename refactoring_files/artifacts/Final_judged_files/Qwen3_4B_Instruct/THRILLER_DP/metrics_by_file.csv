@@ -1,0 +1,2 @@
+source_file,n_rows,mean_f1,exact_match_rate
+thriller_qwen3_4b_dp.answers.jsonl,150,0.4,0.4
