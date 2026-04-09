@@ -1,0 +1,22 @@
+dataset,minerva_category,count,total_rows,coverage_pct
+NEWS,Composite,21,150,14.0
+NEWS,Compute on Sets and Lists,21,150,14.0
+NEWS,Match and Compare,22,150,14.67
+NEWS,Recall and Edit,22,150,14.67
+NEWS,Search,22,150,14.67
+NEWS,Spot the Differences,21,150,14.0
+NEWS,Stateful Processing,21,150,14.0
+SCIFI,Composite,21,150,14.0
+SCIFI,Compute on Sets and Lists,21,150,14.0
+SCIFI,Match and Compare,22,150,14.67
+SCIFI,Recall and Edit,22,150,14.67
+SCIFI,Search,22,150,14.67
+SCIFI,Spot the Differences,21,150,14.0
+SCIFI,Stateful Processing,21,150,14.0
+THRILLER,Composite,21,150,14.0
+THRILLER,Compute on Sets and Lists,21,150,14.0
+THRILLER,Match and Compare,22,150,14.67
+THRILLER,Recall and Edit,22,150,14.67
+THRILLER,Search,22,150,14.67
+THRILLER,Spot the Differences,21,150,14.0
+THRILLER,Stateful Processing,21,150,14.0
