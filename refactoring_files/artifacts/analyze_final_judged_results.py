@@ -291,6 +291,7 @@ def forest_with_ci(
     title: str,
     out_path: Path,
     x_label: str,
+    xlim: tuple[float, float] | None = None,
 ) -> None:
     if table.empty:
         return
@@ -314,13 +315,235 @@ def forest_with_ci(
         capsize=3,
     )
     plt.yticks(y, plot[label_col].tolist())
-    plt.xlim(-0.02, 1.02)
+    if xlim is None:
+        x_min = float(np.nanmin(np.concatenate([means, los, his])))
+        x_max = float(np.nanmax(np.concatenate([means, los, his])))
+        span = x_max - x_min
+        pad = 0.08 * span if span > 1e-9 else 0.05
+        plt.xlim(x_min - pad, x_max + pad)
+    else:
+        plt.xlim(xlim[0], xlim[1])
     plt.axvline(0, color="gray", linestyle="--", linewidth=1)
     plt.xlabel(x_label)
     plt.title(title)
     plt.tight_layout()
     out_path.parent.mkdir(parents=True, exist_ok=True)
     plt.savefig(out_path, dpi=180)
+    plt.close()
+
+
+def pair_outcomes(
+    pairs: pd.DataFrame,
+    tol: float = 1e-12,
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    if pairs.empty:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+    p = pairs.copy()
+    delta = p["f1_rag"] - p["f1_dp"]
+    p["delta_f1_rag_minus_dp"] = delta
+    p["pair_outcome"] = np.where(delta > tol, "RAG wins", np.where(delta < -tol, "RAG loses", "Tie"))
+
+    def summarize(df: pd.DataFrame, group_cols: list[str]) -> pd.DataFrame:
+        counts = (
+            df.groupby(group_cols + ["pair_outcome"], dropna=False)
+            .size()
+            .rename("n")
+            .reset_index()
+        )
+        if group_cols:
+            counts["pct"] = counts.groupby(group_cols, dropna=False)["n"].transform(lambda s: 100.0 * s / s.sum())
+        else:
+            total = float(counts["n"].sum()) if len(counts) else 1.0
+            counts["pct"] = 100.0 * counts["n"] / total
+        return counts.sort_values(group_cols + ["pair_outcome"])
+
+    overall = summarize(p, [])
+    by_model = summarize(p, ["model"])
+    by_model_book = summarize(p, ["model", "book"])
+    return overall, by_model, by_model_book
+
+
+def stacked_percent_bar_from_counts(
+    counts: pd.DataFrame,
+    index_cols: list[str],
+    category_col: str,
+    order: list[str] | None,
+    category_order: list[str],
+    title: str,
+    out_path: Path,
+) -> None:
+    if counts.empty:
+        return
+    c = counts.copy()
+    idx_name = "__idx__"
+    if len(index_cols) == 1:
+        c[idx_name] = c[index_cols[0]].astype(str)
+    else:
+        c[idx_name] = c[index_cols].astype(str).agg(" | ".join, axis=1)
+
+    pivot = c.pivot_table(index=idx_name, columns=category_col, values="pct", aggfunc="sum", fill_value=0)
+    existing_cat_order = [x for x in category_order if x in pivot.columns]
+    pivot = pivot.reindex(columns=existing_cat_order)
+    if order is not None:
+        pivot = pivot.reindex([o for o in order if o in pivot.index])
+
+    colors = ["#2ca02c", "#7f7f7f", "#d62728"]  # win, tie, lose
+    plt.figure(figsize=(max(8, 0.9 * len(pivot.index) + 2), 5.4))
+    bottom = np.zeros(len(pivot.index))
+    x = np.arange(len(pivot.index))
+    for i, cat in enumerate(existing_cat_order):
+        vals = pivot[cat].to_numpy(dtype=float)
+        plt.bar(x, vals, bottom=bottom, label=cat, color=colors[i % len(colors)], width=0.75)
+        bottom += vals
+
+    plt.xticks(x, pivot.index.tolist(), rotation=20 if len(pivot.index) > 5 else 0, ha="right")
+    plt.ylim(0, 100)
+    plt.ylabel("Percentage of Paired Questions")
+    plt.title(title)
+    plt.legend(title="Outcome", bbox_to_anchor=(1.02, 1), loc="upper left")
+    plt.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(out_path, dpi=180)
+    plt.close()
+
+
+def ecdf_delta_plot(pairs: pd.DataFrame, model_order: list[str], out_path: Path) -> None:
+    if pairs.empty:
+        return
+    plt.figure(figsize=(10, 6))
+    for model in model_order:
+        sub = pairs[pairs["model"] == model]
+        if sub.empty:
+            continue
+        x = np.sort((sub["f1_rag"] - sub["f1_dp"]).to_numpy(dtype=float))
+        y = np.arange(1, len(x) + 1) / len(x)
+        plt.step(x, y, where="post", linewidth=2, label=f"{model} (n={len(x)})")
+    plt.axvline(0, color="black", linestyle="--", linewidth=1)
+    plt.xlim(-1.01, 1.01)
+    plt.ylim(0, 1.01)
+    plt.xlabel("Per-question Delta F1 (RAG - DP)")
+    plt.ylabel("ECDF")
+    plt.title("ECDF of Delta F1 (RAG - DP) by Model")
+    plt.legend(bbox_to_anchor=(1.02, 1), loc="upper left")
+    plt.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    plt.savefig(out_path, dpi=180)
+    plt.close()
+
+
+def retrieval_delta_table(rows: pd.DataFrame) -> pd.DataFrame:
+    df = rows.copy()
+    df["retrieval_type"] = df.get("retrieval_type", pd.Series("", index=df.index)).astype(str)
+    grouped = (
+        df.groupby(["model", "method", "retrieval_type"], dropna=False)
+        .agg(n_rows=("f1", "size"), sum_f1=("f1", "sum"))
+        .reset_index()
+    )
+    grouped["weighted_mean_f1"] = grouped["sum_f1"] / grouped["n_rows"].clip(lower=1)
+
+    rag = grouped[grouped["method"] == "RAG"][["model", "retrieval_type", "n_rows", "weighted_mean_f1"]].rename(
+        columns={"n_rows": "n_rag", "weighted_mean_f1": "f1_rag_weighted"}
+    )
+    dp = grouped[grouped["method"] == "DP"][["model", "retrieval_type", "n_rows", "weighted_mean_f1"]].rename(
+        columns={"n_rows": "n_dp", "weighted_mean_f1": "f1_dp_weighted"}
+    )
+    merged = pd.merge(rag, dp, on=["model", "retrieval_type"], how="outer")
+    merged["f1_rag_weighted"] = pd.to_numeric(merged["f1_rag_weighted"], errors="coerce")
+    merged["f1_dp_weighted"] = pd.to_numeric(merged["f1_dp_weighted"], errors="coerce")
+    merged["delta_rag_minus_dp"] = merged["f1_rag_weighted"] - merged["f1_dp_weighted"]
+    return merged.sort_values(["model", "retrieval_type"])
+
+
+def error_bucket(row: pd.Series) -> str:
+    try:
+        f1 = float(row.get("f1", np.nan))
+    except Exception:
+        f1 = np.nan
+    em = int(row.get("exact_match", 0)) if not pd.isna(row.get("exact_match", np.nan)) else 0
+    if em == 1:
+        return "Exact Match"
+    if not math.isnan(f1) and abs(f1) < 1e-12:
+        return "Zero F1"
+    if not math.isnan(f1) and f1 < 0.5:
+        return "Low F1 (0,0.5)"
+    return "Mid F1 [0.5,1)"
+
+
+def stacked_error_profile(
+    rows: pd.DataFrame,
+    out_dir: Path,
+    model_order: list[str],
+) -> None:
+    bucket_order = ["Exact Match", "Mid F1 [0.5,1)", "Low F1 (0,0.5)", "Zero F1"]
+    colors = ["#2ca02c", "#1f77b4", "#ff7f0e", "#d62728"]
+
+    df = rows.copy()
+    df["error_bucket"] = df.apply(error_bucket, axis=1)
+
+    # Mode-only stacked bars
+    mode_counts = (
+        df.groupby(["method", "error_bucket"], dropna=False)
+        .size()
+        .rename("n")
+        .reset_index()
+    )
+    mode_counts["pct"] = mode_counts.groupby("method", dropna=False)["n"].transform(lambda s: 100.0 * s / s.sum())
+    mode_counts.to_csv(out_dir / "error_profile_by_method.csv", index=False)
+
+    pivot = mode_counts.pivot_table(index="method", columns="error_bucket", values="pct", fill_value=0)
+    pivot = pivot.reindex(index=METHOD_ORDER, columns=[b for b in bucket_order if b in pivot.columns])
+    x = np.arange(len(pivot.index))
+    bottom = np.zeros(len(pivot.index))
+    plt.figure(figsize=(7.8, 5.2))
+    for i, b in enumerate(pivot.columns):
+        vals = pivot[b].to_numpy(dtype=float)
+        plt.bar(x, vals, bottom=bottom, width=0.65, label=b, color=colors[i % len(colors)])
+        bottom += vals
+    plt.xticks(x, pivot.index.tolist())
+    plt.ylim(0, 100)
+    plt.ylabel("Percentage of Questions")
+    plt.title("Error Profile by Mode")
+    plt.legend(title="Bucket", bbox_to_anchor=(1.02, 1), loc="upper left")
+    plt.tight_layout()
+    plt.savefig(out_dir / "stacked_error_profile_by_method.png", dpi=180)
+    plt.close()
+
+    # Model x mode stacked bars
+    df["model_method"] = df["model"].astype(str) + " | " + df["method"].astype(str)
+    mm_counts = (
+        df.groupby(["model", "method", "model_method", "error_bucket"], dropna=False)
+        .size()
+        .rename("n")
+        .reset_index()
+    )
+    mm_counts["pct"] = mm_counts.groupby(["model", "method"], dropna=False)["n"].transform(
+        lambda s: 100.0 * s / s.sum()
+    )
+    mm_counts.to_csv(out_dir / "error_profile_by_model_method.csv", index=False)
+
+    model_method_order = []
+    for m in model_order:
+        for method in METHOD_ORDER:
+            label = f"{m} | {method}"
+            if label in set(mm_counts["model_method"]):
+                model_method_order.append(label)
+
+    pivot = mm_counts.pivot_table(index="model_method", columns="error_bucket", values="pct", fill_value=0)
+    pivot = pivot.reindex(index=model_method_order, columns=[b for b in bucket_order if b in pivot.columns])
+    x = np.arange(len(pivot.index))
+    bottom = np.zeros(len(pivot.index))
+    plt.figure(figsize=(max(10, 0.95 * len(pivot.index) + 2), 5.6))
+    for i, b in enumerate(pivot.columns):
+        vals = pivot[b].to_numpy(dtype=float)
+        plt.bar(x, vals, bottom=bottom, width=0.75, label=b, color=colors[i % len(colors)])
+        bottom += vals
+    plt.xticks(x, pivot.index.tolist(), rotation=25, ha="right")
+    plt.ylim(0, 100)
+    plt.ylabel("Percentage of Questions")
+    plt.title("Error Profile by Model and Mode")
+    plt.legend(title="Bucket", bbox_to_anchor=(1.02, 1), loc="upper left")
+    plt.tight_layout()
+    plt.savefig(out_dir / "stacked_error_profile_by_model_method.png", dpi=180)
     plt.close()
 
 
@@ -546,6 +769,7 @@ def main() -> None:
         title="Forest Plot: Mean F1 by Model (95% bootstrap CI)",
         out_path=out_dir / "forest_mean_f1_by_model.png",
         x_label="Mean F1",
+        xlim=(0.0, 1.0),
     )
 
     # Chronological-awareness score tables + plots
@@ -618,6 +842,7 @@ def main() -> None:
         title="Forest Plot: Chronological Awareness by Model (95% bootstrap CI)",
         out_path=out_dir / "forest_chronological_awareness_by_model.png",
         x_label="Chronological Awareness Score",
+        xlim=(0.0, 1.0),
     )
 
     # Heatmaps
@@ -655,6 +880,27 @@ def main() -> None:
         center=0.0,
     )
 
+    # Retrieval-type weighted delta heatmap (RAG - DP)
+    retrieval_delta = retrieval_delta_table(rows)
+    retrieval_delta.to_csv(out_dir / "retrieval_type_delta_rag_minus_dp_by_model.csv", index=False)
+    retrieval_order = (
+        retrieval_delta.groupby("retrieval_type", as_index=False)["delta_rag_minus_dp"]
+        .mean()
+        .sort_values("delta_rag_minus_dp", ascending=False)["retrieval_type"]
+        .tolist()
+    )
+    retrieval_delta_pivot = retrieval_delta.pivot(
+        index="model", columns="retrieval_type", values="delta_rag_minus_dp"
+    )
+    retrieval_delta_pivot = retrieval_delta_pivot.reindex(index=model_order, columns=retrieval_order)
+    heatmap(
+        retrieval_delta_pivot,
+        title="Weighted Mean F1 Delta (RAG - DP) by Retrieval Type",
+        out_path=out_dir / "heatmap_retrieval_delta_rag_minus_dp.png",
+        cmap="RdBu_r",
+        center=0.0,
+    )
+
     # Category heatmaps by method
     for method in METHOD_ORDER:
         cat = rows[rows["method"] == method].copy()
@@ -678,6 +924,47 @@ def main() -> None:
     missing_notes: list[str] = []
     if not pairs.empty:
         pairs.to_csv(out_dir / "paired_row_differences_dp_minus_rag.csv", index=False)
+        pairs = pairs.copy()
+        pairs["delta_f1_rag_minus_dp"] = pairs["f1_rag"] - pairs["f1_dp"]
+        pairs.to_csv(out_dir / "paired_row_differences_rag_minus_dp.csv", index=False)
+
+        # Win/Tie/Lose summaries from matched row_key pairs
+        wt_overall, wt_by_model, wt_by_model_book = pair_outcomes(pairs)
+        wt_overall.to_csv(out_dir / "win_tie_loss_overall.csv", index=False)
+        wt_by_model.to_csv(out_dir / "win_tie_loss_by_model.csv", index=False)
+        wt_by_model_book.to_csv(out_dir / "win_tie_loss_by_model_book.csv", index=False)
+
+        stacked_percent_bar_from_counts(
+            counts=wt_by_model,
+            index_cols=["model"],
+            category_col="pair_outcome",
+            order=model_order,
+            category_order=["RAG wins", "Tie", "RAG loses"],
+            title="Matched Row Pairs: RAG Wins vs Ties vs Losses by Model",
+            out_path=out_dir / "stacked_win_tie_loss_by_model.png",
+        )
+
+        by_book_counts = (
+            wt_by_model_book.groupby(["book", "pair_outcome"], as_index=False)
+            .agg(n=("n", "sum"))
+        )
+        by_book_counts["pct"] = by_book_counts.groupby("book")["n"].transform(lambda s: 100.0 * s / s.sum())
+        stacked_percent_bar_from_counts(
+            counts=by_book_counts,
+            index_cols=["book"],
+            category_col="pair_outcome",
+            order=BOOK_ORDER,
+            category_order=["RAG wins", "Tie", "RAG loses"],
+            title="Matched Row Pairs: RAG Wins vs Ties vs Losses by Book",
+            out_path=out_dir / "stacked_win_tie_loss_by_book.png",
+        )
+
+        # ECDF of per-question delta F1 (RAG - DP)
+        ecdf_delta_plot(
+            pairs=pairs,
+            model_order=model_order,
+            out_path=out_dir / "ecdf_delta_f1_rag_minus_dp_by_model.png",
+        )
 
         diff_rows = []
         for model, g in pairs.groupby("model"):
@@ -692,6 +979,34 @@ def main() -> None:
             diff_rows.append({"book": book, "n": len(g), "mean_diff_f1": mean_, "ci_low": lo, "ci_high": hi})
         diffs_book = pd.DataFrame(diff_rows).sort_values("mean_diff_f1", ascending=False)
         diffs_book.to_csv(out_dir / "dp_minus_rag_effect_by_book.csv", index=False)
+
+        # Forest summary: one point per model-dataset (book) with bootstrap CI on mean delta (RAG - DP)
+        effect_rows = []
+        for i, ((model, book), g) in enumerate(pairs.groupby(["model", "book"], dropna=False)):
+            mean_, lo, hi, _ = mean_ci(g["delta_f1_rag_minus_dp"], args.bootstrap, args.seed + 800 + i)
+            effect_rows.append(
+                {
+                    "model": model,
+                    "book": book,
+                    "label": f"{model} | {book}",
+                    "n": len(g),
+                    "mean_delta_f1_rag_minus_dp": mean_,
+                    "ci_low": lo,
+                    "ci_high": hi,
+                }
+            )
+        effect_tbl = pd.DataFrame(effect_rows).sort_values("mean_delta_f1_rag_minus_dp", ascending=False)
+        effect_tbl.to_csv(out_dir / "forest_effect_by_model_book_rag_minus_dp.csv", index=False)
+        forest_with_ci(
+            table=effect_tbl.rename(columns={"mean_delta_f1_rag_minus_dp": "mean"}),
+            label_col="label",
+            mean_col="mean",
+            lo_col="ci_low",
+            hi_col="ci_high",
+            title="Forest Plot: Mean Delta F1 (RAG - DP) by Model-Book",
+            out_path=out_dir / "forest_delta_f1_rag_minus_dp_by_model_book.png",
+            x_label="Mean Delta F1 (RAG - DP)",
+        )
 
         gardner_altman_by_group(
             pairs=pairs,
@@ -713,6 +1028,9 @@ def main() -> None:
         diffs_model = pd.DataFrame()
         diffs_book = pd.DataFrame()
         missing_notes.append("No paired DP/RAG rows could be matched using row_key.")
+
+    # Error-profile stacked bars
+    stacked_error_profile(rows=rows, out_dir=out_dir, model_order=model_order)
 
     # Data-quality notes
     counts = overall[["model", "condition", "n_rows"]].copy()
