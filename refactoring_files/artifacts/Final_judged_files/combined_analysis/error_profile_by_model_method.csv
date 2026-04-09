@@ -1,0 +1,29 @@
+model,method,model_method,error_bucket,n,pct
+Llama3.1_8B_instruct,DP,Llama3.1_8B_instruct | DP,Exact Match,198,44.0
+Llama3.1_8B_instruct,DP,Llama3.1_8B_instruct | DP,"Low F1 (0,0.5)",3,0.6666666666666666
+Llama3.1_8B_instruct,DP,Llama3.1_8B_instruct | DP,"Mid F1 [0.5,1)",14,3.111111111111111
+Llama3.1_8B_instruct,DP,Llama3.1_8B_instruct | DP,Zero F1,235,52.22222222222222
+Llama3.1_8B_instruct,RAG,Llama3.1_8B_instruct | RAG,Exact Match,214,47.55555555555556
+Llama3.1_8B_instruct,RAG,Llama3.1_8B_instruct | RAG,"Low F1 (0,0.5)",3,0.6666666666666666
+Llama3.1_8B_instruct,RAG,Llama3.1_8B_instruct | RAG,"Mid F1 [0.5,1)",13,2.888888888888889
+Llama3.1_8B_instruct,RAG,Llama3.1_8B_instruct | RAG,Zero F1,220,48.888888888888886
+Phi3_mini_4K_instruct,DP,Phi3_mini_4K_instruct | DP,Exact Match,188,41.77777777777778
+Phi3_mini_4K_instruct,DP,Phi3_mini_4K_instruct | DP,Zero F1,262,58.22222222222222
+Phi3_mini_4K_instruct,RAG,Phi3_mini_4K_instruct | RAG,Exact Match,210,46.666666666666664
+Phi3_mini_4K_instruct,RAG,Phi3_mini_4K_instruct | RAG,"Low F1 (0,0.5)",4,0.8888888888888888
+Phi3_mini_4K_instruct,RAG,Phi3_mini_4K_instruct | RAG,"Mid F1 [0.5,1)",16,3.5555555555555554
+Phi3_mini_4K_instruct,RAG,Phi3_mini_4K_instruct | RAG,Zero F1,220,48.888888888888886
+Qwen2.5_14B_Instruct,DP,Qwen2.5_14B_Instruct | DP,Exact Match,190,42.22222222222222
+Qwen2.5_14B_Instruct,DP,Qwen2.5_14B_Instruct | DP,"Low F1 (0,0.5)",5,1.1111111111111112
+Qwen2.5_14B_Instruct,DP,Qwen2.5_14B_Instruct | DP,"Mid F1 [0.5,1)",6,1.3333333333333333
+Qwen2.5_14B_Instruct,DP,Qwen2.5_14B_Instruct | DP,Zero F1,249,55.333333333333336
+Qwen2.5_14B_Instruct,RAG,Qwen2.5_14B_Instruct | RAG,Exact Match,210,46.666666666666664
+Qwen2.5_14B_Instruct,RAG,Qwen2.5_14B_Instruct | RAG,"Low F1 (0,0.5)",2,0.4444444444444444
+Qwen2.5_14B_Instruct,RAG,Qwen2.5_14B_Instruct | RAG,"Mid F1 [0.5,1)",17,3.7777777777777777
+Qwen2.5_14B_Instruct,RAG,Qwen2.5_14B_Instruct | RAG,Zero F1,221,49.111111111111114
+Qwen3_4B_Instruct,DP,Qwen3_4B_Instruct | DP,Exact Match,188,41.77777777777778
+Qwen3_4B_Instruct,DP,Qwen3_4B_Instruct | DP,Zero F1,262,58.22222222222222
+Qwen3_4B_Instruct,RAG,Qwen3_4B_Instruct | RAG,Exact Match,205,45.86129753914989
+Qwen3_4B_Instruct,RAG,Qwen3_4B_Instruct | RAG,"Low F1 (0,0.5)",4,0.8948545861297539
+Qwen3_4B_Instruct,RAG,Qwen3_4B_Instruct | RAG,"Mid F1 [0.5,1)",9,2.0134228187919465
+Qwen3_4B_Instruct,RAG,Qwen3_4B_Instruct | RAG,Zero F1,229,51.230425055928414

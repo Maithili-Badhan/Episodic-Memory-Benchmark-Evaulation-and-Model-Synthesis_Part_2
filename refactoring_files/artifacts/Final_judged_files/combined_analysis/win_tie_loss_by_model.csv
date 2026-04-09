@@ -1,0 +1,13 @@
+model,pair_outcome,n,pct
+Llama3.1_8B_instruct,RAG loses,52,11.555555555555555
+Llama3.1_8B_instruct,RAG wins,69,15.333333333333334
+Llama3.1_8B_instruct,Tie,329,73.11111111111111
+Phi3_mini_4K_instruct,RAG loses,33,7.333333333333333
+Phi3_mini_4K_instruct,RAG wins,75,16.666666666666668
+Phi3_mini_4K_instruct,Tie,342,76.0
+Qwen2.5_14B_Instruct,RAG loses,35,7.777777777777778
+Qwen2.5_14B_Instruct,RAG wins,63,14.0
+Qwen2.5_14B_Instruct,Tie,352,78.22222222222223
+Qwen3_4B_Instruct,RAG loses,5,1.1185682326621924
+Qwen3_4B_Instruct,RAG wins,37,8.277404921700224
+Qwen3_4B_Instruct,Tie,405,90.60402684563758
